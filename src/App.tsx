@@ -12,6 +12,10 @@ import YapayZekaIsAlanlari from "./pages/YapayZekaIsAlanlari";
 import Pazarlama from "./pages/Pazarlama";
 import SatisOtomasyonu from "./pages/SatisOtomasyonu";
 import Services5 from "./pages/Services5";
+import Hakkimda from "./pages/Hakkimda";
+import Otomasyon from "./pages/Otomasyon";
+import VeriAnalizi from "./pages/VeriAnalizi";
+import SatisOtomasyonuDemo from "./pages/SatisOtomasyonuDemo";
 
 const queryClient = new QueryClient();
 
@@ -30,7 +34,11 @@ const App = () => (
                 <Route path="/yapay-zeka-is-alanlari" element={<YapayZekaIsAlanlari />} />
                 <Route path="/yapay-zeka-is-alanlari/pazarlama" element={<Pazarlama />} />
                 <Route path="/yapay-zeka-is-alanlari/yapay-zeka-satis-otomasyonu" element={<SatisOtomasyonu />} />
+                <Route path="/satis-otomasyonu-demo" element={<SatisOtomasyonuDemo />} />
                 <Route path="/services-5" element={<Services5 />} />
+                <Route path="/hakkimda" element={<Hakkimda />} />
+                <Route path="/otomasyon" element={<Otomasyon />} />
+                <Route path="/veri-analizi" element={<VeriAnalizi />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
