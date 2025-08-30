@@ -13,17 +13,11 @@ const Navigation = () => {
 
   const navItems = [
     { href: "/", label: "Ana Sayfa" },
-    {
-      label: "Yapay Zeka İş Alanları",
-      items: [
-        { href: "/yapay-zeka-is-alanlari", label: "Genel Bakış" },
-        { href: "/yapay-zeka-is-alanlari/pazarlama", label: "Pazarlama" },
-        { href: "/yapay-zeka-is-alanlari/yapay-zeka-satis-otomasyonu", label: "Satış Otomasyonu" },
-      ]
-    },
-    { href: "/hakkimda", label: "Hakkımda" },
-    { href: "/services-5", label: "Hizmetlerimiz" },
+    { href: "/services-5", label: "Çözümler" },
+    { href: "/cases", label: "Vaka Çalışmaları" },
+    { href: "/pricing", label: "Fiyatlandırma" },
     { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "İletişim" },
   ];
 
   const isActiveLink = (href: string) => {
@@ -44,49 +38,19 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-6">
             {navItems.map((item) => (
-              <div key={item.label} className="relative">
-                {item.items ? (
-                  <div
-                    className="group relative"
-                    onMouseEnter={() => setServicesOpen(true)}
-                    onMouseLeave={() => setServicesOpen(false)}
-                  >
-                    <button className="flex items-center space-x-1 text-sm font-medium text-foreground transition-colors hover:text-primary">
-                      <span>{item.label}</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </button>
-                    {servicesOpen && (
-                      <div className="absolute left-0 top-full mt-2 w-56 rounded-md bg-popover p-2 shadow-lg ring-1 ring-border">
-                        {item.items.map((subItem) => (
-                          <Link
-                            key={subItem.href}
-                            to={subItem.href}
-                            className={cn(
-                              "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-                              isActiveLink(subItem.href) && "bg-accent text-accent-foreground"
-                            )}
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    to={item.href!}
-                    className={cn(
-                      "text-sm font-medium transition-colors hover:text-primary",
-                      isActiveLink(item.href!) ? "text-primary" : "text-foreground"
-                    )}
-                  >
-                    {item.label}
-                  </Link>
+              <Link
+                key={item.label}
+                to={item.href!}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  isActiveLink(item.href!) ? "text-primary" : "text-foreground"
                 )}
-              </div>
+              >
+                {item.label}
+              </Link>
             ))}
             <Button asChild className="bg-gradient-to-r from-primary to-accent">
-              <Link to="/danismanlik">İletişim</Link>
+              <Link to="/contact">İletişim</Link>
             </Button>
           </div>
 
@@ -105,44 +69,20 @@ const Navigation = () => {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <div key={item.label}>
-                    {item.items ? (
-                      <div>
-                        <div className="py-2 text-sm font-medium text-foreground">
-                          {item.label}
-                        </div>
-                        <div className="ml-4 space-y-2">
-                          {item.items.map((subItem) => (
-                            <Link
-                              key={subItem.href}
-                              to={subItem.href}
-                              onClick={() => setIsOpen(false)}
-                              className={cn(
-                                "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent",
-                                isActiveLink(subItem.href) && "bg-accent text-accent-foreground"
-                              )}
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <Link
-                        to={item.href!}
-                        onClick={() => setIsOpen(false)}
-                        className={cn(
-                          "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent",
-                          isActiveLink(item.href!) && "bg-accent text-accent-foreground"
-                        )}
-                      >
-                        {item.label}
-                      </Link>
+                  <Link
+                    key={item.label}
+                    to={item.href!}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent",
+                      isActiveLink(item.href!) && "bg-accent text-accent-foreground"
                     )}
-                  </div>
+                  >
+                    {item.label}
+                  </Link>
                 ))}
                 <Button asChild className="mt-4 bg-gradient-to-r from-primary to-accent">
-                  <Link to="/danismanlik" onClick={() => setIsOpen(false)}>İletişim</Link>
+                  <Link to="/contact" onClick={() => setIsOpen(false)}>İletişim</Link>
                 </Button>
               </nav>
             </SheetContent>
