@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import SEO from "@/components/SEO";
+import { SEO } from "@/components/SEO";
 import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
 import { 
   Bot, 

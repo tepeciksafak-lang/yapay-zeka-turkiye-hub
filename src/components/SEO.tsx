@@ -60,4 +60,4 @@ const SEO = ({ title, description, image, url, type = "website" }: SEOProps) => 
   );
 };
 
-export default SEO;
+export { SEO };

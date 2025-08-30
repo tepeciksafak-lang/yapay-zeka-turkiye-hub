@@ -1,4 +1,4 @@
-import SEO from "@/components/SEO";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 
 const Services5 = () => {
