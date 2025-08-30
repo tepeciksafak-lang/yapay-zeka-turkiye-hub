@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,14 +90,18 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Language Switcher & Mobile Navigation */}
+          <div className="flex items-center space-x-2">
+            <LanguageSwitcher />
+            
+            {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (
@@ -142,6 +147,7 @@ const Navigation = () => {
               </nav>
             </SheetContent>
           </Sheet>
+          </div>
         </div>
       </div>
     </nav>
