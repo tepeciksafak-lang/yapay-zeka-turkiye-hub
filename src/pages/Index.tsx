@@ -134,12 +134,13 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
         <div className="container relative mx-auto px-4 py-20">
           <div className="mx-auto max-w-5xl text-center">
             <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-7xl xl:text-8xl animate-fade-in-up leading-tight">
               {t('hero.headline')}{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block mt-2">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block mt-2 animate-glow-neon">
                 {t('hero.headline.highlight')}
               </span>
             </h1>
@@ -150,17 +151,17 @@ const Index = () => {
               <Button 
                 size="lg" 
                 onClick={() => setModalOpen(true)}
-                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-lg px-8 py-4 h-auto font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-lg px-8 py-4 h-auto font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover-glow border-0"
               >
                 {t('hero.cta.primary')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 py-4 h-auto">
+              <Button size="lg" variant="outline" asChild className="text-lg px-8 py-4 h-auto border-primary/30 hover:border-primary text-foreground hover:bg-primary/10 hover-glow-purple">
                 <a href="#demo">{t('hero.cta.secondary')}</a>
               </Button>
             </div>
             <p className="mt-8 text-sm text-muted-foreground animate-fade-in-up [animation-delay:0.6s]">
-              <Star className="inline h-4 w-4 text-yellow-500 mr-1" />
+              <Star className="inline h-4 w-4 text-accent mr-1" />
               {t('hero.social.proof')}
             </p>
           </div>

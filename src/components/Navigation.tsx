@@ -26,13 +26,14 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-16 items-center justify-between">
-          <Link to={`/${currentLanguage}`} className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-primary to-accent bg-clip-text text-xl font-bold text-transparent">
+          <Link to={`/${currentLanguage}`} className="flex items-center space-x-3 group">
+            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent group-hover:from-primary/80 group-hover:to-accent/80 transition-all duration-300 hover-glow" />
+            <span className="text-xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
               Pratik Yapay Zeka
-            </div>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -49,7 +50,7 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
-            <Button asChild className="bg-gradient-to-r from-primary to-accent">
+            <Button asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 hover-glow border-0 font-semibold">
               <Link to={`/${currentLanguage}/contact`}>{t('nav.contact')}</Link>
             </Button>
           </div>
