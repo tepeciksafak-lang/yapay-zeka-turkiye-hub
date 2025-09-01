@@ -1,5 +1,5 @@
-import { createContext, useContext, ReactNode } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { createContext, useContext, ReactNode, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type Language = 'de' | 'tr' | 'en';
 
@@ -7,6 +7,7 @@ interface LanguageContextType {
   currentLanguage: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  initializeLanguage: (lang: string | undefined) => void;
 }
 
 const translations = {
@@ -63,15 +64,23 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const { lang } = useParams<{ lang: string }>();
+  const [currentLanguage, setCurrentLanguage] = useState<Language>('tr');
   const navigate = useNavigate();
   
-  const currentLanguage = (lang as Language) || 'tr'; // Default to Turkish
+  const initializeLanguage = (lang: string | undefined) => {
+    const validLang = (lang as Language);
+    if (validLang && ['de', 'tr', 'en'].includes(validLang)) {
+      setCurrentLanguage(validLang);
+    } else {
+      setCurrentLanguage('tr'); // Default to Turkish
+    }
+  };
   
   const setLanguage = (newLang: Language) => {
     const currentPath = window.location.pathname;
     const pathWithoutLang = currentPath.replace(/^\/(de|tr|en)/, '') || '/';
     navigate(`/${newLang}${pathWithoutLang}`);
+    setCurrentLanguage(newLang);
   };
 
   const t = (key: string): string => {
@@ -79,7 +88,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <LanguageContext.Provider value={{ currentLanguage, setLanguage, t }}>
+    <LanguageContext.Provider value={{ currentLanguage, setLanguage, t, initializeLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
