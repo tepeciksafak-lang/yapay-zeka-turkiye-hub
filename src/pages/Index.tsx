@@ -130,33 +130,33 @@ const Index = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted py-20 lg:py-32">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted">
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-        <div className="container relative mx-auto px-4">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl animate-fade-in-up">
-              Yapay Zeka ile Satış ve Pazarlamayı{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Otomatikleştirin
+        <div className="container relative mx-auto px-4 py-20">
+          <div className="mx-auto max-w-5xl text-center">
+            <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-7xl xl:text-8xl animate-fade-in-up leading-tight">
+              Sie führen das Unternehmen.{" "}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block mt-2">
+                Wir bauen die Künstliche Intelligenz.
               </span>
             </h1>
-            <p className="mb-8 text-lg text-muted-foreground sm:text-xl animate-fade-in-up [animation-delay:0.2s]">
-              Outbound & inbound, içerik ve sosyal medya—lead'den toplantıya kadar uçtan uca otomasyon.
+            <p className="mb-12 text-lg text-muted-foreground sm:text-xl lg:text-2xl max-w-4xl mx-auto animate-fade-in-up [animation-delay:0.2s] leading-relaxed">
+              KI + Automatisierung, die Ihr Unternehmen skaliert – ohne dass Sie mehr leisten müssen.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center animate-fade-in-up [animation-delay:0.4s]">
+            <div className="flex flex-col gap-6 sm:flex-row sm:justify-center animate-fade-in-up [animation-delay:0.4s]">
               <Button 
                 size="lg" 
                 onClick={() => setModalOpen(true)}
-                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-lg px-8 py-4 h-auto font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
               >
-                30 dk Hızlı Analiz
-                <ArrowRight className="ml-2 h-4 w-4" />
+                Jetzt kostenlos starten
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="text-lg px-8 py-4 h-auto">
                 <a href="#demo">Demoları Gör</a>
               </Button>
             </div>
-            <p className="mt-6 text-sm text-muted-foreground animate-fade-in-up [animation-delay:0.6s]">
+            <p className="mt-8 text-sm text-muted-foreground animate-fade-in-up [animation-delay:0.6s]">
               <Star className="inline h-4 w-4 text-yellow-500 mr-1" />
               100+ B2B ekip için pratik otomasyon kurguladık.
             </p>
