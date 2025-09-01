@@ -1,21 +1,22 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const LanguageSwitcher = () => {
-  const [currentLanguage, setCurrentLanguage] = useState("TR");
+  const { currentLanguage, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
-    { code: "TR", name: "Türkçe", flag: "🇹🇷" },
-    { code: "DE", name: "Deutsch", flag: "🇩🇪" },
-    { code: "EN", name: "English", flag: "🇺🇸" },
+    { code: "tr", name: "Türkçe", flag: "🇹🇷" },
+    { code: "de", name: "Deutsch", flag: "🇩🇪" },
+    { code: "en", name: "English", flag: "🇺🇸" },
   ];
 
   const currentLang = languages.find(lang => lang.code === currentLanguage);
 
   const handleLanguageChange = (languageCode: string) => {
-    setCurrentLanguage(languageCode);
+    setLanguage(languageCode as 'de' | 'tr' | 'en');
     setIsOpen(false);
   };
 
@@ -29,7 +30,7 @@ const LanguageSwitcher = () => {
       >
         <Globe className="h-4 w-4" />
         <span>{currentLang?.flag}</span>
-        <span className="hidden sm:inline">{currentLang?.code}</span>
+        <span className="hidden sm:inline">{currentLang?.code.toUpperCase()}</span>
         <ChevronDown className="h-3 w-3" />
       </Button>
 

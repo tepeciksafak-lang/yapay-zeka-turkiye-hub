@@ -5,19 +5,19 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+  const { currentLanguage, t } = useLanguage();
 
   const navItems = [
-    { href: "/", label: "Ana Sayfa" },
-    { href: "/services-5", label: "Çözümler" },
-    { href: "/cases", label: "Vaka Çalışmaları" },
-    { href: "/pricing", label: "Fiyatlandırma" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "İletişim" },
+    { href: `/${currentLanguage}/yapay-zeka-is-alanlari`, label: t('nav.solutions') },
+    { href: `/${currentLanguage}/vaka-calismalari`, label: t('nav.cases') },
+    { href: `/${currentLanguage}/fiyatlandirma`, label: t('nav.pricing') },
+    { href: `/${currentLanguage}/blog`, label: t('nav.blog') },
   ];
 
   const isActiveLink = (href: string) => {
@@ -29,7 +29,7 @@ const Navigation = () => {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to={`/${currentLanguage}`} className="flex items-center space-x-2">
             <div className="bg-gradient-to-r from-primary to-accent bg-clip-text text-xl font-bold text-transparent">
               Pratik Yapay Zeka
             </div>
@@ -50,7 +50,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Button asChild className="bg-gradient-to-r from-primary to-accent">
-              <Link to="/contact">İletişim</Link>
+              <Link to={`/${currentLanguage}/contact`}>{t('nav.contact')}</Link>
             </Button>
           </div>
 
@@ -82,7 +82,7 @@ const Navigation = () => {
                   </Link>
                 ))}
                 <Button asChild className="mt-4 bg-gradient-to-r from-primary to-accent">
-                  <Link to="/contact" onClick={() => setIsOpen(false)}>İletişim</Link>
+                  <Link to={`/${currentLanguage}/contact`} onClick={() => setIsOpen(false)}>{t('nav.contact')}</Link>
                 </Button>
               </nav>
             </SheetContent>

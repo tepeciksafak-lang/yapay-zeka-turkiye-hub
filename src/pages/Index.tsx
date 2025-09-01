@@ -1,28 +1,31 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { SEO } from "@/components/SEO";
-import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
 import { 
-  Bot, 
-  TrendingUp, 
-  MessageCircle, 
-  BarChart3, 
-  CheckCircle, 
   ArrowRight, 
-  Zap,
-  Users,
+  Star, 
+  CheckCircle, 
+  Users, 
+  Zap, 
+  Target, 
+  BarChart3, 
+  MessageSquare, 
+  TrendingUp, 
   Clock,
-  Target,
-  Star,
+  Bot, 
+  MessageCircle,
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
+import { SEO } from "@/components/SEO";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const { t } = useLanguage();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const features = [
@@ -135,13 +138,13 @@ const Index = () => {
         <div className="container relative mx-auto px-4 py-20">
           <div className="mx-auto max-w-5xl text-center">
             <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-7xl xl:text-8xl animate-fade-in-up leading-tight">
-              Sie führen das Unternehmen.{" "}
+              {t('hero.headline')}{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block mt-2">
-                Wir bauen die Künstliche Intelligenz.
+                {t('hero.headline.highlight')}
               </span>
             </h1>
             <p className="mb-12 text-lg text-muted-foreground sm:text-xl lg:text-2xl max-w-4xl mx-auto animate-fade-in-up [animation-delay:0.2s] leading-relaxed">
-              KI + Automatisierung, die Ihr Unternehmen skaliert – ohne dass Sie mehr leisten müssen.
+              {t('hero.subheadline')}
             </p>
             <div className="flex flex-col gap-6 sm:flex-row sm:justify-center animate-fade-in-up [animation-delay:0.4s]">
               <Button 
@@ -149,16 +152,16 @@ const Index = () => {
                 onClick={() => setModalOpen(true)}
                 className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-lg px-8 py-4 h-auto font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
               >
-                Jetzt kostenlos starten
+                {t('hero.cta.primary')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button size="lg" variant="outline" asChild className="text-lg px-8 py-4 h-auto">
-                <a href="#demo">Demoları Gör</a>
+                <a href="#demo">{t('hero.cta.secondary')}</a>
               </Button>
             </div>
             <p className="mt-8 text-sm text-muted-foreground animate-fade-in-up [animation-delay:0.6s]">
               <Star className="inline h-4 w-4 text-yellow-500 mr-1" />
-              100+ B2B ekip için pratik otomasyon kurguladık.
+              {t('hero.social.proof')}
             </p>
           </div>
         </div>
