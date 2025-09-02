@@ -18,6 +18,7 @@ import Hakkimda from "./pages/Hakkimda";
 import Otomasyon from "./pages/Otomasyon";
 import VeriAnalizi from "./pages/VeriAnalizi";
 import SatisOtomasyonuDemo from "./pages/SatisOtomasyonuDemo";
+import VakaCalismalari from "./pages/VakaCalismalari";
 
 const queryClient = new QueryClient();
 
@@ -116,6 +117,15 @@ const App = () => (
                     <Footer />
                   </LanguageWrapper>
                 } />
+                <Route path="/:lang/vaka-calismalari" element={
+                  <LanguageWrapper>
+                    <Navigation />
+                    <main className="flex-1">
+                      <VakaCalismalari />
+                    </main>
+                    <Footer />
+                  </LanguageWrapper>
+                } />
                 
                 {/* Legacy routes without language - redirect to Turkish */}
                 <Route path="/yapay-zeka-is-alanlari" element={<Navigate to="/tr/yapay-zeka-is-alanlari" replace />} />
@@ -126,6 +136,7 @@ const App = () => (
                 <Route path="/hakkimda" element={<Navigate to="/tr/hakkimda" replace />} />
                 <Route path="/otomasyon" element={<Navigate to="/tr/otomasyon" replace />} />
                 <Route path="/veri-analizi" element={<Navigate to="/tr/veri-analizi" replace />} />
+                <Route path="/vaka-calismalari" element={<Navigate to="/tr/vaka-calismalari" replace />} />
                 
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
