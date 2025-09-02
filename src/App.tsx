@@ -19,6 +19,8 @@ import Otomasyon from "./pages/Otomasyon";
 import VeriAnalizi from "./pages/VeriAnalizi";
 import SatisOtomasyonuDemo from "./pages/SatisOtomasyonuDemo";
 import VakaCalismalari from "./pages/VakaCalismalari";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -126,6 +128,24 @@ const App = () => (
                     <Footer />
                   </LanguageWrapper>
                 } />
+                <Route path="/:lang/blog" element={
+                  <LanguageWrapper>
+                    <Navigation />
+                    <main className="flex-1">
+                      <Blog />
+                    </main>
+                    <Footer />
+                  </LanguageWrapper>
+                } />
+                <Route path="/:lang/blog/:id" element={
+                  <LanguageWrapper>
+                    <Navigation />
+                    <main className="flex-1">
+                      <BlogPost />
+                    </main>
+                    <Footer />
+                  </LanguageWrapper>
+                } />
                 
                 {/* Legacy routes without language - redirect to Turkish */}
                 <Route path="/yapay-zeka-is-alanlari" element={<Navigate to="/tr/yapay-zeka-is-alanlari" replace />} />
@@ -137,6 +157,8 @@ const App = () => (
                 <Route path="/otomasyon" element={<Navigate to="/tr/otomasyon" replace />} />
                 <Route path="/veri-analizi" element={<Navigate to="/tr/veri-analizi" replace />} />
                 <Route path="/vaka-calismalari" element={<Navigate to="/tr/vaka-calismalari" replace />} />
+                <Route path="/blog" element={<Navigate to="/tr/blog" replace />} />
+                <Route path="/blog/:id" element={<Navigate to="/tr/blog" replace />} />
                 
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
