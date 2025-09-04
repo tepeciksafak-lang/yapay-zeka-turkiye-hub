@@ -4,29 +4,29 @@ Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
   
   // Performance monitoring
-  tracesSampleRate: 1.0,
+  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
   
-  // Capture 100% of the transactions for performance monitoring
-  // We recommend adjusting this value in production
+  // Capture 100% of the transactions for performance monitoring in development
   replaysOnErrorSampleRate: 1.0,
   
   // Capture 10% of the transactions for performance monitoring when no errors occur
-  replaysSessionSampleRate: 0.1,
+  replaysSessionSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
   
-  // You can remove this option if you're not planning to use the Sentry Session Replay feature
+  // Session Replay configuration
   integrations: [
     new Sentry.Replay({
-      // Additional Replay configuration
       maskAllText: true,
       blockAllMedia: true,
     }),
   ],
   
   beforeSend(event) {
-    // Filter out development errors
+    // Filter out development errors in production
     if (process.env.NODE_ENV === 'development') {
-      return null
+      console.log('Sentry Event:', event)
     }
     return event
   },
+  
+  environment: process.env.NODE_ENV,
 })

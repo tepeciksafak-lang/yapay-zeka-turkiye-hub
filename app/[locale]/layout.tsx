@@ -41,7 +41,7 @@ export async function generateMetadata({
 
   const title = titles[locale as keyof typeof titles] || titles.tr
   const description = descriptions[locale as keyof typeof descriptions] || descriptions.tr
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yourdomain.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
 
   return {
     title,

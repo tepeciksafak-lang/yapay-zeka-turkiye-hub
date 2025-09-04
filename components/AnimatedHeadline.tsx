@@ -23,16 +23,16 @@ export function AnimatedHeadline({ children, className }: AnimatedHeadlineProps)
 
     const element = headlineRef.current
     
-    // Initial state
+    // Initial state using transform instead of y
     gsap.set(element, { 
       opacity: 0, 
-      y: 50 
+      transform: "translateY(50px)" 
     })
 
-    // Animation
+    // Animation using only transform and opacity
     gsap.to(element, {
       opacity: 1,
-      y: 0,
+      transform: "translateY(0px)",
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {

@@ -12,6 +12,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const t = await getI18n()
   const { locale } = params
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
   
   const titles = {
     tr: 'AI Otomasyon Platformu | Yapay Zeka ile İşletmenizi Büyütün',
@@ -34,12 +35,33 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
+      url: `${baseUrl}/${locale}`,
+      siteName: 'AI Automation Platform',
+      images: [
+        {
+          url: `${baseUrl}/og-image-${locale}.jpg`,
+          width: 1200,
+          height: 630,
+          alt: title
+        }
+      ],
+      locale,
       type: 'website'
     },
     twitter: {
       card: 'summary_large_image',
       title,
-      description
+      description,
+      images: [`${baseUrl}/og-image-${locale}.jpg`],
+      creator: '@yourtwitterhandle'
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        'tr': `${baseUrl}/tr`,
+        'de': `${baseUrl}/de`,
+        'en': `${baseUrl}/en`
+      }
     }
   }
 }

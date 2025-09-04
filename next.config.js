@@ -36,7 +36,21 @@ const nextConfig = {
         ]
       }
     ]
-  }
+  },
+  // Bundle analyzer (enable with ANALYZE=true)
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config) => {
+      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'server',
+          analyzerPort: 8888,
+          openAnalyzer: true
+        })
+      )
+      return config
+    }
+  })
 }
 
 // Initialize Sentry
