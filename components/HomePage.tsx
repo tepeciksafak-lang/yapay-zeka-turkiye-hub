@@ -177,19 +177,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Trust Stripe */}
-      <section className="py-8 border-y border-border/40 bg-muted/20">
-        <div className="container">
-          <div className="flex items-center justify-center text-sm text-muted-foreground">
-            <span className="mr-8">100+ şirketin tercihi:</span>
-            <div className="flex space-x-8 opacity-60">
-              <div className="h-8 w-24 bg-gradient-to-r from-primary/20 to-secondary/20 rounded" />
-              <div className="h-8 w-24 bg-gradient-to-r from-secondary/20 to-accent/20 rounded" />
-              <div className="h-8 w-24 bg-gradient-to-r from-accent/20 to-primary/20 rounded" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Features Grid */}
       <section className="py-16 lg:py-24">
