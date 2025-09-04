@@ -168,14 +168,6 @@ export function HomePage() {
                 </MotionButton>
               </div>
 
-              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-secondary border-2 border-background" />
-                  ))}
-                </div>
-                <span>{t('hero.social.proof')}</span>
-              </div>
             </div>
 
             <div className="lg:order-first order-last">
