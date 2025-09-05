@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import { getI18n } from '@/locales/server'
 import { HomePage } from '@/components/HomePage'
 import { JsonLd } from '@/components/JsonLd'
+import Hero from './_hero/Hero'
+import { HeroLang } from './_hero/copy'
 
 export const revalidate = 60
 
@@ -74,9 +76,10 @@ export default async function Page({
   const t = await getI18n()
   
   return (
-    <>
+    <main id="main">
       <JsonLd locale={params.locale} />
+      <Hero locale={params.locale as HeroLang} />
       <HomePage />
-    </>
+    </main>
   )
 }
