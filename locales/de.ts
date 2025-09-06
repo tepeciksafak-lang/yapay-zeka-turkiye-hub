@@ -11,7 +11,7 @@ export default {
   'hero.headline.highlight': 'Wir bauen die Künstliche Intelligenz.',
   'hero.subheadline': 'KI + Automatisierung, die Ihr Unternehmen skaliert – ohne dass Sie mehr leisten müssen.',
   'hero.cta.primary': 'Jetzt kostenlos starten',
-  'hero.cta.secondary': 'Demos ansehen',
+  
   'hero.social.proof': '100+ B2B Teams vertrauen auf unsere praktischen Automatisierungen.',
 
   // Features

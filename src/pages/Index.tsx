@@ -156,9 +156,6 @@ const Index = () => {
                 {t('hero.cta.primary')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 py-4 h-auto border-primary/30 hover:border-primary text-foreground hover:bg-primary/10 hover-glow-purple">
-                <a href="#demo">{t('hero.cta.secondary')}</a>
-              </Button>
             </div>
           </div>
         </div>

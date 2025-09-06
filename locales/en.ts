@@ -11,7 +11,7 @@ export default {
   'hero.headline.highlight': 'We build the Artificial Intelligence.',
   'hero.subheadline': 'AI + Automation that scales your company — without you doing more.',
   'hero.cta.primary': 'Start free now',
-  'hero.cta.secondary': 'See Demos',
+  
   'hero.social.proof': '100+ B2B teams trust our practical automation solutions.',
 
   // Features

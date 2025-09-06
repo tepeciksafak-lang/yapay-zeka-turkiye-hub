@@ -11,7 +11,7 @@ export default {
   'hero.headline.highlight': 'Biz Yapay Zekayı kurarız.',
   'hero.subheadline': 'Yapay Zeka + Otomasyon ile Şirketinizi Daha da Büyütün – Fazladan Çaba Harcamadan.',
   'hero.cta.primary': 'Şimdi ücretsiz başlayın',
-  'hero.cta.secondary': 'Demoları Gör',
+  
   'hero.social.proof': '100+ B2B ekip için pratik otomasyon kurguladık.',
 
   // Features

@@ -24,7 +24,7 @@ const translations = {
     'hero.headline.highlight': 'Wir bauen die Künstliche Intelligenz.',
     'hero.subheadline': 'KI + Automatisierung, die Ihr Unternehmen skaliert – ohne dass Sie mehr leisten müssen.',
     'hero.cta.primary': 'Jetzt kostenlos starten',
-    'hero.cta.secondary': 'Demos ansehen',
+    
     'hero.social.proof': '100+ B2B Teams vertrauen auf unsere praktischen Automatisierungen.',
   },
   tr: {
@@ -40,7 +40,7 @@ const translations = {
     'hero.headline.highlight': 'Biz Yapay Zekayı kurarız.',
     'hero.subheadline': 'Yapay Zeka + Otomasyon ile Şirketinizi Daha da Büyütün – Fazladan Çaba Harcamadan.',
     'hero.cta.primary': 'Şimdi ücretsiz başlayın',
-    'hero.cta.secondary': 'Demoları Gör', 
+     
     'hero.social.proof': '100+ B2B ekip için pratik otomasyon kurguladık.',
   },
   en: {
@@ -56,7 +56,7 @@ const translations = {
     'hero.headline.highlight': 'We build the Artificial Intelligence.',
     'hero.subheadline': 'AI + Automation that scales your company — without you doing more.',
     'hero.cta.primary': 'Start free now',
-    'hero.cta.secondary': 'See Demos',
+    
     'hero.social.proof': '100+ B2B teams trust our practical automation solutions.',
   }
 };
