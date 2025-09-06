@@ -30,7 +30,6 @@ export default function Hero({ locale }: { locale: HeroLang }){
 
           <div className={styles.ctaRow}>
             <MotionCta href={`/${locale}#basla`} variant="primary">{copy.ctaPrimary}</MotionCta>
-            <MotionCta href={`/${locale}#demo`}  variant="ghost">{copy.ctaSecondary}</MotionCta>
           </div>
         </div>
         <div>{/* optional visual */}</div>

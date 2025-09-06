@@ -160,10 +160,6 @@ const Index = () => {
                 <a href="#demo">{t('hero.cta.secondary')}</a>
               </Button>
             </div>
-            <p className="mt-8 text-sm text-muted-foreground animate-fade-in-up [animation-delay:0.6s]">
-              <Star className="inline h-4 w-4 text-accent mr-1" />
-              {t('hero.social.proof')}
-            </p>
           </div>
         </div>
       </section>
