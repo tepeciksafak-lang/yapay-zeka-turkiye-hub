@@ -22,6 +22,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
 import { SEO } from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
+import AgitateDemo from "@/components/AgitateDemo";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -161,6 +162,8 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Agitate Demo Section */}
+      <AgitateDemo />
 
       {/* Features Grid */}
       <section className="py-20 lg:py-32">
