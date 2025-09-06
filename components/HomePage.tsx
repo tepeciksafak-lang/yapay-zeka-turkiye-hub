@@ -158,14 +158,6 @@ export function HomePage() {
                   {t('hero.cta.primary')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </MotionButton>
-                
-                <MotionButton 
-                  variant="outline" 
-                  size="lg"
-                  className="hover-glow-purple glass"
-                >
-                  {t('hero.cta.secondary')}
-                </MotionButton>
               </div>
 
             </div>
