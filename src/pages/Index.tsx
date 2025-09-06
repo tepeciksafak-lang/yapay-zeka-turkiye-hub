@@ -161,25 +161,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Stripe */}
-      <section className="border-b bg-muted/50 py-12">
-        <div className="container mx-auto px-4">
-          <p className="mb-8 text-center text-sm font-medium text-muted-foreground">
-            Güvenilir sonuçlar, ölçülebilir etki.
-          </p>
-          <div className="grid grid-cols-2 items-center gap-8 opacity-60 sm:grid-cols-4 lg:grid-cols-5">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className="flex h-12 items-center justify-center rounded-lg bg-muted p-4"
-                aria-label={`Partner logo ${i + 1}`}
-              >
-                <div className="h-8 w-24 rounded bg-foreground/10" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Features Grid */}
       <section className="py-20 lg:py-32">
