@@ -54,10 +54,6 @@ export default function AgitateDemo() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
             Yapay zekâ ile şirketinizin otomatik çalışmasını nasıl sağlarsınız?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Üç yaygın yol var — ama her biri pratikte takılmaya meyilli: zaman, yetkinlik, maliyet.
-            Soldan bir seçenek seçin; neden çoğu projede tıkandığını görün.
-          </p>
         </div>
 
         <div className="mt-16">
