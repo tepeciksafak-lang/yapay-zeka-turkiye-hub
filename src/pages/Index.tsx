@@ -13,20 +13,68 @@ import {
   Bot, 
   MessageCircle,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Cog,
+  PieChart
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Features } from "@/components/ui/features";
 import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
 import { SEO } from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
+import automationImage from "@/assets/agitate-automation.jpg";
+import analyticsImage from "@/assets/agitate-analytics.jpg";
+import salesImage from "@/assets/agitate-sales.jpg";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const { t } = useLanguage();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const agitateFeatures = [
+    {
+      id: 'automation',
+      icon: Cog,
+      title: 'Vollständige Automatisierung',
+      description: 'KI-gesteuerte Prozesse ohne manuellen Aufwand',
+      bullets: [
+        'Automatische Leadgenerierung und -qualifizierung durch KI',
+        'Intelligente E-Mail-Sequenzen basierend auf Kundenverhalten',
+        '24/7 Chatbot mit natürlicher Sprachverarbeitung'
+      ],
+      image: automationImage,
+      imageAlt: 'AI Automation Dashboard'
+    },
+    {
+      id: 'analytics',
+      icon: PieChart,
+      title: 'Datengetriebene Einblicke',
+      description: 'Präzise Analytik für bessere Entscheidungen',
+      bullets: [
+        'Echtzeit-Dashboard mit allen wichtigen KPIs',
+        'Predictive Analytics für Umsatzprognosen',
+        'Kundenverhalten-Tracking und Segmentierung'
+      ],
+      image: analyticsImage,
+      imageAlt: 'Analytics Dashboard'
+    },
+    {
+      id: 'sales',
+      icon: TrendingUp,
+      title: 'Verkaufsoptimierung',
+      description: 'Mehr Abschlüsse durch intelligente Systeme',
+      bullets: [
+        'Automatische Follow-up-Sequenzen für warme Leads',
+        'Dynamische Preisgestaltung basierend auf Marktdaten',
+        'Intelligente Empfehlungen für Cross- und Upselling'
+      ],
+      image: salesImage,
+      imageAlt: 'Sales Optimization Interface'
+    }
+  ];
 
   const features = [
     {
@@ -161,6 +209,20 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Agitate Features Section */}
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              Warum unsere KI-Lösung anders ist
+            </h2>
+            <p className="mt-6 text-lg text-muted-foreground">
+              Entdecken Sie, wie unsere fortschrittliche KI-Technologie Ihr Unternehmen transformiert und nachhaltiges Wachstum ermöglicht.
+            </p>
+          </div>
+          <Features features={agitateFeatures} />
+        </div>
+      </section>
 
       {/* Features Grid */}
       <section className="py-20 lg:py-32">
