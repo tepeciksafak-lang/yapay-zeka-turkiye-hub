@@ -23,6 +23,7 @@ import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
 import { SEO } from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
 import AgitateDemo from "@/components/AgitateDemo";
+import SolutionSection from "@/components/SolutionSection";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -164,6 +165,9 @@ const Index = () => {
 
       {/* Agitate Demo Section */}
       <AgitateDemo />
+
+      {/* Solution Section */}
+      <SolutionSection />
 
       {/* Features Grid */}
       <section className="py-20 lg:py-32">
