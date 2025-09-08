@@ -244,20 +244,19 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                   {item.title}
                 </div>
 
-                {expanded && (
+                {expanded && !isMobile && (
                   <Card 
                     className="absolute left-1/2 -translate-x-1/2 bg-bg-2/95 backdrop-blur-lg border border-white/15 shadow-xl shadow-black/40 overflow-visible rounded-xl"
                     style={{
                       top: `${responsive.nodeSize + 32}px`,
-                      width: `${responsive.cardWidth}px`,
-                      maxWidth: isMobile ? '90vw' : 'none'
+                      width: `${responsive.cardWidth}px`
                     }}
                   >
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-white/15"></div>
                     <CardHeader className="pb-4">
-                      <CardTitle className={`text-text-hi ${isMobile ? 'text-sm' : 'text-base lg:text-lg'}`}>{item.title}</CardTitle>
+                      <CardTitle className="text-base lg:text-lg text-text-hi">{item.title}</CardTitle>
                     </CardHeader>
-                    <CardContent className={`text-text-hi/90 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+                    <CardContent className="text-sm text-text-hi/90">
                       {item.image && (
                         <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-4">
                           <img
@@ -275,6 +274,37 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
             );
           })}
         </div>
+
+        {/* Mobile card display - below orbital circle */}
+        {isMobile && Object.keys(expandedItems).some(id => expandedItems[Number(id)]) && (
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-full max-w-sm px-4">
+            {timelineData
+              .filter(item => expandedItems[item.id])
+              .map(item => (
+                <Card 
+                  key={item.id}
+                  className="bg-bg-2/95 backdrop-blur-lg border border-white/15 shadow-xl shadow-black/40 rounded-xl"
+                >
+                  <CardHeader className="pb-4">
+                    <CardTitle className="text-sm text-text-hi">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-xs text-text-hi/90">
+                    {item.image && (
+                      <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-4">
+                        <img
+                          src={item.image}
+                          alt={item.imageAlt ?? item.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="whitespace-pre-line leading-relaxed">{item.content}</div>
+                  </CardContent>
+                </Card>
+              ))
+            }
+          </div>
+        )}
       </div>
     </div>
   );
