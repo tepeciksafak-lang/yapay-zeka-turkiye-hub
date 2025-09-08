@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface TimelineItem {
   id: number;
@@ -26,9 +27,61 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
   const [autoRotate, setAutoRotate] = useState<boolean>(true);
   const [pulseEffect, setPulseEffect] = useState<Record<number, boolean>>({});
   const [activeNodeId, setActiveNodeId] = useState<number | null>(null);
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
   const orbitRef = useRef<HTMLDivElement>(null);
   const nodeRefs = useRef<Record<number, HTMLDivElement | null>>({});
+  const isMobile = useIsMobile();
+
+  // Track window size for responsive calculations
+  useEffect(() => {
+    const updateSize = () => {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  // Get responsive values based on screen size
+  const getResponsiveValues = () => {
+    const { width } = windowSize;
+    
+    if (width < 768) {
+      // Mobile
+      return {
+        radius: Math.min(150, width * 0.35),
+        nodeSize: 32,
+        iconSize: 14,
+        cardWidth: Math.min(280, width - 40),
+        containerHeight: '65vh',
+        orbitHeight: '60vh'
+      };
+    } else if (width < 1024) {
+      // Tablet
+      return {
+        radius: Math.min(220, width * 0.28),
+        nodeSize: 40,
+        iconSize: 18,
+        cardWidth: 320,
+        containerHeight: '75vh',
+        orbitHeight: '70vh'
+      };
+    } else {
+      // Desktop
+      return {
+        radius: Math.min(300, width * 0.25),
+        nodeSize: 48,
+        iconSize: 20,
+        cardWidth: 360,
+        containerHeight: '85vh',
+        orbitHeight: '78vh'
+      };
+    }
+  };
+
+  const responsive = getResponsiveValues();
 
   const handleContainerClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === containerRef.current || e.target === orbitRef.current) {
@@ -84,8 +137,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
 
   const calculateNodePosition = (index: number, total: number) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    // Use clamp for responsive radius: min 260px, preferred 38vmin, max 480px
-    const radius = 280; // Base radius for consistent calculation
+    const radius = responsive.radius;
     const rad = (angle * Math.PI) / 180;
     const x = radius * Math.cos(rad);
     const y = radius * Math.sin(rad);
@@ -99,11 +151,15 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
 
   return (
     <div
-      className="w-full min-h-[75vh] md:min-h-[85vh] lg:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden bg-bg-1"
+      className="w-full overflow-hidden bg-bg-1"
+      style={{ minHeight: responsive.containerHeight }}
       ref={containerRef}
       onClick={handleContainerClick}
     >
-      <div className="relative w-full max-w-6xl h-[75vh] md:h-[80vh] lg:h-[85vh] flex items-center justify-center">
+      <div 
+        className="relative w-full max-w-6xl mx-auto flex items-center justify-center"
+        style={{ height: responsive.orbitHeight }}
+      >
         {/* Subtle lime glow background */}
         <div className="absolute inset-0 pointer-events-none opacity-20">
           <div className="w-full h-full bg-gradient-radial from-lime/10 via-transparent to-transparent" />
@@ -115,21 +171,27 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
           style={{ perspective: "1000px" }}
         >
           {/* Central core */}
-          <div className="absolute w-20 h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center z-10 bg-gradient-to-br from-lime to-emerald">
-            <div className="absolute w-24 h-24 lg:w-28 lg:h-28 rounded-full border border-white/15 animate-ping opacity-70"></div>
-            <div className="absolute w-28 h-28 lg:w-32 lg:h-32 rounded-full border border-white/10 animate-ping opacity-50" style={{ animationDelay: "0.5s" }}></div>
-            <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/90 backdrop-blur-md"></div>
+          <div className={`absolute ${isMobile ? 'w-16 h-16' : 'w-20 h-20 lg:w-24 lg:h-24'} rounded-full flex items-center justify-center z-10 bg-gradient-to-br from-lime to-emerald`}>
+            <div className={`absolute ${isMobile ? 'w-20 h-20' : 'w-24 h-24 lg:w-28 lg:h-28'} rounded-full border border-white/15 animate-ping opacity-70`}></div>
+            <div className={`absolute ${isMobile ? 'w-24 h-24' : 'w-28 h-28 lg:w-32 lg:h-32'} rounded-full border border-white/10 animate-ping opacity-50`} style={{ animationDelay: "0.5s" }}></div>
+            <div className={`${isMobile ? 'w-8 h-8' : 'w-10 h-10 lg:w-12 lg:h-12'} rounded-full bg-white/90 backdrop-blur-md`}></div>
           </div>
 
           {/* Orbital rings */}
-          <div className="absolute rounded-full border border-white/10" style={{ 
-            width: `${Math.min(Math.max(520, window.innerWidth * 0.76), 960)}px`, 
-            height: `${Math.min(Math.max(520, window.innerWidth * 0.76), 960)}px` 
-          }}></div>
-          <div className="absolute rounded-full border border-white/5" style={{ 
-            width: `${Math.min(Math.max(600, window.innerWidth * 0.88), 1120)}px`, 
-            height: `${Math.min(Math.max(600, window.innerWidth * 0.88), 1120)}px` 
-          }}></div>
+          <div 
+            className="absolute rounded-full border border-white/10" 
+            style={{ 
+              width: `${responsive.radius * 2}px`, 
+              height: `${responsive.radius * 2}px` 
+            }}
+          ></div>
+          <div 
+            className="absolute rounded-full border border-white/5" 
+            style={{ 
+              width: `${responsive.radius * 2.4}px`, 
+              height: `${responsive.radius * 2.4}px` 
+            }}
+          ></div>
 
           {timelineData.map((item, index) => {
             const pos = calculateNodePosition(index, timelineData.length);
@@ -157,30 +219,45 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                 )}
                 
                 <div
-                  className={`w-9 h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center border-2 transition-all duration-500 transform ${
+                  className={`rounded-full flex items-center justify-center border-2 transition-all duration-500 transform ${
                     expanded 
                       ? "bg-white text-slate-900 border-white shadow-lg shadow-lime/30 scale-[1.4]"
                       : related 
                         ? "bg-white/60 text-slate-900 border-white scale-110"
                         : "bg-card text-text-hi border-white/40 hover:bg-border/30 hover:scale-105"
                   }`}
+                  style={{ 
+                    width: `${responsive.nodeSize}px`, 
+                    height: `${responsive.nodeSize}px` 
+                  }}
                 >
-                  <Icon size={window.innerWidth >= 1024 ? 20 : window.innerWidth >= 768 ? 18 : 16} />
+                  <Icon size={responsive.iconSize} />
                 </div>
 
-                <div className={`absolute top-14 lg:top-16 whitespace-nowrap text-xs md:text-sm lg:text-base font-semibold tracking-wide transition-all duration-500 ${
+                <div className={`absolute whitespace-nowrap text-xs font-semibold tracking-wide transition-all duration-500 ${
                   expanded ? "text-white scale-125" : "text-white/85"
-                }`}>
+                }`}
+                style={{ 
+                  top: `${responsive.nodeSize + 8}px`,
+                  fontSize: isMobile ? '11px' : '12px'
+                }}>
                   {item.title}
                 </div>
 
                 {expanded && (
-                  <Card className="absolute top-20 lg:top-24 left-1/2 -translate-x-1/2 w-80 lg:w-96 bg-bg-2/95 backdrop-blur-lg border border-white/15 shadow-xl shadow-black/40 overflow-visible rounded-xl">
+                  <Card 
+                    className="absolute left-1/2 -translate-x-1/2 bg-bg-2/95 backdrop-blur-lg border border-white/15 shadow-xl shadow-black/40 overflow-visible rounded-xl"
+                    style={{
+                      top: `${responsive.nodeSize + 32}px`,
+                      width: `${responsive.cardWidth}px`,
+                      maxWidth: isMobile ? '90vw' : 'none'
+                    }}
+                  >
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-white/15"></div>
                     <CardHeader className="pb-4">
-                      <CardTitle className="text-base lg:text-lg text-text-hi">{item.title}</CardTitle>
+                      <CardTitle className={`text-text-hi ${isMobile ? 'text-sm' : 'text-base lg:text-lg'}`}>{item.title}</CardTitle>
                     </CardHeader>
-                    <CardContent className="text-sm text-text-hi/90">
+                    <CardContent className={`text-text-hi/90 ${isMobile ? 'text-xs' : 'text-sm'}`}>
                       {item.image && (
                         <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-4">
                           <img
