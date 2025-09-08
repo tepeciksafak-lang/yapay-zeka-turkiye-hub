@@ -277,7 +277,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
 
         {/* Mobile card display - below orbital circle */}
         {isMobile && Object.keys(expandedItems).some(id => expandedItems[Number(id)]) && (
-          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-full max-w-sm px-4">
+          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-full max-w-sm px-4">
             {timelineData
               .filter(item => expandedItems[item.id])
               .map(item => (
