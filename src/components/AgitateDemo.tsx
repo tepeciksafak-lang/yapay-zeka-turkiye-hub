@@ -16,13 +16,13 @@ const features = [
       'Kritik bilgi kişiye bağımlı kalır, risk artar.'
     ],
     image: agitateAutomation,
-    imageAlt: 'Kurucunun tek başına yapay zekâ kurmaya çalışması'
+    imageAlt: 'Kurucunun tek başına yapay zeka kurmaya çalışması'
   },
   {
     id: 2,
     icon: UsersRound,
     title: 'İçeriden ekip kurmak / yeni eleman almak',
-    description: 'İyi fikir gibi — fakat yapay zekâ hâlâ yeni; ramp-up aylar sürebilir.',
+    description: 'İyi fikir gibi — fakat yapay zeka hâlâ yeni; ramp-up aylar sürebilir.',
     bullets: [
       'Yetkinlik kıtlığı; işe alım + eğitim maliyeti yüksektir.',
       '"Ek iş" olarak verildiğinde etki düşük kalır, öncelik olmaz.',
@@ -52,7 +52,7 @@ export default function AgitateDemo() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
-            Yapay zekâ ile şirketinizin otomatik çalışmasını nasıl sağlarsınız?
+            Yapay zeka ile şirketinizin otomatik çalışmasını nasıl sağlarsınız?
           </h2>
         </div>
 
