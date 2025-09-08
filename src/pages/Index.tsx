@@ -24,6 +24,7 @@ import { SEO } from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
 import AgitateDemo from "@/components/AgitateDemo";
 import SolutionSection from "@/components/SolutionSection";
+import GoToMarketTimeline from "@/components/GoToMarketTimeline";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -171,6 +172,9 @@ const Index = () => {
 
       {/* Solution Section */}
       <SolutionSection />
+
+      {/* Go-to-Market Timeline */}
+      <GoToMarketTimeline />
 
       {/* Features Grid */}
       <section className="py-20 lg:py-32">

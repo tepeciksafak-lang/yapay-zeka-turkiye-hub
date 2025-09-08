@@ -197,6 +197,10 @@ All colors MUST be HSL for consistency and theming support.
   }
 
   /* Lime dot accent */
+  .bg-gradient-radial {
+    background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  }
+
   .lime-dot {
     width: 6px;
     height: 6px;
