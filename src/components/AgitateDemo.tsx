@@ -48,19 +48,19 @@ const features = [
 
 export default function AgitateDemo() {
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-br from-muted/30 via-background to-muted/20">
+    <section className="relative py-16 md:py-24 bg-bg-2/30">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+          <h2 className="headline text-3xl md:text-4xl tracking-tight text-text-hi mb-4">
             Yapay zeka ile şirketinizin otomatik çalışmasını nasıl sağlarsınız?
           </h2>
         </div>
 
         <div className="mt-16">
           <Features
-            primaryColor="sky-500"
-            progressGradientLight="bg-gradient-to-r from-sky-400 to-sky-500"
-            progressGradientDark="bg-gradient-to-r from-sky-300 to-sky-400"
+            primaryColor="lime-400"
+            progressGradientLight="bg-gradient-to-r from-lime-400 to-emerald-400"
+            progressGradientDark="bg-gradient-to-r from-lime-300 to-emerald-300"
             features={features}
           />
         </div>

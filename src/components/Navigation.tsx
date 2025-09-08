@@ -26,31 +26,41 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 transition-all duration-300 data-[scrolled=true]:bg-bg-2 data-[scrolled=true]:border-border">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-16 items-center justify-between">
           <Link to={`/${currentLanguage}`} className="flex items-center space-x-3 group">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent group-hover:from-primary/80 group-hover:to-accent/80 transition-all duration-300 hover-glow" />
-            <span className="text-xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+            <div className="h-8 w-8 rounded-lg bg-card border border-border group-hover:border-lime-400/50 transition-all duration-300 flex items-center justify-center">
+              <div className="w-4 h-4 bg-lime-400 rounded-sm"></div>
+            </div>
+            <span className="text-xl font-bold text-foreground tracking-tight">
               Pratik Yapay Zeka
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-6">
+          <div className="hidden md:flex md:items-center md:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 to={item.href!}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  isActiveLink(item.href!) ? "text-primary" : "text-foreground"
+                  "text-sm font-medium transition-colors lime-underline focus-lime relative",
+                  isActiveLink(item.href!) ? "text-lime-400" : "text-text-hi hover:text-lime-400"
                 )}
               >
                 {item.label}
+                {isActiveLink(item.href!) && (
+                  <div className="absolute -left-2 top-1/2 -translate-y-1/2 lime-dot"></div>
+                )}
               </Link>
             ))}
-            <Button asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 hover-glow border-0 font-semibold">
+            <Button 
+              variant="lime" 
+              size="sm"
+              asChild
+              className="hover-glow focus-lime"
+            >
               <Link to={`/${currentLanguage}/contact`}>{t('nav.contact')}</Link>
             </Button>
           </div>
@@ -62,27 +72,31 @@ const Navigation = () => {
             {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="focus-lime">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col space-y-4">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-card border-border">
+              <nav className="flex flex-col space-y-4 mt-8">
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
                     to={item.href!}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent",
-                      isActiveLink(item.href!) && "bg-accent text-accent-foreground"
+                      "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-border/30",
+                      isActiveLink(item.href!) ? "bg-border/50 text-lime-400 border-l-2 border-lime-400" : "text-text-hi"
                     )}
                   >
                     {item.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-4 bg-gradient-to-r from-primary to-accent">
+                <Button 
+                  variant="lime" 
+                  asChild 
+                  className="mt-4 hover-glow"
+                >
                   <Link to={`/${currentLanguage}/contact`} onClick={() => setIsOpen(false)}>{t('nav.contact')}</Link>
                 </Button>
               </nav>

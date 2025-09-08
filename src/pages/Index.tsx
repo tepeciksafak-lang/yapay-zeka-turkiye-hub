@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { 
   ArrowRight, 
   Star, 
@@ -135,25 +135,28 @@ const Index = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted">
-        <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+        <div className="absolute inset-0 opacity-30" style={{background: 'var(--glow-lime)'}} />
         <div className="container relative mx-auto px-4 py-20">
           <div className="mx-auto max-w-5xl text-center">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-7xl xl:text-8xl animate-fade-in-up leading-tight">
-              {t('hero.headline')}{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block mt-2 animate-glow-neon">
+            <h1 className="mb-8 headline text-4xl sm:text-5xl lg:text-7xl xl:text-8xl animate-slide-up leading-tight">
+              <span className="block text-text-hi">
+                {t('hero.headline')}
+              </span>
+              <span className="block mt-2 bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent lime-underline">
                 {t('hero.headline.highlight')}
               </span>
             </h1>
-            <p className="mb-12 text-lg text-muted-foreground sm:text-xl lg:text-2xl max-w-4xl mx-auto animate-fade-in-up [animation-delay:0.2s] leading-relaxed">
+            <p className="mb-12 body-text text-text-muted max-w-4xl mx-auto animate-slide-up [animation-delay:0.2s] leading-relaxed">
               {t('hero.subheadline')}
             </p>
-            <div className="flex flex-col gap-6 sm:flex-row sm:justify-center animate-fade-in-up [animation-delay:0.4s]">
+            <div className="flex flex-col gap-6 sm:flex-row sm:justify-center animate-slide-up [animation-delay:0.4s]">
               <Button 
                 size="lg" 
+                variant="lime"
                 onClick={() => setModalOpen(true)}
-                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-lg px-8 py-4 h-auto font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover-glow border-0"
+                className="text-lg px-8 py-4 h-auto hover-glow focus-lime"
               >
                 {t('hero.cta.primary')}
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -173,80 +176,77 @@ const Index = () => {
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
+            <h2 className="mb-4 headline text-3xl sm:text-4xl text-text-hi">
               Tek Platformda Uçtan Uca Otomasyon
             </h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
-              <Card key={index} className="group relative overflow-hidden border transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                <CardContent className="p-6">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                    {feature.icon}
+              <div key={index} className="group relative carbon-card p-6 transition-all duration-300 hover:translate-y-[-2px] hover-glow">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-lime-400/10 transition-colors group-hover:bg-lime-400/20">
+                  <div className="text-lime-400">
+                    {React.cloneElement(feature.icon, { className: "h-8 w-8" })}
                   </div>
-                  <h3 className="mb-2 font-semibold text-foreground">{feature.title}</h3>
-                  <p className="mb-3 text-sm text-muted-foreground">{feature.description}</p>
-                  <Badge variant="secondary" className="text-xs">
-                    {feature.proof}
-                  </Badge>
-                </CardContent>
-              </Card>
+                </div>
+                <h3 className="mb-2 font-semibold text-text-hi">{feature.title}</h3>
+                <p className="mb-3 text-sm text-text-muted">{feature.description}</p>
+                <div className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-3 py-1">
+                  <div className="lime-dot"></div>
+                  <span className="text-xs text-text-hi">{feature.proof}</span>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Comparison */}
-      <section className="bg-muted/50 py-20">
+      <section className="bg-bg-2/50 py-20">
         <div className="container mx-auto px-4">
           <div className="grid gap-8 lg:grid-cols-2">
-            <Card className="border-destructive/20 bg-destructive/5">
-              <CardContent className="p-8">
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-destructive" />
-                  <h3 className="text-xl font-semibold text-foreground">Önce</h3>
-                </div>
-                <p className="mb-6 text-lg text-foreground">Manuel: 9–12 saat/hafta, dağınık takip.</p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Clock className="mt-0.5 h-4 w-4 text-destructive" />
-                    Haftada 9-12 saat manuel işlem
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Target className="mt-0.5 h-4 w-4 text-destructive" />
-                    Dağınık lead takip sistemi
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Users className="mt-0.5 h-4 w-4 text-destructive" />
-                    Kişiselleştirme eksikliği
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="carbon-card p-8 border-red-500/20 bg-red-500/5">
+              <div className="mb-4 flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-red-500" />
+                <h3 className="text-xl font-semibold text-text-hi">Önce</h3>
+              </div>
+              <p className="mb-6 text-lg text-text-hi">Manuel: 9–12 saat/hafta, dağınık takip.</p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2 text-sm text-text-muted">
+                  <Clock className="mt-0.5 h-4 w-4 text-red-500" />
+                  Haftada 9-12 saat manuel işlem
+                </li>
+                <li className="flex items-start gap-2 text-sm text-text-muted">
+                  <Target className="mt-0.5 h-4 w-4 text-red-500" />
+                  Dağınık lead takip sistemi
+                </li>
+                <li className="flex items-start gap-2 text-sm text-text-muted">
+                  <Users className="mt-0.5 h-4 w-4 text-red-500" />
+                  Kişiselleştirme eksikliği
+                </li>
+              </ul>
+            </div>
 
-            <Card className="border-primary/20 bg-primary/5">
-              <CardContent className="p-8">
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-primary" />
-                  <h3 className="text-xl font-semibold text-foreground">Sonra</h3>
-                </div>
-                <p className="mb-6 text-lg text-foreground">Otomasyon: 0 saat, +%45 görünürlük, 3.000+ kişisel e-posta.</p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="mt-0.5 h-4 w-4 text-primary" />
-                    Tam otomatik süreç yönetimi
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="mt-0.5 h-4 w-4 text-primary" />
-                    %45 görünürlük artışı
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="mt-0.5 h-4 w-4 text-primary" />
-                    Günde 500+ kişisel mesaj
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="carbon-card p-8 border-lime-400/20 bg-lime-400/5">
+              <div className="mb-4 flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-lime-400" />
+                <h3 className="text-xl font-semibold text-text-hi">Sonra</h3>
+              </div>
+              <p className="mb-6 text-lg text-text-hi">Otomasyon: 0 saat, +%45 görünürlük, 3.000+ kişisel e-posta.</p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2 text-sm text-text-muted">
+                  <CheckCircle className="mt-0.5 h-4 w-4 text-lime-400" />
+                  Tam otomatik süreç yönetimi
+                </li>
+                <li className="flex items-start gap-2 text-sm text-text-muted">
+                  <CheckCircle className="mt-0.5 h-4 w-4 text-lime-400" />
+                  %45 görünürlük artışı
+                </li>
+                <li className="flex items-start gap-2 text-sm text-text-muted">
+                  <CheckCircle className="mt-0.5 h-4 w-4 text-lime-400" />
+                  Günde 500+ kişisel mesaj
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
