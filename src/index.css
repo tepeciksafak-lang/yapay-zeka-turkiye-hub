@@ -154,4 +154,31 @@ All colors MUST be HSL for consistency and theming support.
     background-image: var(--bg-grid);
     background-size: var(--bg-grid-size);
   }
+
+  /* Dynamic GlowCard border effects */
+  [data-glow]::before,
+  [data-glow]::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  [data-glow]::before {
+    background: radial-gradient(
+      150px circle at var(--x, 50%) var(--y, 50%),
+      hsl(var(--hue) 100% 70% / 0.8),
+      transparent 70%
+    );
+  }
+
+  [data-glow]::after {
+    background: radial-gradient(
+      100px circle at var(--x, 50%) var(--y, 50%),
+      hsl(var(--hue) 80% 60% / 0.4),
+      transparent 60%
+    );
+  }
 }

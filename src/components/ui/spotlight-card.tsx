@@ -18,6 +18,15 @@ const glowColors = {
   cyan: "shadow-cyan-500/20 border-cyan-500/20 hover:shadow-cyan-500/40"
 };
 
+const glowHues = {
+  green: "142",
+  blue: "200",
+  purple: "256", 
+  red: "0",
+  yellow: "48",
+  cyan: "189"
+};
+
 const sizes = {
   sm: "p-4 min-h-[200px]",
   md: "p-6 min-h-[250px]", 
@@ -31,8 +40,24 @@ export function GlowCard({
   size = "md",
   ...props 
 }: GlowCardProps) {
+  const divRef = React.useRef<HTMLDivElement>(null);
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!divRef.current) return;
+    
+    const rect = divRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    divRef.current.style.setProperty('--x', `${x}px`);
+    divRef.current.style.setProperty('--y', `${y}px`);
+  };
+
   return (
     <div
+      ref={divRef}
+      data-glow
+      onPointerMove={handlePointerMove}
       className={cn(
         "relative rounded-lg border bg-card/50 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]",
         "shadow-lg hover:shadow-2xl",
@@ -40,6 +65,11 @@ export function GlowCard({
         sizes[size],
         className
       )}
+      style={{
+        '--hue': glowHues[glowColor],
+        '--border-size': '2px',
+        '--radius': '8'
+      } as React.CSSProperties}
       {...props}
     >
       <div className="relative z-10 h-full">
