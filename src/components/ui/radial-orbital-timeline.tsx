@@ -49,14 +49,14 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
     const { width, height } = windowSize;
     
     if (width < 768) {
-      // Mobile
+      // Mobile - increased height for card space  
       return {
-        radius: Math.min(150, width * 0.35),
+        radius: Math.min(Math.max(180, width * 0.32), 240),
         nodeSize: 32,
         iconSize: 14,
-        cardWidth: Math.min(280, width - 40),
-        containerHeight: '65vh',
-        orbitHeight: '60vh'
+        cardWidth: Math.min(360, width - 32),
+        containerHeight: width <= 480 ? 'auto' : '65vh',
+        orbitHeight: width <= 480 ? '60vh' : '60vh'
       };
     } else if (width < 1024) {
       // Tablet
@@ -108,6 +108,17 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         rel.forEach(r => pulse[r] = true);
         setPulseEffect(pulse);
         centerViewOnNode(id);
+        
+        // Smooth scroll for mobile when card opens
+        if (isMobile && windowSize.width <= 480) {
+          setTimeout(() => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            containerRef.current?.scrollIntoView({ 
+              behavior: prefersReducedMotion ? 'auto' : 'smooth',
+              block: 'start'
+            });
+          }, 300);
+        }
       } else {
         setActiveNodeId(null);
         setAutoRotate(true);
@@ -153,8 +164,11 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
 
   return (
     <div
-      className="w-full overflow-hidden bg-bg-1"
-      style={{ minHeight: responsive.containerHeight }}
+      className="w-full overflow-visible bg-bg-1"
+      style={{ 
+        minHeight: responsive.containerHeight,
+        paddingBottom: isMobile && windowSize.width <= 480 ? '2rem' : 0
+      }}
       ref={containerRef}
       onClick={handleContainerClick}
     >
@@ -279,7 +293,12 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
 
         {/* Mobile card display - below orbital circle */}
         {isMobile && Object.keys(expandedItems).some(id => expandedItems[Number(id)]) && (
-          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-full max-w-sm px-4">
+          <div 
+            className="w-full max-w-sm mx-auto px-4 mt-6 relative z-50"
+            style={{ 
+              marginBottom: windowSize.width <= 480 ? '2rem' : 0 
+            }}
+          >
             {timelineData
               .filter(item => expandedItems[item.id])
               .map(item => (
