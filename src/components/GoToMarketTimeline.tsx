@@ -94,10 +94,10 @@ export default function GoToMarketTimeline() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 id="gtm-title" className="text-2xl md:text-3xl font-semibold tracking-tight text-text-hi mb-4">
-            Lead Generation → Marketing → Sales & CRM → Customer Success → Conversion
+            Hem yeni müşteri kazanın, hem mevcut müşterilerinizden daha fazla değer yaratın.
           </h2>
           <p className="text-text-muted max-w-2xl mx-auto">
-            "Doğru yol nedir?" sorusundan sonra: büyüme hattınızın tüm aşamalarını yapay zekâ ile düzenleyin ve otomatikleştirin.
+            Hem yeni müşteri kazanımı hem de mevcut müşterilerinizi daha iyi yönetip upsell etmeniz için uçtan uca otomatik sistemler kuruyoruz.
           </p>
         </div>
         <RadialOrbitalTimeline timelineData={timelineData} />
