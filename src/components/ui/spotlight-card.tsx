@@ -38,7 +38,7 @@ const sizes = {
 export function GlowCard({ 
   children, 
   className, 
-  glowColor = "blue", 
+  glowColor = "lime", 
   size = "md",
   ...props 
 }: GlowCardProps) {
