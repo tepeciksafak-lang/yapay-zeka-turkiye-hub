@@ -17,9 +17,9 @@ export default function SolutionSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <GlowCard glowColor="green" size="lg" className="carbon-card">
+          <GlowCard glowColor="lime" size="lg" className="carbon-card">
             <div className="flex flex-col items-center justify-center h-full text-center gap-6 p-8">
-              <Award className="w-12 h-12 text-lime-400" />
+              <Award className="w-12 h-12" style={{ color: 'hsl(var(--lime))' }} />
               <h3 className="text-xl font-bold text-text-hi">
                 Satışta ölçülebilir sonuçlar
               </h3>
@@ -30,9 +30,9 @@ export default function SolutionSection() {
             </div>
           </GlowCard>
 
-          <GlowCard glowColor="green" size="lg" className="carbon-card">
+          <GlowCard glowColor="lime" size="lg" className="carbon-card">
             <div className="flex flex-col items-center justify-center h-full text-center gap-6 p-8">
-              <Cpu className="w-12 h-12 text-emerald-400" />
+              <Cpu className="w-12 h-12" style={{ color: 'hsl(var(--emerald))' }} />
               <h3 className="text-xl font-bold text-text-hi">
                 Operasyonda radikal verimlilik
               </h3>
@@ -43,9 +43,9 @@ export default function SolutionSection() {
             </div>
           </GlowCard>
 
-          <GlowCard glowColor="green" size="lg" className="carbon-card">
+          <GlowCard glowColor="lime" size="lg" className="carbon-card">
             <div className="flex flex-col items-center justify-center h-full text-center gap-6 p-8">
-              <Globe className="w-12 h-12 text-lime-400" />
+              <Globe className="w-12 h-12" style={{ color: 'hsl(var(--lime))' }} />
               <h3 className="text-xl font-bold text-text-hi">
                 Uluslararası deneyim
               </h3>
@@ -56,9 +56,9 @@ export default function SolutionSection() {
             </div>
           </GlowCard>
 
-          <GlowCard glowColor="green" size="lg" className="carbon-card">
+          <GlowCard glowColor="lime" size="lg" className="carbon-card">
             <div className="flex flex-col items-center justify-center h-full text-center gap-6 p-8">
-              <Handshake className="w-12 h-12 text-emerald-400" />
+              <Handshake className="w-12 h-12" style={{ color: 'hsl(var(--emerald))' }} />
               <h3 className="text-xl font-bold text-text-hi">
                 Garantili proje başarısı
               </h3>

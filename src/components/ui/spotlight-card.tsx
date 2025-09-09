@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 interface GlowCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  glowColor?: "green" | "blue" | "purple" | "red" | "yellow" | "cyan";
+  glowColor?: "green" | "blue" | "purple" | "red" | "yellow" | "cyan" | "lime";
   size?: "sm" | "md" | "lg";
 }
 
@@ -15,7 +15,8 @@ const glowColors = {
   purple: "shadow-purple-500/20 border-purple-500/20 hover:shadow-purple-500/40",
   red: "shadow-red-500/20 border-red-500/20 hover:shadow-red-500/40",
   yellow: "shadow-yellow-500/20 border-yellow-500/20 hover:shadow-yellow-500/40",
-  cyan: "shadow-cyan-500/20 border-cyan-500/20 hover:shadow-cyan-500/40"
+  cyan: "shadow-cyan-500/20 border-cyan-500/20 hover:shadow-cyan-500/40",
+  lime: "border-border/20 hover:shadow-lg"
 };
 
 const glowHues = {
@@ -24,7 +25,8 @@ const glowHues = {
   purple: "256", 
   red: "0",
   yellow: "48",
-  cyan: "189"
+  cyan: "189",
+  lime: "84"
 };
 
 const sizes = {
