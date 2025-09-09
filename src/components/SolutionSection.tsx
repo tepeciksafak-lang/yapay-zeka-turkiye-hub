@@ -9,10 +9,10 @@ export default function SolutionSection() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center mb-12">
           <h2 className="headline text-3xl md:text-4xl tracking-tight text-text-hi mb-6">
-            Doğru yol nedir?
+            Hem yeni müşteri kazanın, hem mevcut müşterilerinizden daha fazla değer yaratın.
           </h2>
           <p className="body-text text-text-muted max-w-3xl mx-auto">
-            Üç yaygın yolun sonunda hep aynı çıkmaz var. Peki başarılı şirketler ne yapıyor? İşte sizin için doğru çözümün 4 nedeni:
+            Hem yeni müşteri kazanımı hem de mevcut müşterilerinizi daha iyi yönetip upsell etmeniz için uçtan uca otomatik sistemler kuruyoruz.
           </p>
         </div>
 
