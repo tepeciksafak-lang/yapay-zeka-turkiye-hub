@@ -46,7 +46,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
 
   // Get responsive values based on screen size
   const getResponsiveValues = () => {
-    const { width } = windowSize;
+    const { width, height } = windowSize;
     
     if (width < 768) {
       // Mobile
@@ -61,7 +61,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
     } else if (width < 1024) {
       // Tablet
       return {
-        radius: Math.min(220, width * 0.28),
+        radius: Math.min(220, width * 0.28, height * 0.22),
         nodeSize: 40,
         iconSize: 18,
         cardWidth: 320,
@@ -69,14 +69,16 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         orbitHeight: '70vh'
       };
     } else {
-      // Desktop
+      // Desktop - ensure radius fits within both width and height constraints
+      const maxRadiusFromWidth = Math.min(240, width * 0.18);
+      const maxRadiusFromHeight = Math.min(200, (height * 0.65) * 0.3); // 30% of available height
       return {
-        radius: Math.min(300, width * 0.25),
+        radius: Math.min(maxRadiusFromWidth, maxRadiusFromHeight),
         nodeSize: 48,
         iconSize: 20,
         cardWidth: 360,
-        containerHeight: '85vh',
-        orbitHeight: '78vh'
+        containerHeight: '75vh',
+        orbitHeight: '65vh'
       };
     }
   };
