@@ -69,9 +69,9 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         orbitHeight: '70vh'
       };
     } else {
-      // Desktop - larger orbit with centered cards
+      // Desktop - smaller orbit with centered cards (~20% smaller)
       const vmin = Math.min(width, height) * 0.01; // 1vmin
-      const baseRadius = Math.max(420, Math.min(42 * vmin, 520));
+      const baseRadius = Math.max(360, Math.min(34 * vmin, 440));
       const availableCardSpace = baseRadius - 24; // 24px margin from orbit ring
       const cardWidth = Math.min(400, availableCardSpace * 1.6); // Keep card within inner circle
       const cardScale = height < 800 ? 0.95 : 1; // Scale down on smaller heights
@@ -82,8 +82,9 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         iconSize: 20,
         cardWidth: cardWidth,
         cardScale: cardScale,
-        containerHeight: '80vh',
-        orbitHeight: '78vh'
+        containerHeight: '76vh',
+        orbitHeight: '74vh',
+        orbitOffsetY: 36 // Downward shift for desktop
       };
     }
   };
@@ -189,7 +190,10 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         <div
           className="absolute w-full h-full flex items-center justify-center"
           ref={orbitRef}
-          style={{ perspective: "1000px" }}
+          style={{ 
+            perspective: "1000px",
+            transform: !isMobile && windowSize.width >= 1024 ? `translateY(${responsive.orbitOffsetY || 0}px)` : undefined
+          }}
         >
           {/* Central core */}
           <div className={`absolute ${isMobile ? 'w-16 h-16' : 'w-20 h-20 lg:w-24 lg:h-24'} rounded-full flex items-center justify-center z-10 bg-gradient-to-br from-lime to-emerald`}>
