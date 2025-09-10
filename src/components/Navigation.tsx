@@ -14,7 +14,7 @@ const Navigation = () => {
   const { currentLanguage, t } = useLanguage();
 
   const navItems = [
-    { href: `/${currentLanguage}/yapay-zeka-is-alanlari`, label: t('nav.solutions') },
+    { href: `/${currentLanguage}/cozumler`, label: t('nav.solutions') },
     { href: `/${currentLanguage}/vaka-calismalari`, label: t('nav.cases') },
     { href: `/${currentLanguage}/fiyatlandirma`, label: t('nav.pricing') },
     { href: `/${currentLanguage}/blog`, label: t('nav.blog') },
