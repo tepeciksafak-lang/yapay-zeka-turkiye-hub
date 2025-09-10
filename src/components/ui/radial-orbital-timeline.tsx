@@ -69,16 +69,21 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         orbitHeight: '70vh'
       };
     } else {
-      // Desktop - ensure radius fits within both width and height constraints
-      const maxRadiusFromWidth = Math.min(240, width * 0.18);
-      const maxRadiusFromHeight = Math.min(200, (height * 0.65) * 0.3); // 30% of available height
+      // Desktop - larger orbit with centered cards
+      const vmin = Math.min(width, height) * 0.01; // 1vmin
+      const baseRadius = Math.max(420, Math.min(42 * vmin, 520));
+      const availableCardSpace = baseRadius - 24; // 24px margin from orbit ring
+      const cardWidth = Math.min(400, availableCardSpace * 1.6); // Keep card within inner circle
+      const cardScale = height < 800 ? 0.95 : 1; // Scale down on smaller heights
+      
       return {
-        radius: Math.min(maxRadiusFromWidth, maxRadiusFromHeight),
+        radius: baseRadius,
         nodeSize: 48,
         iconSize: 20,
-        cardWidth: 360,
-        containerHeight: '75vh',
-        orbitHeight: '65vh'
+        cardWidth: cardWidth,
+        cardScale: cardScale,
+        containerHeight: '80vh',
+        orbitHeight: '78vh'
       };
     }
   };
@@ -260,7 +265,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                   {item.title}
                 </div>
 
-                {expanded && !isMobile && (
+                {expanded && !isMobile && windowSize.width < 1024 && (
                   <Card 
                     className="absolute left-1/2 -translate-x-1/2 bg-bg-2/95 backdrop-blur-lg border border-white/15 shadow-xl shadow-black/40 overflow-visible rounded-xl"
                     style={{
@@ -289,6 +294,44 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
               </div>
             );
           })}
+        
+          {/* Desktop centered cards - only show one expanded card in orbit center */}
+          {!isMobile && windowSize.width >= 1024 && Object.keys(expandedItems).some(id => expandedItems[Number(id)]) && (
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              {timelineData
+                .filter(item => expandedItems[item.id])
+                .map(item => (
+                  <Card 
+                    key={`desktop-${item.id}`}
+                    className="bg-bg-2/95 backdrop-blur-lg border border-white/15 shadow-xl shadow-black/40 rounded-xl pointer-events-auto"
+                    style={{
+                      width: `${responsive.cardWidth}px`,
+                      maxHeight: `${Math.min((responsive.radius || 420) * 1.4, 400)}px`,
+                      transform: `scale(${responsive.cardScale || 1})`,
+                      overflow: 'auto',
+                      zIndex: 300
+                    }}
+                  >
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-base lg:text-lg text-text-hi">{item.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-sm text-text-hi/90">
+                      {item.image && (
+                        <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-4">
+                          <img
+                            src={item.image}
+                            alt={item.imageAlt ?? item.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
+                      <div className="whitespace-pre-line leading-relaxed">{item.content}</div>
+                    </CardContent>
+                  </Card>
+                ))
+              }
+            </div>
+          )}
         </div>
 
         {/* Mobile card display - below orbital circle */}
