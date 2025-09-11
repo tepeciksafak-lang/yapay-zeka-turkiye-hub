@@ -21,6 +21,7 @@ import SatisOtomasyonuDemo from "./pages/SatisOtomasyonuDemo";
 import VakaCalismalari from "./pages/VakaCalismalari";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Solutions from "./pages/Solutions";
 
 const queryClient = new QueryClient();
 
@@ -124,6 +125,15 @@ const App = () => (
                     <Navigation />
                     <main className="flex-1">
                       <VakaCalismalari />
+                    </main>
+                    <Footer />
+                  </LanguageWrapper>
+                } />
+                <Route path="/:lang/cozumler" element={
+                  <LanguageWrapper>
+                    <Navigation />
+                    <main className="flex-1">
+                      <Solutions />
                     </main>
                     <Footer />
                   </LanguageWrapper>
