@@ -15,7 +15,7 @@ const translations = {
     // Navigation
     'nav.solutions': 'Lösungen',
     'nav.cases': 'Vaka Çalışmaları', 
-    'nav.pricing': 'Preise',
+    'nav.freeContent': 'Kostenlose Inhalte',
     'nav.blog': 'Blog',
     'nav.contact': 'Kontakt',
     
@@ -31,7 +31,7 @@ const translations = {
     // Navigation  
     'nav.solutions': 'Çözümler',
     'nav.cases': 'Vaka Çalışmaları',
-    'nav.pricing': 'Fiyatlandırma', 
+    'nav.freeContent': 'Ücretsiz İçerikler', 
     'nav.blog': 'Blog',
     'nav.contact': 'İletişim',
     
@@ -47,7 +47,7 @@ const translations = {
     // Navigation
     'nav.solutions': 'Solutions',
     'nav.cases': 'Case Studies',
-    'nav.pricing': 'Pricing',
+    'nav.freeContent': 'Free Content',
     'nav.blog': 'Blog', 
     'nav.contact': 'Contact',
     
