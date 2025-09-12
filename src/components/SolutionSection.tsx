@@ -12,7 +12,7 @@ export default function SolutionSection() {
             Doğru yol nedir?
           </h2>
           <p className="body-text text-text-muted max-w-3xl mx-auto">
-            Üç yaygın yolun sonunda hep aynı çıkmaz var. Peki başarılı şirketler ne yapıyor? İşte sizin için doğru çözümün 4 nedeni:
+            
           </p>
         </div>
 
