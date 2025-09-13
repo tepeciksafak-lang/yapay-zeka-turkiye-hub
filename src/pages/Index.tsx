@@ -141,7 +141,7 @@ const Index = () => {
         <div className="absolute inset-0 opacity-30" style={{background: 'var(--glow-lime)'}} />
         <div className="container relative mx-auto px-4 py-20">
           <div className="mx-auto max-w-5xl text-center">
-            <h1 className="mb-8 headline animate-slide-up leading-tight">
+            <h1 className="mb-16 headline animate-slide-up leading-tight">
               <span className="block text-text-hi text-4xl sm:text-5xl lg:text-7xl xl:text-8xl">
                 {t('hero.headline')}
               </span>
