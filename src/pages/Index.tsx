@@ -145,7 +145,7 @@ const Index = () => {
               <span className="block text-text-hi text-4xl sm:text-5xl lg:text-7xl xl:text-8xl">
                 {t('hero.headline')}
               </span>
-              <span className="block mt-2 bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent lime-underline text-3xl sm:text-4xl lg:text-6xl xl:text-7xl">
+              <span className="block mt-2 bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent lime-underline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
                 {t('hero.headline.highlight')}
               </span>
             </h1>
