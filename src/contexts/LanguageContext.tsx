@@ -37,7 +37,7 @@ const translations = {
     
     // Hero
     'hero.headline': 'Siz şirketi yönetin.',
-    'hero.headline.highlight': 'Biz Yapay Zekayı kurarız.',
+    'hero.headline.highlight': 'Biz şirketiniz için 7/24 çalışan yapay zeka işçileri kuruyoruz.',
     'hero.subheadline': 'Yapay Zeka + Otomasyon ile Şirketinizi Daha da Büyütün – Fazladan Çaba Harcamadan.',
     'hero.cta.primary': 'Şimdi ücretsiz başlayın',
      
