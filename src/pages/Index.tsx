@@ -149,9 +149,14 @@ const Index = () => {
                 {t('hero.headline.highlight')}
               </span>
             </h1>
-            <p className="mb-12 body-text text-text-muted max-w-4xl mx-auto animate-slide-up [animation-delay:0.2s] leading-relaxed">
-              {t('hero.subheadline')}
-            </p>
+            {(() => {
+              const sub = t('hero.subheadline');
+              if (!sub || sub === 'hero.subheadline') return null;
+              return (
+                <p className="mb-12 body-text text-text-muted max-w-4xl mx-auto animate-slide-up [animation-delay:0.2s] leading-relaxed">{sub}</p>
+              );
+            })()}
+
             <div className="flex flex-col gap-6 sm:flex-row sm:justify-center animate-slide-up [animation-delay:0.4s]">
               <Button 
                 size="lg" 
