@@ -6,7 +6,7 @@ export const heroCopy: Record<HeroLang, {
 }> = {
   tr: {
     title1: 'Siz şirketinizi yönetin.',
-    title2: 'Biz yapay zekayı kurarız.',
+    title2: 'Biz şirketiniz için 7/24 çalışan yapay zeka işçileri kuruyoruz.',
     subtitle: 'Yapay zeka + otomasyonla büyüyün: daha fazla müşteri, daha az operasyon yükü — ekstra çaba gerektirmeden.',
     ctaPrimary: 'Şimdi ücretsiz başlayın',
     ctaSecondary: 'Demoları Gör',
