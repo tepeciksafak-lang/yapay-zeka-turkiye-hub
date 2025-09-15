@@ -1,5 +1,5 @@
 import { Features } from './ui/features';
-import { BrainCog, UsersRound, Building2 } from 'lucide-react';
+import { Check } from 'lucide-react';
 import agitateAutomation from '../assets/agitate-diy.jpg';
 import agitateAnalytics from '../assets/agitate-inhouse.jpg';
 import agitateSales from '../assets/agitate-agency.jpg';
@@ -7,42 +7,27 @@ import agitateSales from '../assets/agitate-agency.jpg';
 const features = [
   {
     id: 1,
-    icon: BrainCog,
-    title: 'Kurucu/Yönetim olarak "kendiniz yapın"',
-    description: 'Hızlı ve ucuz görünür; gerçekte yönetim odağınız bölünür.',
-    bullets: [
-      'Günlük yoğunlukta odak bölünür; satış ve operasyon aksar.',
-      'Parça parça (patchwork) otomasyonlar sürdürülemez.',
-      'Kritik bilgi kişiye bağımlı kalır, risk artar.'
-    ],
+    icon: Check,
+    title: 'Kendiniz yapın',
+    description: 'İlginiz varsa veya bilgisayar konusunda güçlüyseniz, cazip gelir. Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji. Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir. Kendi yoğunluğunuz içinde buna vakit ayırabilir misiniz?',
     image: agitateAutomation,
-    imageAlt: 'Kurucunun tek başına yapay zeka kurmaya çalışması'
+    imageAlt: 'Kendiniz yapın seçeneği'
   },
   {
     id: 2,
-    icon: UsersRound,
-    title: 'İçeriden ekip kurmak / yeni eleman almak',
-    description: 'İyi fikir gibi — fakat yapay zeka hâlâ yeni; ramp-up aylar sürebilir.',
-    bullets: [
-      'Yetkinlik kıtlığı; işe alım + eğitim maliyeti yüksektir.',
-      '"Ek iş" olarak verildiğinde etki düşük kalır, öncelik olmaz.',
-      'Kıdemli uzman bulmak zor ve pahalı; hız yavaş.'
-    ],
+    icon: Check,
+    title: 'İçeriden ekip kurun veya yeni eleman alın',
+    description: 'İçeriden birini görevlendirdiğinizde, zaten dolu masasına bir dosya daha koymuş oluyorsunuz. Şirketinizi dönüştürecek bir teknolojiyi yan iş olarak mı önem vermek istiyorsunuz? Yeni eleman almak ise başka bir zorluk: bu teknoloji çok yeni, çoğu kişi daha yolun başında. Tecrübeli uzmanlar ise çok pahalı, işe alım süreci ise bitmeyen bir kuyruk gibi: hep beklersiniz, bir türlü ilerlemez.',
     image: agitateAnalytics,
-    imageAlt: 'İç ekip kurma ve yeni çalışan işe alımı'
+    imageAlt: 'İç ekip kurma seçeneği'
   },
   {
     id: 3,
-    icon: Building2,
-    title: 'Büyük danışmanlık / ajans',
-    description: 'Retainer yüksektir; süreçler ağır ve teslimatlar yavaş olur.',
-    bullets: [
-      'Yüksek maliyet; kapsam şişer, zaman uzar.',
-      'Bütçe sınırlıysa iş kıdemsiz ekibe devrolur.',
-      'Maliyet/çıktı dengesi çoğu zaman zayıf.'
-    ],
+    icon: Check,
+    title: 'Gelecek ayda, gelecek dönemde, gelecek yılda başlayın',
+    description: 'Seneye bütçe ayarlanır, o zaman yaparız. Ama her geçen ay, kaybolan fırsatlar ve kaçan müşteriler anlamına geliyor. Gerçek şu: 3 yıl önce dev bir yazılım şirketi olan DocuSign, bugün yapay zeka ile 2 günde kopyalanabiliyor. Peki sizin iş modelinizin kopyalanması ne kadar sürer?',
     image: agitateSales,
-    imageAlt: 'Büyük danışmanlık yaklaşımı'
+    imageAlt: 'Erteleme seçeneği'
   }
 ];
 
@@ -52,8 +37,11 @@ export default function AgitateDemo() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center mb-12">
           <h2 className="headline text-3xl md:text-4xl tracking-tight text-text-hi mb-4">
-            Yapay zeka ile şirketinizin otomatik çalışmasını nasıl sağlarsınız?
+            Yapay zekayı doğru şekilde şirketimize nasıl entegre edebiliriz?
           </h2>
+          <p className="text-lg md:text-xl text-text-med leading-relaxed">
+            Farklı yöntemler var… ama çoğu ayakkabınızın içindeki taş gibi: her adımda rahatsız eder.
+          </p>
         </div>
 
         <div className="mt-16">
