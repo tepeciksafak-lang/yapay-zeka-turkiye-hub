@@ -24,7 +24,10 @@ export default function HeadlineReveal(){
         }
       }, 0);
     }
-    if (underline) tl.to(underline, { scaleX: 1, duration: 0.9 }, 0.15);
+    if (underline) {
+      gsap.set(underline, { y: '1em', transformOrigin: '0% 50%' });
+      tl.to(underline, { scaleX: 1, duration: 0.9 }, 0.15);
+    }
 
     return () => tl.kill();
   }, []);

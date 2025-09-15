@@ -16,7 +16,7 @@ export default function HeadlineReveal(){
       });
       tl.from(lines, { yPercent:20, opacity:0, stagger:0.08, clearProps:'all' });
     }
-    if (underline) gsap.fromTo(underline, { scaleX:0 }, { scaleX:1, transformOrigin:'0% 50%', duration:0.8, delay:0.1 });
+    if (underline) gsap.fromTo(underline, { scaleX:0, y:'1em' }, { scaleX:1, y:'1em', transformOrigin:'0% 50%', duration:0.8, delay:0.1 });
     return () => tl.kill();
   }, []);
   return null;
