@@ -95,9 +95,6 @@ export default function GoToMarketTimeline() {
           <h2 id="gtm-title" className="text-2xl md:text-3xl font-semibold tracking-tight text-text-hi mb-4">
             Sıfırdan yeni lead kazanımından, sadık müşteri yaratmaya kadar uçtan uca otomasyon
           </h2>
-          <p className="text-text-muted max-w-2xl mx-auto">
-            Hem yeni müşteri kazanımı hem de mevcut müşterilerinizi daha iyi yönetip upsell etmeniz için uçtan uca otomatik sistemler kuruyoruz.
-          </p>
         </div>
         <RadialOrbitalTimeline timelineData={timelineData} />
       </div>
