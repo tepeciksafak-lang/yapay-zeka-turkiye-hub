@@ -10,9 +10,19 @@ export default function HeadlineReveal(){
     const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
 
     if (lines.length) {
-      // Fallback-Init für den Fall, dass CSS nicht greift
-      lines.forEach(el => { el.style.transform='translateY(110%)'; el.style.opacity='0'; el.style.filter='blur(2px)'; });
-      tl.to(lines, { y: '0%', opacity: 1, filter:'blur(0px)', stagger: 0.08 }, 0);
+      tl.to(lines, { 
+        y: "0%", 
+        opacity: 1, 
+        filter: "blur(0px)", 
+        stagger: 0.08,
+        onStart() { 
+          lines.forEach(el => {
+            el.style.transform ||= "translate3d(0,110%,0)";
+            el.style.opacity ||= "0";
+            el.style.filter ||= "blur(2px)";
+          });
+        }
+      }, 0);
     }
     if (underline) tl.to(underline, { scaleX: 1, duration: 0.9 }, 0.15);
 
