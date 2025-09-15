@@ -5,14 +5,14 @@ import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 const timelineData = [
   {
     id: 1,
-    title: "Lead Üretimi",
+    title: "Yeni Müşteri Kazanımı",
     date: "Şimdi",
-    content: `Yeni müşteri adaylarını yapay zekâ destekli ve otomatik sistemlerle yaratın.
+    content: `Takviminizi kendi kendine dolduran akıllı sistemler.
 
-• Cold Calling için AI listeler
-• Otomatik e-posta outreach
-• LinkedIn/Instagram/X DM otomasyonları
-• Lead scraping & yurtdışı açılımı`,
+• Telefonla soğuk satış: hedef listenizi AI ile hazırlayın
+• Yöneticilere kişiselleştirilmiş e-mail kampanyaları
+• Sosyal medya DM kampanyaları (LinkedIn, Instagram, X)
+• Çok dilli iletişimle yurtdışına açılım`,
     category: "Lead Generation",
     icon: PhoneCall,
     relatedIds: [2, 3],
@@ -23,11 +23,11 @@ const timelineData = [
     id: 2,
     title: "Pazarlama",
     date: "Bu ay",
-    content: `Markanızı yapay zekâ ile görünür kılın; hedeflenmiş kampanyalarla güven inşa edin.
+    content: `İçeriğiniz ve reklamlarınız artık tesadüfe değil sisteme dayanıyor.
 
-• AI içerik & kampanya üretimi
-• Reklam yönetimi & funnel otomasyonu
-• Topluluk oluşturma & nurturing`,
+• Hızlı ve zahmetsiz içerik üretimi (AI destekli)
+• Web sitesi tasarımı & optimizasyonu
+• Reklam videolari ve tanitim videolari`,
     category: "Marketing",
     icon: Megaphone,
     relatedIds: [1, 3],
@@ -36,14 +36,13 @@ const timelineData = [
   },
   {
     id: 3,
-    title: "Sales & CRM",
+    title: "Satış & CRM",
     date: "Bu çeyrek",
-    content: `Lead'leri fırsata dönüştürün — yapay zekâ tabanlı CRM süreçleriyle hız kazanın.
+    content: `Satıcılarınız satmakla meşgul olsun, dökümantasyonla değil.
 
-• CRM dokümantasyonu + AI entegrasyonu
-• Time-to-Lead optimizasyonu
-• AI destekli teklif oluşturma
-• Otomatik lead skorlama`,
+• Otomatik CRM dokümantasyonu
+• Hızlı ve kolay teklif oluşturma (size özel)
+• Satıcılarınızın müşteri kazanma oranını yükseltin`,
     category: "Sales & CRM",
     icon: Database,
     relatedIds: [1, 2, 4],
@@ -52,12 +51,12 @@ const timelineData = [
   },
   {
     id: 4,
-    title: "Customer Success",
+    title: "Müşteri Başarısı",
     date: "Sürekli",
-    content: `Müşteri elde tutma ve upsell artık yapay zekâ ile otomatikleşiyor.
+    content: `Mevcut müşterilerinizle bağınızı güçlendirin, gelir potansiyelini artırın.
 
-• AI destekli destek yönetimi
-• Upsell & cross-sell sistemleri`,
+• AI destekli müşteri destek ajanı: talepleri telefon ve mail üzerinden anında cevaplar
+• Upsell & cross-sell sistemleriyle mevcut müşterilerden daha fazla değer yaratın`,
     category: "Customer Success",
     icon: Handshake,
     relatedIds: [3, 5],
@@ -66,13 +65,13 @@ const timelineData = [
   },
   {
     id: 5,
-    title: "Conversion Optimization",
+    title: "Dönüşüm Optimizasyonu",
     date: "Her zaman",
-    content: `Trafiği gelire dönüştürün — yapay zekâ destekli testler ve otomatik yanıtlarla.
+    content: `Web sitenizden gelen başvuruları artırın.
 
-• Web optimizasyonu (AI heatmaps & testler)
-• Speed-to-Lead otomatik yanıt
-• Instagram Chatbot (AI görsel satış)`,
+• Yapay zeka ile sitenizi optimize edin, başvuru oranlarını yükseltin
+• Speed-to-Lead: potansiyel müşteri hafta sonu bile yazsa, 2 dk içinde cevap
+• Instagram chatbot: vitrininizde anında ilgilenen bir satış temsilcisi gibi`,
     category: "CRO",
     icon: FlaskConical,
     relatedIds: [1, 3, 4],
@@ -94,7 +93,7 @@ export default function GoToMarketTimeline() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 id="gtm-title" className="text-2xl md:text-3xl font-semibold tracking-tight text-text-hi mb-4">
-            Hem yeni müşteri kazanın, hem mevcut müşterilerinizden daha fazla değer yaratın.
+            Sıfırdan yeni lead kazanımından, sadık müşteri yaratmaya kadar uçtan uca otomasyon
           </h2>
           <p className="text-text-muted max-w-2xl mx-auto">
             Hem yeni müşteri kazanımı hem de mevcut müşterilerinizi daha iyi yönetip upsell etmeniz için uçtan uca otomatik sistemler kuruyoruz.
