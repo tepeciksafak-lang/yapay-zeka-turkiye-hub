@@ -9,7 +9,12 @@ const features = [
     id: 1,
     icon: Check,
     title: 'Kendiniz yapın',
-    description: 'İlginiz varsa veya bilgisayar konusunda güçlüyseniz, cazip gelir. Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji. Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir. Kendi yoğunluğunuz içinde buna vakit ayırabilir misiniz?',
+    bullets: [
+      'İlginiz varsa veya bilgisayar konusunda güçlüyseniz, cazip gelir.',
+      'Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji.',
+      'Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir.',
+      'Kendi yoğunluğunuz içinde buna vakit ayırabilir misiniz?'
+    ],
     image: agitateAutomation,
     imageAlt: 'Kendiniz yapın seçeneği'
   },
@@ -17,7 +22,12 @@ const features = [
     id: 2,
     icon: Check,
     title: 'İçeriden ekip kurun veya yeni eleman alın',
-    description: 'İçeriden birini görevlendirdiğinizde, zaten dolu masasına bir dosya daha koymuş oluyorsunuz. Şirketinizi dönüştürecek bir teknolojiyi yan iş olarak mı önem vermek istiyorsunuz? Yeni eleman almak ise başka bir zorluk: bu teknoloji çok yeni, çoğu kişi daha yolun başında. Tecrübeli uzmanlar ise çok pahalı, işe alım süreci ise bitmeyen bir kuyruk gibi: hep beklersiniz, bir türlü ilerlemez.',
+    bullets: [
+      'İçeriden birini görevlendirdiğinizde, zaten dolu masasına bir dosya daha koymuş oluyorsunuz.',
+      'Şirketinizi dönüştürecek bir teknolojiyi yan iş olarak mı önem vermek istiyorsunuz?',
+      'Yeni eleman almak ise başka bir zorluk: bu teknoloji çok yeni, çoğu kişi daha yolun başında.',
+      'Tecrübeli uzmanlar ise çok pahalı, işe alım süreci ise bitmeyen bir kuyruk gibi: hep beklersiniz, bir türlü ilerlemez.'
+    ],
     image: agitateAnalytics,
     imageAlt: 'İç ekip kurma seçeneği'
   },
@@ -25,7 +35,12 @@ const features = [
     id: 3,
     icon: Check,
     title: 'Gelecek ayda, gelecek dönemde, gelecek yılda başlayın',
-    description: 'Seneye bütçe ayarlanır, o zaman yaparız. Ama her geçen ay, kaybolan fırsatlar ve kaçan müşteriler anlamına geliyor. Gerçek şu: 3 yıl önce dev bir yazılım şirketi olan DocuSign, bugün yapay zeka ile 2 günde kopyalanabiliyor. Peki sizin iş modelinizin kopyalanması ne kadar sürer?',
+    bullets: [
+      'Seneye bütçe ayarlanır, o zaman yaparız.',
+      'Ama her geçen ay, kaybolan fırsatlar ve kaçan müşteriler anlamına geliyor.',
+      'Gerçek şu: 3 yıl önce dev bir yazılım şirketi olan DocuSign, bugün yapay zeka ile 2 günde kopyalanabiliyor.',
+      'Peki sizin iş modelinizin kopyalanması ne kadar sürer?'
+    ],
     image: agitateSales,
     imageAlt: 'Erteleme seçeneği'
   }

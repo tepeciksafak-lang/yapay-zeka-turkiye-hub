@@ -56,9 +56,8 @@ export function Features({
               )}
             >
               <div className="flex items-center gap-3">
-                <span className={clsx('inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5',
-                  selected ? 'text-primary' : 'text-muted-foreground')}>
-                  <Icon className="h-5 w-5" />
+                <span className={clsx('inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5')}>
+                  <Icon className="h-5 w-5 text-lime-400" />
                 </span>
                 <span className={clsx('font-medium', selected ? 'text-foreground' : 'text-foreground/90')}>
                   {f.title}
@@ -81,6 +80,16 @@ export function Features({
             !prefersReducedMotion && 'animate-fade-in'
           )}
         >
+          {active?.bullets?.length ? (
+            <div className="mb-6 space-y-3 text-foreground/85">
+              {active.bullets.map((b, i) => (
+                <p key={i} className="text-base leading-relaxed">{b}</p>
+              ))}
+            </div>
+          ) : active?.description ? (
+            <p className="mb-6 text-foreground/85">{active.description}</p>
+          ) : null}
+          
           <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted">
             <img
               src={active?.image || '/images/agitate/placeholder.jpg'}
@@ -89,18 +98,6 @@ export function Features({
               loading="lazy"
             />
           </div>
-          {active?.bullets?.length ? (
-            <ul className="mt-4 space-y-2 text-foreground/85">
-              {active.bullets.map((b, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                  <span className="text-sm">{b}</span>
-                </li>
-              ))}
-            </ul>
-          ) : active?.description ? (
-            <p className="mt-4 text-foreground/85">{active.description}</p>
-          ) : null}
         </div>
       </div>
     </div>
