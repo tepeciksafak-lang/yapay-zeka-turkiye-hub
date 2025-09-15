@@ -81,11 +81,11 @@ export function Features({
           )}
         >
           {active?.bullets?.length ? (
-            <div className="mb-6 space-y-3 text-foreground/85">
+            <div className="mb-6 space-y-4 text-foreground/85">
               {active.bullets.map((b, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-lime-400 shrink-0" />
-                  <p className="text-base leading-relaxed">{b}</p>
+                <div key={i} className="flex items-start gap-3 min-h-[1.5rem]">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-lime-400 shrink-0" />
+                  <p className="text-base leading-loose">{b}</p>
                 </div>
               ))}
             </div>
