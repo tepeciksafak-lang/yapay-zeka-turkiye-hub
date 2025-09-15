@@ -1,5 +1,5 @@
 import { Features } from './ui/features';
-import { Check } from 'lucide-react';
+import { Settings, Users, Calendar } from 'lucide-react';
 import agitateAutomation from '../assets/agitate-diy.jpg';
 import agitateAnalytics from '../assets/agitate-inhouse.jpg';
 import agitateSales from '../assets/agitate-agency.jpg';
@@ -7,7 +7,7 @@ import agitateSales from '../assets/agitate-agency.jpg';
 const features = [
   {
     id: 1,
-    icon: Check,
+    icon: Settings,
     title: 'Kendiniz yapın',
     bullets: [
       'İlginiz varsa veya bilgisayar konusunda güçlüyseniz, cazip gelir.',
@@ -20,7 +20,7 @@ const features = [
   },
   {
     id: 2,
-    icon: Check,
+    icon: Users,
     title: 'İçeriden ekip kurun veya yeni eleman alın',
     bullets: [
       'İçeriden birini görevlendirdiğinizde, zaten dolu masasına bir dosya daha koymuş oluyorsunuz.',
@@ -33,7 +33,7 @@ const features = [
   },
   {
     id: 3,
-    icon: Check,
+    icon: Calendar,
     title: 'Gelecek ayda, gelecek dönemde, gelecek yılda başlayın',
     bullets: [
       'Seneye bütçe ayarlanır, o zaman yaparız.',
