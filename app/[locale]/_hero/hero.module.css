@@ -4,8 +4,8 @@
 
 .headline { font-weight: 800; line-height: 1.22; letter-spacing: -0.02em; font-size: clamp(2.25rem,4vw+1rem,4.5rem); overflow: visible; }
 .line { display:block; background: linear-gradient(90deg,#38bdf8 0%,#7c3aed 60%); -webkit-background-clip:text; background-clip:text; color:transparent; position: relative; z-index: 1; }
-.lineWrap{ position:relative; display:block; overflow: hidden; padding-bottom: 0.9em; }
-.underline{ position:absolute; left:0; right:0; bottom:0; height:0.1em; border-radius:999px; background:linear-gradient(90deg,#A3E635,#34D399); transform: translateY(0.4em) scaleX(0); transform-origin:0% 50%; will-change: transform; z-index: 0; pointer-events: none; }
+.lineWrap{ position:relative; display:block; overflow: hidden; padding-bottom: 1.2em; }
+.underline{ position:absolute; left:0; right:0; bottom:0; height:0.08em; border-radius:999px; background:linear-gradient(90deg,#A3E635,#34D399); transform: translateY(0.7em) scaleX(0); transform-origin:0% 50%; will-change: transform; z-index: 0; pointer-events: none; }
 
 .sub{ margin-top:1.5rem; max-width:65ch; font-size:1.125rem; color:rgba(255,255,255,.82); }
 .ctaRow{ margin-top:clamp(3rem, 5vw, 6.5rem); display:flex; flex-wrap:wrap; gap:.75rem; }
