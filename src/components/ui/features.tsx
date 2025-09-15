@@ -75,17 +75,17 @@ export function Features({
       <div className="md:col-span-7">
         <div
           key={String(active?.id)}
-          className={clsx(
-            'rounded-2xl border border-border bg-card/50 p-4 md:p-6',
+className={clsx(
+            'relative isolate rounded-2xl border border-border bg-card/50 p-4 md:p-6',
             !prefersReducedMotion && 'animate-fade-in'
           )}
         >
           {active?.bullets?.length ? (
-            <div className="mb-6 space-y-4 text-foreground/85">
+            <div className="relative z-10 mb-8 space-y-4 text-foreground/85">
               {active.bullets.map((b, i) => (
-                <div key={i} className="flex items-start gap-3 min-h-[1.5rem]">
-                  <span className="mt-2 h-2 w-2 rounded-full bg-lime-400 shrink-0" />
-                  <p className="text-base leading-loose">{b}</p>
+                <div key={i} className="flex items-start gap-3 min-h-[1.5rem] pb-0.5">
+                  <span className="mt-2.5 h-2 w-2 rounded-full bg-lime-400 shrink-0" />
+                  <p className="text-base leading-relaxed">{b}</p>
                 </div>
               ))}
             </div>
@@ -93,7 +93,7 @@ export function Features({
             <p className="mb-6 text-foreground/85">{active.description}</p>
           ) : null}
           
-          <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted">
+          <div className="relative z-0 aspect-[16/10] overflow-hidden rounded-xl bg-muted">
             <img
               src={active?.image || '/images/agitate/placeholder.jpg'}
               alt={active?.imageAlt || active?.title || 'Detay görseli'}
