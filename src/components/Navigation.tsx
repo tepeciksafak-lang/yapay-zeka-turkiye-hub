@@ -33,9 +33,9 @@ const Navigation = () => {
             <div className="h-8 w-8 rounded-lg bg-card border border-border group-hover:border-lime-400/50 transition-all duration-300 flex items-center justify-center">
               <div className="w-4 h-4 bg-lime-400 rounded-sm"></div>
             </div>
-            <span className="text-xl font-bold text-foreground tracking-tight">
+            {/* <span className="text-xl font-bold text-foreground tracking-tight">
               Pratik Yapay Zeka
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -67,7 +67,7 @@ const Navigation = () => {
 
           {/* Language Switcher & Mobile Navigation */}
           <div className="flex items-center space-x-2">
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
             
             {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
