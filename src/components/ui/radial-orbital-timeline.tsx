@@ -69,22 +69,22 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         orbitHeight: '70vh'
       };
     } else {
-      // Desktop - larger orbit restored to original size
+      // Desktop - adjusted to optimal size to prevent header overlap
       const vmin = Math.min(width, height) * 0.01; // 1vmin
-      const baseRadius = Math.max(480, Math.min(42 * vmin, 580));
+      const baseRadius = Math.max(300, Math.min(32 * vmin, 380));
       const availableCardSpace = baseRadius - 24; // 24px margin from orbit ring
-      const cardWidth = Math.min(420, availableCardSpace * 1.6); // Keep card within inner circle
-      const cardScale = height < 800 ? 0.95 : 1; // Scale down on smaller heights
+      const cardWidth = Math.min(380, availableCardSpace * 1.4); // Keep card within inner circle
+      const cardScale = height < 800 ? 0.9 : 1; // Scale down on smaller heights
       
       return {
         radius: baseRadius,
-        nodeSize: 52,
-        iconSize: 22,
+        nodeSize: 48,
+        iconSize: 20,
         cardWidth: cardWidth,
         cardScale: cardScale,
-        containerHeight: '80vh',
-        orbitHeight: '78vh',
-        orbitOffsetY: 36 // Downward shift for desktop
+        containerHeight: '70vh',
+        orbitHeight: '65vh',
+        orbitOffsetY: 20 // Reduced downward shift for better spacing
       };
     }
   };

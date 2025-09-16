@@ -91,8 +91,8 @@ export default function GoToMarketTimeline() {
       }}
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 id="gtm-title" className="text-2xl md:text-3xl font-semibold tracking-tight text-text-hi mb-4">
+        <div className="text-center mb-20">
+          <h2 id="gtm-title" className="text-2xl md:text-3xl font-semibold tracking-tight text-text-hi mb-8">
             Sıfırdan yeni lead kazanımından, sadık müşteri yaratmaya kadar uçtan uca otomasyon
           </h2>
         </div>
