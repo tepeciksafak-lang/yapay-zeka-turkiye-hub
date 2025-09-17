@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, TrendingUp, Clock, Target, Zap } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import ConnectedTimeline from "@/components/ConnectedTimeline";
+import { useState } from "react";
 
 const VakaCalismalari = () => {
+  const [selectedFilter, setSelectedFilter] = useState<string>("Hepsi");
+  
   // Exact copy data with normalization (â/Â → a/A)
   const caseStudies = [
     {
@@ -98,28 +101,123 @@ const VakaCalismalari = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-        
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="outline" className="mb-6 bg-primary/10 border-primary/20 text-primary">
+      <section className="relative overflow-hidden" style={{ 
+        minHeight: '50vh', 
+        backgroundColor: '#0B0F14',
+        backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(163, 230, 53, 0.05) 0%, transparent 70%), url("data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23A3E635" fill-opacity="0.02"%3E%3Cpath d="m0 40l40-40h-40v40zm40 0v-40h-40l40 40z"/%3E%3C/g%3E%3C/svg%3E")'
+      }}>
+        <div className="container mx-auto px-4 relative py-16 lg:py-24">
+          <div className="max-w-6xl mx-auto">
+            <Badge 
+              variant="outline" 
+              className="mb-8 border border-[#A3E635] text-[#A3E635] bg-transparent hover:bg-[#A3E635]/5"
+            >
               Basari Hikayeleri
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Vaka Çalismalarimiz
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Yapay zeka ve otomasyon çözümlerimizle müsterilerimizin elde ettigi 
-              <span className="text-primary font-semibold"> gerçek sonuçlari</span> kesfеdin
-            </p>
+            
+            <div className="lg:flex lg:items-start lg:justify-between lg:gap-12 mb-12">
+              <div className="lg:flex-1">
+                <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#E5E7EB' }}>
+                  <span className="relative inline-block">
+                    Gerçek sonuçlar.
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#A3E635] transform scale-x-100 transition-transform duration-300"></span>
+                  </span>
+                  <br />
+                  Yapay zeka + otomasyonla büyüyen markalar.
+                </h1>
+                
+                <div className="space-y-3 text-lg lg:text-xl" style={{ color: '#94A3B8' }}>
+                  <p>
+                    Asagidaki vakalarda, kurulumdan günler içinde ölçülen kazanimlari görürsünüz.
+                  </p>
+                  <p>
+                    Tiklayin, her vakanin detaylarini açin.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-8 lg:mt-0 lg:flex-shrink-0">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-[#A3E635] text-[#A3E635] hover:bg-[#A3E635]/10"
+                >
+                  Danismanlık alin
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+            
+            {/* KPI Strip */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              <div className="flex items-center gap-3 px-4 py-3 rounded-full border" style={{ 
+                backgroundColor: '#111827', 
+                borderColor: '#1F2937' 
+              }}>
+                <TrendingUp className="h-5 w-5 text-[#A3E635]" />
+                <div>
+                  <div className="font-bold text-[#E5E7EB]">3000+</div>
+                  <div className="text-xs text-[#94A3B8]">e-posta</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 px-4 py-3 rounded-full border" style={{ 
+                backgroundColor: '#111827', 
+                borderColor: '#1F2937' 
+              }}>
+                <Clock className="h-5 w-5 text-[#A3E635]" />
+                <div>
+                  <div className="font-bold text-[#E5E7EB]">20+ saat/ay</div>
+                  <div className="text-xs text-[#94A3B8]">tasarruf</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 px-4 py-3 rounded-full border" style={{ 
+                backgroundColor: '#111827', 
+                borderColor: '#1F2937' 
+              }}>
+                <Target className="h-5 w-5 text-[#A3E635]" />
+                <div>
+                  <div className="font-bold text-[#E5E7EB]">5x</div>
+                  <div className="text-xs text-[#94A3B8]">etkilesim</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 px-4 py-3 rounded-full border" style={{ 
+                backgroundColor: '#111827', 
+                borderColor: '#1F2937' 
+              }}>
+                <Zap className="h-5 w-5 text-[#A3E635]" />
+                <div>
+                  <div className="font-bold text-[#E5E7EB]">1-7 gün</div>
+                  <div className="text-xs text-[#94A3B8]">kurulum</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Filter Chips */}
+            <div className="flex flex-wrap gap-2 lg:gap-3 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+              {['Hepsi', 'Satis Otomasyonu', 'Pazarlama Otomasyonu', 'İçerik Otomasyonu'].map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setSelectedFilter(filter)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                    selectedFilter === filter
+                      ? 'bg-[#A3E635]/10 border border-[#A3E635] text-[#A3E635]'
+                      : 'border border-[#1F2937] text-[#94A3B8] hover:border-[#A3E635]/50 hover:text-[#A3E635]'
+                  }`}
+                  style={{ backgroundColor: selectedFilter === filter ? undefined : 'transparent' }}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Connected Timeline */}
-      <ConnectedTimeline caseStudies={caseStudies} />
+      <ConnectedTimeline caseStudies={caseStudies} selectedFilter={selectedFilter} />
 
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">

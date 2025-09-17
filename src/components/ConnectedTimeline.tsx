@@ -22,11 +22,17 @@ interface CaseStudy {
 
 interface ConnectedTimelineProps {
   caseStudies: CaseStudy[];
+  selectedFilter?: string;
 }
 
-export default function ConnectedTimeline({ caseStudies }: ConnectedTimelineProps) {
+export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi" }: ConnectedTimelineProps) {
   const [activeCase, setActiveCase] = useState<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
+
+  // Filter case studies based on selected filter
+  const filteredCaseStudies = selectedFilter === "Hepsi" 
+    ? caseStudies 
+    : caseStudies.filter(caseStudy => caseStudy.etiket === selectedFilter);
 
   const handleNodeClick = (caseId: number) => {
     setActiveCase(activeCase === caseId ? null : caseId);
@@ -55,7 +61,7 @@ export default function ConnectedTimeline({ caseStudies }: ConnectedTimelineProp
             />
             
             {/* Timeline Nodes */}
-            {caseStudies.map((caseStudy, index) => (
+            {filteredCaseStudies.map((caseStudy, index) => (
               <div key={caseStudy.id} className="relative z-10">
                 <button
                   onClick={() => handleNodeClick(caseStudy.id)}
@@ -88,7 +94,7 @@ export default function ConnectedTimeline({ caseStudies }: ConnectedTimelineProp
             <div 
               className={`transition-all duration-200 ${prefersReducedMotion ? '' : 'animate-fade-in'}`}
             >
-              <CasePanel caseStudy={caseStudies.find(c => c.id === activeCase)!} />
+              <CasePanel caseStudy={filteredCaseStudies.find(c => c.id === activeCase)!} />
             </div>
           )}
         </div>
@@ -105,7 +111,7 @@ export default function ConnectedTimeline({ caseStudies }: ConnectedTimelineProp
               }}
             />
             
-            {caseStudies.map((caseStudy, index) => (
+            {filteredCaseStudies.map((caseStudy, index) => (
               <div key={caseStudy.id} className="relative mb-8">
                 {/* Mobile Node */}
                 <div className="flex items-start">
