@@ -10,7 +10,7 @@ export default function HeadlineReveal(){
     const tl = gsap.timeline({ defaults:{ ease:'power2.out', duration:0.7 } });
     if (lines.length) {
       lines.forEach(el => {
-        el.style.transform ||= "translate3d(0,110%,0)";
+        el.style.transform ||= "translate3d(0,100%,0)";
         el.style.opacity ||= "0";
         el.style.filter ||= "blur(2px)";
       });
