@@ -1,0 +1,36 @@
+[
+  {
+    "id": "linkedin-2000-sirket-listesi",
+    "title": "2000+ Şirket Listesi (Excel)",
+    "excerpt": "TR/DE firmalarından oluşan 2000+ B2B liste; hedef rol, sektör ve linkleriyle.",
+    "platform": "linkedin",
+    "type": "excel",
+    "tags": ["Lead Gen", "Dosya", "TR", "DE"],
+    "gate": "comment",
+    "actionUrl": "#linkedin-post",
+    "assetUrl": null,
+    "metrics": {
+      "downloads": 847,
+      "saves": 1200
+    },
+    "createdAt": "2025-01-01",
+    "gateNote": "Yoruma 'liste' yaz — DM ile gönderiyoruz."
+  },
+  {
+    "id": "instagram-google-ads-prompts",
+    "title": "Google Ads Prompt Library",
+    "excerpt": "Google Ads için hazır prompt şablonları: arama, PMax, kreatif varyasyonlar.",
+    "platform": "instagram", 
+    "type": "prompt-library",
+    "tags": ["Ads", "Prompt Library"],
+    "gate": "comment",
+    "actionUrl": "#instagram-video",
+    "assetUrl": null,
+    "metrics": {
+      "downloads": 623,
+      "saves": 890
+    },
+    "createdAt": "2025-01-02",
+    "gateNote": "Yorum: 'prompt' yaz — DM ile gönderiyoruz."
+  }
+]

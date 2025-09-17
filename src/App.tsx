@@ -19,6 +19,7 @@ import Otomasyon from "./pages/Otomasyon";
 import VeriAnalizi from "./pages/VeriAnalizi";
 import SatisOtomasyonuDemo from "./pages/SatisOtomasyonuDemo";
 import VakaCalismalari from "./pages/VakaCalismalari";
+import UcretsizIcerikler from "./pages/UcretsizIcerikler";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Solutions from "./pages/Solutions";
@@ -125,6 +126,15 @@ const App = () => (
                     <Navigation />
                     <main className="flex-1">
                       <VakaCalismalari />
+                    </main>
+                    <Footer />
+                  </LanguageWrapper>
+                } />
+                <Route path="/:lang/ucretsiz-icerikler" element={
+                  <LanguageWrapper>
+                    <Navigation />
+                    <main className="flex-1">
+                      <UcretsizIcerikler />
                     </main>
                     <Footer />
                   </LanguageWrapper>
