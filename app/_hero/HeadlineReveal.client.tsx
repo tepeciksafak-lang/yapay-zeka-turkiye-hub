@@ -13,13 +13,11 @@ export default function HeadlineReveal(){
       tl.to(lines, { 
         y: "0%", 
         opacity: 1, 
-        filter: "blur(0px)", 
         stagger: 0.08,
         onStart() { 
           lines.forEach(el => {
-            el.style.transform ||= "translate3d(0,110%,0)";
+            el.style.transform ||= "translate3d(0,100%,0)";
             el.style.opacity ||= "0";
-            el.style.filter ||= "blur(2px)";
           });
         }
       }, 0);

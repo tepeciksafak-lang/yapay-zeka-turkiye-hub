@@ -1,11 +1,11 @@
 .heroSection { position: relative; overflow: visible; }
 .container { max-width: 1200px; margin: 0 auto; padding: 5rem 1rem; display: grid; gap: 2rem; grid-template-columns: 1fr; }
 @media (min-width: 768px){ .container{ grid-template-columns: 7fr 5fr; padding: 7rem 1rem; } }
-.headline { font-weight: 800; line-height: 1.22; letter-spacing: -0.02em; font-size: clamp(2.25rem,4vw+1rem,4.5rem); overflow: visible; }
+.headline { font-weight: 800; line-height: 1.35; letter-spacing: -0.02em; font-size: clamp(2.25rem,4vw+1rem,4.5rem); overflow: visible; margin-bottom: 0.5rem; }
 
 .line { display:block; background: linear-gradient(90deg,#38bdf8 0%,#7c3aed 60%); -webkit-background-clip:text; background-clip:text; color:transparent; position: relative; z-index: 1; }
-.lineWrap { position: relative; display: block; overflow: hidden; padding-bottom: 1.2em; }
-.lineInner { display:inline-block; transform: translate3d(0,110%,0); opacity: 0; filter: blur(2px); will-change: transform, opacity, filter; }
+.lineWrap { position: relative; display: block; overflow: visible; padding: 0.3em 0 1.2em 0; }
+.lineInner { display:inline-block; transform: translate3d(0,100%,0); opacity: 0; will-change: transform, opacity; }
 
 .underline { position:absolute; left:0; right:0; bottom:0; height:0.08em; border-radius:999px;
   background:linear-gradient(90deg,#A3E635,#34D399); transform: translateY(0.7em) scaleX(0); transform-origin:0% 50%; will-change: transform; z-index: 0; pointer-events: none; }

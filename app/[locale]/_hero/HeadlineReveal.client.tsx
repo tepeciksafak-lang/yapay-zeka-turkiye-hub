@@ -12,7 +12,6 @@ export default function HeadlineReveal(){
       lines.forEach(el => {
         el.style.transform ||= "translate3d(0,100%,0)";
         el.style.opacity ||= "0";
-        el.style.filter ||= "blur(2px)";
       });
       tl.from(lines, { yPercent:20, opacity:0, stagger:0.08, clearProps:'all' });
     }
