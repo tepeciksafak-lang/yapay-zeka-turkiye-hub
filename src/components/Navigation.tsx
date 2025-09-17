@@ -14,6 +14,7 @@ const Navigation = () => {
   const { currentLanguage, t } = useLanguage();
 
   const navItems = [
+    { href: `/${currentLanguage}`, label: t('nav.home') },
     { href: `/${currentLanguage}/cozumler`, label: t('nav.solutions') },
     { href: `/${currentLanguage}/vaka-calismalari`, label: t('nav.cases') },
     { href: `/${currentLanguage}/ucretsiz-icerikler`, label: t('nav.freeContent') },

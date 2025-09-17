@@ -13,6 +13,7 @@ interface LanguageContextType {
 const translations = {
   de: {
     // Navigation
+    'nav.home': 'Startseite',
     'nav.solutions': 'Lösungen',
     'nav.cases': 'Vaka Çalışmaları', 
     'nav.freeContent': 'Kostenlose Inhalte',
@@ -29,6 +30,7 @@ const translations = {
   },
   tr: {
     // Navigation  
+    'nav.home': 'Anasayfa',
     'nav.solutions': 'Çözümler',
     'nav.cases': 'Vaka Çalışmaları',
     'nav.freeContent': 'Ücretsiz İçerikler', 
@@ -45,6 +47,7 @@ const translations = {
   },
   en: {
     // Navigation
+    'nav.home': 'Home',
     'nav.solutions': 'Solutions',
     'nav.cases': 'Case Studies',
     'nav.freeContent': 'Free Content',
