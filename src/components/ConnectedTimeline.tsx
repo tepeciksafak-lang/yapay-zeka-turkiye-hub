@@ -194,33 +194,33 @@ function CasePanel({ caseStudy }: { caseStudy: CaseStudy }) {
         {/* Tabs */}
         <Tabs defaultValue="problem" className="w-full" role="tablist">
           <TabsList 
-            className="grid w-full grid-cols-4 bg-slate-800/30 border border-slate-700"
-            style={{ height: 'auto', padding: '4px' }}
+            className="grid w-full grid-cols-2 md:grid-cols-4 bg-slate-800/30 border border-slate-700 h-auto p-1 gap-1"
           >
             <TabsTrigger 
               value="problem"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300"
+              className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-2 text-xs md:text-sm"
               role="tab"
             >
               Problem
             </TabsTrigger>
             <TabsTrigger 
               value="cozum"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300"
+              className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-2 text-xs md:text-sm"
               role="tab"
             >
               Çözüm
             </TabsTrigger>
             <TabsTrigger 
               value="uygulama"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300"
+              className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-2 text-xs md:text-sm"
               role="tab"
             >
-              Uygulama Aşamaları
+              <span className="md:hidden">Uygulama</span>
+              <span className="hidden md:inline">Uygulama Aşamaları</span>
             </TabsTrigger>
             <TabsTrigger 
               value="sonuclar"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300"
+              className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-2 text-xs md:text-sm"
               role="tab"
             >
               Sonuçlar
