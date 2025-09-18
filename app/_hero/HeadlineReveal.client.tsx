@@ -6,7 +6,6 @@ export default function HeadlineReveal(){
   useLayoutEffect(() => {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const lines = document.querySelectorAll<HTMLElement>('[data-line]');
-    const underline = document.querySelector<HTMLElement>('[data-underline]');
     const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
 
     if (lines.length) {
@@ -21,10 +20,6 @@ export default function HeadlineReveal(){
           });
         }
       }, 0);
-    }
-    if (underline) {
-      gsap.set(underline, { y: '1em', transformOrigin: '0% 50%' });
-      tl.to(underline, { scaleX: 1, duration: 0.9 }, 0.15);
     }
 
     return () => tl.kill();
