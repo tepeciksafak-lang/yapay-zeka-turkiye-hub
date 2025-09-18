@@ -136,16 +136,16 @@ const Index = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      <section className="relative min-h-screen flex items-center justify-center overflow-visible bg-background">
         <div className="absolute inset-0 bg-grid-pattern opacity-10" />
         <div className="absolute inset-0 opacity-30" style={{background: 'var(--glow-lime)'}} />
         <div className="container relative mx-auto px-4 py-20">
           <div className="mx-auto max-w-5xl text-center">
-            <h1 className="mb-16 headline animate-slide-up leading-tight">
+            <h1 className="mb-16 headline animate-slide-up leading-[1.35] overflow-visible">
               <span className="block text-text-hi text-4xl sm:text-5xl lg:text-7xl xl:text-8xl">
                 {t('hero.headline')}
               </span>
-              <span className="block mt-2 bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
+              <span className="block mt-2 py-1 bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
                 {t('hero.headline.highlight')}
               </span>
             </h1>
