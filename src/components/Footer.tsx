@@ -8,8 +8,8 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="text-xl font-bold text-text-hi">
-                Pratik Yapay Zeka
+              <div className="h-8 w-8 rounded-lg bg-card border border-border flex items-center justify-center">
+                <div className="w-4 h-4 bg-lime-400 rounded-sm"></div>
               </div>
             </Link>
             <p className="text-sm text-text-muted">
@@ -17,6 +17,37 @@ const Footer = () => {
             </p>
           </div>
           
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-text-hi">Menu</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Ana Sayfa
+                </Link>
+              </li>
+              <li>
+                <Link to="/cozumler" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Çözümler
+                </Link>
+              </li>
+              <li>
+                <Link to="/vaka-calismalari" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Vaka Çalışmaları
+                </Link>
+              </li>
+              <li>
+                <Link to="/ucretsiz-icerikler" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Ücretsiz İçerikler
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Blog
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-text-hi">Hizmetlerimiz</h3>
             <ul className="space-y-2 text-sm">
@@ -31,39 +62,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/musteri-iletisimi-cozumleri" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                  Müşteri İletişimi
+                <Link to="/yapay-zeka-is-alanlari" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Yapay Zeka İş Alanları
                 </Link>
               </li>
               <li>
                 <Link to="/danismanlik-ve-egitim" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
                   Danışmanlık ve Eğitim
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-text-hi">Yapay Zeka</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/yapay-zeka-is-alanlari" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                  İş Alanları
-                </Link>
-              </li>
-              <li>
-                <Link to="/yapay-zeka-is-alanlari/pazarlama" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                  Pazarlama Otomasyonu
-                </Link>
-              </li>
-              <li>
-                <Link to="/yapay-zeka-is-alanlari/yapay-zeka-satis-otomasyonu" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                  Satış Otomasyonu
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                  Blog
                 </Link>
               </li>
             </ul>

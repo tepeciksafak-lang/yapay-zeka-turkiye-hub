@@ -84,15 +84,15 @@ export default function GoToMarketTimeline() {
   return (
     <section 
       aria-labelledby="gtm-title" 
-      className="relative py-16 md:py-24 bg-bg-1"
+      className="relative py-8 md:py-12 bg-bg-1"
       style={{ 
         minHeight: window.innerWidth <= 480 ? '130vh' : 'auto',
         paddingBottom: window.innerWidth <= 480 ? 'max(8rem, env(safe-area-inset-bottom, 2rem))' : undefined
       }}
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
-          <h2 id="gtm-title" className="text-2xl md:text-3xl font-semibold tracking-tight text-text-hi mb-8">
+        <div className="text-center mb-12">
+          <h2 id="gtm-title" className="text-2xl md:text-3xl font-semibold tracking-tight text-text-hi mb-6">
             Sıfırdan yeni lead kazanımından, sadık müşteri yaratmaya kadar uçtan uca otomasyon
           </h2>
         </div>
