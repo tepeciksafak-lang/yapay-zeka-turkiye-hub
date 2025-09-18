@@ -21,7 +21,7 @@ export default function Hero({ locale }: { locale: HeroLang }){
             </span>
             <span className={styles.lineWrap}>
               <span data-line className={`${styles.line} ${styles.lineInner}`}>{copy.title2}</span>
-              <span data-underline className={styles.underline} />
+              
             </span>
           </h1>
 
