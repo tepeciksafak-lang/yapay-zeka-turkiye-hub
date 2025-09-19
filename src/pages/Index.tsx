@@ -22,6 +22,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
 import { SEO } from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Hero } from "@/components/hero/Hero";
 import AgitateDemo from "@/components/AgitateDemo";
 import SolutionSection from "@/components/SolutionSection";
 import GoToMarketTimeline from "@/components/GoToMarketTimeline";
@@ -136,41 +137,7 @@ const Index = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-visible bg-background">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-        <div className="absolute inset-0 opacity-30" style={{background: 'var(--glow-lime)'}} />
-        <div className="container relative mx-auto px-4 py-20">
-          <div className="mx-auto max-w-5xl text-center">
-            <h1 className="mb-16 headline animate-slide-up leading-[1.35] overflow-visible">
-              <span className="block text-text-hi text-4xl sm:text-5xl lg:text-7xl xl:text-8xl">
-                {t('hero.headline')}
-              </span>
-              <span className="block mt-2 py-1 bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
-                {t('hero.headline.highlight')}
-              </span>
-            </h1>
-            {(() => {
-              const sub = t('hero.subheadline');
-              if (!sub || sub === 'hero.subheadline') return null;
-              return (
-                <p className="mb-12 body-text text-text-muted max-w-4xl mx-auto animate-slide-up [animation-delay:0.2s] leading-relaxed">{sub}</p>
-              );
-            })()}
-
-            <div className="flex flex-col gap-6 sm:flex-row sm:justify-center animate-slide-up [animation-delay:0.4s]">
-              <Button 
-                size="lg" 
-                variant="lime"
-                onClick={() => setModalOpen(true)}
-                className="text-lg px-8 py-4 h-auto hover-glow focus-lime"
-              >
-                {t('hero.cta.primary')}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Agitate Demo Section */}
       <AgitateDemo />

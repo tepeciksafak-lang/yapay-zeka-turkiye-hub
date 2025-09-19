@@ -1,4 +1,4 @@
-import Hero from '../_hero/Hero';
+import { Hero } from '@/components/hero/Hero';
 import { HomePage } from '@/components/HomePage';
 import { JsonLd } from '@/components/JsonLd';
 
