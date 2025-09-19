@@ -17,10 +17,10 @@ export default function Hero({ locale }: { locale: HeroLang }){
         <div>
           <h1 className={styles.headline}>
             <span className={styles.lineWrap}>
-              <span data-line className={`${styles.line} ${styles.lineInner}`}>{copy.title1}</span>
+              <span data-line className={styles.line}>{copy.title1}</span>
             </span>
             <span className={styles.lineWrap}>
-              <span data-line className={`${styles.line} ${styles.lineInner}`}>{copy.title2}</span>
+              <span data-line className={styles.line}>{copy.title2}</span>
               
             </span>
           </h1>
