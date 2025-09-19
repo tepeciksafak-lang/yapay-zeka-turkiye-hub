@@ -24,8 +24,6 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { useI18n } from '@/locales/client'
 import { MotionButton } from '@/components/MotionButton'
-import { AnimatedHeadline } from '@/components/AnimatedHeadline'
-import { Hero3DLazy } from '@/components/Hero3D.lazy'
 import { QuickAnalysisModal } from '@/components/QuickAnalysisModal'
 
 export function HomePage() {
@@ -132,42 +130,6 @@ export function HomePage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-12 lg:py-20 overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="container relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <AnimatedHeadline className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                {t('hero.headline')}{' '}
-                <span className="gradient-text">
-                  {t('hero.headline.highlight')}
-                </span>
-              </AnimatedHeadline>
-              
-              <p className="text-xl text-muted-foreground max-w-2xl">
-                {t('hero.subheadline')}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <MotionButton 
-                  size="lg" 
-                  className="hover-glow bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0"
-                  onClick={() => setModalOpen(true)}
-                >
-                  {t('hero.cta.primary')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </MotionButton>
-              </div>
-
-            </div>
-
-            <div className="lg:order-first order-last">
-              <Hero3DLazy />
-            </div>
-          </div>
-        </div>
-      </section>
 
 
       {/* Features Grid */}

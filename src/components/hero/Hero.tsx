@@ -50,7 +50,7 @@ export function Hero({ locale }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
@@ -64,7 +64,7 @@ export function Hero({ locale }: HeroProps) {
         <div className="max-w-5xl mx-auto space-y-8">
           {/* Main Headlines */}
           <div className="space-y-4">
-            <h1 className="headline text-4xl md:text-6xl lg:text-7xl text-foreground leading-tight">
+            <h1 className="headline text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.25] md:leading-[1.2]">
               <span className="block">{copy.title1}</span>
               <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">
                 {copy.title2}
