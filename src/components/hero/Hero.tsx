@@ -85,13 +85,6 @@ export function Hero({ locale }: HeroProps) {
               {copy.ctaPrimary}
             </Button>
           </div>
-          
-          {/* Social Proof */}
-          <div className="pt-12">
-            <p className="text-sm text-muted-foreground/80 font-medium">
-              {copy.socialProof}
-            </p>
-          </div>
         </div>
       </div>
     </section>
