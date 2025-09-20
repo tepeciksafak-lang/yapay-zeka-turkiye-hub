@@ -60,9 +60,9 @@ export function Hero({ locale }: HeroProps) {
         <div className="max-w-5xl mx-auto space-y-8">
           {/* Main Headlines */}
           <div className="space-y-4">
-            <h1 className="headline text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.25] md:leading-[1.2]">
+            <h1 className="group headline text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.25] md:leading-[1.2]">
               <span className="block">{copy.title1}</span>
-              <span className="block text-primary pb-1">
+              <span className="block text-primary pb-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 after:origin-right after:transition-transform after:duration-700 after:ease-out group-hover:after:scale-x-100 group-hover:after:origin-left">
                 {copy.title2}
               </span>
             </h1>
