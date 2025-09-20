@@ -2,8 +2,7 @@ import { Metadata } from 'next'
 import { getI18n } from '@/locales/server'
 import { HomePage } from '@/components/HomePage'
 import { JsonLd } from '@/components/JsonLd'
-import Hero from './_hero/Hero'
-import { HeroLang } from './_hero/copy'
+import { Hero, HeroLang } from '@/components/hero/Hero'
 
 export const revalidate = 60
 

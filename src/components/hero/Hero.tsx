@@ -55,10 +55,6 @@ export function Hero({ locale }: HeroProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       
-      {/* Glow Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lime/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald/10 rounded-full blur-3xl animate-pulse" />
-      
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-5xl mx-auto space-y-8">
@@ -66,7 +62,7 @@ export function Hero({ locale }: HeroProps) {
           <div className="space-y-4">
             <h1 className="headline text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.25] md:leading-[1.2]">
               <span className="block">{copy.title1}</span>
-              <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">
+              <span className="block text-primary pb-1">
                 {copy.title2}
               </span>
             </h1>
@@ -84,7 +80,7 @@ export function Hero({ locale }: HeroProps) {
             <Button
               onClick={handleCtaClick}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 hover-glow px-12 py-6 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-lg font-semibold rounded-xl transition-colors duration-200"
             >
               {copy.ctaPrimary}
             </Button>
