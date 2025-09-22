@@ -176,62 +176,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-muted/50 py-20">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl">
-            <div className="relative">
-              <Card>
-                <CardContent className="p-8 text-center">
-                  <blockquote className="mb-6 text-lg text-foreground">
-                    "{testimonials[currentTestimonial].text}"
-                  </blockquote>
-                  <div className="mb-2 font-semibold text-foreground">
-                    {testimonials[currentTestimonial].name}
-                  </div>
-                  <div className="mb-4 text-sm text-muted-foreground">
-                    {testimonials[currentTestimonial].company}
-                  </div>
-                  <Badge className="bg-primary/10 text-primary">
-                    {testimonials[currentTestimonial].metric}
-                  </Badge>
-                </CardContent>
-              </Card>
-              
-              <div className="mt-6 flex items-center justify-center gap-4">
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={prevTestimonial}
-                  aria-label="Previous testimonial"
-                >
-                  <ChevronLeft className="h-4 w-4" />
-                </Button>
-                <div className="flex gap-2">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentTestimonial(index)}
-                      className={`h-2 w-2 rounded-full transition-colors ${
-                        index === currentTestimonial ? 'bg-primary' : 'bg-muted-foreground/30'
-                      }`}
-                      aria-label={`Go to testimonial ${index + 1}`}
-                    />
-                  ))}
-                </div>
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={nextTestimonial}
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <QuickAnalysisModal open={modalOpen} onOpenChange={setModalOpen} />
     </>

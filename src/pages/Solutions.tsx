@@ -82,55 +82,6 @@ const Solutions = () => {
       />
       
       <div className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="relative py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-3xl md:text-5xl font-bold text-text-hi mb-6 leading-tight">
-                Hem yurt içinde hem de yurtdışında{" "}
-                <span className="gradient-text">yeni müşteriler kazanın.</span>
-              </h1>
-              <p className="text-lg md:text-xl text-text-muted mb-8 leading-relaxed max-w-3xl mx-auto">
-                Bizim çözümlerimiz, lead üretiminden müşteri ilişkilerine kadar tüm hattınızı yapay zekâ ve otomasyonla uçtan uca kurar. Daha fazla müşteri, daha düşük maliyet, daha sürdürülebilir büyüme.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  variant="lime" 
-                  size="lg"
-                  asChild
-                  className="hover-glow focus-lime"
-                >
-                  <Link to={`/${currentLanguage}/contact`}>
-                    Danışmanlık alın
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  asChild
-                  className="focus-lime"
-                >
-                  <Link to={`/${currentLanguage}/contact`}>
-                    İletişime geçin
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            
-            {/* Geometric Visual */}
-            <div className="relative mt-16 max-w-2xl mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-lime-400/10 to-transparent h-px"></div>
-              <div className="flex justify-center items-center space-x-8 py-8">
-                <div className="w-2 h-2 bg-lime-400 rounded-full opacity-60"></div>
-                <div className="w-16 h-px bg-lime-400/30"></div>
-                <div className="w-3 h-3 border border-lime-400/50 rotate-45"></div>
-                <div className="w-16 h-px bg-lime-400/30"></div>
-                <div className="w-2 h-2 bg-lime-400 rounded-full opacity-60"></div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Solutions Grid */}
         <section className="py-16 md:py-24">
