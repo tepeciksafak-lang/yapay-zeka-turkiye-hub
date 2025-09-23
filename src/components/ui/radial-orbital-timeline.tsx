@@ -182,10 +182,12 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         className="relative w-full max-w-6xl mx-auto flex items-center justify-center"
         style={{ height: responsive.orbitHeight }}
       >
-        {/* Subtle lime glow background */}
-        <div className="absolute inset-0 pointer-events-none opacity-20">
-          <div className="w-full h-full bg-gradient-radial from-lime/10 via-transparent to-transparent" />
-        </div>
+        {/* Subtle lime glow background - hidden when any item is expanded */}
+        {!Object.keys(expandedItems).some(id => expandedItems[Number(id)]) && (
+          <div className="absolute inset-0 pointer-events-none opacity-20">
+            <div className="w-full h-full bg-gradient-radial from-lime/10 via-transparent to-transparent" />
+          </div>
+        )}
 
         <div
           className="absolute w-full h-full flex items-center justify-center"

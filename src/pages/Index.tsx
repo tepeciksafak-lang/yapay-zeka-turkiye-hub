@@ -165,7 +165,7 @@ const Index = () => {
                   <div className="flex items-center justify-between">
                     <Badge className="bg-primary/10 text-primary">{case_item.metric}</Badge>
                     <button 
-                      onClick={() => navigate('/tr/vaka-calismalari')}
+                      onClick={() => navigate(`/tr/vaka-calismalari#case-${index + 1}`)}
                       className="text-sm text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
                     >
                       Detaylar

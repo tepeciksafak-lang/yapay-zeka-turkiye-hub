@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,9 +23,10 @@ interface CaseStudy {
 interface ConnectedTimelineProps {
   caseStudies: CaseStudy[];
   selectedFilter?: string;
+  autoExpandCase?: number | null;
 }
 
-export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi" }: ConnectedTimelineProps) {
+export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi", autoExpandCase }: ConnectedTimelineProps) {
   const [activeCase, setActiveCase] = useState<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
 
@@ -44,6 +45,13 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
       handleNodeClick(caseId);
     }
   };
+
+  // Handle auto-expand when coming from Success Stories link
+  useEffect(() => {
+    if (autoExpandCase) {
+      setActiveCase(autoExpandCase);
+    }
+  }, [autoExpandCase]);
 
   return (
     <div className="relative py-16" style={{ backgroundColor: '#0B0F14' }}>

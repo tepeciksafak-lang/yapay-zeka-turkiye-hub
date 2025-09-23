@@ -3,10 +3,11 @@ import { ArrowRight, TrendingUp, Clock, Target, Zap } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import ConnectedTimeline from "@/components/ConnectedTimeline";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const VakaCalismalari = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("Hepsi");
+  const [autoExpandCase, setAutoExpandCase] = useState<number | null>(null);
   
   // Exact copy data with normalization (â/Â → a/A)
   const caseStudies = [
@@ -92,6 +93,24 @@ const VakaCalismalari = () => {
       alinti: "Siz de içerik üretimi veya sosyal medya stratejinizde benzer sorunlar yasiyor musunuz? Salevium için kurdugumuz bu otomatik sistemin sizin is modelinize nasil uygulanabilecegini birlikte kesfedebiliriz."
     }
   ];
+
+  // Handle hash navigation for direct case linking
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#case-')) {
+      const caseNumber = parseInt(hash.replace('#case-', ''));
+      if (caseNumber >= 1 && caseNumber <= caseStudies.length) {
+        setAutoExpandCase(caseNumber);
+        // Scroll to timeline after a short delay to ensure it's rendered
+        setTimeout(() => {
+          const timelineElement = document.querySelector('[data-timeline]');
+          if (timelineElement) {
+            timelineElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -217,7 +236,13 @@ const VakaCalismalari = () => {
       </section>
 
       {/* Connected Timeline */}
-      <ConnectedTimeline caseStudies={caseStudies} selectedFilter={selectedFilter} />
+      <div data-timeline>
+        <ConnectedTimeline 
+          caseStudies={caseStudies} 
+          selectedFilter={selectedFilter} 
+          autoExpandCase={autoExpandCase}
+        />
+      </div>
 
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
