@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { 
   ArrowRight, 
   Star, 
@@ -31,6 +32,7 @@ const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const { t } = useLanguage();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const navigate = useNavigate();
 
   const features = [
     {
@@ -162,12 +164,12 @@ const Index = () => {
                   <p className="mb-4 text-muted-foreground">{case_item.result}</p>
                   <div className="flex items-center justify-between">
                     <Badge className="bg-primary/10 text-primary">{case_item.metric}</Badge>
-                    <a 
-                      href="#cases" 
+                    <button 
+                      onClick={() => navigate('/tr/vaka-calismalari')}
                       className="text-sm text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
                     >
                       Detaylar
-                    </a>
+                    </button>
                   </div>
                 </CardContent>
               </Card>

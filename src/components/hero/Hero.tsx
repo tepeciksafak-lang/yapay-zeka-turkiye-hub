@@ -12,7 +12,7 @@ interface HeroProps {
 const heroCopy = {
   tr: {
     title1: 'Siz şirketi yönetin.',
-    title2: 'Biz şirketiniz için 7/24 çalışan yapay zeka işçileri kuruyoruz.',
+    title2: 'Biz sizin için 7/24 çalışan yapay zeka işçileri kuruyoruz.',
     subtitle: '',
     ctaPrimary: 'Şimdi ücretsiz başlayın',
     socialProof: '100+ B2B ekip için pratik otomasyon kurguladık.'
@@ -20,7 +20,7 @@ const heroCopy = {
   de: {
     title1: 'Sie führen das Unternehmen.',
     title2: 'Wir bauen die Künstliche Intelligenz.',
-    subtitle: 'KI + Automatisierung, die Ihr Unternehmen skaliert – ohne dass Sie mehr leisten müssen.',
+    subtitle: 'Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?',
     ctaPrimary: 'Jetzt kostenlos starten',
     socialProof: '100+ B2B Teams vertrauen auf unsere praktischen Automatisierungen.'
   },

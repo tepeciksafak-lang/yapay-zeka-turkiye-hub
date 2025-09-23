@@ -84,7 +84,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         cardScale: cardScale,
         containerHeight: '70vh',
         orbitHeight: '65vh',
-        orbitOffsetY: 20 // Reduced downward shift for better spacing
+        orbitOffsetY: 10 // Further reduced downward shift for better header spacing
       };
     }
   };
@@ -199,7 +199,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
           <div className={`absolute ${isMobile ? 'w-16 h-16' : 'w-20 h-20 lg:w-24 lg:h-24'} rounded-full flex items-center justify-center z-10 bg-gradient-to-br from-lime to-emerald`}>
             <div className={`absolute ${isMobile ? 'w-20 h-20' : 'w-24 h-24 lg:w-28 lg:h-28'} rounded-full border border-white/15 animate-ping opacity-70`}></div>
             <div className={`absolute ${isMobile ? 'w-24 h-24' : 'w-28 h-28 lg:w-32 lg:h-32'} rounded-full border border-white/10 animate-ping opacity-50`} style={{ animationDelay: "0.5s" }}></div>
-            <div className={`${isMobile ? 'w-8 h-8' : 'w-10 h-10 lg:w-12 lg:h-12'} rounded-full bg-white/90 backdrop-blur-md`}></div>
+            <div className={`${isMobile ? 'w-4 h-4' : 'w-6 h-6 lg:w-8 lg:h-8'} rounded-full bg-white/90 backdrop-blur-md`}></div>
           </div>
 
           {/* Orbital rings */}

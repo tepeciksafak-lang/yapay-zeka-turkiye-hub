@@ -10,10 +10,7 @@ const features = [
     icon: Settings,
     title: 'Kendiniz yapın',
     bullets: [
-      'İlginiz varsa veya bilgisayar konusunda güçlüyseniz, cazip gelir.',
-      'Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji.',
-      'Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir.',
-      'Kendi yoğunluğunuz içinde buna vakit ayırabilir misiniz?'
+      'Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji. Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir. Kendi yoğunluğunuz içinde buna vakit ayırabilir misiniz?'
     ],
     image: agitateAutomation,
     imageAlt: 'Kendiniz yapın seçeneği'
@@ -23,10 +20,9 @@ const features = [
     icon: Users,
     title: 'İçeriden ekip kurun veya yeni eleman alın',
     bullets: [
-      'İçeriden birini görevlendirdiğinizde, zaten dolu masasına bir dosya daha koymuş oluyorsunuz.',
-      'Şirketinizi dönüştürecek bir teknolojiyi yan iş olarak mı önem vermek istiyorsunuz?',
-      'Yeni eleman almak ise başka bir zorluk: bu teknoloji çok yeni, çoğu kişi daha yolun başında.',
-      'Tecrübeli uzmanlar ise çok pahalı, işe alım süreci ise bitmeyen bir kuyruk gibi: hep beklersiniz, bir türlü ilerlemez.'
+      'İçeriden birini görevlendirmek: Zaten dolu masasına bir dosya daha. Şirketinizi dönüştürecek teknolojiyi yan iş olarak mı önem vermek istiyorsunuz?',
+      'Yeni eleman almak: Bu teknoloji çok yeni, çoğu kişi daha yolun başında. Tecrübeli uzmanlar çok pahalı.',
+      'İşe alım süreci bitmeyen kuyruk gibi: Hep beklersiniz, bir türlü ilerlemez.'
     ],
     image: agitateAnalytics,
     imageAlt: 'İç ekip kurma seçeneği'
@@ -36,9 +32,8 @@ const features = [
     icon: Calendar,
     title: 'Gelecek ayda, gelecek dönemde, gelecek yılda başlayın',
     bullets: [
-      'Seneye bütçe ayarlanır, o zaman yaparız.',
-      'Ama her geçen ay, kaybolan fırsatlar ve kaçan müşteriler anlamına geliyor.',
-      'Gerçek şu: 3 yıl önce dev bir yazılım şirketi olan DocuSign, bugün yapay zeka ile 2 günde kopyalanabiliyor.',
+      'Seneye bütçe ayarlanır, o zaman yaparız. Ama her geçen ay kaybolan fırsatlar ve kaçan müşteriler demek.',
+      'Gerçek şu: 3 yıl önce dev yazılım şirketi DocuSign, bugün yapay zeka ile 2 günde kopyalanabiliyor.',
       'Peki sizin iş modelinizin kopyalanması ne kadar sürer?'
     ],
     image: agitateSales,
@@ -52,7 +47,7 @@ export default function AgitateDemo() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center mb-12">
           <h2 className="headline text-3xl md:text-4xl tracking-tight text-text-hi mb-4">
-            Yapay zekayı doğru şekilde şirketimize nasıl entegre edebiliriz?
+            Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?
           </h2>
           <p className="text-lg md:text-xl text-text-med leading-relaxed">
             Farklı yöntemler var… ama çoğu ayakkabınızın içindeki taş gibi: her adımda rahatsız eder.
