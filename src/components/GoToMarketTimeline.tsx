@@ -9,6 +9,7 @@ const timelineData = [
     date: "Şimdi",
     content: `Takviminizi kendi kendine dolduran akıllı sistemler.
 
+
 • Telefonla soğuk satış: hedef listenizi AI ile hazırlayın
 • Yöneticilere kişiselleştirilmiş e-mail kampanyaları
 • Sosyal medya DM kampanyaları (LinkedIn, Instagram, X)
@@ -68,6 +69,7 @@ const timelineData = [
     title: "Dönüşüm Optimizasyonu",
     date: "Her zaman",
     content: `Web sitenizden gelen başvuruları artırın.
+
 
 • Yapay zeka ile sitenizi optimize edin, başvuru oranlarını yükseltin
 • Speed-to-Lead: potansiyel müşteri hafta sonu bile yazsa, 2 dk içinde cevap
