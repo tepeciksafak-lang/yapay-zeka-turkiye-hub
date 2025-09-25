@@ -36,13 +36,10 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
       
       setIsSubmitted(true);
       
-      // Analytics event (placeholder)
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'lead_form_submit', {
-          event_category: 'engagement',
-          event_label: 'quick_analysis',
-          value: 1
-        });
+      // Analytics event
+      if (typeof window !== 'undefined') {
+        const { analytics } = await import('../utils/analytics');
+        analytics.trackFormSubmit('quick_analysis', true);
       }
 
       toast({

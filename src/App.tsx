@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { useAnalytics } from "./hooks/useAnalytics";
 import { LanguageWrapper } from "./components/LanguageWrapper";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -26,6 +27,11 @@ import Solutions from "./pages/Solutions";
 
 const queryClient = new QueryClient();
 
+function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
+  useAnalytics(); // Initialize analytics tracking
+  return <>{children}</>;
+}
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
@@ -33,7 +39,8 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <LanguageProvider>
+          <AnalyticsWrapper>
+            <LanguageProvider>
             <div className="flex min-h-screen flex-col">
               <Routes>
                 {/* Redirect root to Turkish */}
@@ -185,7 +192,8 @@ const App = () => (
               </Routes>
             </div>
           </LanguageProvider>
-        </BrowserRouter>
+        </AnalyticsWrapper>
+      </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>
