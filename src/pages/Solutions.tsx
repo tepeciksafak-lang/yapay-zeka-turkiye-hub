@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SEO } from "@/components/SEO";
+import { Hero } from "@/components/hero/Hero";
 
 const Solutions = () => {
   const { currentLanguage } = useLanguage();
@@ -74,6 +75,15 @@ const Solutions = () => {
     }
   ];
 
+  // Hero content for Solutions page
+  const solutionsHero = {
+    title1: 'İşletmenizi büyütmek için',
+    title2: 'hangi aşamada desteğe ihtiyacınız var?',
+    subtitle: 'Lead üretiminden müşteri ilişkilerine kadar tüm hattınızı yapay zekâ ve otomasyonla kuruyoruz.',
+    ctaPrimary: 'Danışmanlık alın',
+    socialProof: '100+ B2B ekip için pratik kurulumlar'
+  };
+
   return (
     <>
       <SEO
@@ -81,7 +91,63 @@ const Solutions = () => {
         description="Lead üretiminden müşteri ilişkilerine kadar tüm hattınızı yapay zekâ ve otomasyonla kuruyoruz. Daha fazla müşteri, daha düşük maliyet, sürdürülebilir büyüme."
       />
       
-      <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+        
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 text-center">
+          <div className="max-w-5xl mx-auto space-y-8">
+            {/* Main Headlines */}
+            <div className="space-y-4">
+              <h1 className="group headline text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.25] md:leading-[1.2]">
+                <span className="block">{solutionsHero.title1}</span>
+                <span className="block text-primary pb-1 relative after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 after:origin-right after:transition-transform after:duration-1000 after:ease-out group-hover:after:scale-x-100 group-hover:after:origin-left">
+                  {solutionsHero.title2}
+                </span>
+              </h1>
+            </div>
+            
+            {/* Subtitle */}
+            <p className="body-text text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {solutionsHero.subtitle}
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-lg font-semibold rounded-xl transition-colors duration-200"
+                asChild
+              >
+                <Link to={`/${currentLanguage}/contact`}>
+                  {solutionsHero.ctaPrimary}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-12 py-6 text-lg font-semibold rounded-xl"
+                asChild
+              >
+                <Link to={`/${currentLanguage}/contact`}>
+                  İletişime geçin
+                </Link>
+              </Button>
+            </div>
+            
+            {/* Social Proof */}
+            <p className="text-sm text-muted-foreground pt-4">
+              {solutionsHero.socialProof}
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <div className="bg-background">
 
         {/* Solutions Grid */}
         <section className="py-16 md:py-24">
