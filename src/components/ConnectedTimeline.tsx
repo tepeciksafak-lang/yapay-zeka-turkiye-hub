@@ -112,11 +112,11 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
           <div className="relative">
             {/* Vertical Timeline Line */}
             <div 
-              className="absolute left-8 top-0 w-0.5"
+              className="absolute left-2 top-0 w-0.5"
               style={{
                 background: '#A3E635',
                 boxShadow: '0 0 8px rgba(163, 230, 53, 0.18)',
-                height: `${filteredCaseStudies.length * 120}px`
+                height: `${filteredCaseStudies.length * 160}px`
               }}
             />
             
@@ -128,7 +128,7 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
                     onClick={() => handleNodeClick(caseStudy.id)}
                     onKeyDown={(e) => handleKeyDown(e, caseStudy.id)}
                     className={`
-                      relative z-10 w-16 h-16 rounded-full border-2 transition-all duration-200 flex-shrink-0
+                      relative z-10 w-16 h-16 rounded-full border-2 transition-all duration-200 flex-shrink-0 ml-4
                       focus:outline-none focus:ring-2 focus:ring-lime-400 focus:ring-offset-2 focus:ring-offset-slate-900
                       ${activeCase === caseStudy.id
                         ? 'bg-lime-400/12 border-lime-400 shadow-lg shadow-lime-400/25'
@@ -152,17 +152,17 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
                     <h3 className="text-slate-300 font-semibold text-lg">{caseStudy.baslik}</h3>
                   </div>
                 </div>
+
+                {/* Mobile Panel - Below each node */}
+                {activeCase === caseStudy.id && (
+                  <div 
+                    className={`mt-4 ml-20 transition-all duration-200 ${prefersReducedMotion ? '' : 'animate-fade-in'}`}
+                  >
+                    <CasePanel caseStudy={caseStudy} />
+                  </div>
+                )}
               </div>
             ))}
-            
-            {/* Mobile Panel - Always at bottom */}
-            {activeCase && (
-              <div 
-                className={`mt-8 transition-all duration-200 ${prefersReducedMotion ? '' : 'animate-fade-in'}`}
-              >
-                <CasePanel caseStudy={filteredCaseStudies.find(c => c.id === activeCase)!} />
-              </div>
-            )}
           </div>
         </div>
       </div>
