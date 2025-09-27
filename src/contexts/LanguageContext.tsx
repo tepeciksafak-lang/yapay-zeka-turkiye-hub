@@ -94,6 +94,32 @@ const translations = {
     'footer.services.consulting': 'Beratung und Training',
     'footer.contact.text': 'Sprechen Sie uns an für Ihre KI-Lösung',
     'footer.copyright': '© 2024 Pratik Yapay Zeka. Alle Rechte vorbehalten.',
+    'footer.description': 'Wir bereiten Ihr Unternehmen mit KI-Beratung und Automatisierungslösungen auf die Zukunft vor.',
+
+    // Modal translations
+    'modal.title': 'Kostenlose Schnellanalyse',
+    'modal.name': 'Name',
+    'modal.name.placeholder': 'Ihr Vor- und Nachname',
+    'modal.email': 'E-Mail',
+    'modal.email.placeholder': 'beispiel@firma.de',
+    'modal.company': 'Unternehmen',
+    'modal.company.placeholder': 'Ihr Firmenname',
+    'modal.message': 'Welche Prozesse möchten Sie automatisieren?',
+    'modal.message.placeholder': 'Vertrieb, Marketing, Kundenservice usw. - in welchem Bereich benötigen Sie Hilfe?',
+    'modal.cancel': 'Abbrechen',
+    'modal.submit': 'Analyse anfordern',
+    'modal.submitting': 'Wird gesendet...',
+    'modal.success': 'Vielen Dank! Wir melden uns schnellstmöglich bei Ihnen.',
+    'modal.description': 'Nachdem Sie das Formular abgeschickt haben, erstellen wir innerhalb von 24 Stunden einen personalisierten Analysebericht und senden ihn Ihnen per E-Mail zu.',
+
+    // Success Stories
+    'cases.title': 'Echte Ergebnisse. Marken, die mit KI und Automatisierung wachsen.',
+    'cases.subtitle': 'In den folgenden Fällen sehen Sie messbare Erfolge binnen Tagen nach der Einrichtung. Klicken Sie und öffnen Sie die Details jedes Falls.',
+    'cases.cta': 'Beratung erhalten',
+    'cases.final.title': 'Sind Sie bereit, Ihre eigene Erfolgsgeschichte zu schreiben?',
+    'cases.final.subtitle': 'Wie diese Kunden können auch Sie Ihr Unternehmen mit KI und Automatisierung auf die nächste Stufe bringen.',
+    'cases.final.cta1': 'Kostenlose Beratung',
+    'cases.final.cta2': 'Demo anfordern',
 
     // Free Content
     'freeContent.title': 'Kostenlose Inhalte. Echter, sofort nutzbarer Mehrwert.',

@@ -4,10 +4,12 @@ import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import ConnectedTimeline from "@/components/ConnectedTimeline";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const VakaCalismalari = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("Hepsi");
   const [autoExpandCase, setAutoExpandCase] = useState<number | null>(null);
+  const { t } = useLanguage();
   
   // Exact copy data with normalization (â/Â → a/A)
   const caseStudies = [
@@ -131,21 +133,16 @@ const VakaCalismalari = () => {
               variant="outline" 
               className="mb-8 border border-[#A3E635] text-[#A3E635] bg-transparent hover:bg-[#A3E635]/5"
             >
-              Basari Hikayeleri
+              {t('nav.cases')}
             </Badge>
             
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#E5E7EB' }}>
-                <span className="relative inline-block">
-                  Gerçek sonuçlar.
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#A3E635] transform scale-x-100 transition-transform duration-300"></span>
-                </span>
-                <br />
-                Yapay zeka + otomasyonla büyüyen markalar.
+                {t('cases.title')}
               </h1>
               
               <p className="text-lg lg:text-xl mb-8" style={{ color: '#94A3B8' }}>
-                Aşağıdaki vakalarda, kurulumdan günler içinde ölçülen kazanımları görürsünüz. Tıklayın, her vakanın detaylarını açın.
+                {t('cases.subtitle')}
               </p>
               
               <Button 
@@ -153,7 +150,7 @@ const VakaCalismalari = () => {
                 size="lg" 
                 className="border-[#A3E635] text-[#A3E635] hover:bg-[#A3E635]/10"
               >
-                Danışmanlık alın
+                {t('cases.cta')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -178,18 +175,18 @@ const VakaCalismalari = () => {
         <div className="container mx-auto px-4 relative">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Siz de Basari Hikayenizi Yazmaya Hazir misiniz?
+              {t('cases.final.title')}
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Bu müsterilerimiz gibi siz de yapay zeka ve otomasyon ile isinizi bir üst seviyeye tasiуabilirsiniz.
+              {t('cases.final.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="hover-glow">
-                Ücretsiz Konsültasyon Al
+                {t('cases.final.cta1')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button variant="outline" size="lg" className="hover-glow-purple">
-                Demo Talep Et
+                {t('cases.final.cta2')}
               </Button>
             </div>
           </div>

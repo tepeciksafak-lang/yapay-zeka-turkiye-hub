@@ -20,9 +20,9 @@ const heroCopy = {
     socialProof: '100+ B2B ekip için pratik otomasyon kurguladık.'
   },
   de: {
-    title1: 'Sie führen das Unternehmen.',
-    title2: 'Wir bauen die Künstliche Intelligenz.',
-    subtitle: 'Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?',
+    title1: 'Sie führen Ihr Unternehmen.',
+    title2: 'Wir stellen Ihnen KI-Mitarbeiter zur Seite, die 24/7 für Sie arbeiten.',
+    subtitle: '',
     ctaPrimary: 'Jetzt kostenlos starten',
     socialProof: '100+ B2B Teams vertrauen auf unsere praktischen Automatisierungen.'
   },

@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import { useI18n } from '@/locales/client'
 import { MotionButton } from '@/components/MotionButton'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface QuickAnalysisModalProps {
   open: boolean
@@ -22,7 +22,7 @@ export function QuickAnalysisModal({ open, onOpenChange }: QuickAnalysisModalPro
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const t = useI18n()
+  const { t } = useLanguage()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -36,8 +36,8 @@ export function QuickAnalysisModal({ open, onOpenChange }: QuickAnalysisModalPro
     setIsSubmitting(false)
     onOpenChange(false)
     
-    // Show success message (you can replace with proper toast)
-    alert('Teşekkürler! En kısa sürede size geri döneceğiz.')
+    // Show success message
+    alert(t('modal.success'))
   }
 
   const handleInputChange = (field: string, value: string) => {
@@ -49,55 +49,55 @@ export function QuickAnalysisModal({ open, onOpenChange }: QuickAnalysisModalPro
       <DialogContent className="glass max-w-md">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold gradient-text">
-            Ücretsiz Hızlı Analiz
+            {t('modal.title')}
           </DialogTitle>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Ad Soyad *</Label>
+              <Label htmlFor="name">{t('modal.name')} *</Label>
               <Input
                 id="name"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                placeholder="Adınız ve soyadınız"
+                placeholder={t('modal.name.placeholder')}
                 required
                 className="glass focus-visible"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="email">E-posta *</Label>
+              <Label htmlFor="email">{t('modal.email')} *</Label>
               <Input
                 id="email"
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
-                placeholder="ornek@sirket.com"
+                placeholder={t('modal.email.placeholder')}
                 required
                 className="glass focus-visible"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="company">Şirket</Label>
+              <Label htmlFor="company">{t('modal.company')}</Label>
               <Input
                 id="company"
                 value={formData.company}
                 onChange={(e) => handleInputChange('company', e.target.value)}
-                placeholder="Şirket adınız"
+                placeholder={t('modal.company.placeholder')}
                 className="glass focus-visible"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="message">Hangi süreçleri otomatikleştirmek istiyorsunuz?</Label>
+              <Label htmlFor="message">{t('modal.message')}</Label>
               <Textarea
                 id="message"
                 value={formData.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}
-                placeholder="Satış, pazarlama, müşteri hizmetleri vb. hangi alanda yardıma ihtiyacınız var?"
+                placeholder={t('modal.message.placeholder')}
                 rows={4}
                 className="glass focus-visible resize-none"
               />
@@ -112,21 +112,20 @@ export function QuickAnalysisModal({ open, onOpenChange }: QuickAnalysisModalPro
               className="flex-1 glass"
               disabled={isSubmitting}
             >
-              İptal
+              {t('modal.cancel')}
             </Button>
             <MotionButton
               type="submit"
               disabled={isSubmitting}
               className="flex-1 hover-glow bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0"
             >
-              {isSubmitting ? 'Gönderiliyor...' : 'Analiz İste'}
+              {isSubmitting ? t('modal.submitting') : t('modal.submit')}
             </MotionButton>
           </div>
         </form>
         
         <p className="text-xs text-muted-foreground text-center">
-          Form gönderdiğinizde, 24 saat içinde size özel bir analiz raporu hazırlayıp 
-          e-posta ile göndereceğiz.
+          {t('modal.description')}
         </p>
       </DialogContent>
     </Dialog>
