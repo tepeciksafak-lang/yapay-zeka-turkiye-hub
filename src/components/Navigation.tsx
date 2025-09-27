@@ -59,7 +59,7 @@ const Navigation = () => {
 
           {/* Language Switcher & Mobile Navigation */}
           <div className="flex items-center space-x-2">
-            {/* <LanguageSwitcher /> */}
+            <LanguageSwitcher />
             
             {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
