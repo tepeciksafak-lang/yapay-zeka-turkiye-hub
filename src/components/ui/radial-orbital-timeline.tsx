@@ -54,7 +54,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         radius: Math.min(Math.max(162, width * 0.29), 216),
         nodeSize: 32,
         iconSize: 14,
-        cardWidth: Math.min(360, width - 32),
+        cardWidth: width <= 480 ? Math.min(280, width - 48) : Math.min(300, width - 40),
         containerHeight: width <= 480 ? 'auto' : '65vh',
         orbitHeight: width <= 480 ? '60vh' : '60vh'
       };
@@ -343,7 +343,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         {/* Mobile card display - below orbital circle */}
         {isMobile && Object.keys(expandedItems).some(id => expandedItems[Number(id)]) && (
           <div 
-            className="w-full max-w-sm mx-auto px-4 mt-6 relative z-50"
+            className="w-full max-w-xs mx-auto px-3 mt-6 relative z-50"
             style={{ 
               marginBottom: windowSize.width <= 480 ? '2rem' : 0 
             }}
@@ -355,10 +355,10 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                   key={item.id}
                   className="bg-bg-2/95 backdrop-blur-lg border border-white/15 shadow-xl shadow-black/40 rounded-xl"
                 >
-                  <CardHeader className="pb-4">
+                  <CardHeader className="pb-3">
                     <CardTitle className="text-sm text-text-hi">{item.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="text-xs text-text-hi/90">
+                  <CardContent className="text-xs text-text-hi/90 px-3">
                     {item.image && (
                       <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-4">
                         <img
