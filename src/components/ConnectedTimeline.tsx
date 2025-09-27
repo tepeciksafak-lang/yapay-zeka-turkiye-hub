@@ -112,16 +112,17 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
           <div className="relative">
             {/* Vertical Timeline Line */}
             <div 
-              className="absolute left-8 top-0 bottom-0 w-0.5"
+              className="absolute left-8 top-0 w-0.5"
               style={{
                 background: '#A3E635',
                 boxShadow: '0 0 8px rgba(163, 230, 53, 0.18)',
+                height: `${filteredCaseStudies.length * 120}px`
               }}
             />
             
+            {/* Timeline Nodes */}
             {filteredCaseStudies.map((caseStudy, index) => (
               <div key={caseStudy.id} className="relative mb-8">
-                {/* Mobile Node */}
                 <div className="flex items-start">
                   <button
                     onClick={() => handleNodeClick(caseStudy.id)}
@@ -151,17 +152,17 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
                     <h3 className="text-slate-300 font-semibold text-lg">{caseStudy.baslik}</h3>
                   </div>
                 </div>
-
-                {/* Mobile Panel */}
-                {activeCase === caseStudy.id && (
-                  <div 
-                    className={`mt-4 ml-22 transition-all duration-200 ${prefersReducedMotion ? '' : 'animate-fade-in'}`}
-                  >
-                    <CasePanel caseStudy={caseStudy} />
-                  </div>
-                )}
               </div>
             ))}
+            
+            {/* Mobile Panel - Always at bottom */}
+            {activeCase && (
+              <div 
+                className={`mt-8 transition-all duration-200 ${prefersReducedMotion ? '' : 'animate-fade-in'}`}
+              >
+                <CasePanel caseStudy={filteredCaseStudies.find(c => c.id === activeCase)!} />
+              </div>
+            )}
           </div>
         </div>
       </div>
