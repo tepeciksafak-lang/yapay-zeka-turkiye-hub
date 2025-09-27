@@ -139,7 +139,7 @@ const Index = () => {
       />
       
       {/* Hero Section */}
-      <Hero />
+      <Hero modalOpen={modalOpen} onModalOpenChange={setModalOpen} />
 
       {/* Agitate Demo Section */}
       <AgitateDemo />

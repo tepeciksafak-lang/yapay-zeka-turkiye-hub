@@ -55,14 +55,6 @@ const Navigation = () => {
                 )}
               </Link>
             ))}
-            <Button 
-              variant="lime" 
-              size="sm"
-              asChild
-              className="hover-glow focus-lime"
-            >
-              <Link to={`/${currentLanguage}/contact`}>{t('nav.contact')}</Link>
-            </Button>
           </div>
 
           {/* Language Switcher & Mobile Navigation */}
@@ -92,13 +84,6 @@ const Navigation = () => {
                     {item.label}
                   </Link>
                 ))}
-                <Button 
-                  variant="lime" 
-                  asChild 
-                  className="mt-4 hover-glow"
-                >
-                  <Link to={`/${currentLanguage}/contact`} onClick={() => setIsOpen(false)}>{t('nav.contact')}</Link>
-                </Button>
               </nav>
             </SheetContent>
           </Sheet>

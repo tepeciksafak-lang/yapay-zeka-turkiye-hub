@@ -6,6 +6,8 @@ export type HeroLang = 'tr' | 'de' | 'en';
 
 interface HeroProps {
   locale?: HeroLang;
+  modalOpen?: boolean;
+  onModalOpenChange?: (open: boolean) => void;
 }
 
 // Hero content - using the same translations from LanguageContext
@@ -33,7 +35,7 @@ const heroCopy = {
   }
 };
 
-export function Hero({ locale }: HeroProps) {
+export function Hero({ locale, modalOpen, onModalOpenChange }: HeroProps) {
   // For React Router context (src/ pages)
   const languageContext = useLanguage?.();
   
@@ -42,10 +44,9 @@ export function Hero({ locale }: HeroProps) {
   const copy = heroCopy[currentLocale];
 
   const handleCtaClick = () => {
-    // Scroll to the start section or open modal
-    const startSection = document.getElementById('basla');
-    if (startSection) {
-      startSection.scrollIntoView({ behavior: 'smooth' });
+    // Open the QuickAnalysisModal
+    if (onModalOpenChange) {
+      onModalOpenChange(true);
     }
   };
 
