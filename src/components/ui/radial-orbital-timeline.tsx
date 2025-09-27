@@ -51,7 +51,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
     if (width < 768) {
       // Mobile - increased height for card space  
       return {
-        radius: Math.min(Math.max(180, width * 0.32), 240),
+        radius: Math.min(Math.max(162, width * 0.29), 216),
         nodeSize: 32,
         iconSize: 14,
         cardWidth: Math.min(360, width - 32),
