@@ -8,9 +8,9 @@ const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
-    { code: "tr", name: "Türkçe", flag: "🇹🇷" },
-    { code: "de", name: "Deutsch", flag: "🇩🇪" },
-    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "tr", name: "Türkçe" },
+    { code: "de", name: "Deutsch" },
+    { code: "en", name: "English" },
   ];
 
   const currentLang = languages.find(lang => lang.code === currentLanguage);
@@ -29,7 +29,6 @@ const LanguageSwitcher = () => {
         className="flex items-center space-x-2 text-sm"
       >
         <Globe className="h-4 w-4" />
-        <span>{currentLang?.flag}</span>
         <span className="hidden sm:inline">{currentLang?.code.toUpperCase()}</span>
         <ChevronDown className="h-3 w-3" />
       </Button>
@@ -47,7 +46,6 @@ const LanguageSwitcher = () => {
                 onClick={() => handleLanguageChange(language.code)}
                 className="flex w-full items-center space-x-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                <span>{language.flag}</span>
                 <span>{language.name}</span>
               </button>
             ))}
