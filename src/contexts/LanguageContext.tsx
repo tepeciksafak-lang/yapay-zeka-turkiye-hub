@@ -147,6 +147,15 @@ const translations = {
     'hero.cta.primary': 'Şimdi ücretsiz başlayın',
      
     'hero.social.proof': '100+ B2B ekip için pratik otomasyon kurguladık.',
+
+    // Cases Page
+    'cases.title': 'Başarı Hikayeleri',
+    'cases.subtitle': 'Yapay zeka otomasyonu ile büyüyen şirketlerden gerçek sonuçlar',
+    'cases.cta': 'Danışmanlık alın',
+    'cases.final.title': 'Kendi başarı hikayenizi yazmaya hazır mısınız?',
+    'cases.final.subtitle': 'Bu müşteriler gibi siz de işletmenizi yapay zeka ve otomasyon ile bir sonraki seviyeye taşıyabilirsiniz.',
+    'cases.final.cta1': 'Şimdi ücretsiz başlayın',
+    'cases.final.cta2': 'Demo talep edin',
   },
   en: {
     // Navigation
