@@ -157,20 +157,38 @@ const translations = {
     'cases.final.cta1': 'Ücretsiz Danışmanlık',
     'cases.final.cta2': 'Demo Talep Et',
 
+    // Solutions Page
+    'solutions.hero.title1': 'İşletmenizi büyütmek için',
+    'solutions.hero.title2': 'hangi aşamada desteğe ihtiyacınız var?',
+
     // Footer
     'footer.cta': 'İşletmenizi dönüştürmeye hazır mısınız?',
-    'footer.cta.button': 'Ücretsiz Danışmanlık Alın',
+    'footer.cta.button': 'Şimdi ücretsiz başlayın',
     'footer.menu.home': 'Anasayfa',
     'footer.menu.solutions': 'Çözümler', 
     'footer.menu.cases': 'Vaka Çalışmaları',
-    'footer.menu.free': 'Ücretsiz İçerikler',
-    'footer.menu.blog': 'Blog',
     'footer.contact.title': 'İletişim',
     'footer.contact.text': 'Yapay zeka çözümünüz için bizimle iletişime geçin',
     'footer.copyright': '© 2024 Pratik Yapay Zeka. Tüm hakları saklıdır.',
     'footer.description': 'Şirketinizi yapay zeka danışmanlığı ve otomasyon çözümleri ile geleceğe hazırlıyoruz.',
     'footer.privacy': 'Gizlilik Politikası',
     'footer.terms': 'Kullanım Koşulları',
+
+    // Modal translations
+    'modal.title': 'Ücretsiz Hızlı Analiz',
+    'modal.name': 'İsim',
+    'modal.name.placeholder': 'Adınız ve Soyadınız',
+    'modal.email': 'E-posta',
+    'modal.email.placeholder': 'ornek@firma.com',
+    'modal.company': 'Şirket',
+    'modal.company.placeholder': 'Şirket adınız',
+    'modal.message': 'Hangi süreçleri otomatikleştirmek istiyorsunuz?',
+    'modal.message.placeholder': 'Satış, pazarlama, müşteri hizmetleri vb. - hangi alanda yardıma ihtiyacınız var?',
+    'modal.cancel': 'İptal',
+    'modal.submit': 'Analiz Talep Et',
+    'modal.submitting': 'Gönderiliyor...',
+    'modal.success': 'Teşekkürler! En kısa sürede sizinle iletişime geçeceğiz.',
+    'modal.description': 'Formu gönderdikten sonra, 24 saat içinde kişiselleştirilmiş bir analiz raporu oluşturup e-posta ile size göndereceğiz.',
   },
   en: {
     // Navigation
