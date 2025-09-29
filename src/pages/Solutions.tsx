@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useModal } from "@/contexts/ModalContext";
 import { SEO } from "@/components/SEO";
-import SolutionSection from "@/components/SolutionSection";
+import SolutionCardsSection from "@/components/SolutionCardsSection";
 
 const Solutions = () => {
   const { t } = useLanguage();
@@ -53,7 +53,7 @@ const Solutions = () => {
       </section>
       
       {/* Solution Cards Section */}
-      <SolutionSection />
+      <SolutionCardsSection />
       
     </>
   );
