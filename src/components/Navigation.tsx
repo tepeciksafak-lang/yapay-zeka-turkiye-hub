@@ -17,9 +17,8 @@ const Navigation = () => {
     { href: `/${currentLanguage}`, label: t('nav.home') },
     { href: `/${currentLanguage}/cozumler`, label: t('nav.solutions') },
     { href: `/${currentLanguage}/vaka-calismalari`, label: t('nav.cases') },
-    // Temporarily hide these items - not deleted for future use
-    // { href: `/${currentLanguage}/ucretsiz-icerikler`, label: t('nav.freeContent') },
-    // { href: `/${currentLanguage}/blog`, label: t('nav.blog') },
+    { href: `/${currentLanguage}/ucretsiz-icerikler`, label: t('nav.freeContent') },
+    { href: `/${currentLanguage}/blog`, label: t('nav.blog') },
   ];
 
   const isActiveLink = (href: string) => {

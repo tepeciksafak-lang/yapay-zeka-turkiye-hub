@@ -28,15 +28,15 @@ export async function generateMetadata({
   const { locale } = params
   
   const titles = {
-    tr: 'Pratik Yapay Zeka | Satış ve Pazarlama Otomasyonu',
-    de: 'Praktische KI | Vertriebs- und Marketing-Automatisierung',
-    en: 'Practical AI | Sales and Marketing Automation'
+    tr: 'AI Otomasyon Platformu | Yapay Zeka ile İşletmenizi Büyütün',
+    de: 'KI-Automatisierungsplattform | Skalieren Sie Ihr Unternehmen mit KI',
+    en: 'AI Automation Platform | Scale Your Business with Artificial Intelligence'
   }
   
   const descriptions = {
-    tr: 'Lead\'den toplantıya kadar uçtan uca AI otomasyonları. Outbound & inbound satış, içerik üretimi, sosyal medya yönetimi ve 7/24 chatbot desteği ile satışlarınızı artırın.',
-    de: 'End-to-End-KI-Automatisierungen von Lead bis Meeting. Steigern Sie Ihre Verkäufe durch Outbound & Inbound-Vertrieb, Content-Erstellung, Social Media Management und 24/7-Chatbot-Support.',
-    en: 'End-to-end AI automations from lead to meeting. Boost your sales with outbound & inbound sales, content creation, social media management, and 24/7 chatbot support.'
+    tr: 'Yapay zeka ve otomasyon ile satış süreçlerinizi optimize edin. Outbound satış, pazarlama otomasyonu ve müşteri iletişimi çözümleri.',
+    de: 'Optimieren Sie Ihre Verkaufsprozesse mit KI und Automatisierung. Lösungen für Outbound-Vertrieb, Marketing-Automatisierung und Kundenkommunikation.',
+    en: 'Optimize your sales processes with AI and automation. Solutions for outbound sales, marketing automation, and customer communication.'
   }
 
   const title = titles[locale as keyof typeof titles] || titles.tr

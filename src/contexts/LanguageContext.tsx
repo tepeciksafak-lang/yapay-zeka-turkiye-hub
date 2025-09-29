@@ -94,8 +94,7 @@ const translations = {
     'footer.services.consulting': 'Beratung und Training',
     'footer.contact.text': 'Sprechen Sie uns an für Ihre KI-Lösung',
     'footer.copyright': '© 2024 Pratik Yapay Zeka. Alle Rechte vorbehalten.',
-    'footer.privacy': 'Datenschutz',
-    'footer.terms': 'Nutzungsbedingungen',
+    'footer.description': 'Wir bereiten Ihr Unternehmen mit KI-Beratung und Automatisierungslösungen auf die Zukunft vor.',
 
     // Modal translations
     'modal.title': 'Kostenlose Schnellanalyse',
@@ -148,23 +147,6 @@ const translations = {
     'hero.cta.primary': 'Şimdi ücretsiz başlayın',
      
     'hero.social.proof': '100+ B2B ekip için pratik otomasyon kurguladık.',
-
-    // Footer
-    'footer.cta': 'İşletmenizi dönüştürmeye hazır mısınız?',
-    'footer.cta.button': 'Ücretsiz danışmanlık',
-    'footer.menu.home': 'Ana Sayfa',
-    'footer.menu.solutions': 'Çözümler', 
-    'footer.menu.cases': 'Başarı Hikayeleri',
-    'footer.services.automation': 'Otomasyon',
-    'footer.services.analytics': 'Veri Analizi',
-    'footer.services.ai': 'Yapay Zeka İş Alanları',
-    'footer.services.consulting': 'Danışmanlık ve Eğitim',
-    'footer.contact.title': 'İletişim',
-    'footer.contact.text': 'Yapay zeka çözümünüz için bizimle iletişime geçin',
-    'footer.copyright': '© 2024 Pratik Yapay Zeka. Tüm hakları saklıdır.',
-    'footer.description': 'İşletmenizi yapay zeka danışmanlığı ve otomasyon çözümleri ile geleceğe hazırlıyoruz.',
-    'footer.privacy': 'Gizlilik Politikası',
-    'footer.terms': 'Kullanım Şartları',
   },
   en: {
     // Navigation

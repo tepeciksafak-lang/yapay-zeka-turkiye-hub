@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import ConnectedTimeline from "@/components/ConnectedTimeline";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Link } from "react-router-dom";
 
 const VakaCalismalari = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("Hepsi");
@@ -175,27 +174,21 @@ const VakaCalismalari = () => {
         
         <div className="container mx-auto px-4 relative">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              Kendi başarı hikayenizi yazmaya hazır mısınız?
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+              {t('cases.final.title')}
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Bu müşteriler gibi siz de işletmenizi yapay zeka ve otomasyon ile bir sonraki seviyeye taşıyabilirsiniz.
+              {t('cases.final.subtitle')}
             </p>
-            <div className="pt-8">
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-lg font-semibold rounded-xl transition-colors duration-200"
-                asChild
-              >
-                <Link to="/tr/contact">
-                  Şimdi ücretsiz başlayın
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="hover-glow">
+                {t('cases.final.cta1')}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="lg" className="hover-glow-purple">
+                {t('cases.final.cta2')}
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground pt-4">
-              100+ B2B ekip için pratik otomasyon kurguladık.
-            </p>
           </div>
         </div>
       </section>
