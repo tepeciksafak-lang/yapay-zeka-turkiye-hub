@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide Lovable badge globally */
+#lovable-badge {
+  display: none !important;
+}
+
 /* Carbon Mono + Lime Pop Design System 
 All colors MUST be HSL for consistency and theming support.
 */
