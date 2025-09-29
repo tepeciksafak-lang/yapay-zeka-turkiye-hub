@@ -38,16 +38,6 @@ const Footer = () => {
                   {t('footer.menu.cases')}
                 </Link>
               </li>
-              <li>
-                <Link to="/ucretsiz-icerikler" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                  {t('footer.menu.free')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                  {t('footer.menu.blog')}
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -97,10 +87,10 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Link to="/gizlilik" className="text-sm text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                Datenschutz
+                {t('footer.privacy')}
               </Link>
               <Link to="/kullanim-kosullari" className="text-sm text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                Nutzungsbedingungen
+                {t('footer.terms')}
               </Link>
             </div>
           </div>
