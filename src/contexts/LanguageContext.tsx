@@ -148,6 +148,15 @@ const translations = {
      
     'hero.social.proof': '100+ B2B ekip için pratik otomasyon kurguladık.',
 
+    // Cases
+    'cases.title': 'Gerçek Sonuçlar. Yapay Zeka ve Otomasyon ile Büyüyen Markalar.',
+    'cases.subtitle': 'Aşağıdaki vakalarda kurulum sonrası günler içinde ölçülebilir başarılar görüyorsunuz. Tıklayıp her vakanın detaylarını açın.',
+    'cases.cta': 'Danışmanlık Al',
+    'cases.final.title': 'Kendi başarı hikayenizi yazmaya hazır mısınız?',
+    'cases.final.subtitle': 'Bu müşteriler gibi siz de şirketinizi yapay zeka ve otomasyon ile bir sonraki seviyeye taşıyabilirsiniz.',
+    'cases.final.cta1': 'Ücretsiz Danışmanlık',
+    'cases.final.cta2': 'Demo Talep Et',
+
     // Footer
     'footer.cta': 'İşletmenizi dönüştürmeye hazır mısınız?',
     'footer.cta.button': 'Ücretsiz Danışmanlık Alın',
