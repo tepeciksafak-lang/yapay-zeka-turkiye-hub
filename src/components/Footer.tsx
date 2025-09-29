@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useModal } from "@/contexts/ModalContext";
 
 const Footer = () => {
   const { t } = useLanguage();
+  const { openModal } = useModal();
 
   return (
     <footer className="border-t border-border bg-bg-2">
@@ -38,16 +40,6 @@ const Footer = () => {
                   {t('footer.menu.cases')}
                 </Link>
               </li>
-              <li>
-                <Link to="/ucretsiz-icerikler" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                  {t('footer.menu.free')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                  {t('footer.menu.blog')}
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -57,8 +49,8 @@ const Footer = () => {
               <p className="text-sm text-text-muted">
                 {t('footer.contact.text')}
               </p>
-              <Button variant="lime" asChild className="w-full hover-glow">
-                <Link to="/">{t('footer.cta.button')}</Link>
+              <Button variant="lime" className="w-full hover-glow" onClick={openModal}>
+                {t('footer.cta.button')}
               </Button>
             </div>
           </div>

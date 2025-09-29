@@ -3,12 +3,14 @@ import { ArrowRight, TrendingUp, Clock, Target, Zap } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import ConnectedTimeline from "@/components/ConnectedTimeline";
+import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const VakaCalismalari = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("Hepsi");
   const [autoExpandCase, setAutoExpandCase] = useState<number | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
   const { t } = useLanguage();
   
   // Exact copy data with normalization (â/Â → a/A)
@@ -149,6 +151,7 @@ const VakaCalismalari = () => {
                 variant="outline" 
                 size="lg" 
                 className="border-[#A3E635] text-[#A3E635] hover:bg-[#A3E635]/10"
+                onClick={() => setModalOpen(true)}
               >
                 {t('cases.cta')}
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -181,17 +184,19 @@ const VakaCalismalari = () => {
               {t('cases.final.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="hover-glow">
+              <Button size="lg" className="hover-glow" onClick={() => setModalOpen(true)}>
                 {t('cases.final.cta1')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" size="lg" className="hover-glow-purple">
+              <Button variant="outline" size="lg" className="hover-glow-purple" onClick={() => setModalOpen(true)}>
                 {t('cases.final.cta2')}
               </Button>
             </div>
           </div>
         </div>
       </section>
+
+      <QuickAnalysisModal open={modalOpen} onOpenChange={setModalOpen} />
     </div>
   );
 };
