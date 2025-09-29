@@ -39,8 +39,8 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <AnalyticsWrapper>
-            <LanguageProvider>
+          <LanguageProvider>
+            <AnalyticsWrapper>
             <div className="flex min-h-screen flex-col">
               <Routes>
                 {/* Redirect root to Turkish */}
@@ -191,9 +191,9 @@ const App = () => (
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
+            </AnalyticsWrapper>
           </LanguageProvider>
-        </AnalyticsWrapper>
-      </BrowserRouter>
+        </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>
