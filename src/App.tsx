@@ -209,11 +209,11 @@ function App() {
           <Sonner />
           <BrowserRouter>
             <LanguageProvider>
-              <ModalProvider>
-                <AnalyticsWrapper>
+              <AnalyticsWrapper>
+                <ModalProvider>
                   <AppWithModal />
-                </AnalyticsWrapper>
-              </ModalProvider>
+                </ModalProvider>
+              </AnalyticsWrapper>
             </LanguageProvider>
           </BrowserRouter>
         </TooltipProvider>
