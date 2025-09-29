@@ -147,6 +147,21 @@ const translations = {
     'hero.cta.primary': 'Şimdi ücretsiz başlayın',
      
     'hero.social.proof': '100+ B2B ekip için pratik otomasyon kurguladık.',
+
+    // Footer
+    'footer.cta': 'İşletmenizi dönüştürmeye hazır mısınız?',
+    'footer.cta.button': 'Ücretsiz Danışmanlık Alın',
+    'footer.menu.home': 'Anasayfa',
+    'footer.menu.solutions': 'Çözümler', 
+    'footer.menu.cases': 'Vaka Çalışmaları',
+    'footer.menu.free': 'Ücretsiz İçerikler',
+    'footer.menu.blog': 'Blog',
+    'footer.contact.title': 'İletişim',
+    'footer.contact.text': 'Yapay zeka çözümünüz için bizimle iletişime geçin',
+    'footer.copyright': '© 2024 Pratik Yapay Zeka. Tüm hakları saklıdır.',
+    'footer.description': 'Şirketinizi yapay zeka danışmanlığı ve otomasyon çözümleri ile geleceğe hazırlıyoruz.',
+    'footer.privacy': 'Gizlilik Politikası',
+    'footer.terms': 'Kullanım Koşulları',
   },
   en: {
     // Navigation
