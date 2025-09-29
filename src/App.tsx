@@ -110,24 +110,8 @@ const App = () => (
                     <Footer />
                   </LanguageWrapper>
                 } />
-                <Route path="/:lang/otomasyon" element={
-                  <LanguageWrapper>
-                    <Navigation />
-                    <main className="flex-1">
-                      <Otomasyon />
-                    </main>
-                    <Footer />
-                  </LanguageWrapper>
-                } />
-                <Route path="/:lang/veri-analizi" element={
-                  <LanguageWrapper>
-                    <Navigation />
-                    <main className="flex-1">
-                      <VeriAnalizi />
-                    </main>
-                    <Footer />
-                  </LanguageWrapper>
-                } />
+                
+                {/* Clean routes - removed unused service routes */}
                 <Route path="/:lang/vaka-calismalari" element={
                   <LanguageWrapper>
                     <Navigation />
@@ -181,8 +165,6 @@ const App = () => (
                 <Route path="/satis-otomasyonu-demo" element={<Navigate to="/tr/satis-otomasyonu-demo" replace />} />
                 <Route path="/services-5" element={<Navigate to="/tr/services-5" replace />} />
                 <Route path="/hakkimda" element={<Navigate to="/tr/hakkimda" replace />} />
-                <Route path="/otomasyon" element={<Navigate to="/tr/otomasyon" replace />} />
-                <Route path="/veri-analizi" element={<Navigate to="/tr/veri-analizi" replace />} />
                 <Route path="/vaka-calismalari" element={<Navigate to="/tr/vaka-calismalari" replace />} />
                 <Route path="/blog" element={<Navigate to="/tr/blog" replace />} />
                 <Route path="/blog/:id" element={<Navigate to="/tr/blog" replace />} />

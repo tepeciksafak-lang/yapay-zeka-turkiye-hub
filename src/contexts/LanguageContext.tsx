@@ -159,6 +159,7 @@ const translations = {
     'footer.services.analytics': 'Veri Analizi',
     'footer.services.ai': 'Yapay Zeka İş Alanları',
     'footer.services.consulting': 'Danışmanlık ve Eğitim',
+    'footer.contact.title': 'İletişim',
     'footer.contact.text': 'Yapay zeka çözümünüz için bizimle iletişime geçin',
     'footer.copyright': '© 2024 Pratik Yapay Zeka. Tüm hakları saklıdır.',
     'footer.description': 'İşletmenizi yapay zeka danışmanlığı ve otomasyon çözümleri ile geleceğe hazırlıyoruz.',

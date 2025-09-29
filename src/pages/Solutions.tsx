@@ -122,7 +122,7 @@ const Solutions = () => {
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-lg font-semibold rounded-xl transition-colors duration-200"
                 asChild
               >
-                <Link to={`/${currentLanguage}/contact`}>
+                <Link to="/tr">
                   {solutionsHero.ctaPrimary}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -133,8 +133,8 @@ const Solutions = () => {
                 className="px-12 py-6 text-lg font-semibold rounded-xl"
                 asChild
               >
-                <Link to={`/${currentLanguage}/contact`}>
-                  İletişime geçin
+                  <Link to="/tr">
+                    İletişime geçin
                 </Link>
               </Button>
             </div>
@@ -159,7 +159,7 @@ const Solutions = () => {
                   className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-lg font-semibold rounded-xl transition-colors duration-200"
                   asChild
                 >
-                  <Link to={`/${currentLanguage}/contact`}>
+                  <Link to="/tr">
                     Şimdi ücretsiz başlayın
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
