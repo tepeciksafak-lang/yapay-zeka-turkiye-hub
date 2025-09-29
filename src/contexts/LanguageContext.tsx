@@ -151,15 +151,15 @@ const translations = {
     // Cases
     'cases.title': 'Gerçek Sonuçlar. Yapay Zeka ve Otomasyon ile Büyüyen Markalar.',
     'cases.subtitle': 'Aşağıdaki vakalarda kurulum sonrası günler içinde ölçülebilir başarılar görüyorsunuz. Tıklayıp her vakanın detaylarını açın.',
-    'cases.cta': 'Şimdi ücretsiz başlayın',
+    'cases.cta': 'Danışmanlık Al',
     'cases.final.title': 'Kendi başarı hikayenizi yazmaya hazır mısınız?',
     'cases.final.subtitle': 'Bu müşteriler gibi siz de şirketinizi yapay zeka ve otomasyon ile bir sonraki seviyeye taşıyabilirsiniz.',
-    'cases.final.cta1': 'Şimdi ücretsiz başlayın',
-    'cases.final.cta2': 'Şimdi ücretsiz başlayın',
+    'cases.final.cta1': 'Ücretsiz Danışmanlık',
+    'cases.final.cta2': 'Demo Talep Et',
 
     // Footer
     'footer.cta': 'İşletmenizi dönüştürmeye hazır mısınız?',
-    'footer.cta.button': 'Şimdi ücretsiz başlayın',
+    'footer.cta.button': 'Ücretsiz Danışmanlık Alın',
     'footer.menu.home': 'Anasayfa',
     'footer.menu.solutions': 'Çözümler', 
     'footer.menu.cases': 'Vaka Çalışmaları',
