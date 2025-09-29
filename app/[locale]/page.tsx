@@ -16,15 +16,15 @@ export async function generateMetadata({
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
   
   const titles = {
-    tr: 'AI Otomasyon Platformu | Yapay Zeka ile İşletmenizi Büyütün',
-    de: 'KI-Automatisierungsplattform | Skalieren Sie Ihr Unternehmen mit KI',
-    en: 'AI Automation Platform | Scale Your Business with Artificial Intelligence'
+    tr: 'Pratik Yapay Zeka | Satış ve Pazarlama Otomasyonu',
+    de: 'Praktische KI | Vertriebs- und Marketing-Automatisierung', 
+    en: 'Practical AI | Sales and Marketing Automation'
   }
   
   const descriptions = {
-    tr: 'Yapay zeka destekli satış otomasyonu, pazarlama otomasyonu ve müşteri iletişimi çözümleri ile işletmenizi büyütün. 100+ B2B ekibinin tercihi.',
-    de: 'Skalieren Sie Ihr Unternehmen mit KI-gestützten Vertriebsautomatisierungen, Marketing-Automatisierung und Kundenkommunikationslösungen. Vertrauen von 100+ B2B-Teams.',
-    en: 'Scale your business with AI-powered sales automation, marketing automation, and customer communication solutions. Trusted by 100+ B2B teams.'
+    tr: 'Lead\'den toplantıya kadar uçtan uca AI otomasyonları. Günde 500+ kişiselleştirilmiş mesaj, SEO skorunda %85+ artış ve %40 müşteri memnuniyeti artışı garantisi.',
+    de: 'End-to-End-KI-Automatisierungen von Lead bis Meeting. Garantiert 500+ personalisierte Nachrichten täglich, 85%+ SEO-Score-Steigerung und 40% höhere Kundenzufriedenheit.',
+    en: 'End-to-end AI automations from lead to meeting. Guaranteed 500+ personalized messages daily, 85%+ SEO score improvement, and 40% customer satisfaction increase.'
   }
 
   const title = titles[locale as keyof typeof titles] || titles.tr
