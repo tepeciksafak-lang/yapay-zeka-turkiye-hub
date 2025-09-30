@@ -18,8 +18,11 @@ const Solutions = () => {
         description="Lead üretiminden müşteri ilişkilerine kadar tüm hattınızı yapay zekâ ve otomasyonla kuruyoruz. Daha fazla müşteri, daha düşük maliyet, sürdürülebilir büyüme."
       />
       
+      {/* Solution Cards Section */}
+      <SolutionCardsSection />
+      
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      <section className="relative py-24 flex items-center justify-center">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
         <div className="absolute inset-0 bg-grid-pattern opacity-30" />
@@ -29,12 +32,12 @@ const Solutions = () => {
           <div className="max-w-5xl mx-auto space-y-8">
             {/* Main Headlines */}
             <div className="space-y-4">
-              <h1 className="group headline text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.25] md:leading-[1.2]">
+              <h2 className="group headline text-3xl md:text-5xl lg:text-6xl text-foreground leading-[1.25] md:leading-[1.2]">
                 <span className="block">{t('solutions.hero.title1')}</span>
                 <span className="block text-primary pb-1 relative after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 after:origin-right after:transition-transform after:duration-1000 after:ease-out group-hover:after:scale-x-100 group-hover:after:origin-left">
                   {t('solutions.hero.title2')}
                 </span>
-              </h1>
+              </h2>
             </div>
             
             {/* CTA Button */}
@@ -51,9 +54,6 @@ const Solutions = () => {
           </div>
         </div>
       </section>
-      
-      {/* Solution Cards Section */}
-      <SolutionCardsSection />
       
     </>
   );

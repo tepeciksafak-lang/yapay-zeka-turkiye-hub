@@ -5,11 +5,13 @@ import { Badge } from "@/components/ui/badge";
 import ConnectedTimeline from "@/components/ConnectedTimeline";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useModal } from "@/contexts/ModalContext";
 
 const VakaCalismalari = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("Hepsi");
   const [autoExpandCase, setAutoExpandCase] = useState<number | null>(null);
   const { t } = useLanguage();
+  const { openQuickAnalysis } = useModal();
   
   // Exact copy data with normalization (â/Â → a/A)
   const caseStudies = [
@@ -149,8 +151,9 @@ const VakaCalismalari = () => {
                 variant="outline" 
                 size="lg" 
                 className="border-[#A3E635] text-[#A3E635] hover:bg-[#A3E635]/10"
+                onClick={openQuickAnalysis}
               >
-                {t('cases.cta')}
+                {t('hero.cta.primary')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -181,12 +184,9 @@ const VakaCalismalari = () => {
               {t('cases.final.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="hover-glow">
-                {t('cases.final.cta1')}
+              <Button size="lg" className="hover-glow" onClick={openQuickAnalysis}>
+                {t('hero.cta.primary')}
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="lg" className="hover-glow-purple">
-                {t('cases.final.cta2')}
               </Button>
             </div>
           </div>
