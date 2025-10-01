@@ -146,16 +146,6 @@ const VakaCalismalari = () => {
               <p className="text-lg lg:text-xl mb-8" style={{ color: '#94A3B8' }}>
                 {t('cases.subtitle')}
               </p>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-[#A3E635] text-[#A3E635] hover:bg-[#A3E635]/10"
-                onClick={openQuickAnalysis}
-              >
-                {t('hero.cta.primary')}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </div>
           </div>
         </div>
