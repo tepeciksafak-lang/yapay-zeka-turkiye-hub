@@ -40,6 +40,28 @@ const AppWithModal = () => {
           {/* Redirect root to Turkish */}
           <Route path="/" element={<Navigate to="/tr" replace />} />
           
+          {/* German Routes */}
+          <Route path="/de" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Index />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          {/* English Routes */}
+          <Route path="/en" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Index />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
           {/* Turkish Routes */}
           <Route path="/tr" element={
             <LanguageWrapper>
