@@ -16,7 +16,7 @@ const glowColors = {
   red: "shadow-red-500/20 border-red-500/20 hover:shadow-red-500/40",
   yellow: "shadow-yellow-500/20 border-yellow-500/20 hover:shadow-yellow-500/40",
   cyan: "shadow-cyan-500/20 border-cyan-500/20 hover:shadow-cyan-500/40",
-  lime: "border-border/20 hover:shadow-lg"
+  lime: "shadow-lime-500/20 border-lime-500/20 hover:shadow-lime-500/40"
 };
 
 const glowHues = {
