@@ -22,7 +22,7 @@ export default function SolutionCardsSection() {
       content: t('timeline.step2.description'),
       category: "Marketing",
       icon: Megaphone,
-      glowColor: "blue" as const,
+      glowColor: "lime" as const,
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ export default function SolutionCardsSection() {
       content: t('timeline.step3.description'),
       category: "Sales & CRM",
       icon: Database,
-      glowColor: "purple" as const,
+      glowColor: "lime" as const,
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ export default function SolutionCardsSection() {
       content: t('timeline.step4.description'),
       category: "Customer Success",
       icon: Handshake,
-      glowColor: "green" as const,
+      glowColor: "lime" as const,
     },
     {
       id: 5,
@@ -46,7 +46,7 @@ export default function SolutionCardsSection() {
       content: t('timeline.step5.description'),
       category: "Conversion Optimization",
       icon: FlaskConical,
-      glowColor: "cyan" as const,
+      glowColor: "lime" as const,
     }
   ] : [
     {
@@ -72,7 +72,7 @@ export default function SolutionCardsSection() {
 • Reklam videolari ve tanitim videolari`,
       category: "Marketing",
       icon: Megaphone,
-      glowColor: "blue" as const,
+      glowColor: "lime" as const,
     },
     {
       id: 3,
@@ -84,7 +84,7 @@ export default function SolutionCardsSection() {
 • Satıcılarınızın müşteri kazanma oranını yükseltin`,
       category: "Sales & CRM",
       icon: Database,
-      glowColor: "purple" as const,
+      glowColor: "lime" as const,
     },
     {
       id: 4,
@@ -95,7 +95,7 @@ export default function SolutionCardsSection() {
 • Upsell & cross-sell sistemleriyle mevcut müşterilerden daha fazla değer yaratın`,
       category: "Customer Success",
       icon: Handshake,
-      glowColor: "green" as const,
+      glowColor: "lime" as const,
     },
     {
       id: 5,
@@ -107,7 +107,7 @@ export default function SolutionCardsSection() {
 • Instagram chatbot: vitrininizde anında ilgilenen bir satış temsilcisi gibi`,
       category: "Conversion Optimization",
       icon: FlaskConical,
-      glowColor: "cyan" as const,
+      glowColor: "lime" as const,
     }
   ];
 
