@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 
 const YapayZekaIsAlanlari = () => {
   return (
-    <main className="min-h-screen">
+    <>
+      <SEO
+        title="Yapay Zeka İş Alanları - Satış & Pazarlama Otomasyonu | Pratik Yapay Zeka"
+        description="AI ile iş süreçlerinizi dönüştürün: Satış otomasyonu, pazarlama kampanyaları, müşteri analizi. Dijital dönüşümünüzü hızlandırın."
+      />
+      <main className="min-h-screen">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-background via-secondary/20 to-accent/10">
         <div className="container mx-auto px-4 lg:px-6">
@@ -133,6 +139,7 @@ const YapayZekaIsAlanlari = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 
