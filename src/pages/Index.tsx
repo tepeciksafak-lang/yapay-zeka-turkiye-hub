@@ -157,6 +157,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 max-w-2xl text-center">
             <h2 className="mb-4 text-3xl font-bold text-foreground">Success Stories</h2>
+            <p className="text-muted-foreground">
+              <a href="/tr/vaka-calismalari" className="text-primary hover:underline">Detaylı vaka çalışmalarımızı</a> inceleyin ve başarı hikayelerimizi keşfedin.
+            </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {cases.map((case_item, index) => (
@@ -176,6 +179,11 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="mt-12 text-center">
+            <p className="text-muted-foreground">
+              Daha fazla çözüm mü arıyorsunuz? <a href="/tr/otomasyon" className="text-primary hover:underline">Otomasyon hizmetlerimize</a>, <a href="/tr/pazarlama" className="text-primary hover:underline">pazarlama çözümlerimize</a> veya <a href="/tr/veri-analizi" className="text-primary hover:underline">veri analizi hizmetlerimize</a> göz atın.
+            </p>
           </div>
         </div>
       </section>

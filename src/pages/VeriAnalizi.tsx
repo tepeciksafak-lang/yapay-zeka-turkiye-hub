@@ -7,6 +7,7 @@ const VeriAnalizi = () => {
       <SEO 
         title="Veri Analizi | Pratik Yapay Zeka"
         description="Yapay Zeka ile gerçeklere dayalı kararlar alın. Müşteri kazanımınızı geliştirin, verileri toplayın ve analiz edin."
+        image="https://pratikyz.com/og-data-analysis.jpg"
       />
       <BreadcrumbSchema items={[
         { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
@@ -140,6 +141,11 @@ const VeriAnalizi = () => {
                 <button className="px-8 py-3 border border-border rounded-lg hover:bg-accent transition-colors">
                   Demo Görüşmesi
                 </button>
+              </div>
+              <div className="mt-8 text-muted-foreground">
+                <p>
+                  Daha fazlası için: <a href="/tr/otomasyon" className="text-primary hover:underline">Otomasyon Çözümleri</a>, <a href="/tr/pazarlama" className="text-primary hover:underline">Pazarlama Otomasyonu</a>, <a href="/tr/vaka-calismalari" className="text-primary hover:underline">Başarılı Projeler</a>
+                </p>
               </div>
             </section>
           </div>

@@ -7,6 +7,7 @@ const Otomasyon = () => {
       <SEO 
         title="Otomasyon | Pratik Yapay Zeka"
         description="İş hayatınızda değerli zamanınızı rutin görevlere mi harcıyorsunuz? Yapay zeka ile sosyal medya yönetimi ve rutin işleri otomatikleştirin."
+        image="https://pratikyz.com/og-automation.jpg"
       />
       <BreadcrumbSchema items={[
         { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
@@ -109,6 +110,11 @@ const Otomasyon = () => {
                 <button className="px-8 py-3 border border-border rounded-lg hover:bg-accent transition-colors">
                   Demo Talep Et
                 </button>
+              </div>
+              <div className="mt-8 text-muted-foreground">
+                <p>
+                  İlgili hizmetler: <a href="/tr/pazarlama" className="text-primary hover:underline">Pazarlama Otomasyonu</a>, <a href="/tr/veri-analizi" className="text-primary hover:underline">Veri Analizi</a>, <a href="/tr/vaka-calismalari" className="text-primary hover:underline">Başarı Hikayeleri</a>
+                </p>
               </div>
             </section>
           </div>

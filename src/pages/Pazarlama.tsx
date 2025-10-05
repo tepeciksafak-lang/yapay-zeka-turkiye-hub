@@ -9,6 +9,7 @@ const Pazarlama = () => {
       <SEO 
         title="Yapay Zeka Pazarlama Otomasyonu | Pratik Yapay Zeka"
         description="Yapay zeka destekli içerik pazarlaması ve sosyal medya otomasyonu. SEO uyumlu blog yazıları, kişiselleştirilmiş e-posta kampanyaları ve otomatik reklam optimizasyonu."
+        image="https://pratikyz.com/og-marketing.jpg"
       />
       <BreadcrumbSchema items={[
         { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
@@ -142,6 +143,11 @@ const Pazarlama = () => {
                     Satış Otomasyonu Hakkında Daha Fazla Bilgi Edinin
                   </Link>
                 </Button>
+              </div>
+              <div className="mt-8 text-muted-foreground">
+                <p>
+                  İlginizi çekebilir: <a href="/tr/otomasyon" className="text-primary hover:underline">Otomasyon</a>, <a href="/tr/veri-analizi" className="text-primary hover:underline">Veri Analizi</a>, <a href="/tr/vaka-calismalari" className="text-primary hover:underline">Vaka Çalışmaları</a>
+                </p>
               </div>
             </div>
 
