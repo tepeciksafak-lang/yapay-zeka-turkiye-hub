@@ -22,6 +22,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
 import { SEO } from "@/components/SEO";
+import { FAQSchema } from "@/components/FAQSchema";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Hero } from "@/components/hero/Hero";
 import AgitateDemo from "@/components/AgitateDemo";
@@ -137,6 +138,7 @@ const Index = () => {
         title="Pratik Yapay Zeka – Satış ve Pazarlama Otomasyonu"
         description="Lead'den toplantıya kadar uçtan uca AI otomasyonları. Outbound & inbound, içerik ve sosyal medya otomasyonu ile satışlarınızı artırın."
       />
+      <FAQSchema faqs={faqs} />
       
       {/* Hero Section */}
       <Hero modalOpen={modalOpen} onModalOpenChange={setModalOpen} />

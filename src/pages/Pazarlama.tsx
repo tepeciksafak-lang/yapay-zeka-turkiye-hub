@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const Pazarlama = () => {
   return (
@@ -9,6 +10,10 @@ const Pazarlama = () => {
         title="Yapay Zeka Pazarlama Otomasyonu | Pratik Yapay Zeka"
         description="Yapay zeka destekli içerik pazarlaması ve sosyal medya otomasyonu. SEO uyumlu blog yazıları, kişiselleştirilmiş e-posta kampanyaları ve otomatik reklam optimizasyonu."
       />
+      <BreadcrumbSchema items={[
+        { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
+        { name: "Pazarlama", url: "https://pratikyz.com/tr/pazarlama" }
+      ]} />
       <main className="min-h-screen">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-background via-secondary/20 to-accent/10">

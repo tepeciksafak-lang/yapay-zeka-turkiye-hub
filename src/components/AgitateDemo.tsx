@@ -17,7 +17,7 @@ export default function AgitateDemo() {
         t('agitate.option1.description')
       ],
       image: agitateAutomation,
-      imageAlt: 'Selber machen Option'
+      imageAlt: 'DIY KI-Integration - Eigenständige Implementierung von künstlicher Intelligenz im Unternehmen'
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ export default function AgitateDemo() {
         t('agitate.option2.description3')
       ],
       image: agitateAnalytics,
-      imageAlt: 'Internes Team Option'
+      imageAlt: 'Internes KI-Team aufbauen - Mitarbeiter für künstliche Intelligenz Projekte rekrutieren'
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ export default function AgitateDemo() {
         t('agitate.option3.description3')
       ],
       image: agitateSales,
-      imageAlt: 'Aufschieben Option'
+      imageAlt: 'KI-Implementierung aufschieben - Risiken des Abwartens bei künstlicher Intelligenz'
     }
   ] : [
     {
@@ -52,7 +52,7 @@ export default function AgitateDemo() {
         'Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji. Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir. Kendi yoğunluğunuz içinde buna vakit ayırabilir misiniz?'
       ],
       image: agitateAutomation,
-      imageAlt: 'Kendiniz yapın seçeneği'
+      imageAlt: 'DIY Yapay Zeka Otomasyonu - Kendi başınıza AI kurulum ve entegrasyon süreci'
     },
     {
       id: 2,
@@ -64,7 +64,7 @@ export default function AgitateDemo() {
         'İşe alım süreci bitmeyen kuyruk gibi: Hep beklersiniz, bir türlü ilerlemez.'
       ],
       image: agitateAnalytics,
-      imageAlt: 'İç ekip kurma seçeneği'
+      imageAlt: 'İç Ekip ile AI Entegrasyonu - Yapay zeka uzmanı işe alım ve takım kurma süreci'
     },
     {
       id: 3,
@@ -76,7 +76,7 @@ export default function AgitateDemo() {
         'Peki sizin iş modelinizin kopyalanması ne kadar sürer?'
       ],
       image: agitateSales,
-      imageAlt: 'Erteleme seçeneği'
+      imageAlt: 'Yapay Zeka Erteleme Riski - AI dönüşümünü geciktirmenin iş maliyeti'
     }
   ];
 

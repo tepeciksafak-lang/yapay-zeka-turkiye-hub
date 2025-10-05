@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Clock, Target, Zap } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Badge } from "@/components/ui/badge";
 import ConnectedTimeline from "@/components/ConnectedTimeline";
 import { useState, useEffect } from "react";
@@ -122,9 +123,13 @@ const VakaCalismalari = () => {
         title="Vaka Çalismalari - Basari Hikayeleri | Yapay Zeka Çözümleri"
         description="Car Studio AI, Acilsatis ve Salevium'un yapay zeka ve otomasyon ile elde ettigi basari hikayelerini kesfedin. Gerçek sonuçlar, somut veriler."
       />
+      <BreadcrumbSchema items={[
+        { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
+        { name: "Vaka Çalışmaları", url: "https://pratikyz.com/tr/vaka-calismalari" }
+      ]} />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden" style={{ 
+      <section className="relative overflow-hidden" style={{
         minHeight: '50vh', 
         backgroundColor: '#0B0F14',
         backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(163, 230, 53, 0.05) 0%, transparent 70%), url("data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23A3E635" fill-opacity="0.02"%3E%3Cpath d="m0 40l40-40h-40v40zm40 0v-40h-40l40 40z"/%3E%3C/g%3E%3C/svg%3E")'

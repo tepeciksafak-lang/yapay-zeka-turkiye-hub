@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const VeriAnalizi = () => {
   return (
@@ -7,6 +8,10 @@ const VeriAnalizi = () => {
         title="Veri Analizi | Pratik Yapay Zeka"
         description="Yapay Zeka ile gerçeklere dayalı kararlar alın. Müşteri kazanımınızı geliştirin, verileri toplayın ve analiz edin."
       />
+      <BreadcrumbSchema items={[
+        { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
+        { name: "Veri Analizi", url: "https://pratikyz.com/tr/veri-analizi" }
+      ]} />
       <main className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-16 max-w-6xl">
           <header className="text-center mb-16">

@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const Otomasyon = () => {
   return (
@@ -7,6 +8,10 @@ const Otomasyon = () => {
         title="Otomasyon | Pratik Yapay Zeka"
         description="İş hayatınızda değerli zamanınızı rutin görevlere mi harcıyorsunuz? Yapay zeka ile sosyal medya yönetimi ve rutin işleri otomatikleştirin."
       />
+      <BreadcrumbSchema items={[
+        { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
+        { name: "Otomasyon", url: "https://pratikyz.com/tr/otomasyon" }
+      ]} />
       <main className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-16 max-w-6xl">
           <header className="text-center mb-16">
