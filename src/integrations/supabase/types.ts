@@ -14,7 +14,78 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_posts: {
+        Row: {
+          author: string
+          author_bio: string | null
+          category: string
+          content: string
+          cover_image_alt: string | null
+          cover_image_url: string | null
+          created_at: string | null
+          date: string | null
+          excerpt: string
+          id: string
+          meta_description: string | null
+          meta_keywords: string[] | null
+          meta_title: string | null
+          og_image_url: string | null
+          published_at: string | null
+          read_time: number | null
+          slug: string
+          status: string | null
+          tags: string[] | null
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          author: string
+          author_bio?: string | null
+          category: string
+          content: string
+          cover_image_alt?: string | null
+          cover_image_url?: string | null
+          created_at?: string | null
+          date?: string | null
+          excerpt: string
+          id?: string
+          meta_description?: string | null
+          meta_keywords?: string[] | null
+          meta_title?: string | null
+          og_image_url?: string | null
+          published_at?: string | null
+          read_time?: number | null
+          slug: string
+          status?: string | null
+          tags?: string[] | null
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          author?: string
+          author_bio?: string | null
+          category?: string
+          content?: string
+          cover_image_alt?: string | null
+          cover_image_url?: string | null
+          created_at?: string | null
+          date?: string | null
+          excerpt?: string
+          id?: string
+          meta_description?: string | null
+          meta_keywords?: string[] | null
+          meta_title?: string | null
+          og_image_url?: string | null
+          published_at?: string | null
+          read_time?: number | null
+          slug?: string
+          status?: string | null
+          tags?: string[] | null
+          title?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
