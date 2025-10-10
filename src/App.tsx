@@ -26,6 +26,8 @@ import UcretsizIcerikler from "./pages/UcretsizIcerikler";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Solutions from "./pages/Solutions";
+import GizlilikPolitikasi from "./pages/GizlilikPolitikasi";
+import KullanimKosullari from "./pages/KullanimKosullari";
 
 const queryClient = new QueryClient();
 
@@ -201,6 +203,19 @@ const AppWithModal = () => {
                 <Services5 />
               </main>
               <Footer />
+            </LanguageWrapper>
+          } />
+          
+          {/* Legal Routes */}
+          <Route path="/tr/gizlilik" element={
+            <LanguageWrapper>
+              <GizlilikPolitikasi />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/tr/kullanim-kosullari" element={
+            <LanguageWrapper>
+              <KullanimKosullari />
             </LanguageWrapper>
           } />
 
