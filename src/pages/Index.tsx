@@ -77,6 +77,11 @@ const Index = () => {
       company: "Salevium",
       result: "İçerik üretimi: saatlerden dakikalara.",
       metric: "%90 zaman tasarrufu"
+    },
+    {
+      company: "ERPA Teknoloji",
+      result: "Avrupa pazarına AI destekli stratejik giriş.",
+      metric: "İlk ayda nitelikli görüşmeler"
     }
   ];
 
@@ -161,7 +166,7 @@ const Index = () => {
               <a href="/tr/vaka-calismalari" className="text-primary hover:underline">Detaylı vaka çalışmalarımızı</a> inceleyin ve başarı hikayelerimizi keşfedin.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {cases.map((case_item, index) => (
               <Card key={index} className="group transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                 <CardContent className="p-6">
@@ -170,7 +175,10 @@ const Index = () => {
                   <div className="flex items-center justify-between">
                     <Badge className="bg-primary/10 text-primary">{case_item.metric}</Badge>
                     <button 
-                      onClick={() => navigate(`/tr/vaka-calismalari#case-${index + 1}`)}
+                      onClick={() => {
+                        const caseMap: Record<number, number> = { 0: 2, 1: 1, 2: 3, 3: 4 };
+                        navigate(`/tr/vaka-calismalari#case-${caseMap[index]}`);
+                      }}
                       className="text-sm text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
                     >
                       Detaylar

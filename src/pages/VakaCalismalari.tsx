@@ -96,6 +96,39 @@ const VakaCalismalari = () => {
         "Içerik onay süresi 48 saatten 4 dakikaya düstü"
       ],
       alinti: "Siz de içerik üretimi veya sosyal medya stratejinizde benzer sorunlar yasiyor musunuz? Salevium için kurdugumuz bu otomatik sistemin sizin is modelinize nasil uygulanabilecegini birlikte kesfedebiliriz."
+    },
+    {
+      id: 4,
+      etiket: "Uluslararasi Pazarlama",
+      baslik: "ERPA Teknoloji",
+      ozet: "TOCHI markasiyla stadyum dijital ekran sistemlerinde Avrupa pazarina stratejik giris. AI destekli lead generation ve kisisellestirilmis iletisim kampanyasi.",
+      kpis: [
+        { label: "Hedef Pazar", value: "Avrupa Stadyumlari" },
+        { label: "Karar Verici Tipi", value: "4+ Pozisyon" },
+        { label: "Kampanya Süresi", value: "Ilk Ay" }
+      ],
+      problem: [
+        "Avrupa pazarinda stadyum isletmecilerine ulasmak",
+        "Dogru karar vericileri (Hospitality Director, Marketing Manager, etc.) tespit etmek",
+        "Her stadyuma özel kisisellestirilmis mesajlar olusturmak",
+        "Yüksek kaliteli lead'lere donüsmek",
+        "Uluslararasi iletisimde profesyonel ve güvenilir imaj"
+      ],
+      cozum: "Yapay zeka tabanli arastirma ile Avrupa genelindeki stadyum isletmecileri ve arena yoneticileri icin kapsamli bir veri tabani olusturuldu. Her karar vericinin pozisyonuna göre uyarlanmis, TOCHI'nin teknolojik üstünlüklerini vurgulayan kisa ve etkili e-posta metinleri hazirlandi. Otomasyon sistemiyle mesajlar gönderildi, yanitlar siniflandirildi ve satis ekibine yönlendirildi.",
+      uygulamaAsamalari: [
+        "Pazar ve Karar Verici Arastirmasi",
+        "Kisisellestirilmis E-posta Metinleri",
+        "Otomasyon ve Lead Yönetimi",
+        "Yanit Analizi ve Satis Transferi"
+      ],
+      sonuclar: [
+        "Ilk ayda birden fazla nitelikli görüsme planlandi",
+        "Sektor ortalamasinin üzerinde geri dönüs orani",
+        "Avrupa genelinde stadyum isletmecileriyle dogrudan iletisim kuruldu",
+        "Ölçeklenebilir ve veri odakli pazarlama altyapisi olusturuldu",
+        "Türk mühendisliginin Avrupa pazarinda görünürlügü artti"
+      ],
+      alinti: "Bu proje, TOCHI markasinin Avrupa pazarinda taninmasini ve stadyum isletmecileriyle stratejik iliskiler kurmasini sagladi. Otomasyon sayesinde ekip büyütmeden uluslararasi pazarlara açilabildik."
     }
   ];
 
@@ -121,7 +154,7 @@ const VakaCalismalari = () => {
     <div className="min-h-screen bg-background">
       <SEO 
         title="Vaka Çalismalari - Basari Hikayeleri | Yapay Zeka Çözümleri"
-        description="Car Studio AI, Acilsatis ve Salevium'un yapay zeka ve otomasyon ile elde ettigi basari hikayelerini kesfedin. Gerçek sonuçlar, somut veriler."
+        description="Car Studio AI, Acilsatis, Salevium ve ERPA Teknoloji'nin yapay zeka ve otomasyon ile elde ettigi basari hikayelerini kesfedin. Uluslararasi pazarlama, satis otomasyonu ve içerik üretiminde gerçek sonuçlar."
       />
       <BreadcrumbSchema items={[
         { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
