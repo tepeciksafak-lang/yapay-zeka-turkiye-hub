@@ -129,6 +129,43 @@ const VakaCalismalari = () => {
         "Türk mühendisliginin Avrupa pazarinda görünürlügü artti"
       ],
       alinti: "Bu proje, TOCHI markasinin Avrupa pazarinda taninmasini ve stadyum isletmecileriyle stratejik iliskiler kurmasini sagladi. Otomasyon sayesinde ekip büyütmeden uluslararasi pazarlara açilabildik."
+    },
+    {
+      id: 5,
+      etiket: "B2B Export & Distribütör Agi",
+      baslik: "Cemkimsan",
+      ozet: "1980'den beri su aritma ve denizcilik kimyasallari üreticisi Cemkimsan'in uluslararasi distribütör agini 20+ ülkede genisletme projesi. Veri odakli ve otomatik B2B lead generation.",
+      kpis: [
+        { label: "Hedef Ülke", value: "20+ Ülke" },
+        { label: "Dogrulanmis Distribütör", value: "1000+" },
+        { label: "Pilot Pazar", value: "Kuveyt" }
+      ],
+      problem: [
+        "Yeni ihracat pazarlarinda dogru distribütörleri bulmak",
+        "20+ ülkede su aritma ve kimya ithalatçilarini tespit etmek",
+        "Her ülkenin ticari ve kültürel özelliklerine uygun mesajlar olusturmak",
+        "Manuel arastirma ve iletisim süreçlerinin çok fazla zaman almasi",
+        "Uluslararasi B2B iletisimde profesyonel ve güvenilir görünmek",
+        "Distribütör kalitesini ve potansiyelini degerlendirmek"
+      ],
+      cozum: "Yapay zeka destekli pazar arastirmasi ile Körfez ülkeleri, Kuzey Afrika, Orta Asya ve Güneydogu Avrupa'daki su aritma kimyasallari distribütörleri için kapsamli bir veri tabani olusturuldu. Her ülkenin ticari yapisi, kültürel özellikleri ve sektör normlarini göz önünde bulundurarak kisisellestirilmis Ingilizce iletisim sablonlari hazirlandi. Otomatik takip sistemi, lead kalifikasyonu ve önceliklendirme yapildi.",
+      uygulamaAsamalari: [
+        "Ülke Bazli Pazar ve Hedef Firma Arastirmasi",
+        "Distribütör Veri Tabani Olusturma (1000+ Firma)",
+        "Kültürel ve Sektörel Mesaj Sablonlari",
+        "Otomatik Iletisim ve Takip Sistemi",
+        "Lead Kalifikasyonu ve Tier Siniflandirmasi (1-3)",
+        "Pilot Pazar Testi (Kuveyt)"
+      ],
+      sonuclar: [
+        "1000'den fazla dogrulanmis potansiyel distribütör 20+ ülkede tespit edildi",
+        "Tier 1-3 önceliklendirme ile pazar potansiyeline göre siniflandirma yapildi",
+        "Kuveyt pilot pazarinda basarili test ve pozitif geri bildirimler alindi",
+        "Uluslararasi satis süreçleri tamamen yapilandirildi ve takip edilebilir hale getirildi",
+        "Ihracat ekibine önemli zaman tasarrufu ve süreç seffafligi saglandi",
+        "Cemkimsan artik bagimsiz olarak yeni pazarlari analiz edip partner bulabiliyor"
+      ],
+      alinti: "Bu proje sayesinde ihracat süreçlerimizi modernlestirdik ve 20'den fazla ülkede sistematik bir distribütör agi kurmaya basladik. Artik hangi pazarda kim ile görüsecegimizi net olarak biliyoruz ve zaman kaybetmeden hedefli çalisiyoruz."
     }
   ];
 
@@ -154,7 +191,7 @@ const VakaCalismalari = () => {
     <div className="min-h-screen bg-background">
       <SEO 
         title="Vaka Çalismalari - Basari Hikayeleri | Yapay Zeka Çözümleri"
-        description="Car Studio AI, Acilsatis, Salevium ve ERPA Teknoloji'nin yapay zeka ve otomasyon ile elde ettigi basari hikayelerini kesfedin. Uluslararasi pazarlama, satis otomasyonu ve içerik üretiminde gerçek sonuçlar."
+        description="Car Studio AI, Acilsatis, Salevium, ERPA Teknoloji ve Cemkimsan'in yapay zeka ve otomasyon ile elde ettigi basari hikayelerini kesfedin. Uluslararasi pazarlama, satis otomasyonu, B2B export ve distribütör agi genisletmede gerçek sonuçlar."
       />
       <BreadcrumbSchema items={[
         { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
