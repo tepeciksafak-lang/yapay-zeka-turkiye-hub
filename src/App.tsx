@@ -14,12 +14,9 @@ import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import YapayZekaIsAlanlari from "./pages/YapayZekaIsAlanlari";
-import Pazarlama from "./pages/Pazarlama";
 import SatisOtomasyonu from "./pages/SatisOtomasyonu";
 import Services5 from "./pages/Services5";
 import Hakkimda from "./pages/Hakkimda";
-import Otomasyon from "./pages/Otomasyon";
-import VeriAnalizi from "./pages/VeriAnalizi";
 import SatisOtomasyonuDemo from "./pages/SatisOtomasyonuDemo";
 import VakaCalismalari from "./pages/VakaCalismalari";
 import UcretsizIcerikler from "./pages/UcretsizIcerikler";
@@ -99,17 +96,7 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Otomasyon />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/tr/otomasyon" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Otomasyon />
+                <Hakkimda />
               </main>
               <Footer />
             </LanguageWrapper>
@@ -130,26 +117,6 @@ const AppWithModal = () => {
               <Navigation />
               <main className="flex-1">
                 <SatisOtomasyonuDemo />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/tr/pazarlama" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Pazarlama />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/tr/veri-analizi" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <VeriAnalizi />
               </main>
               <Footer />
             </LanguageWrapper>

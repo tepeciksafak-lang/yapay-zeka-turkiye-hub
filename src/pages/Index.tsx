@@ -188,11 +188,6 @@ const Index = () => {
               </Card>
             ))}
           </div>
-          <div className="mt-12 text-center">
-            <p className="text-muted-foreground">
-              Daha fazla çözüm mü arıyorsunuz? <a href="/tr/otomasyon" className="text-primary hover:underline">Otomasyon hizmetlerimize</a>, <a href="/tr/pazarlama" className="text-primary hover:underline">pazarlama çözümlerimize</a> veya <a href="/tr/veri-analizi" className="text-primary hover:underline">veri analizi hizmetlerimize</a> göz atın.
-            </p>
-          </div>
         </div>
       </section>
 
