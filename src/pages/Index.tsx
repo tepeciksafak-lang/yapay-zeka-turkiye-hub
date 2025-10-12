@@ -81,12 +81,12 @@ const Index = () => {
     {
       company: "ERPA Teknoloji",
       result: "Avrupa pazarına AI destekli stratejik giriş.",
-      metric: "İlk ayda nitelikli görüşmeler"
+      metric: "İlk ayda görüşmeler"
     },
     {
       company: "Cemkimsan",
       result: "20+ ülkede 1000+ doğrulanmış distribütör ağı.",
-      metric: "Sistematik ihracat büyümesi"
+      metric: "6 yeni fırsat"
     }
   ];
 
