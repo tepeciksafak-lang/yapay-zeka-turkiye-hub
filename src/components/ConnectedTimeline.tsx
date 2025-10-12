@@ -1,32 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
-
-interface CaseStudy {
-  id: number;
-  etiket: string;
-  baslik: string;
-  ozet: string;
-  kpis: Array<{
-    label: string;
-    value: string;
-  }>;
-  problem: string[];
-  cozum: string;
-  uygulamaAsamalari: string[];
-  sonuclar: string[];
-  alinti?: string;
-}
+import { CaseStudy } from "@/data/caseStudiesData";
 
 interface ConnectedTimelineProps {
   caseStudies: CaseStudy[];
   selectedFilter?: string;
-  autoExpandCase?: number | null;
 }
 
-export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi", autoExpandCase }: ConnectedTimelineProps) {
+export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi" }: ConnectedTimelineProps) {
   const [activeCase, setActiveCase] = useState<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
 
@@ -46,13 +31,6 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
     }
   };
 
-  // Handle auto-expand when coming from Success Stories link
-  useEffect(() => {
-    if (autoExpandCase) {
-      setActiveCase(autoExpandCase);
-    }
-  }, [autoExpandCase]);
-
   return (
     <div className="relative py-16" style={{ backgroundColor: '#0B0F14' }}>
       <div className="container mx-auto px-4">
@@ -71,24 +49,26 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
             {/* Timeline Nodes */}
             {filteredCaseStudies.map((caseStudy, index) => (
               <div key={caseStudy.id} className="relative z-10">
-                <button
+                <Link
+                  to={`/tr/vaka-calismalari/${caseStudy.slug}`}
                   onClick={() => handleNodeClick(caseStudy.id)}
                   onKeyDown={(e) => handleKeyDown(e, caseStudy.id)}
                   className={`
-                    w-16 h-16 rounded-full border-2 transition-all duration-200
+                    block w-16 h-16 rounded-full border-2 transition-all duration-200
                     focus:outline-none focus:ring-2 focus:ring-lime-400 focus:ring-offset-2 focus:ring-offset-slate-900
                     ${activeCase === caseStudy.id
                       ? 'bg-lime-400/12 border-lime-400 shadow-lg shadow-lime-400/25'
                       : 'bg-slate-900 border-lime-400 hover:bg-lime-400/8'
                     }
                     ${prefersReducedMotion ? '' : 'hover:scale-105'}
+                    flex items-center justify-center
                   `}
                   style={{ backgroundColor: activeCase === caseStudy.id ? 'rgba(163, 230, 53, 0.12)' : '#111827' }}
                   aria-selected={activeCase === caseStudy.id}
                   role="tab"
                 >
                   <span className="text-lime-400 font-bold text-lg">{index + 1}</span>
-                </button>
+                </Link>
                 <div className="mt-4 text-center max-w-32">
                   <p className="text-lime-400 text-sm font-medium">{caseStudy.etiket}</p>
                   <p className="text-slate-300 text-xs mt-1">{caseStudy.baslik}</p>
@@ -124,7 +104,8 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
             {filteredCaseStudies.map((caseStudy, index) => (
               <div key={caseStudy.id} className="relative mb-8">
                 <div className="flex items-start">
-                  <button
+                  <Link
+                    to={`/tr/vaka-calismalari/${caseStudy.slug}`}
                     onClick={() => handleNodeClick(caseStudy.id)}
                     onKeyDown={(e) => handleKeyDown(e, caseStudy.id)}
                     className={`
@@ -134,13 +115,14 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
                         ? 'bg-lime-400/12 border-lime-400 shadow-lg shadow-lime-400/25'
                         : 'bg-slate-900 border-lime-400 hover:bg-lime-400/8'
                       }
+                      flex items-center justify-center
                     `}
                     style={{ backgroundColor: activeCase === caseStudy.id ? 'rgba(163, 230, 53, 0.12)' : '#111827' }}
                     aria-selected={activeCase === caseStudy.id}
                     role="tab"
                   >
-                    <span className="text-lime-400 font-bold text-lg mx-auto">{index + 1}</span>
-                  </button>
+                    <span className="text-lime-400 font-bold text-lg">{index + 1}</span>
+                  </Link>
                   
                   <div className="ml-6 flex-1">
                     <Badge 

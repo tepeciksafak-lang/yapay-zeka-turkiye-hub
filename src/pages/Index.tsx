@@ -85,7 +85,7 @@ const Index = () => {
     },
     {
       company: "Cemkimsan",
-      result: "20+ ülkede 1000+ doğrulanmış distribütör ağı.",
+      result: "20'den fazla ülkeye satış ve pazarlama kampanyası.",
       metric: "6 yeni fırsat"
     }
   ];

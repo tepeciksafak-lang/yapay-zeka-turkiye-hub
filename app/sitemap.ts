@@ -14,6 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/veri-analizi',
     '/yapay-zeka-is-alanlari',
     '/vaka-calismalari',
+    '/vaka-calismalari/car-studio-ai',
+    '/vaka-calismalari/acilsatis',
+    '/vaka-calismalari/salevium',
+    '/vaka-calismalari/erpa-teknoloji',
+    '/vaka-calismalari/cemkimsan',
     '/ucretsiz-icerikler',
     '/blog',
     '/services5'

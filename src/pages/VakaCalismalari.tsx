@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Clock, Target, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Badge } from "@/components/ui/badge";
@@ -7,185 +7,26 @@ import ConnectedTimeline from "@/components/ConnectedTimeline";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useModal } from "@/contexts/ModalContext";
+import { useNavigate } from "react-router-dom";
+import { caseStudiesData } from "@/data/caseStudiesData";
 
 const VakaCalismalari = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("Hepsi");
-  const [autoExpandCase, setAutoExpandCase] = useState<number | null>(null);
+  const navigate = useNavigate();
   const { t } = useLanguage();
   const { openQuickAnalysis } = useModal();
-  
-  // Exact copy data with normalization (â/Â → a/A)
-  const caseStudies = [
-    {
-      id: 1,
-      etiket: "Satis Otomasyonu",
-      baslik: "Car Studio AI", 
-      ozet: "Uluslararasi pazarda ekip büyütmeden sürdürülebilir satis altyapisi kurulumu.",
-      kpis: [
-        { label: "E-posta Gönderimi", value: "3000+" },
-        { label: "Zaman Tasarrufu", value: "20+ saat/ay" },
-        { label: "Kurulum Süresi", value: "1 hafta" }
-      ],
-      problem: [
-        "Dogru firmalari ve karar vericileri bulma",
-        "Her firmaya özel mesajlar hazirlama",
-        "Düzenli takip sistemi kurma"
-      ],
-      cozum: "Yapay zeka destekli e-posta sistemi her firmanin özelliklerine göre kisisellestirilmis mesajlar olusturdu. LinkedIn profilleri ve sirket web sitelerinden alinan bilgilerle, dikkat çeken ve güven olusturan içerikler hazirlandi.",
-      uygulamaAsamalari: ["Otomatik E-posta Süreci", "Yapay Zeka ile Arama (Cold Calling)", "Kisisellestirilmis Mesajlasma"],
-      sonuclar: [
-        "3000'den fazla kisisellestirilmis e-posta hiç manuel islem gerektirmeden gönderildi",
-        "Cold calling sayesinde kaliteli potansiyel müsteriler kazanildi", 
-        "Satis ekibi ayda 20 saatten fazla zaman tasarrufu sagladi"
-      ],
-      alinti: "Otomasyon sayesinde artik sadece gerçekten ilgilenen müsterilerle görüsüyoruz. Bu da satis basarimizi önemli ölçüde artirdi."
-    },
-    {
-      id: 2,
-      etiket: "Pazarlama Otomasyonu",
-      baslik: "Acilsatis",
-      ozet: "Gayrimenkul ve otomobil sektöründe hizli büyüme ve organik trafik artisi.",
-      kpis: [
-        { label: "Platform Ilani", value: "5000+" },
-        { label: "Hedef Sektör", value: "2 Ana Sektör" },
-        { label: "Kurulum", value: "Birkaç gün" }
-      ],
-      problem: [
-        "Sektördeki binlerce emlakçi ve oto saticisina kisa sürede ulasmak",
-        "Platformu potansiyel kullanicilara kisisel ve dogrudan tanitmak",
-        "Organik büyümeyi yüksek reklam maliyetleri olmadan gerçeklestirmek",
-        "Sürekli yüksek web trafigi saglamak",
-        "Sosyal medyada hizli, kaliteli ve sürekli içerik üretimi saglamak"
-      ],
-      cozum: "Potansiyel kullanicilar, Instagram hesaplari üzerinden otomatik olarak tespit edildi. Ardindan her kullaniciya özel hazirlanmis, ilgi çekici mesajlar olusturuldu ve hem Instagram DM hem de SMS yoluyla iletildi. Ek olarak tamamen yapay zeka tarafindan üretilen reklam videolariyla markanin dijital ortamda görünürlügü ve ilgi çekiciligi artirildi.",
-      uygulamaAsamalari: ["Veri Toplama (Scraping)", "Otomatik Mesaj Gönderimi", "Yapay Zeka ile Video Üretimi"],
-      sonuclar: [
-        "Kisa sürede yüzlerce emlakçi ve oto saticisiyla kisisel iletisim saglandi",
-        "Web sitesi trafigi ve platform bilinirliginde belirgin artis gerçeklesti",
-        "Tamamen otomatik sistem sayesinde pazarlama için ayrilan haftalik zaman ciddi oranda azaldi",
-        "Sosyal medya içerik üretimi sifir manuel müdahaleyle hiz kazandi ve kalite yükseldi"
-      ],
-      alinti: "Artik sektör profesyonelleri bizi taniyor ve bize güveniyor. Trafik artisi sayesinde kullanici sayimiz hizla artiyor."
-    },
-    {
-      id: 3,
-      etiket: "Içerik Otomasyonu",
-      baslik: "Salevium",
-      ozet: "Oyun temelli satis egitimi sirketinin LinkedIn pazarlama sürecinin tamamen otomatiklestilmesi.",
-      kpis: [
-        { label: "Manuel Içerik", value: "%0" },
-        { label: "Takipçi Sayisi", value: "22,000+" },
-        { label: "Etkilesim Artisi", value: "5x" }
-      ],
-      problem: [
-        "LinkedIn pazarlama süreci tamamen kurucunun omuzlarindaydi",
-        "Içerik üretimi her hafta saatler aliyordu", 
-        "Oyunlastirma alanindaki liderlik konumu sürdürülemiyordu",
-        "Içerikler kaliteli fakat düzensizdi",
-        "Ölçeklenebilir bir sistem mevcut degildi"
-      ],
-      cozum: "Gelistirilen sistem, tamamen otomatik bir içerik akisi olusturarak, LinkedIn stratejisini manuel efor harcamadan yürütebilecek sekilde yapilandirildi. Bilimsel arastirma motoru, oyunlastirma dönüsüm sistemi ve tek tikla onay sistemi ile süreç optimize edildi.",
-      uygulamaAsamalari: ["Stratejik Içerik Planlamas​i", "Bilimsel Arastirma Motoru", "Oyunlastirma Dönüsüm Sistemi", "Tek Tikla Onay Sistemi"],
-      sonuclar: [
-        "Manuel içerik üretimi %0 (öncesi haftalik 9–12 saat)",
-        "LinkedIn görünürlügünde %45 artis",
-        "Takipçi sayisi 22.000'in üzerine çikti",
-        "Içerik etkilesim orani 5 katina çikti",
-        "Haftalik otomatik içerik sayisi 3–5",
-        "Kurulum süresi 2 gün",
-        "Içerik onay süresi 48 saatten 4 dakikaya düstü"
-      ],
-      alinti: "Siz de içerik üretimi veya sosyal medya stratejinizde benzer sorunlar yasiyor musunuz? Salevium için kurdugumuz bu otomatik sistemin sizin is modelinize nasil uygulanabilecegini birlikte kesfedebiliriz."
-    },
-    {
-      id: 4,
-      etiket: "Uluslararasi Pazarlama",
-      baslik: "ERPA Teknoloji",
-      ozet: "TOCHI markasiyla stadyum dijital ekran sistemlerinde Avrupa pazarina stratejik giris. AI destekli lead generation ve kisisellestirilmis iletisim kampanyasi.",
-      kpis: [
-        { label: "Hedef Pazar", value: "Avrupa Stadyumlari" },
-        { label: "Karar Verici Tipi", value: "4+ Pozisyon" },
-        { label: "Kampanya Süresi", value: "Ilk Ay" }
-      ],
-      problem: [
-        "Avrupa pazarinda stadyum isletmecilerine ulasmak",
-        "Dogru karar vericileri (Hospitality Director, Marketing Manager, etc.) tespit etmek",
-        "Her stadyuma özel kisisellestirilmis mesajlar olusturmak",
-        "Yüksek kaliteli lead'lere donüsmek",
-        "Uluslararasi iletisimde profesyonel ve güvenilir imaj"
-      ],
-      cozum: "Yapay zeka tabanli arastirma ile Avrupa genelindeki stadyum isletmecileri ve arena yoneticileri icin kapsamli bir veri tabani olusturuldu. Her karar vericinin pozisyonuna göre uyarlanmis, TOCHI'nin teknolojik üstünlüklerini vurgulayan kisa ve etkili e-posta metinleri hazirlandi. Otomasyon sistemiyle mesajlar gönderildi, yanitlar siniflandirildi ve satis ekibine yönlendirildi.",
-      uygulamaAsamalari: [
-        "Pazar ve Karar Verici Arastirmasi",
-        "Kisisellestirilmis E-posta Metinleri",
-        "Otomasyon ve Lead Yönetimi",
-        "Yanit Analizi ve Satis Transferi"
-      ],
-      sonuclar: [
-        "Ilk ayda birden fazla nitelikli görüsme planlandi",
-        "Sektor ortalamasinin üzerinde geri dönüs orani",
-        "Avrupa genelinde stadyum isletmecileriyle dogrudan iletisim kuruldu",
-        "Ölçeklenebilir ve veri odakli pazarlama altyapisi olusturuldu",
-        "Türk mühendisliginin Avrupa pazarinda görünürlügü artti"
-      ],
-      alinti: "Bu proje, TOCHI markasinin Avrupa pazarinda taninmasini ve stadyum isletmecileriyle stratejik iliskiler kurmasini sagladi. Otomasyon sayesinde ekip büyütmeden uluslararasi pazarlara açilabildik."
-    },
-    {
-      id: 5,
-      etiket: "B2B Export & Distribütör Agi",
-      baslik: "Cemkimsan",
-      ozet: "1980'den beri su aritma ve denizcilik kimyasallari üreticisi Cemkimsan'in uluslararasi distribütör agini 20+ ülkede genisletme projesi. Veri odakli ve otomatik B2B lead generation.",
-      kpis: [
-        { label: "Hedef Ülke", value: "20+ Ülke" },
-        { label: "Dogrulanmis Distribütör", value: "1000+" },
-        { label: "Pilot Pazar", value: "Kuveyt" }
-      ],
-      problem: [
-        "Yeni ihracat pazarlarinda dogru distribütörleri bulmak",
-        "20+ ülkede su aritma ve kimya ithalatçilarini tespit etmek",
-        "Her ülkenin ticari ve kültürel özelliklerine uygun mesajlar olusturmak",
-        "Manuel arastirma ve iletisim süreçlerinin çok fazla zaman almasi",
-        "Uluslararasi B2B iletisimde profesyonel ve güvenilir görünmek",
-        "Distribütör kalitesini ve potansiyelini degerlendirmek"
-      ],
-      cozum: "Yapay zeka destekli pazar arastirmasi ile Körfez ülkeleri, Kuzey Afrika, Orta Asya ve Güneydogu Avrupa'daki su aritma kimyasallari distribütörleri için kapsamli bir veri tabani olusturuldu. Her ülkenin ticari yapisi, kültürel özellikleri ve sektör normlarini göz önünde bulundurarak kisisellestirilmis Ingilizce iletisim sablonlari hazirlandi. Otomatik takip sistemi, lead kalifikasyonu ve önceliklendirme yapildi.",
-      uygulamaAsamalari: [
-        "Ülke Bazli Pazar ve Hedef Firma Arastirmasi",
-        "Distribütör Veri Tabani Olusturma (1000+ Firma)",
-        "Kültürel ve Sektörel Mesaj Sablonlari",
-        "Otomatik Iletisim ve Takip Sistemi",
-        "Lead Kalifikasyonu ve Tier Siniflandirmasi (1-3)",
-        "Pilot Pazar Testi (Kuveyt)"
-      ],
-      sonuclar: [
-        "1000'den fazla dogrulanmis potansiyel distribütör 20+ ülkede tespit edildi",
-        "Tier 1-3 önceliklendirme ile pazar potansiyeline göre siniflandirma yapildi",
-        "Kuveyt pilot pazarinda basarili test ve pozitif geri bildirimler alindi",
-        "Uluslararasi satis süreçleri tamamen yapilandirildi ve takip edilebilir hale getirildi",
-        "Ihracat ekibine önemli zaman tasarrufu ve süreç seffafligi saglandi",
-        "Cemkimsan artik bagimsiz olarak yeni pazarlari analiz edip partner bulabiliyor"
-      ],
-      alinti: "Bu proje sayesinde ihracat süreçlerimizi modernlestirdik ve 20'den fazla ülkede sistematik bir distribütör agi kurmaya basladik. Artik hangi pazarda kim ile görüsecegimizi net olarak biliyoruz ve zaman kaybetmeden hedefli çalisiyoruz."
-    }
-  ];
 
-  // Handle hash navigation for direct case linking
+  // Handle hash navigation - redirect to new URLs
   useEffect(() => {
     const hash = window.location.hash;
     if (hash.startsWith('#case-')) {
       const caseNumber = parseInt(hash.replace('#case-', ''));
-      if (caseNumber >= 1 && caseNumber <= caseStudies.length) {
-        setAutoExpandCase(caseNumber);
-        // Scroll to timeline after a short delay to ensure it's rendered
-        setTimeout(() => {
-          const timelineElement = document.querySelector('[data-timeline]');
-          if (timelineElement) {
-            timelineElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        }, 100);
+      const caseStudy = caseStudiesData[caseNumber - 1];
+      if (caseStudy) {
+        navigate(`/tr/vaka-calismalari/${caseStudy.slug}`, { replace: true });
       }
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -229,9 +70,8 @@ const VakaCalismalari = () => {
       {/* Connected Timeline */}
       <div data-timeline>
         <ConnectedTimeline 
-          caseStudies={caseStudies} 
-          selectedFilter={selectedFilter} 
-          autoExpandCase={autoExpandCase}
+          caseStudies={caseStudiesData} 
+          selectedFilter={selectedFilter}
         />
       </div>
 

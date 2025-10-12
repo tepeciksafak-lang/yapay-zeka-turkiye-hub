@@ -19,6 +19,7 @@ import Services5 from "./pages/Services5";
 import Hakkimda from "./pages/Hakkimda";
 import SatisOtomasyonuDemo from "./pages/SatisOtomasyonuDemo";
 import VakaCalismalari from "./pages/VakaCalismalari";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 import UcretsizIcerikler from "./pages/UcretsizIcerikler";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -87,6 +88,16 @@ const AppWithModal = () => {
               <Navigation />
               <main className="flex-1">
                 <VakaCalismalari />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/tr/vaka-calismalari/:slug" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <CaseStudyDetail />
               </main>
               <Footer />
             </LanguageWrapper>
