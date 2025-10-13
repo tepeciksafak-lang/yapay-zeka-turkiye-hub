@@ -87,22 +87,8 @@ const Index = () => {
       company: "Cemkimsan",
       result: "20'den fazla ülkeye satış ve pazarlama kampanyası.",
       metric: "6 yeni fırsat"
-    },
-    {
-      company: "DKM/Coach Bilge",
-      result: "Fuarda oyun formatında lead funnel ile yüzlerce ek lead.",
-      metric: "+300 nitelikli lead"
     }
   ];
-
-  const caseMap: { [key: string]: string } = {
-    "AcilSatis": "case-2",
-    "Carstudio AI": "case-1", 
-    "Salevium": "case-3",
-    "ERPA Teknoloji": "case-4",
-    "Cemkimsan": "case-5",
-    "DKM/Coach Bilge": "case-6"
-  };
 
   const testimonials = [
     {
@@ -177,38 +163,32 @@ const Index = () => {
       <GoToMarketTimeline />
 
       {/* Mini Cases */}
-      <section className="py-12">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
             <h2 className="mb-4 text-3xl font-bold text-foreground">Success Stories</h2>
             <p className="text-muted-foreground">
               <a href="/tr/vaka-calismalari" className="text-primary hover:underline">Detaylı vaka çalışmalarımızı</a> inceleyin ve başarı hikayelerimizi keşfedin.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {cases.map((c) => (
-              <Card 
-                key={c.company} 
-                className="group transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 cursor-pointer"
-                onClick={() => {
-                  const caseId = caseMap[c.company];
-                  if (caseId) {
-                    const slug = {
-                      "case-1": "car-studio-ai",
-                      "case-2": "acilsatis",
-                      "case-3": "salevium",
-                      "case-4": "erpa-teknoloji",
-                      "case-5": "cemkimsan",
-                      "case-6": "dkm-coach-bilge"
-                    }[caseId];
-                    navigate(`/tr/vaka-calismalari/${slug}`);
-                  }
-                }}
-              >
-                <CardContent className="p-5">
-                  <h3 className="mb-2 text-lg font-semibold text-foreground">{c.company}</h3>
-                  <p className="mb-4 text-muted-foreground">{c.result}</p>
-                  <Badge className="bg-primary/10 text-primary">{c.metric}</Badge>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {cases.map((case_item, index) => (
+              <Card key={index} className="group transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                <CardContent className="p-6">
+                  <h3 className="mb-2 text-lg font-semibold text-foreground">{case_item.company}</h3>
+                  <p className="mb-4 text-muted-foreground">{case_item.result}</p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-primary/10 text-primary">{case_item.metric}</Badge>
+                    <button 
+                      onClick={() => {
+                        const caseMap: Record<number, number> = { 0: 2, 1: 1, 2: 3, 3: 4, 4: 5 };
+                        navigate(`/tr/vaka-calismalari#case-${caseMap[index]}`);
+                      }}
+                      className="text-sm text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
+                    >
+                      Detaylar
+                    </button>
+                  </div>
                 </CardContent>
               </Card>
             ))}

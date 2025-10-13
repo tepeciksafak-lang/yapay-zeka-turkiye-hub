@@ -189,46 +189,6 @@ export const caseStudiesData: CaseStudy[] = [
       "Cemkimsan artik bagimsiz olarak yeni pazarlari analiz edip partner bulabiliyor"
     ],
     alinti: "Bu proje sayesinde ihracat süreçlerimizi modernlestirdik ve 20'den fazla ülkede sistematik bir distribütör agi kurmaya basladik. Artik hangi pazarda kim ile görüsecegimizi net olarak biliyoruz ve zaman kaybetmeden hedefli çalisiyoruz."
-  },
-  {
-    id: 6,
-    slug: "dkm-coach-bilge",
-    etiket: "Gamification & Messe-Marketing",
-    baslik: "DKM/Coach Bilge",
-    ozet: "Oyun formatında lead funnel ile DKM Sigorta Fuarı'nda yüzlerce ek nitelikli lead kazanımı.",
-    metaTitle: "DKM/Coach Bilge Vaka Çalışması - Gamification ile +300 Fuar Lead'i",
-    metaDescription: "DKM Sigorta Fuarı'nda interaktif quiz ve oyunlaştırma ile +300 nitelikli lead, %40 daha fazla stand ziyaretçisi ve %100 dijital takip edilebilirlik.",
-    ogImage: "/og-homepage.jpg",
-    kpis: [
-      { label: "Nitelikli Lead", value: "+300" },
-      { label: "Stand Ziyaretçi Artışı", value: "%40" },
-      { label: "Dijital Takip", value: "%100" }
-    ],
-    problem: [
-      "Fuar yatırımlarından maksimum verim almak (stand maliyeti, personel, lojistik)",
-      "Fuar öncesi ve sonrasında sistematik lead toplama eksikliği",
-      "Rastgele fuar ziyaretçileriyle sınırlı kalınması",
-      "Fuar sonrası takip süreçlerinde veri ve otomasyon eksikliği",
-      "Rekabet ortamında dikkat çekme ve öne çıkma zorluğu"
-    ],
-    cozum: "Salevium için DKM Dortmund Sigorta Fuarı öncesinde interaktif bir landing page ve oyunlaştırılmış quiz sistemi (Supermakler-Challenge) geliştirildi. Katılımcılar fuar öncesinde sosyal medya, e-posta ve partner ağları üzerinden challenge'a davet edildi. Her katılımcı otomatik olarak çekiliş havuzuna dahil edildi ve verileri (e-posta, pozisyon, ilgi alanı) nitelikli lead olarak kaydedildi. Fuar sonrası, AI destekli otomatik e-posta dizileri ve kişiselleştirilmiş content akışlarıyla tüm katılımcılara ulaşıldı.",
-    uygulamaAsamalari: [
-      "İnteraktif Landingpage & Quiz Tasarımı",
-      "Gamification Mekanikleri (Puan & Sıralama Sistemi)",
-      "Fuar Öncesi Kampanya (Social Media, Newsletter, Partner Network)",
-      "Lead Toplama & CRM Entegrasyonu",
-      "Otomatik E-posta Follow-up Dizileri",
-      "AI ile Kişiselleştirilmiş İçerik Üretimi"
-    ],
-    sonuclar: [
-      "+300 nitelikli lead fuar öncesi ve fuar sırasında kazanıldı",
-      "Önceki yıla göre %40 daha fazla stand ziyaretçisi sağlandı",
-      "%100 dijital takip edilebilirlik ile tüm etkileşimler ölçülebildi",
-      "Fuar sadece bir temas noktası değil, ölçülebilir satış stratejisinin parçası haline geldi",
-      "No-code yapı sayesinde kurulum hızlı ve maliyet etkin gerçekleştirildi",
-      "Gerçek zamanlı sonuç takibi ve liderlik tablosu ile katılım motivasyonu artırıldı"
-    ],
-    alinti: "DKM fuarı artık bizim için sadece bir etkinlik değil – ölçülebilir, veri odaklı bir lead makinesine dönüştü. Oyunlaştırma sayesinde insanlar bizimle etkileşime geçmek için heyecanlandı."
   }
 ];
 

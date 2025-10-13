@@ -8,7 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function AgitateDemo() {
   const { currentLanguage, t } = useLanguage();
 
-  const features = [
+  const features = currentLanguage === 'de' ? [
     {
       id: 1,
       icon: Settings,
@@ -17,9 +17,7 @@ export default function AgitateDemo() {
         t('agitate.option1.description')
       ],
       image: agitateAutomation,
-      imageAlt: currentLanguage === 'de' 
-        ? 'DIY KI-Integration - Eigenständige Implementierung von künstlicher Intelligenz im Unternehmen'
-        : 'DIY Yapay Zeka Otomasyonu - Kendi başınıza AI kurulum ve entegrasyon süreci'
+      imageAlt: 'DIY KI-Integration - Eigenständige Implementierung von künstlicher Intelligenz im Unternehmen'
     },
     {
       id: 2,
@@ -31,9 +29,7 @@ export default function AgitateDemo() {
         t('agitate.option2.description3')
       ],
       image: agitateAnalytics,
-      imageAlt: currentLanguage === 'de'
-        ? 'Internes KI-Team aufbauen - Mitarbeiter für künstliche Intelligenz Projekte rekrutieren'
-        : 'İç Ekip ile AI Entegrasyonu - Yapay zeka uzmanı işe alım ve takım kurma süreci'
+      imageAlt: 'Internes KI-Team aufbauen - Mitarbeiter für künstliche Intelligenz Projekte rekrutieren'
     },
     {
       id: 3,
@@ -45,9 +41,42 @@ export default function AgitateDemo() {
         t('agitate.option3.description3')
       ],
       image: agitateSales,
-      imageAlt: currentLanguage === 'de'
-        ? 'KI-Implementierung aufschieben - Risiken des Abwartens bei künstlicher Intelligenz'
-        : 'Yapay Zeka Erteleme Riski - AI dönüşümünü geciktirmenin iş maliyeti'
+      imageAlt: 'KI-Implementierung aufschieben - Risiken des Abwartens bei künstlicher Intelligenz'
+    }
+  ] : [
+    {
+      id: 1,
+      icon: Settings,
+      title: 'Kendiniz yapın',
+      bullets: [
+        'Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji. Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir. Kendi yoğunluğunuz içinde buna vakit ayırabilir misiniz?'
+      ],
+      image: agitateAutomation,
+      imageAlt: 'DIY Yapay Zeka Otomasyonu - Kendi başınıza AI kurulum ve entegrasyon süreci'
+    },
+    {
+      id: 2,
+      icon: Users,
+      title: 'İçeriden ekip kurun veya yeni eleman alın',
+      bullets: [
+        'İçeriden birini görevlendirmek: Zaten dolu masasına bir dosya daha. Şirketinizi dönüştürecek teknolojiyi yan iş olarak mı önem vermek istiyorsunuz?',
+        'Yeni eleman almak: Bu teknoloji çok yeni, çoğu kişi daha yolun başında. Tecrübeli uzmanlar çok pahalı.',
+        'İşe alım süreci bitmeyen kuyruk gibi: Hep beklersiniz, bir türlü ilerlemez.'
+      ],
+      image: agitateAnalytics,
+      imageAlt: 'İç Ekip ile AI Entegrasyonu - Yapay zeka uzmanı işe alım ve takım kurma süreci'
+    },
+    {
+      id: 3,
+      icon: Calendar,
+      title: 'Gelecek ayda, gelecek dönemde, gelecek yılda başlayın',
+      bullets: [
+        'Seneye bütçe ayarlanır, o zaman yaparız. Ama her geçen ay kaybolan fırsatlar ve kaçan müşteriler demek.',
+        'Gerçek şu: 3 yıl önce dev yazılım şirketi DocuSign, bugün yapay zeka ile 2 günde kopyalanabiliyor.',
+        'Peki sizin iş modelinizin kopyalanması ne kadar sürer?'
+      ],
+      image: agitateSales,
+      imageAlt: 'Yapay Zeka Erteleme Riski - AI dönüşümünü geciktirmenin iş maliyeti'
     }
   ];
 
@@ -56,10 +85,10 @@ export default function AgitateDemo() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center mb-12">
           <h2 className="headline text-3xl md:text-4xl tracking-tight text-text-hi mb-4">
-            {t('agitate.title')}
+            {currentLanguage === 'de' ? t('agitate.title') : 'Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?'}
           </h2>
           <p className="text-lg md:text-xl text-text-med leading-relaxed">
-            {t('agitate.subtitle')}
+            {currentLanguage === 'de' ? t('agitate.subtitle') : 'Farklı yöntemler var… ama çoğu ayakkabınızın içindeki taş gibi: her adımda rahatsız eder.'}
           </p>
         </div>
 

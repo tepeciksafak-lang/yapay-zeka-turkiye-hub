@@ -16,8 +16,7 @@ import {
   Bot, 
   MessageCircle,
   ChevronLeft,
-  ChevronRight,
-  X
+  ChevronRight
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -35,89 +34,89 @@ export function HomePage() {
   const features = [
     {
       icon: <TrendingUp className="h-8 w-8 text-primary" />,
-      title: t('features.outbound.title'),
-      description: t('features.outbound.description'),
-      proof: t('features.outbound.proof')
+      title: "Outbound Satış Otomasyonu",
+      description: "Kişiselleştirilmiş e-postalar ve akıllı takip.",
+      proof: "Günde 500+ kişiselleştirilmiş mesaj gönderimi"
     },
     {
       icon: <Bot className="h-8 w-8 text-primary" />,
-      title: t('features.marketing.title'), 
-      description: t('features.marketing.description'),
-      proof: t('features.marketing.proof')
+      title: "Pazarlama Otomasyonu", 
+      description: "İçerik, SEO ve reklam optimizasyonu otomatik.",
+      proof: "SEO skorunda %85+ artış garantisi"
     },
     {
       icon: <MessageCircle className="h-8 w-8 text-primary" />,
-      title: t('features.chatbot.title'),
-      description: t('features.chatbot.description'),
-      proof: t('features.chatbot.proof')
+      title: "Müşteri İletişimi (Chatbot)",
+      description: "7/24 kişiselleştirilmiş yanıt.",
+      proof: "Müşteri memnuniyetinde %40 artış"
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-primary" />,
-      title: t('features.analytics.title'),
-      description: t('features.analytics.description'),
-      proof: t('features.analytics.proof')
+      title: "Veri Analizi ve Raporlama",
+      description: "Gerçek zamanlı dashboard ve tahminleme.",
+      proof: "Karar alma süresinde %60 hızlanma"
     }
   ]
 
   const cases = [
     {
       company: "Car Studio AI",
-      result: t('cases.carstudio.result'),
-      metric: t('cases.carstudio.metric')
+      result: "3000+ kişiselleştirilmiş e-posta otomatik gönderim",
+      metric: "20 saat/ay zaman tasarrufu"
     },
     {
       company: "Acilsatis",
-      result: t('cases.acilsatis.result'),
-      metric: t('cases.acilsatis.metric')
+      result: "Yüzlerce emlakçı ve oto satıcısıyla otomatik iletişim",
+      metric: "Web trafiğinde belirgin artış"
     },
     {
       company: "Salevium",
-      result: t('cases.salevium.result'),
-      metric: t('cases.salevium.metric')
+      result: "LinkedIn pazarlama tamamen otomatikleştirildi",
+      metric: "Görünürlükte %45 artış, 22.000+ takipçi"
     }
   ]
 
   const testimonials = [
     {
-      text: t('testimonial.carstudio.text'),
+      text: "Otomasyon sayesinde artık sadece gerçekten ilgilenen müşterilerle görüşüyoruz. Bu da satış başarımızı önemli ölçüde artırdı.",
       name: "Car Studio AI",
-      company: t('testimonial.carstudio.company'),
-      metric: t('testimonial.carstudio.metric')
+      company: "Uluslararası Pazar",
+      metric: "3000+ otomatik e-posta"
     },
     {
-      text: t('testimonial.acilsatis.text'),
+      text: "Artık sektör profesyonelleri bizi tanıyor ve bize güveniyor. Trafik artışı sayesinde kullanıcı sayımız hızla artıyor.",
       name: "Acilsatis",
-      company: t('testimonial.acilsatis.company'),
-      metric: t('testimonial.acilsatis.metric')
+      company: "Emlak Platformu",
+      metric: "Yüzlerce yeni bağlantı"
     },
     {
-      text: t('testimonial.salevium.text'),
+      text: "LinkedIn stratejimiz tamamen otomatik çalışıyor. Manuel içerik üretimi sıfıra indi, görünürlüğümüz katlandı.",
       name: "Salevium",
-      company: t('testimonial.salevium.company'),
-      metric: t('testimonial.salevium.metric')
+      company: "Eğitim Şirketi",
+      metric: "%45 görünürlük artışı"
     }
   ]
 
   const faqs = [
     {
-      question: t('faq.setup.question'),
-      answer: t('faq.setup.answer')
+      question: "Kurulum süreci ne kadar sürer?",
+      answer: "Çoğu otomasyon sistemi 1-2 hafta içinde kurulur ve aktif hale gelir. Karmaşık projelerde bu süre 1 aya kadar uzayabilir."
     },
     {
-      question: t('faq.integration.question'),
-      answer: t('faq.integration.answer')
+      question: "Mevcut sistemlerimle entegre olur mu?",
+      answer: "Evet, API'ler ve webhook'lar kullanarak mevcut CRM, e-posta pazarlama araçları ve diğer sistemlerinizle sorunsuz entegrasyon sağlarız."
     },
     {
-      question: t('faq.roi.question'),
-      answer: t('faq.roi.answer')
+      question: "ROI'yi ne kadar sürede görürüm?",
+      answer: "Çoğu müşterimiz ilk 30-60 gün içinde zaman tasarrufu ve verimlilik artışı görür. Tam ROI genellikle 3-6 ay içinde gerçekleşir."
     },
     {
-      question: t('faq.security.question'),
-      answer: t('faq.security.answer')
+      question: "Sistem güvenli mi?",
+      answer: "Tüm verileriniz şifrelenir ve güvenli sunucularda saklanır. GDPR uyumlu çalışır, verileriniz üçüncü taraflarla paylaşılmaz."
     },
     {
-      question: t('faq.technical.question'),
-      answer: t('faq.technical.answer')
+      question: "Teknik bilgim yoksa kullanabilir miyim?",
+      answer: "Elbette! Sistemler kullanıcı dostu arayüzlerle tasarlanır. Eğitim ve sürekli destek sağlarız."
     }
   ]
 
@@ -171,14 +170,14 @@ export function HomePage() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/30">
-                  {t('beforeafter.before.title')}
+                  Öncesi (Manuel Süreçler)
                 </Badge>
                 <ul className="space-y-3">
                   {[
-                    t('beforeafter.before.item1'),
-                    t('beforeafter.before.item2'),
-                    t('beforeafter.before.item3'),
-                    t('beforeafter.before.item4')
+                    "Günlük 4-6 saat manuel e-posta yazımı",
+                    "Düzensiz takip mesajları", 
+                    "Kişiselleştirme eksikliği",
+                    "Zaman kaybı ve düşük verimlilik"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3 text-muted-foreground">
                       <X className="h-5 w-5 text-red-400 mt-0.5 flex-shrink-0" />
@@ -192,14 +191,14 @@ export function HomePage() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-green-500/20 text-green-400 border-green-500/30">
-                  {t('beforeafter.after.title')}
+                  Sonrası (AI Otomasyon)
                 </Badge>
                 <ul className="space-y-3">
                   {[
-                    t('beforeafter.after.item1'),
-                    t('beforeafter.after.item2'),
-                    t('beforeafter.after.item3'),
-                    t('beforeafter.after.item4')
+                    "Günde 500+ otomatik kişiselleştirilmiş mesaj",
+                    "Akıllı takip sistemi ve hatırlatmalar",
+                    "Her alıcıya özel içerik üretimi",
+                    "20+ saat haftalık zaman tasarrufu"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
@@ -246,17 +245,18 @@ export function HomePage() {
         <div className="container text-center">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-3xl lg:text-4xl font-bold">
-              {t('cta.title')} <span className="gradient-text">{t('cta.title.highlight')}</span>
+              Hazır mısınız? <span className="gradient-text">Başlayalım.</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              {t('cta.description')}
+              15 dakikalık ücretsiz analiz ile hangi süreçlerinizin 
+              otomatikleştirilebileceğini keşfedin.
             </p>
             <MotionButton 
               size="lg"
               className="hover-glow bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0"
               onClick={() => setModalOpen(true)}
             >
-              {t('cta.button')}
+              Ücretsiz Analiz Al
               <ArrowRight className="ml-2 h-5 w-5" />
             </MotionButton>
           </div>
@@ -280,17 +280,17 @@ export function HomePage() {
             <Card className="glass hover-glow transition-all duration-300">
               <CardContent className="p-8 space-y-6">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">{t('pricing.starter.title')}</h3>
-                  <p className="text-muted-foreground">{t('pricing.starter.subtitle')}</p>
+                  <h3 className="text-2xl font-bold">Starter</h3>
+                  <p className="text-muted-foreground">Küçük işletmeler için</p>
                 </div>
                 <div className="space-y-4">
                   <div className="text-3xl font-bold">€497<span className="text-base font-normal text-muted-foreground">/ay</span></div>
                   <ul className="space-y-3">
                     {[
-                      t('pricing.starter.feature1'),
-                      t('pricing.starter.feature2'),
-                      t('pricing.starter.feature3'),
-                      t('pricing.starter.feature4')
+                      "50 potansiyel müşteri/hafta",
+                      "E-posta otomasyonu",
+                      "Temel raporlama",
+                      "Email desteği"
                     ].map((feature, index) => (
                       <li key={index} className="flex items-center space-x-3">
                         <CheckCircle className="h-5 w-5 text-primary" />
@@ -300,7 +300,7 @@ export function HomePage() {
                   </ul>
                 </div>
                 <MotionButton className="w-full hover-glow" variant="outline">
-                  {t('pricing.starter.button')}
+                  Başla
                 </MotionButton>
               </CardContent>
             </Card>
@@ -309,23 +309,23 @@ export function HomePage() {
             <Card className="glass hover-glow-purple transition-all duration-300 border-primary relative">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <Badge className="bg-gradient-to-r from-primary to-secondary text-primary-foreground">
-                  {t('pricing.growth.badge')}
+                  En Popüler
                 </Badge>
               </div>
               <CardContent className="p-8 space-y-6">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">{t('pricing.growth.title')}</h3>
-                  <p className="text-muted-foreground">{t('pricing.growth.subtitle')}</p>
+                  <h3 className="text-2xl font-bold">Growth</h3>
+                  <p className="text-muted-foreground">Büyüyen şirketler için</p>
                 </div>
                 <div className="space-y-4">
                   <div className="text-3xl font-bold">€997<span className="text-base font-normal text-muted-foreground">/ay</span></div>
                   <ul className="space-y-3">
                     {[
-                      t('pricing.growth.feature1'),
-                      t('pricing.growth.feature2'),
-                      t('pricing.growth.feature3'),
-                      t('pricing.growth.feature4'),
-                      t('pricing.growth.feature5')
+                      "200 potansiyel müşteri/hafta",
+                      "Full otomasyon paketi",
+                      "Gelişmiş raporlama",
+                      "Öncelikli destek",
+                      "Chatbot entegrasyonu"
                     ].map((feature, index) => (
                       <li key={index} className="flex items-center space-x-3">
                         <CheckCircle className="h-5 w-5 text-primary" />
@@ -335,7 +335,7 @@ export function HomePage() {
                   </ul>
                 </div>
                 <MotionButton className="w-full hover-glow bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0">
-                  {t('pricing.growth.button')}
+                  Başla
                 </MotionButton>
               </CardContent>
             </Card>
@@ -344,18 +344,18 @@ export function HomePage() {
             <Card className="glass hover-glow transition-all duration-300">
               <CardContent className="p-8 space-y-6">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">{t('pricing.enterprise.title')}</h3>
-                  <p className="text-muted-foreground">{t('pricing.enterprise.subtitle')}</p>
+                  <h3 className="text-2xl font-bold">Enterprise</h3>
+                  <p className="text-muted-foreground">Kurumsal çözümler</p>
                 </div>
                 <div className="space-y-4">
-                  <div className="text-3xl font-bold">{t('pricing.enterprise.price')}<span className="text-base font-normal text-muted-foreground"> Fiyat</span></div>
+                  <div className="text-3xl font-bold">Özel<span className="text-base font-normal text-muted-foreground"> Fiyat</span></div>
                   <ul className="space-y-3">
                     {[
-                      t('pricing.enterprise.feature1'),
-                      t('pricing.enterprise.feature2'),
-                      t('pricing.enterprise.feature3'),
-                      t('pricing.enterprise.feature4'),
-                      t('pricing.enterprise.feature5')
+                      "Sınırsız potansiyel müşteri",
+                      "Özel entegrasyonlar",
+                      "Dedicated hesap yöneticisi",
+                      "24/7 destek",
+                      "Custom AI modeller"
                     ].map((feature, index) => (
                       <li key={index} className="flex items-center space-x-3">
                         <CheckCircle className="h-5 w-5 text-primary" />
@@ -365,7 +365,7 @@ export function HomePage() {
                   </ul>
                 </div>
                 <MotionButton className="w-full hover-glow" variant="outline">
-                  {t('pricing.enterprise.button')}
+                  İletişime Geç
                 </MotionButton>
               </CardContent>
             </Card>
