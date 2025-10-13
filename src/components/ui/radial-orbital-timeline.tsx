@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface TimelineItem {
   id: number;
@@ -132,6 +133,24 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
       }
       return next;
     });
+  };
+
+  const navigateToNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (activeNodeId === null) return;
+    const currentIndex = timelineData.findIndex(item => item.id === activeNodeId);
+    const nextIndex = (currentIndex + 1) % timelineData.length;
+    const nextId = timelineData[nextIndex].id;
+    toggleItem(nextId);
+  };
+
+  const navigateToPrevious = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (activeNodeId === null) return;
+    const currentIndex = timelineData.findIndex(item => item.id === activeNodeId);
+    const prevIndex = (currentIndex - 1 + timelineData.length) % timelineData.length;
+    const prevId = timelineData[prevIndex].id;
+    toggleItem(prevId);
   };
 
   useEffect(() => {
@@ -346,6 +365,24 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
               marginBottom: windowSize.width <= 480 ? '2rem' : 0 
             }}
           >
+            {/* Navigation arrows for mobile */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-2 pointer-events-none z-[60]">
+              <button
+                onClick={navigateToPrevious}
+                className="pointer-events-auto w-12 h-12 rounded-full bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+                aria-label="Vorheriger Service"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={navigateToNext}
+                className="pointer-events-auto w-12 h-12 rounded-full bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+                aria-label="Nächster Service"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+
             {timelineData
               .filter(item => expandedItems[item.id])
               .map(item => (
