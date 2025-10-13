@@ -1,7 +1,9 @@
 import { SEO } from "@/components/SEO";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SatisOtomasyonuDemo = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,17 +20,17 @@ const SatisOtomasyonuDemo = () => {
   return (
     <>
       <SEO 
-        title="Satış Otomasyonunu Kendiniz Deneyin | Pratik Yapay Zeka"
-        description="Satış otomasyonu nasıl çalışır? Kişiselleştirilmiş konu başlığı ve satış görüşmesi hazırlık demosunu şimdi kendiniz test edin."
+        title={t('sales.demo.seo.title')}
+        description={t('sales.demo.seo.description')}
       />
       <main className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-16 max-w-6xl">
           <header className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Satış Otomasyonunu Kendiniz Deneyin | Pratik Yapay Zeka
+              {t('sales.demo.hero.title')}
             </h1>
             <h2 className="text-2xl text-muted-foreground">
-              Satış Otomasyonu Nasıl Çalışır? Şimdi Kendiniz Test Edin
+              {t('sales.demo.hero.subtitle')}
             </h2>
           </header>
 
@@ -48,10 +50,10 @@ const SatisOtomasyonuDemo = () => {
               {/* Kişiselleştirilmiş Konu Başlığı Demo */}
               <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
                 <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Kişiselleştirilmiş Konu Başlığı Demo:
+                  {t('sales.demo.subject.title')}
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  E-posta açılma oranınızı artırmak için en etkili konu başlığını nasıl oluşturacağınızı şimdi keşfedin.
+                  {t('sales.demo.subject.description')}
                 </p>
                 <div className="bg-accent/20 rounded-lg p-4 mb-6">
                   <div className="flex items-center justify-center h-24">
@@ -59,17 +61,17 @@ const SatisOtomasyonuDemo = () => {
                   </div>
                 </div>
                 <button className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
-                  Demo'yu Başlat
+                  {t('sales.demo.button.start')}
                 </button>
               </section>
 
               {/* Satış Görüşmesi Hazırlık Demo */}
               <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
                 <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Satış Görüşmesi Hazırlık Demosu:
+                  {t('sales.demo.meeting.title')}
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Toplantıdan müşteri kazanma oranınızı artırmak için adaya özel hazırlığı nasıl hızlandıracağınızı görün.
+                  {t('sales.demo.meeting.description')}
                 </p>
                 <div className="bg-accent/20 rounded-lg p-4 mb-6">
                   <div className="flex items-center justify-center h-24">
@@ -77,7 +79,7 @@ const SatisOtomasyonuDemo = () => {
                   </div>
                 </div>
                 <button className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
-                  Demo'yu Başlat
+                  {t('sales.demo.button.start')}
                 </button>
               </section>
             </div>
@@ -95,25 +97,25 @@ const SatisOtomasyonuDemo = () => {
             {/* Açıklama Section */}
             <section className="bg-card rounded-lg p-8 shadow-sm border border-border text-center">
               <h4 className="text-2xl font-bold text-foreground mb-6">
-                Yapay Zeka Satış otomasyonu nedir, anlatmakla olmaz – biz doğrudan gösteriyoruz.
+                {t('sales.demo.explanation.title')}
               </h4>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Yukarıdaki demolarla, manuel ve zaman kaybettiren satış süreçlerinin nasıl daha akıllı ve hızlı şekilde otomatikleştirilebildiğini kendiniz deneyimleyin.
+                {t('sales.demo.explanation.text')}
               </p>
               <p className="text-primary font-semibold text-lg">
-                Dakikalar içinde farkı hissedin, sonucu görün.
+                {t('sales.demo.explanation.tagline')}
               </p>
             </section>
 
             {/* Contact Form */}
             <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-                Daha Fazla Bilgi İçin İletişime Geçin
+                {t('sales.demo.form.title')}
               </h3>
               <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Ad Soyad *
+                    {t('sales.demo.form.name.label')}
                   </label>
                   <input
                     type="text"
@@ -127,7 +129,7 @@ const SatisOtomasyonuDemo = () => {
                 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    E-posta *
+                    {t('sales.demo.form.email.label')}
                   </label>
                   <input
                     type="email"
@@ -141,7 +143,7 @@ const SatisOtomasyonuDemo = () => {
                 
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                    Şirket
+                    {t('sales.demo.form.company.label')}
                   </label>
                   <input
                     type="text"
@@ -154,7 +156,7 @@ const SatisOtomasyonuDemo = () => {
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Mesajınız
+                    {t('sales.demo.form.message.label')}
                   </label>
                   <textarea
                     id="message"
@@ -169,7 +171,7 @@ const SatisOtomasyonuDemo = () => {
                   type="submit"
                   className="w-full px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
                 >
-                  Gönder
+                  {t('sales.demo.form.submit')}
                 </button>
               </form>
             </section>

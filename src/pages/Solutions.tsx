@@ -13,10 +13,10 @@ const Solutions = () => {
 
   return (
     <>
-      <SEO
-        title="Çözümler – Yapay zekâ ve otomasyonla uçtan uca büyüme"
-        description="Lead üretiminden müşteri ilişkilerine kadar tüm hattınızı yapay zekâ ve otomasyonla kuruyoruz. Daha fazla müşteri, daha düşük maliyet, sürdürülebilir büyüme."
-      />
+<SEO
+  title={t('solutions.seo.title')}
+  description={t('solutions.seo.description')}
+/>
       
       {/* Solution Cards Section */}
       <SolutionCardsSection />
