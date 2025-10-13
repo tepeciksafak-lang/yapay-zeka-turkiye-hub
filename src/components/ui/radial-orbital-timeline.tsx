@@ -366,7 +366,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
             }}
           >
             {/* Navigation arrows for mobile */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-2 pointer-events-none z-[60]">
+            <div className="absolute -top-16 left-0 right-0 flex justify-between px-2 pointer-events-none z-[60]">
               <button
                 onClick={navigateToPrevious}
                 className="pointer-events-auto w-12 h-12 rounded-full bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg flex items-center justify-center transition-all hover:scale-110 active:scale-95"
