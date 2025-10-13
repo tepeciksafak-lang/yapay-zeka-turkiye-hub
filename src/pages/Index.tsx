@@ -177,15 +177,15 @@ const Index = () => {
       <GoToMarketTimeline />
 
       {/* Mini Cases */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="mb-4 text-3xl font-bold text-foreground">Success Stories</h2>
             <p className="text-muted-foreground">
               <a href="/tr/vaka-calismalari" className="text-primary hover:underline">Detaylı vaka çalışmalarımızı</a> inceleyin ve başarı hikayelerimizi keşfedin.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {cases.map((c) => (
               <Card 
                 key={c.company} 
@@ -205,7 +205,7 @@ const Index = () => {
                   }
                 }}
               >
-                <CardContent className="p-6">
+                <CardContent className="p-5">
                   <h3 className="mb-2 text-lg font-semibold text-foreground">{c.company}</h3>
                   <p className="mb-4 text-muted-foreground">{c.result}</p>
                   <Badge className="bg-primary/10 text-primary">{c.metric}</Badge>
