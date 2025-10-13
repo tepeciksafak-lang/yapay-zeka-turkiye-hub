@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/vaka-calismalari/salevium',
     '/vaka-calismalari/erpa-teknoloji',
     '/vaka-calismalari/cemkimsan',
+    '/vaka-calismalari/dkm-coach-bilge',
     '/ucretsiz-icerikler',
     '/blog',
     '/services5'
