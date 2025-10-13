@@ -25,6 +25,8 @@ export default {
   // Cases
   'cases.title': 'Erfolgsgeschichten',
   'cases.subtitle': 'Echte Ergebnisse von Unternehmen, die mit KI-Automatisierung skaliert haben',
+  'cases.seo.title': 'Fallstudien - Erfolgsgeschichten | KI-Lösungen',
+  'cases.seo.description': 'Entdecken Sie die Erfolgsgeschichten von Car Studio AI, Acilsatis, Salevium, ERPA Teknoloji und Cemkimsan mit KI und Automatisierung. Internationale Märkte, Vertriebsautomatisierung, B2B-Export und Händlernetzwerk-Expansion mit echten Ergebnissen.',
   'cases.final.title': 'Bereit für Ihre eigene Erfolgsgeschichte?',
   'cases.final.subtitle': 'Lassen Sie uns gemeinsam Ihre Geschäftsprozesse mit KI optimieren.',
   

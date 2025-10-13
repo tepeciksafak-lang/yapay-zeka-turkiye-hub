@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 import { CaseStudy } from "@/data/caseStudiesData";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocalizedRoute } from "@/lib/routeMappings";
 
 interface ConnectedTimelineProps {
   caseStudies: CaseStudy[];
@@ -14,6 +16,7 @@ interface ConnectedTimelineProps {
 export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi" }: ConnectedTimelineProps) {
   const [activeCase, setActiveCase] = useState<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
+  const { currentLanguage } = useLanguage();
 
   // Filter case studies based on selected filter
   const filteredCaseStudies = selectedFilter === "Hepsi" 
@@ -50,7 +53,7 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
             {filteredCaseStudies.map((caseStudy, index) => (
               <div key={caseStudy.id} className="relative z-10">
                 <Link
-                  to={`/tr/vaka-calismalari/${caseStudy.slug}`}
+                  to={getLocalizedRoute(currentLanguage, 'case-detail', { slug: caseStudy.slug })}
                   onClick={() => handleNodeClick(caseStudy.id)}
                   onKeyDown={(e) => handleKeyDown(e, caseStudy.id)}
                   className={`
@@ -105,7 +108,7 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
               <div key={caseStudy.id} className="relative mb-8">
                 <div className="flex items-start">
                   <Link
-                    to={`/tr/vaka-calismalari/${caseStudy.slug}`}
+                    to={getLocalizedRoute(currentLanguage, 'case-detail', { slug: caseStudy.slug })}
                     onClick={() => handleNodeClick(caseStudy.id)}
                     onKeyDown={(e) => handleKeyDown(e, caseStudy.id)}
                     className={`

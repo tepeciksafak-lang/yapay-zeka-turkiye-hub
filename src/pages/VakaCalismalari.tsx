@@ -32,12 +32,12 @@ const VakaCalismalari = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Vaka Çalismalari - Basari Hikayeleri | Yapay Zeka Çözümleri"
-        description="Car Studio AI, Acilsatis, Salevium, ERPA Teknoloji ve Cemkimsan'in yapay zeka ve otomasyon ile elde ettigi basari hikayelerini kesfedin. Uluslararasi pazarlama, satis otomasyonu, B2B export ve distribütör agi genisletmede gerçek sonuçlar."
+        title={t('cases.seo.title')}
+        description={t('cases.seo.description')}
       />
       <BreadcrumbSchema items={[
-        { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
-        { name: "Vaka Çalışmaları", url: "https://pratikyz.com/tr/vaka-calismalari" }
+        { name: t('nav.home'), url: `https://pratikyz.com${getLocalizedRoute(currentLanguage, 'home')}` },
+        { name: t('nav.cases'), url: `https://pratikyz.com${getLocalizedRoute(currentLanguage, 'cases')}` }
       ]} />
       
       {/* Hero Section */}
