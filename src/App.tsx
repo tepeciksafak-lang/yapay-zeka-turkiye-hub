@@ -37,8 +37,16 @@ const AppWithModal = () => {
     <>
       <div className="flex min-h-screen flex-col">
         <Routes>
-          {/* Redirect root to Turkish */}
-          <Route path="/" element={<Navigate to="/tr" replace />} />
+          {/* Root route - defaults to Turkish */}
+          <Route path="/" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Index />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
           
           {/* German Routes */}
           <Route path="/de" element={
