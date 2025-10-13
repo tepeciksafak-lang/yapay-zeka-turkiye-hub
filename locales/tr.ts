@@ -40,8 +40,9 @@ export default {
 
   // Agitate Section
   'agitate.title': 'Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?',
+  'agitate.subtitle': 'Farklı yöntemler var… ama çoğu ayakkabınızın içindeki taş gibi: her adımda rahatsız eder.',
   
-  'agitate.option1.title': '1️⃣ Kendiniz yapın (DIY)',
+  'agitate.option1.title': '1️⃣ Kendiniz yapın',
   'agitate.option1.description': 'Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji. Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir. Kendi yoğunluğunuz içinde buna vakit ayırabilir misiniz?',
   
   'agitate.option2.title': '2️⃣ İçeriden ekip kurun veya yeni eleman alın',
@@ -49,9 +50,10 @@ export default {
   'agitate.option2.description2': 'Yeni eleman almak: Bu teknoloji çok yeni, çoğu kişi daha yolun başında. Tecrübeli uzmanlar çok pahalı.',
   'agitate.option2.description3': 'İşe alım süreci bitmeyen kuyruk gibi: Hep beklenir, sonuç geç gelir.',
   
-  'agitate.option3.title': '3️⃣ Profesyonel bir ekiple yapın',
-  'agitate.option3.description1': 'Bizim işimiz bu. Şirketinize özel yapay zeka sistemlerini kurarız, optimize ederiz ve çalışır hale getiririz.',
-  'agitate.option3.description2': 'Siz büyümeye odaklanın, biz sistemi yönetiriz.',
+  'agitate.option3.title': '3️⃣ Gelecek ayda, gelecek dönemde, gelecek yılda başlayın',
+  'agitate.option3.description1': 'Seneye bütçe ayarlanır, o zaman yaparız. Ama her geçen ay kaybolan fırsatlar ve kaçan müşteriler demek.',
+  'agitate.option3.description2': 'Gerçek şu: 3 yıl önce dev yazılım şirketi DocuSign, bugün yapay zeka ile 2 günde kopyalanabiliyor.',
+  'agitate.option3.description3': 'Peki sizin iş modelinizin kopyalanması ne kadar sürer?',
 
   // Features Section
   'features.outbound.title': 'Outbound Satış Otomasyonu',

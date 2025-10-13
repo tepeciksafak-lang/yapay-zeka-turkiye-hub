@@ -40,6 +40,7 @@ export default {
 
   // Agitate Section
   'agitate.title': 'Wie können Sie KI richtig in Ihr Unternehmen integrieren?',
+  'agitate.subtitle': 'Es gibt verschiedene Ansätze… aber die meisten sind wie ein Stein im Schuh: bei jedem Schritt unbequem.',
   
   'agitate.option1.title': '1️⃣ Selbst machen (DIY)',
   'agitate.option1.description': 'Das ist die größte Technologie, die die Menschheit je entwickelt hat. Aber um sie richtig in Ihr Unternehmen einzubauen, brauchen Sie monatelange Konzentration und enorm viel Zeit. Haben Sie in Ihrem vollen Alltag wirklich Kapazität dafür?',
@@ -49,9 +50,10 @@ export default {
   'agitate.option2.description2': 'Neue Leute einstellen? Diese Technologie ist neu, erfahrene Fachkräfte sind selten – und teuer.',
   'agitate.option2.description3': 'Der Recruiting-Prozess zieht sich wie ein endloser Stau. Warten. Hoffen. Zeitverlust.',
   
-  'agitate.option3.title': '3️⃣ Mit Profis zusammenarbeiten',
-  'agitate.option3.description1': 'Das ist unser Job. Wir entwickeln und implementieren KI-Systeme, die exakt zu Ihrem Unternehmen passen – von der Integration bis zur Optimierung.',
-  'agitate.option3.description2': 'Sie konzentrieren sich aufs Wachstum. Wir kümmern uns um die Maschine.',
+  'agitate.option3.title': '3️⃣ Später anfangen - nächster Monat, nächstes Quartal, nächstes Jahr',
+  'agitate.option3.description1': 'Nächstes Jahr wird das Budget eingeplant, dann machen wir es. Aber jeder verstrichene Monat bedeutet verlorene Chancen und entgangene Kunden.',
+  'agitate.option3.description2': 'Die Realität: DocuSign, ein riesiges Software-Unternehmen, kann heute mit KI in 2 Tagen repliziert werden – vor 3 Jahren undenkbar.',
+  'agitate.option3.description3': 'Wie lange würde es dauern, Ihr Geschäftsmodell zu kopieren?',
 
   // Features Section
   'features.outbound.title': 'Outbound Vertriebsautomatisierung',
