@@ -125,6 +125,19 @@ export default {
   'blog.seo.description': 'Einblicke und Fallstudien für praktisches, KI-gestütztes Wachstum.',
   'blog.hero.title': 'Blog',
   'blog.hero.subtitle': 'Einblicke und Fallstudien für praktisches, KI-gestütztes Wachstum.',
+
+  // Services Page
+  'services.seo.title': 'Unsere Dienstleistungen | Pratik Yapay Zeka',
+  'services.seo.description': 'Automatisierung, Datenanalyse, Kundenkommunikation und Schulung/Beratung: Praktische KI-Lösungen für Ihr Unternehmen.',
+  'services.page.title': 'Unsere Dienstleistungen | Pratik Yapay Zeka',
+  'services.automation.title': 'Automatisierung',
+  'services.automation.text': 'Viele Aufgaben, die Sie auf Ihrem Telefon oder Computer erledigen, kann jetzt KI für Sie übernehmen. Durch die Automatisierung täglicher wiederkehrender Aufgaben bieten wir Ihnen und Ihrem Team die Möglichkeit, sich auf wertvollere Aufgaben zu konzentrieren. Sparen Sie Zeit und vereinfachen Sie Ihre Geschäftsprozesse, indem Sie Technologie zu einem Teil Ihrer Arbeit machen.',
+  'services.data-analysis.title': 'Datenanalyse',
+  'services.data-analysis.text': 'Wir helfen Ihnen, Ihre verstreuten Informationen zusammenzuführen, zu analysieren und in klare Erkenntnisse umzuwandeln. Ob Verkaufsstatistiken, Kundenfeedback oder Leistungsindikatoren – wir liefern Ihnen die Informationen, die Sie benötigen, um die richtigen Entscheidungen in Ihrem Unternehmen zu treffen.',
+  'services.customer-communication.title': 'Kundenkommunikation',
+  'services.customer-communication.text': 'Erscheint Ihnen die Digitalisierung komplex? Ist KI für Ihr Unternehmen geeignet? Wir bieten Ihnen maßgeschneiderte Lösungen für Ihre Bedürfnisse. Darüber hinaus veranstalten wir leicht verständliche Schulungen, um Ihr Team auf diese Innovationen vorzubereiten.',
+  'services.consulting.title': 'Beratung und Schulung',
+  'services.consulting.text': 'Wir verwalten Ihre KI-Projekte von der Planungsphase bis zur Implementierung und stellen sicher, dass sie erfolgreich abgeschlossen werden.',
   
   // Pricing
   'pricing.title': 'Einfache, Transparente Preise',
