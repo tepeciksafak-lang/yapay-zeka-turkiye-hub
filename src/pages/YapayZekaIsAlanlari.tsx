@@ -1,13 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocalizedRoute } from "@/lib/routeMappings";
 
 const YapayZekaIsAlanlari = () => {
+  const { t, currentLanguage } = useLanguage();
+  
   return (
     <>
       <SEO
-        title="Yapay Zeka İş Alanları - Satış & Pazarlama Otomasyonu | Pratik Yapay Zeka"
-        description="AI ile iş süreçlerinizi dönüştürün: Satış otomasyonu, pazarlama kampanyaları, müşteri analizi. Dijital dönüşümünüzü hızlandırın."
+        title={t('ai.business.seo.title')}
+        description={t('ai.business.seo.description')}
       />
       <main className="min-h-screen">
       {/* Hero Section */}
@@ -15,10 +19,10 @@ const YapayZekaIsAlanlari = () => {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-6 text-foreground sm:text-5xl">
-              Yapay Zeka İş Alanları | Satış ve Pazarlama Otomasyonu
+              {t('ai.business.hero.title')}
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Dijital Dönüşüm ile Süreçlerinizi Otomatikleştirin
+              {t('ai.business.hero.subtitle')}
             </p>
           </div>
         </div>
@@ -38,41 +42,41 @@ const YapayZekaIsAlanlari = () => {
             {/* Satış Otomasyonu Section */}
             <div className="bg-card rounded-xl p-8 shadow-md mb-12">
               <h2 className="text-3xl font-bold mb-6 text-foreground">
-                Satış Otomasyonu – Yapay Zeka ile Satış Süreçlerinizi Otomatikleştirin
+                {t('ai.business.sales.title')}
               </h2>
               
               <div className="space-y-6 mb-8">
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-foreground">
-                    Outbound satış e-postalarınızı yapay zeka ile otomatikleştirin:
+                    {t('ai.business.sales.feature1.title')}
                   </h3>
                   <p className="text-muted-foreground">
-                    AI destekli sistemler, hedef müşteri listelerini analiz ederek kişiselleştirilmiş e-postalar oluşturur ve takip süreçlerini yönetir.
+                    {t('ai.business.sales.feature1.text')}
                   </p>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-foreground">
-                    Müşteri ve rakip şirketleri otomatik analiz edin:
+                    {t('ai.business.sales.feature2.title')}
                   </h3>
                   <p className="text-muted-foreground">
-                    Yapay zeka, LinkedIn profilleri, web siteleri ve haber kaynaklarından müşteri ve rakip analizleri yaparak en uygun satış stratejilerini önerir.
+                    {t('ai.business.sales.feature2.text')}
                   </p>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-foreground">
-                    Takip süreçlerini akıllı otomasyon ile yönetin:
+                    {t('ai.business.sales.feature3.title')}
                   </h3>
                   <p className="text-muted-foreground">
-                    Yanıt alınmayan e-postalar için belirlenen aralıklarda otomatik hatırlatıcılar ve kişiselleştirilmiş yanıtlar gönderilir.
+                    {t('ai.business.sales.feature3.text')}
                   </p>
                 </div>
               </div>
               
               <Button asChild className="bg-gradient-to-r from-primary to-accent">
-                <Link to="/yapay-zeka-is-alanlari/yapay-zeka-satis-otomasyonu">
-                  Daha fazla bilgi için tıklayın
+                <Link to={getLocalizedRoute(currentLanguage, 'sales-automation')}>
+                  {t('ai.business.sales.cta')}
                 </Link>
               </Button>
             </div>
@@ -87,44 +91,44 @@ const YapayZekaIsAlanlari = () => {
             {/* Pazarlama Otomasyonu Section */}
             <div className="bg-card rounded-xl p-8 shadow-md mb-12">
               <h2 className="text-3xl font-bold mb-6 text-foreground">
-                Pazarlama Otomasyonu – Yapay Zeka ile Pazarlama Süreçlerinizi Optimize Edin
+                {t('ai.business.marketing.title')}
               </h2>
               
               <div className="space-y-6 mb-8">
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-foreground">
-                    İçerik üretiminizi ve SEO optimizasyonunuzu AI ile hızlandırın:
+                    {t('ai.business.marketing.feature1.title')}
                   </h3>
                   <ul className="list-disc ml-6 space-y-2 text-muted-foreground">
-                    <li>Yapay zeka destekli araçlar, hedef kitleniz için blog yazıları, ürün açıklamaları ve sosyal medya gönderileri oluşturur.</li>
-                    <li>AI tabanlı SEO analizi, trend olan anahtar kelimeleri belirleyerek içeriklerinizi arama motorlarında üst sıralara taşır.</li>
+                    <li>{t('ai.business.marketing.feature1.text1')}</li>
+                    <li>{t('ai.business.marketing.feature1.text2')}</li>
                   </ul>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-foreground">
-                    Sosyal medya ve reklam kampanyalarınızı AI ile yönetin:
+                    {t('ai.business.marketing.feature2.title')}
                   </h3>
                   <ul className="list-disc ml-6 space-y-2 text-muted-foreground">
-                    <li>Yapay zeka, en iyi paylaşım zamanlarını ve içerik türlerini belirleyerek sosyal medya stratejinizi optimize eder.</li>
-                    <li>AI destekli reklam yönetimi, bütçenizi en verimli şekilde dağıtarak dönüşüm oranlarını artırır.</li>
+                    <li>{t('ai.business.marketing.feature2.text1')}</li>
+                    <li>{t('ai.business.marketing.feature2.text2')}</li>
                   </ul>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-foreground">
-                    Kişiselleştirilmiş pazarlama kampanyaları oluşturun:
+                    {t('ai.business.marketing.feature3.title')}
                   </h3>
                   <ul className="list-disc ml-6 space-y-2 text-muted-foreground">
-                    <li>AI, kullanıcı davranışlarını analiz ederek otomatik e-posta kampanyaları ve kişiselleştirilmiş mesajlar oluşturur.</li>
-                    <li>Dinamik içerik ve bireysel müşteri profillerine özel teklifler, etkileşim oranlarını artırır.</li>
+                    <li>{t('ai.business.marketing.feature3.text1')}</li>
+                    <li>{t('ai.business.marketing.feature3.text2')}</li>
                   </ul>
                 </div>
               </div>
               
               <Button asChild className="bg-gradient-to-r from-primary to-accent">
-                <Link to="/yapay-zeka-is-alanlari/pazarlama">
-                  Daha fazla bilgi için tıklayın
+                <Link to={`/${currentLanguage}/yapay-zeka-is-alanlari/pazarlama`}>
+                  {t('ai.business.marketing.cta')}
                 </Link>
               </Button>
             </div>

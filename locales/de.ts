@@ -94,6 +94,37 @@ export default {
   'sales.demo.form.company.label': 'Unternehmen',
   'sales.demo.form.message.label': 'Ihre Nachricht',
   'sales.demo.form.submit': 'Absenden',
+
+  // AI Business Areas Page
+  'ai.business.seo.title': 'KI-Geschäftsbereiche - Vertriebs- & Marketingautomatisierung | Pratik Yapay Zeka',
+  'ai.business.seo.description': 'Transformieren Sie Ihre Geschäftsprozesse mit KI: Vertriebsautomatisierung, Marketingkampagnen, Kundenanalyse. Beschleunigen Sie Ihre digitale Transformation.',
+  'ai.business.hero.title': 'KI-Geschäftsbereiche | Vertriebs- und Marketingautomatisierung',
+  'ai.business.hero.subtitle': 'Automatisieren Sie Ihre Prozesse mit digitaler Transformation',
+  'ai.business.sales.title': 'Vertriebsautomatisierung – Automatisieren Sie Ihre Vertriebsprozesse mit KI',
+  'ai.business.sales.feature1.title': 'Automatisieren Sie Ihre Outbound-Vertriebs-E-Mails mit KI:',
+  'ai.business.sales.feature1.text': 'KI-gestützte Systeme analysieren Zielkundenlisten, erstellen personalisierte E-Mails und verwalten Nachfolgeprozesse.',
+  'ai.business.sales.feature2.title': 'Analysieren Sie Kunden und Wettbewerber automatisch:',
+  'ai.business.sales.feature2.text': 'KI führt Kunden- und Wettbewerbsanalysen aus LinkedIn-Profilen, Websites und Nachrichtenquellen durch und schlägt die am besten geeigneten Vertriebsstrategien vor.',
+  'ai.business.sales.feature3.title': 'Verwalten Sie Nachfolgeprozesse mit intelligenter Automatisierung:',
+  'ai.business.sales.feature3.text': 'Automatische Erinnerungen und personalisierte Antworten werden in festgelegten Intervallen für unbeantwortete E-Mails gesendet.',
+  'ai.business.sales.cta': 'Klicken Sie hier für weitere Informationen',
+  'ai.business.marketing.title': 'Marketingautomatisierung – Optimieren Sie Ihre Marketingprozesse mit KI',
+  'ai.business.marketing.feature1.title': 'Beschleunigen Sie Ihre Content-Produktion und SEO-Optimierung mit KI:',
+  'ai.business.marketing.feature1.text1': 'KI-gestützte Tools erstellen Blog-Beiträge, Produktbeschreibungen und Social-Media-Posts für Ihre Zielgruppe.',
+  'ai.business.marketing.feature1.text2': 'KI-basierte SEO-Analyse identifiziert Trend-Keywords und bringt Ihre Inhalte an die Spitze der Suchmaschinen.',
+  'ai.business.marketing.feature2.title': 'Verwalten Sie Ihre Social-Media- und Werbekampagnen mit KI:',
+  'ai.business.marketing.feature2.text1': 'KI optimiert Ihre Social-Media-Strategie, indem sie die besten Posting-Zeiten und Content-Typen bestimmt.',
+  'ai.business.marketing.feature2.text2': 'KI-gestütztes Anzeigenmanagement verteilt Ihr Budget am effizientesten und erhöht die Konversionsraten.',
+  'ai.business.marketing.feature3.title': 'Erstellen Sie personalisierte Marketingkampagnen:',
+  'ai.business.marketing.feature3.text1': 'KI analysiert Nutzerverhalten und erstellt automatische E-Mail-Kampagnen und personalisierte Nachrichten.',
+  'ai.business.marketing.feature3.text2': 'Dynamische Inhalte und auf individuelle Kundenprofile zugeschnittene Angebote steigern die Engagement-Raten.',
+  'ai.business.marketing.cta': 'Klicken Sie hier für weitere Informationen',
+
+  // Blog Page
+  'blog.seo.title': 'Blog – Ressourcen & Einblicke',
+  'blog.seo.description': 'Einblicke und Fallstudien für praktisches, KI-gestütztes Wachstum.',
+  'blog.hero.title': 'Blog',
+  'blog.hero.subtitle': 'Einblicke und Fallstudien für praktisches, KI-gestütztes Wachstum.',
   
   // Pricing
   'pricing.title': 'Einfache, Transparente Preise',

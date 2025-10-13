@@ -2,6 +2,8 @@ import { useSearchParams } from "react-router-dom";
 import BlogCard, { type BlogPost } from "@/components/blog/BlogCard";
 import Pagination from "@/components/blog/Pagination";
 import { SEO } from "@/components/SEO";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocalizedRoute } from "@/lib/routeMappings";
 
 const allPosts: BlogPost[] = [
   {
@@ -18,6 +20,7 @@ const allPosts: BlogPost[] = [
 ];
 
 const Blog = () => {
+  const { t, currentLanguage } = useLanguage();
   const [searchParams] = useSearchParams();
   const pageSize = 12;
   const total = allPosts.length;
@@ -32,8 +35,8 @@ const Blog = () => {
   return (
     <main style={{ background: "#0B0F14" }} className="min-h-screen">
       <SEO 
-        title="Blog – Kaynaklar & İçgörüler"
-        description="Pratik, AI destekli büyüme için içgörüler ve vaka yazıları."
+        title={t('blog.seo.title')}
+        description={t('blog.seo.description')}
       />
       
       <section className="relative mx-auto w-full max-w-6xl px-4 pt-12 md:pt-16">
@@ -50,13 +53,13 @@ const Blog = () => {
           className="text-3xl md:text-5xl font-semibold tracking-tight"
           style={{ color: "#E5E7EB" }}
         >
-          Blog
+          {t('blog.hero.title')}
         </h1>
         <p
           className="mt-3 max-w-[65ch] text-base md:text-lg"
           style={{ color: "#94A3B8" }}
         >
-          Pratik, AI destekli büyüme için içgörüler ve vaka yazıları.
+          {t('blog.hero.subtitle')}
         </p>
       </section>
 
@@ -69,7 +72,7 @@ const Blog = () => {
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
-          basePath="/tr/blog"
+          basePath={getLocalizedRoute(currentLanguage, 'blog')}
         />
       </section>
     </main>
