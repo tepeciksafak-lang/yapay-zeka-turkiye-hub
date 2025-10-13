@@ -90,7 +90,7 @@ const Index = () => {
     },
     {
       company: "DKM/Coach Bilge",
-      result: "Oyun formatında lead funnel ile yüzlerce ek lead.",
+      result: "Fuarda oyun formatında lead funnel ile yüzlerce ek lead.",
       metric: "+300 nitelikli lead"
     }
   ];
@@ -185,7 +185,7 @@ const Index = () => {
               <a href="/tr/vaka-calismalari" className="text-primary hover:underline">Detaylı vaka çalışmalarımızı</a> inceleyin ve başarı hikayelerimizi keşfedin.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {cases.map((c) => (
               <Card 
                 key={c.company} 
