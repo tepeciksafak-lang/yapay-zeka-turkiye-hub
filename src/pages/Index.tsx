@@ -28,10 +28,12 @@ import { Hero } from "@/components/hero/Hero";
 import AgitateDemo from "@/components/AgitateDemo";
 import SolutionSection from "@/components/SolutionSection";
 import GoToMarketTimeline from "@/components/GoToMarketTimeline";
+import { getLocalizedRoute } from "@/lib/routeMappings";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const navigate = useNavigate();
 
@@ -168,7 +170,7 @@ const Index = () => {
           <div className="mx-auto mb-16 max-w-2xl text-center">
             <h2 className="mb-4 text-3xl font-bold text-foreground">Success Stories</h2>
             <p className="text-muted-foreground">
-              <a href="/tr/vaka-calismalari" className="text-primary hover:underline">Detaylı vaka çalışmalarımızı</a> inceleyin ve başarı hikayelerimizi keşfedin.
+              <Link to={getLocalizedRoute(currentLanguage, 'cases')} className="text-primary hover:underline">Detaylı vaka çalışmalarımızı</Link> inceleyin ve başarı hikayelerimizi keşfedin.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
@@ -182,7 +184,14 @@ const Index = () => {
                     <button 
                       onClick={() => {
                         const caseMap: Record<number, number> = { 0: 2, 1: 1, 2: 3, 3: 4, 4: 5 };
-                        navigate(`/tr/vaka-calismalari#case-${caseMap[index]}`);
+                        const caseSlugMap: Record<number, string> = { 
+                          0: 'acilsatis', 
+                          1: 'car-studio-ai', 
+                          2: 'salevium', 
+                          3: 'erpa-teknoloji', 
+                          4: 'cemkimsan' 
+                        };
+                        navigate(getLocalizedRoute(currentLanguage, 'case-detail', { slug: caseSlugMap[index] }));
                       }}
                       className="text-sm text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
                     >

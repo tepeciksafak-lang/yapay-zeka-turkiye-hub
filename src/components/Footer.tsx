@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useModal } from "@/contexts/ModalContext";
+import { getLocalizedRoute, type RouteKey } from "@/lib/routeMappings";
 
 const Footer = () => {
   const { t, currentLanguage } = useLanguage();
   const { openQuickAnalysis } = useModal();
   
-  const getLocalizedPath = (path: string) => {
-    return `/${currentLanguage}${path}`;
+  const getLocalizedPath = (routeKey: RouteKey) => {
+    return getLocalizedRoute(currentLanguage, routeKey);
   };
 
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12 lg:px-6">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="space-y-4">
-            <Link to={getLocalizedPath('/')} className="flex items-center space-x-2">
+            <Link to={getLocalizedPath('home')} className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-lg bg-card border border-border flex items-center justify-center">
                 <div className="w-4 h-4 bg-lime-400 rounded-sm"></div>
               </div>
@@ -30,17 +31,17 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-text-hi">Menu</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to={getLocalizedPath('/')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                <Link to={getLocalizedPath('home')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
                   {t('footer.menu.home')}
                 </Link>
               </li>
               <li>
-                <Link to={getLocalizedPath('/cozumler')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                <Link to={getLocalizedPath('solutions')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
                   {t('footer.menu.solutions')}
                 </Link>
               </li>
               <li>
-                <Link to={getLocalizedPath('/vaka-calismalari')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                <Link to={getLocalizedPath('cases')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
                   {t('footer.menu.cases')}
                 </Link>
               </li>
@@ -70,10 +71,10 @@ const Footer = () => {
               {t('footer.copyright')}
             </p>
             <div className="flex space-x-4">
-              <Link to={getLocalizedPath('/gizlilik')} className="text-sm text-text-muted hover:text-lime-400 transition-colors lime-underline">
+              <Link to={getLocalizedPath('privacy')} className="text-sm text-text-muted hover:text-lime-400 transition-colors lime-underline">
                 {t('footer.privacy')}
               </Link>
-              <Link to={getLocalizedPath('/kullanim-kosullari')} className="text-sm text-text-muted hover:text-lime-400 transition-colors lime-underline">
+              <Link to={getLocalizedPath('terms')} className="text-sm text-text-muted hover:text-lime-400 transition-colors lime-underline">
                 {t('footer.terms')}
               </Link>
             </div>

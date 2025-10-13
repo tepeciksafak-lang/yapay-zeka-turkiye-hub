@@ -59,6 +59,136 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
+          <Route path="/de/losungen" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Solutions />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/fallstudien" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <VakaCalismalari />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/fallstudien/:slug" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <CaseStudyDetail />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/uber-uns" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Hakkimda />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/vertriebsautomatisierung" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <SatisOtomasyonu />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/vertriebsautomatisierung-demo" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <SatisOtomasyonuDemo />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/ki-geschaftsbereiche" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <YapayZekaIsAlanlari />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/kostenlose-inhalte" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <UcretsizIcerikler />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/blog" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Blog />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/blog/:slug" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <BlogPost />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/dienstleistungen" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Services5 />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/datenschutz" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <GizlilikPolitikasi />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/nutzungsbedingungen" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <KullanimKosullari />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
           {/* English Routes */}
           <Route path="/en" element={
             <LanguageWrapper>

@@ -9,20 +9,21 @@ import { ArrowRight, ArrowLeft, ExternalLink } from "lucide-react";
 import { getCaseStudyBySlug, getAdjacentCaseStudies } from "@/data/caseStudiesData";
 import { useModal } from "@/contexts/ModalContext";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocalizedRoute } from "@/lib/routeMappings";
 
 const CaseStudyDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { openQuickAnalysis } = useModal();
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   
   if (!slug) {
-    return <Navigate to="/tr/vaka-calismalari" replace />;
+    return <Navigate to={getLocalizedRoute(currentLanguage, 'cases')} replace />;
   }
 
   const caseStudy = getCaseStudyBySlug(slug);
   
   if (!caseStudy) {
-    return <Navigate to="/tr/vaka-calismalari" replace />;
+    return <Navigate to={getLocalizedRoute(currentLanguage, 'cases')} replace />;
   }
 
   const { prev, next } = getAdjacentCaseStudies(slug);
@@ -79,7 +80,7 @@ const CaseStudyDetail = () => {
       }}>
         <div className="container mx-auto px-4 relative py-12 lg:py-16">
           <div className="max-w-4xl mx-auto">
-            <Link to="/tr/vaka-calismalari" className="inline-flex items-center text-lime-400 hover:text-lime-300 mb-6 transition-colors">
+            <Link to={getLocalizedRoute(currentLanguage, 'cases')} className="inline-flex items-center text-lime-400 hover:text-lime-300 mb-6 transition-colors">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Tüm Vaka Çalışmaları
             </Link>
@@ -223,11 +224,10 @@ const CaseStudyDetail = () => {
               </CardContent>
             </Card>
 
-            {/* Navigation */}
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-12">
               {prev ? (
                 <Button asChild variant="outline" className="w-full sm:w-auto border-lime-400 text-lime-400 hover:bg-lime-400/10">
-                  <Link to={`/tr/vaka-calismalari/${prev.slug}`}>
+                  <Link to={getLocalizedRoute(currentLanguage, 'case-detail', { slug: prev.slug })}>
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     {prev.baslik}
                   </Link>
@@ -235,14 +235,14 @@ const CaseStudyDetail = () => {
               ) : <div className="w-full sm:w-auto" />}
               
               <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800">
-                <Link to="/tr/vaka-calismalari">
+                <Link to={getLocalizedRoute(currentLanguage, 'cases')}>
                   Tüm Vakalar
                 </Link>
               </Button>
               
               {next ? (
                 <Button asChild variant="outline" className="w-full sm:w-auto border-lime-400 text-lime-400 hover:bg-lime-400/10">
-                  <Link to={`/tr/vaka-calismalari/${next.slug}`}>
+                  <Link to={getLocalizedRoute(currentLanguage, 'case-detail', { slug: next.slug })}>
                     {next.baslik}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

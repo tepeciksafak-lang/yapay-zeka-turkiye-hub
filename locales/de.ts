@@ -1,5 +1,6 @@
 export default {
   // Navigation
+  'nav.home': 'Startseite',
   'nav.solutions': 'Lösungen',
   'nav.cases': 'Fallstudien',
   'nav.pricing': 'Preise',
@@ -11,8 +12,11 @@ export default {
   'hero.headline.highlight': 'Wir bauen die Künstliche Intelligenz.',
   'hero.subheadline': 'KI + Automatisierung, die Ihr Unternehmen skaliert – ohne dass Sie mehr leisten müssen.',
   'hero.cta.primary': 'Jetzt kostenlos starten',
-  
   'hero.social.proof': '100+ B2B Teams vertrauen auf unsere praktischen Automatisierungen.',
+
+  // Solutions
+  'solutions.hero.title1': 'Bereit für den nächsten Schritt?',
+  'solutions.hero.title2': 'Lassen Sie uns Ihre Lösung entwickeln',
 
   // Features
   'features.title': 'KI-gestützte Geschäftslösungen',
@@ -21,6 +25,8 @@ export default {
   // Cases
   'cases.title': 'Erfolgsgeschichten',
   'cases.subtitle': 'Echte Ergebnisse von Unternehmen, die mit KI-Automatisierung skaliert haben',
+  'cases.final.title': 'Bereit für Ihre eigene Erfolgsgeschichte?',
+  'cases.final.subtitle': 'Lassen Sie uns gemeinsam Ihre Geschäftsprozesse mit KI optimieren.',
   
   // Pricing
   'pricing.title': 'Einfache, Transparente Preise',
@@ -35,6 +41,14 @@ export default {
   'faq.subtitle': 'Alles, was Sie über unsere KI-Automatisierungsplattform wissen müssen',
   
   // Footer
-  'footer.cta': 'Bereit, Ihr Unternehmen zu transformieren?',
-  'footer.cta.button': 'Kostenlose Beratung Erhalten'
+  'footer.description': 'KI-gestützte Automatisierung für wachsende Unternehmen.',
+  'footer.menu.home': 'Startseite',
+  'footer.menu.solutions': 'Lösungen',
+  'footer.menu.cases': 'Fallstudien',
+  'footer.contact.title': 'Kontakt',
+  'footer.contact.text': 'Bereit, Ihr Unternehmen zu transformieren?',
+  'footer.cta.button': 'Kostenlose Beratung Erhalten',
+  'footer.copyright': '© 2024 Pratik Yapay Zeka. Alle Rechte vorbehalten.',
+  'footer.privacy': 'Datenschutz',
+  'footer.terms': 'Nutzungsbedingungen'
 } as const

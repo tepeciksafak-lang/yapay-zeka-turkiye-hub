@@ -9,11 +9,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useModal } from "@/contexts/ModalContext";
 import { useNavigate } from "react-router-dom";
 import { caseStudiesData } from "@/data/caseStudiesData";
+import { getLocalizedRoute } from "@/lib/routeMappings";
 
 const VakaCalismalari = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("Hepsi");
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const { openQuickAnalysis } = useModal();
 
   // Handle hash navigation - redirect to new URLs
@@ -23,10 +24,10 @@ const VakaCalismalari = () => {
       const caseNumber = parseInt(hash.replace('#case-', ''));
       const caseStudy = caseStudiesData[caseNumber - 1];
       if (caseStudy) {
-        navigate(`/tr/vaka-calismalari/${caseStudy.slug}`, { replace: true });
+        navigate(getLocalizedRoute(currentLanguage, 'case-detail', { slug: caseStudy.slug }), { replace: true });
       }
     }
-  }, [navigate]);
+  }, [navigate, currentLanguage]);
 
   return (
     <div className="min-h-screen bg-background">
