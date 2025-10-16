@@ -223,6 +223,44 @@ export default {
   'index.faq.5.question': 'Ist technisches Wissen erforderlich?',
   'index.faq.5.answer': 'Nein. Wir verwalten den gesamten Prozess. Wir müssen nur Ihre Geschäftsprozesse verstehen.',
   
+  // Agitate Demo
+  'agitate.title': 'Wie integrieren Sie KI richtig in Ihr Unternehmen?',
+  'agitate.subtitle': 'Es gibt verschiedene Wege – doch viele sind wie ein Stein im Schuh: stören bei jedem Schritt.',
+  'agitate.option1.title': 'Selbst umsetzen',
+  'agitate.option1.description': 'Dies ist die größte Technologie bisher. Sie korrekt zu integrieren erfordert Monate fokussierter Arbeit. Können Sie das neben dem Tagesgeschäft leisten?',
+  'agitate.option2.title': 'Internes Team aufbauen oder einstellen',
+  'agitate.option2.description1': 'Interne Delegation: Noch eine Aufgabe auf einem ohnehin vollen Tisch. Soll die Transformation zur Nebensache werden?',
+  'agitate.option2.description2': 'Neueinstellungen: Die Technologie ist neu; erfahrene Spezialisten sind selten und teuer.',
+  'agitate.option2.description3': 'Recruiting zieht sich: lange Wartezeiten, wenig Fortschritt.',
+  'agitate.option3.title': 'Nächsten Monat, nächstes Quartal, nächstes Jahr anfangen',
+  'agitate.option3.description1': 'Budget nächstes Jahr? Jeder Monat bedeutet verpasste Chancen und Kunden.',
+  'agitate.option3.description2': 'Früher brauchte man Jahre: Heute lässt sich z. B. DocuSign in 2 Tagen kopieren.',
+  'agitate.option3.description3': 'Wie lange würde es dauern, Ihr Geschäftsmodell zu kopieren?',
+
+  // Solution Section
+  'solution.title': 'Wenn Sie einen Marathonpartner suchen … warum wir?',
+  'solution.card1.title': 'Erfahrung und Kultur',
+  'solution.card1.description': 'Über 10 Jahre Vertriebserfahrung – vom Tee auf türkischen Tischen bis zu den kühlen Glaswänden europäischer Meetingräume.',
+  'solution.card2.title': 'KI in der Praxis',
+  'solution.card2.description': 'Seit 1,5 Jahren baue ich mit meiner KI-Beratung unermüdlich laufende Systeme – wie gut geölte Maschinen.',
+  'solution.card3.title': 'Beweise vorab',
+  'solution.card3.description': 'Ich habe die 2.000 größten Unternehmen der Türkei analysiert und teile die Erkenntnisse. Dazu: meine Prompt-Bibliothek für KI-gestützte Werbeproduktion.',
+  'solution.card4.title': 'Ich trage das Risiko',
+  'solution.card4.description': 'Kommt kein Ergebnis zustande, erhalten Sie 50% des Honorars zurück. Das Risiko liegt nicht bei Ihnen, sondern bei mir.',
+
+  // Timeline
+  'timeline.title': 'Von Null bis Stammkunde: End-to-End-Automation',
+  'timeline.step1.title': 'Neukundengewinnung',
+  'timeline.step1.description': 'Systeme, die Ihren Kalender automatisch füllen.\n\n• Kaltakquise per Telefon: Ziellisten mit KI\n• Personalisierte E-Mail-Kampagnen an Entscheider\n• Social-DM-Kampagnen (LinkedIn, Instagram, X)\n• Mehrsprachige Ansprache für internationale Märkte',
+  'timeline.step2.title': 'Marketing',
+  'timeline.step2.description': 'Inhalte und Werbung basieren nicht auf Zufall, sondern auf Systemen.\n\n• Schnelle, mühelose Content-Produktion (KI-gestützt)\n• Website-Design & -Optimierung\n• Werbe- und Promo-Videos',
+  'timeline.step3.title': 'Vertrieb & CRM',
+  'timeline.step3.description': 'Ihre Verkäufer verkaufen – statt zu dokumentieren.\n\n• Automatische CRM-Dokumentation\n• Schnelle, einfache Angebotserstellung (individuell)\n• Conversion-Rate Ihrer Verkäufer steigern',
+  'timeline.step4.title': 'Customer Success',
+  'timeline.step4.description': 'Stärken Sie die Bindung und erhöhen Sie den Umsatz mit Bestandskunden.\n\n• KI-Support-Agent: beantwortet Anfragen per Telefon und E-Mail sofort\n• Upsell- und Cross-Sell-Systeme für mehr Wert pro Kunde',
+  'timeline.step5.title': 'Conversion-Optimierung',
+  'timeline.step5.description': 'Mehr qualifizierte Anfragen über Ihre Website.\n\n• Website mit KI optimieren, Abschlussquote erhöhen\n• Speed-to-Lead: selbst am Wochenende Antwort in 2 Minuten\n• Instagram-Chatbot: wie ein Verkäufer im Schaufenster',
+
   // Case Study Detail & Timeline
   'cases.back.link': 'Alle Fallstudien',
   'cases.summary.title': 'Kurzzusammenfassung',

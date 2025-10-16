@@ -1,5 +1,6 @@
 export default {
   // Navigation
+  'nav.home': 'Home',
   'nav.solutions': 'Solutions',
   'nav.cases': 'Case Studies',
   'nav.pricing': 'Pricing',

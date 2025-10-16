@@ -1,5 +1,6 @@
 export default {
   // Navigation
+  'nav.home': 'Ana Sayfa',
   'nav.solutions': 'Çözümler',
   'nav.cases': 'Vaka Çalışmaları',
   'nav.pricing': 'Fiyatlandırma',
