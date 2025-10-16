@@ -42,7 +42,14 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const t = (key: string): string => {
-    return translations[currentLanguage]?.[key] || key;
+    const tryGet = (lang: Language) => translations[lang]?.[key];
+    return (
+      tryGet(currentLanguage) ??
+      tryGet('de') ??
+      tryGet('en') ??
+      tryGet('tr') ??
+      key
+    );
   };
 
   return (
