@@ -104,5 +104,22 @@ export default {
   'index.faq.4.question': 'How is pricing determined?',
   'index.faq.4.answer': 'We offer custom packages based on needs and integrations. After free analysis, you get a clear price.',
   'index.faq.5.question': 'Is technical knowledge required?',
-  'index.faq.5.answer': 'No. We manage the entire process. We just need to understand your business processes.'
+  'index.faq.5.answer': 'No. We manage the entire process. We just need to understand your business processes.',
+  
+  // Case Study Detail & Timeline
+  'cases.back.link': 'All Case Studies',
+  'cases.summary.title': 'Brief Summary',
+  'cases.tabs.problem': 'Problem',
+  'cases.tabs.solution': 'Solution',
+  'cases.tabs.implementation': 'Implementation Steps',
+  'cases.tabs.implementation.short': 'Implementation',
+  'cases.tabs.results': 'Results',
+  'cases.nav.previous': 'Previous Case Study',
+  'cases.nav.next': 'Next Case Study',
+  'cases.nav.all': 'View All Case Studies',
+  'cases.cta.title': 'Ready for Your Own Success Story?',
+  'cases.cta.subtitle': 'Let\'s analyze together how AI automation can transform your business.',
+  'cases.cta.button': 'Request Free Analysis',
+  'cases.breadcrumb.home': 'Home',
+  'cases.breadcrumb.cases': 'Case Studies',
 } as const

@@ -104,5 +104,22 @@ export default {
   'index.faq.4.question': 'Fiyat nasıl belirlenir?',
   'index.faq.4.answer': 'İhtiyaç ve entegrasyonlara göre özel paketler sunuyoruz. Ücretsiz analiz sonrası net fiyat alırsınız.',
   'index.faq.5.question': 'Teknik bilgi gerekli mi?',
-  'index.faq.5.answer': 'Hayır. Tüm süreci biz yönetiyoruz. Sadece iş süreçlerinizi anlamamız yeterli.'
+  'index.faq.5.answer': 'Hayır. Tüm süreci biz yönetiyoruz. Sadece iş süreçlerinizi anlamamız yeterli.',
+  
+  // Case Study Detail & Timeline
+  'cases.back.link': 'Tüm Vaka Çalışmaları',
+  'cases.summary.title': 'Kısa Özet',
+  'cases.tabs.problem': 'Problem',
+  'cases.tabs.solution': 'Çözüm',
+  'cases.tabs.implementation': 'Uygulama Aşamaları',
+  'cases.tabs.implementation.short': 'Uygulama',
+  'cases.tabs.results': 'Sonuçlar',
+  'cases.nav.previous': 'Önceki Vaka Çalışması',
+  'cases.nav.next': 'Sonraki Vaka Çalışması',
+  'cases.nav.all': 'Tüm Vaka Çalışmalarını Görüntüle',
+  'cases.cta.title': 'Kendi Başarı Hikayeniz İçin Hazır mısınız?',
+  'cases.cta.subtitle': 'Yapay zeka otomasyonunun işinizi nasıl dönüştürebileceğini birlikte analiz edelim.',
+  'cases.cta.button': 'Ücretsiz Analiz Talep Et',
+  'cases.breadcrumb.home': 'Ana Sayfa',
+  'cases.breadcrumb.cases': 'Vaka Çalışmaları',
 } as const

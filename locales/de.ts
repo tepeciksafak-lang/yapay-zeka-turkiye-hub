@@ -221,5 +221,22 @@ export default {
   'index.faq.4.question': 'Wie wird der Preis festgelegt?',
   'index.faq.4.answer': 'Wir bieten maßgeschneiderte Pakete nach Bedarf und Integrationen. Nach kostenloser Analyse erhalten Sie einen klaren Preis.',
   'index.faq.5.question': 'Ist technisches Wissen erforderlich?',
-  'index.faq.5.answer': 'Nein. Wir verwalten den gesamten Prozess. Wir müssen nur Ihre Geschäftsprozesse verstehen.'
+  'index.faq.5.answer': 'Nein. Wir verwalten den gesamten Prozess. Wir müssen nur Ihre Geschäftsprozesse verstehen.',
+  
+  // Case Study Detail & Timeline
+  'cases.back.link': 'Alle Fallstudien',
+  'cases.summary.title': 'Kurzzusammenfassung',
+  'cases.tabs.problem': 'Problem',
+  'cases.tabs.solution': 'Lösung',
+  'cases.tabs.implementation': 'Umsetzung',
+  'cases.tabs.implementation.short': 'Umsetzung',
+  'cases.tabs.results': 'Ergebnisse',
+  'cases.nav.previous': 'Vorherige Fallstudie',
+  'cases.nav.next': 'Nächste Fallstudie',
+  'cases.nav.all': 'Alle Fallstudien ansehen',
+  'cases.cta.title': 'Bereit für Ihre eigene Erfolgsgeschichte?',
+  'cases.cta.subtitle': 'Lassen Sie uns gemeinsam analysieren, wie KI-Automatisierung Ihr Unternehmen transformieren kann.',
+  'cases.cta.button': 'Kostenlose Analyse anfordern',
+  'cases.breadcrumb.home': 'Startseite',
+  'cases.breadcrumb.cases': 'Fallstudien',
 } as const

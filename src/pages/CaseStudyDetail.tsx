@@ -38,9 +38,9 @@ const CaseStudyDetail = () => {
         type="article"
       />
       <BreadcrumbSchema items={[
-        { name: "Ana Sayfa", url: "https://pratikyz.com/tr" },
-        { name: "Vaka Çalışmaları", url: "https://pratikyz.com/tr/vaka-calismalari" },
-        { name: caseStudy.baslik, url: `https://pratikyz.com/tr/vaka-calismalari/${caseStudy.slug}` }
+        { name: t('cases.breadcrumb.home'), url: `https://pratikyz.com/${currentLanguage}` },
+        { name: t('cases.breadcrumb.cases'), url: `https://pratikyz.com/${currentLanguage}/${currentLanguage === 'de' ? 'fallstudien' : currentLanguage === 'en' ? 'case-studies' : 'vaka-calismalari'}` },
+        { name: caseStudy.baslik, url: `https://pratikyz.com/${currentLanguage}/${currentLanguage === 'de' ? 'fallstudien' : currentLanguage === 'en' ? 'case-studies' : 'vaka-calismalari'}/${caseStudy.slug}` }
       ]} />
 
       {/* Structured Data for Case Study */}
@@ -82,7 +82,7 @@ const CaseStudyDetail = () => {
           <div className="max-w-4xl mx-auto">
             <Link to={getLocalizedRoute(currentLanguage, 'cases')} className="inline-flex items-center text-lime-400 hover:text-lime-300 mb-6 transition-colors">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Tüm Vaka Çalışmaları
+              {t('cases.back.link')}
             </Link>
             
             <Badge 
@@ -139,26 +139,26 @@ const CaseStudyDetail = () => {
                       value="problem"
                       className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-3"
                     >
-                      Problem
+                      {t('cases.tabs.problem')}
                     </TabsTrigger>
                     <TabsTrigger 
                       value="cozum"
                       className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-3"
                     >
-                      Çözüm
+                      {t('cases.tabs.solution')}
                     </TabsTrigger>
                     <TabsTrigger 
                       value="uygulama"
                       className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-3"
                     >
-                      <span className="md:hidden">Uygulama</span>
-                      <span className="hidden md:inline">Uygulama Aşamaları</span>
+                      <span className="md:hidden">{t('cases.tabs.implementation.short')}</span>
+                      <span className="hidden md:inline">{t('cases.tabs.implementation')}</span>
                     </TabsTrigger>
                     <TabsTrigger 
                       value="sonuclar"
                       className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-3"
                     >
-                      Sonuçlar
+                      {t('cases.tabs.results')}
                     </TabsTrigger>
                   </TabsList>
                   
@@ -236,7 +236,7 @@ const CaseStudyDetail = () => {
               
               <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800">
                 <Link to={getLocalizedRoute(currentLanguage, 'cases')}>
-                  Tüm Vakalar
+                  {t('cases.nav.all')}
                 </Link>
               </Button>
               
@@ -256,17 +256,17 @@ const CaseStudyDetail = () => {
             >
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold text-slate-200 mb-4">
-                  Sizin İçin Nasıl Bir Çözüm Üretebiliriz?
+                  {t('cases.cta.title')}
                 </h3>
                 <p className="text-slate-400 mb-6 leading-relaxed">
-                  {caseStudy.baslik} için geliştirdiğimiz bu çözümün sizin işinize nasıl uyarlanabileceğini birlikte keşfedelim.
+                  {t('cases.cta.subtitle')}
                 </p>
                 <Button 
                   size="lg" 
                   className="bg-lime-400 text-slate-900 hover:bg-lime-500"
                   onClick={openQuickAnalysis}
                 >
-                  Ücretsiz Analiz Talep Et
+                  {t('cases.cta.button')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>

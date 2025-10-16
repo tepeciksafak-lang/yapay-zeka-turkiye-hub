@@ -16,7 +16,7 @@ interface ConnectedTimelineProps {
 export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi" }: ConnectedTimelineProps) {
   const [activeCase, setActiveCase] = useState<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
-  const { currentLanguage } = useLanguage();
+  const { currentLanguage, t } = useLanguage();
 
   // Filter case studies based on selected filter
   const filteredCaseStudies = selectedFilter === "Hepsi" 
@@ -156,8 +156,10 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
 }
 
 function CasePanel({ caseStudy }: { caseStudy: CaseStudy }) {
+  const { t } = useLanguage();
+  
   return (
-    <Card 
+    <Card
       className="border border-slate-700 bg-slate-900/90 backdrop-blur-sm"
       style={{ 
         borderRadius: '14px',
@@ -168,7 +170,7 @@ function CasePanel({ caseStudy }: { caseStudy: CaseStudy }) {
       <CardContent className="p-8">
         {/* Brief Summary */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-slate-200 mb-4">Kısa Özet</h3>
+          <h3 className="text-xl font-semibold text-slate-200 mb-4">{t('cases.summary.title')}</h3>
           <p className="text-slate-400 leading-relaxed">{caseStudy.ozet}</p>
         </div>
 
@@ -195,29 +197,29 @@ function CasePanel({ caseStudy }: { caseStudy: CaseStudy }) {
               className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-2 text-xs md:text-sm"
               role="tab"
             >
-              Problem
+              {t('cases.tabs.problem')}
             </TabsTrigger>
             <TabsTrigger 
               value="cozum"
               className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-2 text-xs md:text-sm"
               role="tab"
             >
-              Çözüm
+              {t('cases.tabs.solution')}
             </TabsTrigger>
             <TabsTrigger 
               value="uygulama"
               className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-2 text-xs md:text-sm"
               role="tab"
             >
-              <span className="md:hidden">Uygulama</span>
-              <span className="hidden md:inline">Uygulama Aşamaları</span>
+              <span className="md:hidden">{t('cases.tabs.implementation.short')}</span>
+              <span className="hidden md:inline">{t('cases.tabs.implementation')}</span>
             </TabsTrigger>
             <TabsTrigger 
               value="sonuclar"
               className="data-[state=active]:bg-transparent data-[state=active]:text-lime-400 data-[state=active]:border-b-2 data-[state=active]:border-lime-400 data-[state=active]:rounded-none text-slate-400 hover:text-slate-300 px-2 py-2 text-xs md:text-sm"
               role="tab"
             >
-              Sonuçlar
+              {t('cases.tabs.results')}
             </TabsTrigger>
           </TabsList>
           
