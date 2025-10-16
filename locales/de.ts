@@ -161,5 +161,65 @@ export default {
   'footer.cta.button': 'Kostenlose Beratung Erhalten',
   'footer.copyright': '© 2024 Pratik Yapay Zeka. Alle Rechte vorbehalten.',
   'footer.privacy': 'Datenschutz',
-  'footer.terms': 'Nutzungsbedingungen'
+  'footer.terms': 'Nutzungsbedingungen',
+
+  // Index Page
+  'index.seo.title': 'Pratik Yapay Zeka – Vertriebs- und Marketingautomatisierung',
+  'index.seo.description': 'Durchgängige KI-Automatisierung vom Lead bis zum Meeting. Steigern Sie Ihren Umsatz mit Outbound & Inbound, Content- und Social-Media-Automatisierung.',
+  
+  // Index Features
+  'index.features.outbound.title': 'Outbound-Vertriebsautomatisierung',
+  'index.features.outbound.description': 'Personalisierte E-Mails und intelligente Nachverfolgung.',
+  'index.features.outbound.proof': '500+ personalisierte Nachrichten täglich',
+  'index.features.marketing.title': 'Marketingautomatisierung',
+  'index.features.marketing.description': 'Automatische Content-, SEO- und Anzeigenoptimierung.',
+  'index.features.marketing.proof': 'Garantierte +85% Steigerung des SEO-Scores',
+  'index.features.chatbot.title': 'Kundenkommunikation (Chatbot)',
+  'index.features.chatbot.description': '24/7 personalisierte Antworten.',
+  'index.features.chatbot.proof': '+40% Kundenzufriedenheit',
+  'index.features.analytics.title': 'Datenanalyse',
+  'index.features.analytics.description': 'Echtzeit-Einblicke, bessere Entscheidungen.',
+  'index.features.analytics.proof': '60% schnellere Entscheidungsfindung',
+  
+  // Index Cases
+  'index.cases.title': 'Erfolgsgeschichten',
+  'index.cases.link': 'Unsere detaillierten Fallstudien',
+  'index.cases.subtitle': 'ansehen und Erfolgsgeschichten entdecken.',
+  'index.cases.details': 'Details',
+  'index.cases.acilsatis.result': 'Schnelle Bekanntheit, konstanter Traffic.',
+  'index.cases.acilsatis.metric': '+45% Sichtbarkeit',
+  'index.cases.carstudio.result': 'Expansion in neue Märkte ohne Teamvergrößerung.',
+  'index.cases.carstudio.metric': '3x Markterweiterung',
+  'index.cases.salevium.result': 'Content-Produktion: von Stunden zu Minuten.',
+  'index.cases.salevium.metric': '90% Zeitersparnis',
+  'index.cases.erpa.result': 'KI-gestützter strategischer Eintritt in den europäischen Markt.',
+  'index.cases.erpa.metric': 'Meetings im ersten Monat',
+  'index.cases.cemkimsan.result': 'Vertriebs- und Marketingkampagnen in über 20 Ländern.',
+  'index.cases.cemkimsan.metric': '6 neue Chancen',
+  
+  // Index Testimonials
+  'index.testimonials.1.text': 'Unsere Vertriebsprozesse haben sich komplett verändert. Lead-Qualität um 300% gestiegen.',
+  'index.testimonials.1.name': 'Mehmet Yılmaz',
+  'index.testimonials.1.company': 'TechStart CEO',
+  'index.testimonials.1.metric': '300% Lead-Steigerung',
+  'index.testimonials.2.text': 'Unglaubliche Beschleunigung in der Content-Produktion. Team-Effizienz massiv gestiegen.',
+  'index.testimonials.2.name': 'Ayşe Kara',
+  'index.testimonials.2.company': 'Marketing Direktorin',
+  'index.testimonials.2.metric': '85% Effizienzsteigerung',
+  'index.testimonials.3.text': 'Kundenservice läuft jetzt 24/7. Zufriedenheit auf Rekordniveau.',
+  'index.testimonials.3.name': 'Can Özkan',
+  'index.testimonials.3.company': 'E-Commerce-Experte',
+  'index.testimonials.3.metric': '95% Kundenzufriedenheit',
+  
+  // Index FAQ
+  'index.faq.1.question': 'Wie lange dauert die Einrichtung?',
+  'index.faq.1.answer': 'Normalerweise 2 Tage. Einfache Integrationen am selben Tag, komplexe Systeme können 1 Woche dauern.',
+  'index.faq.2.question': 'Wie wird Datensicherheit gewährleistet?',
+  'index.faq.2.answer': 'Kundendaten werden vollständig vertraulich behandelt, Zugriffe sind eingeschränkt. Wir arbeiten DSGVO-konform.',
+  'index.faq.3.question': 'Wem gehört der Content?',
+  'index.faq.3.answer': 'Alle erstellten Inhalte gehören Ihnen. Sie haben keine Urheberrechtsprobleme.',
+  'index.faq.4.question': 'Wie wird der Preis festgelegt?',
+  'index.faq.4.answer': 'Wir bieten maßgeschneiderte Pakete nach Bedarf und Integrationen. Nach kostenloser Analyse erhalten Sie einen klaren Preis.',
+  'index.faq.5.question': 'Ist technisches Wissen erforderlich?',
+  'index.faq.5.answer': 'Nein. Wir verwalten den gesamten Prozess. Wir müssen nur Ihre Geschäftsprozesse verstehen.'
 } as const

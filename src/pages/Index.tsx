@@ -40,99 +40,99 @@ const Index = () => {
   const features = [
     {
       icon: <TrendingUp className="h-8 w-8 text-primary" />,
-      title: "Outbound Satış Otomasyonu",
-      description: "Kişiselleştirilmiş e-postalar ve akıllı takip.",
-      proof: "Günde 500+ kişiselleştirilmiş mesaj gönderimi"
+      title: t('index.features.outbound.title'),
+      description: t('index.features.outbound.description'),
+      proof: t('index.features.outbound.proof')
     },
     {
       icon: <Bot className="h-8 w-8 text-primary" />,
-      title: "Pazarlama Otomasyonu", 
-      description: "İçerik, SEO ve reklam optimizasyonu otomatik.",
-      proof: "SEO skorunda %85+ artış garantisi"
+      title: t('index.features.marketing.title'), 
+      description: t('index.features.marketing.description'),
+      proof: t('index.features.marketing.proof')
     },
     {
       icon: <MessageCircle className="h-8 w-8 text-primary" />,
-      title: "Müşteri İletişimi (Chatbot)",
-      description: "7/24 kişiselleştirilmiş yanıt.",
-      proof: "Müşteri memnuniyetinde %40 artış"
+      title: t('index.features.chatbot.title'),
+      description: t('index.features.chatbot.description'),
+      proof: t('index.features.chatbot.proof')
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-primary" />,
-      title: "Veri Analizi",
-      description: "Gerçek zamanlı içgörü, daha doğru karar.",
-      proof: "Karar alma süresinde %60 hızlanma"
+      title: t('index.features.analytics.title'),
+      description: t('index.features.analytics.description'),
+      proof: t('index.features.analytics.proof')
     }
   ];
 
   const cases = [
     {
       company: "AcilSatis",
-      result: "Hızlı bilinirlik, sürekli trafik.",
-      metric: "+%45 görünürlük"
+      result: t('index.cases.acilsatis.result'),
+      metric: t('index.cases.acilsatis.metric')
     },
     {
       company: "Carstudio AI", 
-      result: "Ekip büyütmeden yeni pazarlara açılım.",
-      metric: "3x pazar genişlemesi"
+      result: t('index.cases.carstudio.result'),
+      metric: t('index.cases.carstudio.metric')
     },
     {
       company: "Salevium",
-      result: "İçerik üretimi: saatlerden dakikalara.",
-      metric: "%90 zaman tasarrufu"
+      result: t('index.cases.salevium.result'),
+      metric: t('index.cases.salevium.metric')
     },
     {
       company: "ERPA Teknoloji",
-      result: "Avrupa pazarına AI destekli stratejik giriş.",
-      metric: "İlk ayda görüşmeler"
+      result: t('index.cases.erpa.result'),
+      metric: t('index.cases.erpa.metric')
     },
     {
       company: "Cemkimsan",
-      result: "20'den fazla ülkeye satış ve pazarlama kampanyası.",
-      metric: "6 yeni fırsat"
+      result: t('index.cases.cemkimsan.result'),
+      metric: t('index.cases.cemkimsan.metric')
     }
   ];
 
   const testimonials = [
     {
-      text: "Satış süreçlerimiz tamamen değişti. Lead kalitemiz %300 arttı.",
-      name: "Mehmet Yılmaz",
-      company: "TechStart CEO",
-      metric: "%300 lead artışı"
+      text: t('index.testimonials.1.text'),
+      name: t('index.testimonials.1.name'),
+      company: t('index.testimonials.1.company'),
+      metric: t('index.testimonials.1.metric')
     },
     {
-      text: "İçerik üretiminde inanılmaz hızlanma. Ekip verimliliği çok arttı.",
-      name: "Ayşe Kara", 
-      company: "Marketing Director",
-      metric: "%85 verimlilik artışı"
+      text: t('index.testimonials.2.text'),
+      name: t('index.testimonials.2.name'), 
+      company: t('index.testimonials.2.company'),
+      metric: t('index.testimonials.2.metric')
     },
     {
-      text: "Müşteri hizmetleri 7/24 çalışıyor artık. Memnuniyet rekor seviyede.",
-      name: "Can Özkan",
-      company: "E-ticaret Uzmanı", 
-      metric: "%95 müşteri memnuniyeti"
+      text: t('index.testimonials.3.text'),
+      name: t('index.testimonials.3.name'),
+      company: t('index.testimonials.3.company'), 
+      metric: t('index.testimonials.3.metric')
     }
   ];
 
   const faqs = [
     {
-      question: "Kurulum ne kadar sürer?",
-      answer: "Genelde 2 gün. Basit entegrasyonlar aynı gün, kompleks sistemler için 1 hafta sürebilir."
+      question: t('index.faq.1.question'),
+      answer: t('index.faq.1.answer')
     },
     {
-      question: "Veri güvenliği nasıl sağlanıyor?",
-      answer: "Müşteri verileri tamamen gizli tutulur, erişimler kısıtlıdır. KVKK uyumlu çalışıyoruz."
+      question: t('index.faq.2.question'),
+      answer: t('index.faq.2.answer')
     },
     {
-      question: "İçerik sahipliği kimde?",
-      answer: "Üretilen tüm varlıklar size aittir. Hiçbir telif hakkı sorunu yaşamazsınız."
+      question: t('index.faq.3.question'),
+      answer: t('index.faq.3.answer')
     },
     {
-      question: "Fiyat nasıl belirlenir?",
-      answer: "İhtiyaca ve entegrasyonlara göre özelleştirilen paketler sunuyoruz. Ücretsiz analiz sonrası net fiyat."
+      question: t('index.faq.4.question'),
+      answer: t('index.faq.4.answer')
     },
     {
-      question: "Teknik bilgi gerekli mi?",
-      answer: "Hayır. Tüm süreci biz yönetiyoruz. Sadece iş süreçlerinizi anlamamız yeterli."
+      question: t('index.faq.5.question'),
+      answer: t('index.faq.5.answer')
     }
   ];
 
@@ -147,8 +147,8 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Pratik Yapay Zeka – Satış ve Pazarlama Otomasyonu"
-        description="Lead'den toplantıya kadar uçtan uca AI otomasyonları. Outbound & inbound, içerik ve sosyal medya otomasyonu ile satışlarınızı artırın."
+        title={t('index.seo.title')}
+        description={t('index.seo.description')}
       />
       <FAQSchema faqs={faqs} />
       
@@ -168,9 +168,9 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 max-w-2xl text-center">
-            <h2 className="mb-4 text-3xl font-bold text-foreground">Success Stories</h2>
+            <h2 className="mb-4 text-3xl font-bold text-foreground">{t('index.cases.title')}</h2>
             <p className="text-muted-foreground">
-              <Link to={getLocalizedRoute(currentLanguage, 'cases')} className="text-primary hover:underline">Detaylı vaka çalışmalarımızı</Link> inceleyin ve başarı hikayelerimizi keşfedin.
+              <Link to={getLocalizedRoute(currentLanguage, 'cases')} className="text-primary hover:underline">{t('index.cases.link')}</Link> {t('index.cases.subtitle')}
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
@@ -195,7 +195,7 @@ const Index = () => {
                       }}
                       className="text-sm text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
                     >
-                      Detaylar
+                      {t('index.cases.details')}
                     </button>
                   </div>
                 </CardContent>
