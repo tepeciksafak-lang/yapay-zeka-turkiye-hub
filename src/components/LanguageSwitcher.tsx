@@ -10,7 +10,7 @@ const LanguageSwitcher = () => {
   const languages = [
     { code: "tr", name: "Türkçe" },
     { code: "de", name: "Deutsch" },
-    { code: "en", name: "English" },
+    // { code: "en", name: "English" }, // Temporarily disabled
   ];
 
   const currentLang = languages.find(lang => lang.code === currentLanguage);
