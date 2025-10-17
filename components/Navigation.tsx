@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/s
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { useI18n } from '@/locales/client'
 import { MotionButton } from '@/components/MotionButton'
+import { getRouteKeyFromPath, getLocalizedRoute, extractParamsFromPath } from '@/lib/routeMappings'
 
 const locales = [
   { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
@@ -36,8 +37,22 @@ export function Navigation() {
   }
 
   const switchLocale = (newLocale: string) => {
-    const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || ''
-    window.location.href = `/${newLocale}${pathWithoutLocale}`
+    const currentLocaleFromPath = pathname.split('/')[1] || 'tr'
+    
+    // Find current route key
+    const routeKey = getRouteKeyFromPath(pathname, currentLocaleFromPath)
+    
+    if (routeKey) {
+      // Extract params using helper function
+      const params = extractParamsFromPath(pathname, currentLocaleFromPath, routeKey)
+      
+      // Generate correct localized URL
+      window.location.href = getLocalizedRoute(newLocale, routeKey, params || {})
+    } else {
+      // Fallback for unknown routes
+      const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || ''
+      window.location.href = `/${newLocale}${pathWithoutLocale}`
+    }
   }
 
   const navItems = [

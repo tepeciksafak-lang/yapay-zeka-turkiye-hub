@@ -113,3 +113,36 @@ export const getRouteKeyFromPath = (path: string, language: string): RouteKey | 
   
   return undefined;
 };
+
+/**
+ * Extract parameters from a path based on route key
+ * @param path - The path to extract parameters from
+ * @param language - The language code
+ * @param routeKey - The route key
+ * @returns Object with extracted parameters or undefined
+ */
+export const extractParamsFromPath = (
+  path: string,
+  language: string,
+  routeKey: RouteKey
+): Record<string, string> | undefined => {
+  const mapping = routeMappings[language] || routeMappings.tr;
+  const pattern = mapping[routeKey];
+  
+  if (!pattern) return undefined;
+  
+  const cleanPath = path.replace(`/${language}`, '').split('?')[0];
+  const regex = new RegExp(pattern.replace(/:[^/]+/g, '([^/]+)'));
+  const match = cleanPath.match(regex);
+  
+  if (!match) return undefined;
+  
+  const params: Record<string, string> = {};
+  const paramNames = pattern.match(/:[^/]+/g)?.map(p => p.slice(1)) || [];
+  
+  paramNames.forEach((name, index) => {
+    params[name] = match[index + 1];
+  });
+  
+  return params;
+};

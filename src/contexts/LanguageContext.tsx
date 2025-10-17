@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import deTranslations from '../../locales/de';
 import trTranslations from '../../locales/tr';
 import enTranslations from '../../locales/en';
+import { getRouteKeyFromPath, getLocalizedRoute, extractParamsFromPath } from '@/lib/routeMappings';
 
 type Language = 'de' | 'tr' | 'en';
 
@@ -36,8 +37,24 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   
   const setLanguage = (newLang: Language) => {
     const currentPath = window.location.pathname;
-    const pathWithoutLang = currentPath.replace(/^\/(de|tr|en)/, '') || '/';
-    navigate(`/${newLang}${pathWithoutLang}`);
+    const currentLang = currentPath.split('/')[1] as Language;
+    
+    // Find the route key of the current page
+    const routeKey = getRouteKeyFromPath(currentPath, currentLang);
+    
+    if (routeKey) {
+      // Extract parameters using the helper function
+      const params = extractParamsFromPath(currentPath, currentLang, routeKey);
+      
+      // Generate correct localized URL
+      const newPath = getLocalizedRoute(newLang, routeKey, params || {});
+      navigate(newPath);
+    } else {
+      // Fallback: Simple replacement for unknown routes
+      const pathWithoutLang = currentPath.replace(/^\/(de|tr|en)/, '') || '/';
+      navigate(`/${newLang}${pathWithoutLang}`);
+    }
+    
     setCurrentLanguage(newLang);
   };
 
