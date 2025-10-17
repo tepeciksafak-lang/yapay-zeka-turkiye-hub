@@ -1,36 +1,74 @@
 import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import BlogCard, { type BlogPost } from "@/components/blog/BlogCard";
 import Pagination from "@/components/blog/Pagination";
 import { SEO } from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getLocalizedRoute } from "@/lib/routeMappings";
-
-const allPosts: BlogPost[] = [
-  {
-    slug: "ai-outreach-101",
-    title: "AI ile Otomatik Outreach: 5 Adımda İlk Toplantılar",
-    excerpt:
-      "Yapay zekâ destekli kişiselleştirme ve doğru zamanlamayla haftalık düzenli toplantılar üretmenin pratik yolu.",
-    coverImage: "/placeholder.svg",
-    date: "2025-03-05",
-    readTime: "6 dk",
-    author: "Safak Tepecik",
-    tags: ["outreach", "automation", "b2b"],
-  },
-];
+import { supabase } from "@/integrations/supabase/client";
 
 const Blog = () => {
   const { t, currentLanguage } = useLanguage();
   const [searchParams] = useSearchParams();
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [total, setTotal] = useState(0);
+  
   const pageSize = 12;
-  const total = allPosts.length;
-  const totalPages = Math.max(1, Math.ceil(total / pageSize));
-  const currentPage = Math.min(
-    totalPages,
-    Math.max(1, Number(searchParams.get("page") ?? 1))
-  );
+  const currentPage = Math.max(1, Number(searchParams.get("page") ?? 1));
   const start = (currentPage - 1) * pageSize;
-  const posts = allPosts.slice(start, start + pageSize);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      try {
+        // Get total count
+        const { count } = await supabase
+          .from("blog_posts")
+          .select("*", { count: "exact", head: true })
+          .eq("language", currentLanguage)
+          .eq("status", "published");
+
+        setTotal(count || 0);
+
+        // Get paginated posts
+        const { data, error } = await supabase
+          .from("blog_posts")
+          .select("*")
+          .eq("language", currentLanguage)
+          .eq("status", "published")
+          .order("published_at", { ascending: false })
+          .range(start, start + pageSize - 1);
+
+        if (error) {
+          console.error("Error fetching posts:", error);
+          setPosts([]);
+        } else {
+          // Transform to BlogPost format
+          const transformedPosts: BlogPost[] = (data || []).map((post) => ({
+            slug: post.slug,
+            title: post.title,
+            excerpt: post.excerpt,
+            coverImage: post.cover_image_url || "/placeholder.svg",
+            date: new Date(post.published_at || post.created_at).toISOString().split("T")[0],
+            readTime: `${post.read_time} dk`,
+            author: post.author,
+            tags: post.tags || [],
+          }));
+          setPosts(transformedPosts);
+        }
+      } catch (err) {
+        console.error("Unexpected error:", err);
+        setPosts([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, [currentLanguage, start]);
+
+  const totalPages = Math.max(1, Math.ceil(total / pageSize));
 
   return (
     <main style={{ background: "#0B0F14" }} className="min-h-screen">
@@ -64,16 +102,28 @@ const Blog = () => {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-12 md:pb-16">
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {posts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
-          ))}
-        </div>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          basePath={getLocalizedRoute(currentLanguage, 'blog')}
-        />
+        {loading ? (
+          <div className="mt-8 text-center" style={{ color: "#94A3B8" }}>
+            Yükleniyor...
+          </div>
+        ) : posts.length === 0 ? (
+          <div className="mt-8 text-center" style={{ color: "#94A3B8" }}>
+            {currentLanguage === "tr" ? "Henüz blog yazısı yok." : "Noch keine Blog-Posts vorhanden."}
+          </div>
+        ) : (
+          <>
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              {posts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              basePath={getLocalizedRoute(currentLanguage, 'blog')}
+            />
+          </>
+        )}
       </section>
     </main>
   );
