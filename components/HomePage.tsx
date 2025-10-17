@@ -25,6 +25,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { useI18n } from '@/locales/client'
 import { MotionButton } from '@/components/MotionButton'
 import { QuickAnalysisModal } from '@/components/QuickAnalysisModal'
+import { analytics } from '@/utils/analytics'
 
 export function HomePage() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -254,7 +255,10 @@ export function HomePage() {
             <MotionButton 
               size="lg"
               className="hover-glow bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0"
-              onClick={() => setModalOpen(true)}
+              onClick={() => {
+                analytics.trackButtonClick('demo_cta_button', 'demo_section');
+                setModalOpen(true);
+              }}
             >
               Ücretsiz Analiz Al
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -299,7 +303,14 @@ export function HomePage() {
                     ))}
                   </ul>
                 </div>
-                <MotionButton className="w-full hover-glow" variant="outline">
+                <MotionButton 
+                  className="w-full hover-glow" 
+                  variant="outline"
+                  onClick={() => {
+                    analytics.trackButtonClick('pricing_starter_cta', 'pricing_section');
+                    setModalOpen(true);
+                  }}
+                >
                   Başla
                 </MotionButton>
               </CardContent>
@@ -334,7 +345,13 @@ export function HomePage() {
                     ))}
                   </ul>
                 </div>
-                <MotionButton className="w-full hover-glow bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0">
+                <MotionButton 
+                  className="w-full hover-glow bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0"
+                  onClick={() => {
+                    analytics.trackButtonClick('pricing_growth_cta', 'pricing_section');
+                    setModalOpen(true);
+                  }}
+                >
                   Başla
                 </MotionButton>
               </CardContent>
@@ -364,7 +381,14 @@ export function HomePage() {
                     ))}
                   </ul>
                 </div>
-                <MotionButton className="w-full hover-glow" variant="outline">
+                <MotionButton 
+                  className="w-full hover-glow" 
+                  variant="outline"
+                  onClick={() => {
+                    analytics.trackButtonClick('pricing_enterprise_cta', 'pricing_section');
+                    setModalOpen(true);
+                  }}
+                >
                   İletişime Geç
                 </MotionButton>
               </CardContent>

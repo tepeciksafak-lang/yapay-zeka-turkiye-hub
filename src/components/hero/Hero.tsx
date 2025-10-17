@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { analytics } from "@/utils/analytics";
 
 // Types for locale support (Next.js compatibility)
 export type HeroLang = 'tr' | 'de' | 'en';
@@ -44,6 +45,9 @@ export function Hero({ locale, modalOpen, onModalOpenChange }: HeroProps) {
   const copy = heroCopy[currentLocale];
 
   const handleCtaClick = () => {
+    // Track button click
+    analytics.trackButtonClick('hero_cta_button', 'hero_section');
+    
     // Open the QuickAnalysisModal
     if (onModalOpenChange) {
       onModalOpenChange(true);

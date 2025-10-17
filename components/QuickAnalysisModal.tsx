@@ -9,6 +9,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { toast } from '@/hooks/use-toast'
 import { z } from 'zod'
+import { analytics } from '@/utils/analytics'
 
 interface QuickAnalysisModalProps {
   open: boolean
@@ -68,6 +69,18 @@ export function QuickAnalysisModal({ open, onOpenChange }: QuickAnalysisModalPro
         throw new Error('Network error')
       }
 
+      // Track successful form submission
+      analytics.trackFormSubmit('quick_analysis_form', true)
+      analytics.trackEvent({
+        action: 'form_submit',
+        category: 'lead_generation',
+        label: 'quick_analysis_cta',
+        custom_parameters: {
+          language: t('nav.home') ? 'tr' : 'de', // Infer language from context
+          source: 'quick_analysis_modal'
+        }
+      })
+
       // Success
       resetForm()
       onOpenChange(false)
@@ -87,6 +100,9 @@ export function QuickAnalysisModal({ open, onOpenChange }: QuickAnalysisModalPro
         })
         setErrors(fieldErrors)
       } else {
+        // Track failed submission
+        analytics.trackFormSubmit('quick_analysis_form', false)
+        
         // Network or other errors
         toast({
           title: "Fehler beim Senden",
