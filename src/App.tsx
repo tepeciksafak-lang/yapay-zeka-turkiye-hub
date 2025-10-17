@@ -357,19 +357,19 @@ function App() {
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <LanguageProvider>
+        <BrowserRouter>
+          <LanguageProvider>
+            <TooltipProvider>
               <AnalyticsWrapper>
                 <ModalProvider>
                   <AppWithModal />
                 </ModalProvider>
               </AnalyticsWrapper>
-            </LanguageProvider>
-          </BrowserRouter>
-        </TooltipProvider>
+              <Toaster />
+              <Sonner />
+            </TooltipProvider>
+          </LanguageProvider>
+        </BrowserRouter>
       </QueryClientProvider>
     </HelmetProvider>
   );
