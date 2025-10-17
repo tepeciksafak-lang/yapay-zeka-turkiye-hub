@@ -89,6 +89,11 @@ const Index = () => {
       company: "Cemkimsan",
       result: t('index.cases.cemkimsan.result'),
       metric: t('index.cases.cemkimsan.metric')
+    },
+    {
+      company: "DKM/Coach Bilge",
+      result: t('index.cases.dkm.result'),
+      metric: t('index.cases.dkm.metric')
     }
   ];
 
@@ -173,7 +178,7 @@ const Index = () => {
               <Link to={getLocalizedRoute(currentLanguage, 'cases')} className="text-primary hover:underline">{t('index.cases.link')}</Link> {t('index.cases.subtitle')}
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {cases.map((case_item, index) => (
               <Card key={index} className="group transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                 <CardContent className="p-6">
@@ -189,7 +194,8 @@ const Index = () => {
                           1: 'car-studio-ai', 
                           2: 'salevium', 
                           3: 'erpa-teknoloji', 
-                          4: 'cemkimsan' 
+                          4: 'cemkimsan',
+                          5: 'dkm-coach-bilge'
                         };
                         navigate(getLocalizedRoute(currentLanguage, 'case-detail', { slug: caseSlugMap[index] }));
                       }}

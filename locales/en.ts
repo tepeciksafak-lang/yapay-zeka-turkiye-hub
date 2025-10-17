@@ -80,6 +80,8 @@ export default {
   'index.cases.erpa.metric': 'Meetings in first month',
   'index.cases.cemkimsan.result': 'Sales and marketing campaigns in 20+ countries.',
   'index.cases.cemkimsan.metric': '6 new opportunities',
+  'index.cases.dkm.result': 'Gamification lead funnel with hundreds of additional leads.',
+  'index.cases.dkm.metric': '+300 Leads',
   
   // Index Testimonials
   'index.testimonials.1.text': 'Our sales processes have completely changed. Lead quality increased by 300%.',

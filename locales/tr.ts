@@ -80,6 +80,8 @@ export default {
   'index.cases.erpa.metric': 'İlk ayda meetingler',
   'index.cases.cemkimsan.result': '20+ ülkede satış ve pazarlama kampanyaları.',
   'index.cases.cemkimsan.metric': '6 yeni fırsat',
+  'index.cases.dkm.result': 'Oyun formatında Lead Funnel ile yüzlerce ek Lead.',
+  'index.cases.dkm.metric': '+300 Lead',
   
   // Index Testimonials
   'index.testimonials.1.text': 'Satış süreçlerimiz tamamen değişti. Lead kalitesi %300 arttı.',

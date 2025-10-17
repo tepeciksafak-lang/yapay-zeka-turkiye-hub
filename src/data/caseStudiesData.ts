@@ -189,6 +189,40 @@ export const caseStudiesData: CaseStudy[] = [
       "Cemkimsan artik bagimsiz olarak yeni pazarlari analiz edip partner bulabiliyor"
     ],
     alinti: "Bu proje sayesinde ihracat süreçlerimizi modernlestirdik ve 20'den fazla ülkede sistematik bir distribütör agi kurmaya basladik. Artik hangi pazarda kim ile görüsecegimizi net olarak biliyoruz ve zaman kaybetmeden hedefli çalisiyoruz."
+  },
+  {
+    id: 6,
+    slug: "dkm-coach-bilge",
+    etiket: "Oyunlaştırma & Lead Generation",
+    baslik: "DKM/Coach Bilge",
+    ozet: "Oyun formatında Lead Funnel ile yüzlerce ek Lead – fuar öncesi ve sonrası tam otomasyon.",
+    metaTitle: "DKM/Coach Bilge Vaka Çalışması - Oyunlaştırma ile +300 Nitelikli Lead",
+    metaDescription: "DKM/Coach Bilge'nin Supermakler-Challenge projesi ile fuar öncesinde +300 nitelikli lead, %40 daha fazla stand ziyaretçisi ve %100 dijital takip başarısı.",
+    ogImage: "/og-dkm-coach-bilge.jpg",
+    kpis: [
+      { label: "Nitelikli Lead", value: "+300" },
+      { label: "Stand Ziyaretçisi Artışı", value: "+%40" },
+      { label: "Dijital Takip Oranı", value: "%100" }
+    ],
+    problem: [
+      "Her yıl fuarlara yüksek bütçeler harcanıyor, ancak nitelikli kontaktlar belirsiz kalıyor",
+      "Fuar ziyaretçileri tesadüfe bırakılıyor, ön hazırlık yok",
+      "Fuar sonrası takip sistemi manuel ve düzensiz",
+      "ROI (yatırım getirisi) net olarak ölçülemiyor"
+    ],
+    cozum: "Salevium için DKM fuarında interaktif bir quiz ve oyunlaştırma mekanizması geliştirdik. Katılımcılar fuar öncesinde 'Supermakler-Challenge' ile bilgi testine katıldılar ve otomatik olarak hediye çekilişine dahil oldular. Tüm lead verileri anında kaydedildi, nitelikli hale getirildi ve fuar sonrası yapay zeka destekli e-posta akışlarıyla otomatik olarak takip edildi.",
+    uygulamaAsamalari: [
+      "Ön Kampanya: Sosyal medya, e-posta ve partner ağları üzerinden davet",
+      "Quiz & Oyunlaştırma: Supermakler-Challenge ile etkileşimli katılım ve puan sistemi",
+      "Lead Kaydı: E-posta, pozisyon ve ilgi alanı otomatik olarak toplandı",
+      "Fuar Sonrası Otomasyon: Yapay zeka destekli kişiselleştirilmiş e-posta dizileri"
+    ],
+    sonuclar: [
+      "Fuar öncesi ve sırasında +300 nitelikli lead kazanıldı",
+      "Önceki yıla göre stand ziyaretçilerinde %40 artış sağlandı",
+      "Tüm etkileşimler %100 dijital olarak takip edilebilir hale getirildi"
+    ],
+    alinti: "Fuarlar artık tek seferlik etkinlikler değil – veri odaklı lead makineleri haline geldi. DKM'deki bu proje, fuar yatırımlarımızın maksimum verimle kullanılabileceğini gösterdi."
   }
 ];
 
