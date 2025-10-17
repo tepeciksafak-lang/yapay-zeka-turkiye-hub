@@ -28,11 +28,34 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - replace with actual implementation when Supabase is connected
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Here you would normally send to your backend/Supabase
-      console.log("Form submitted:", formData);
+      // Build query parameters for N8N webhook
+      const params = new URLSearchParams({
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || '',
+        message: formData.message || '',
+        timestamp: new Date().toISOString(),
+        source: 'quick_analysis_modal'
+      });
+
+      const webhookUrl = 'https://safakt.app.n8n.cloud/webhook/041dae70-b4dc-4fbb-89e5-3b78274c5ff5';
+
+      // Debug log (without PII)
+      console.log('🚀 N8N webhook GET request fired', {
+        url: webhookUrl,
+        fields: ['name', 'email', 'company', 'message', 'timestamp', 'source'],
+        messageLength: (formData.message || '').length,
+        hasCompany: !!formData.company
+      });
+
+      // Send GET request to N8N webhook
+      await fetch(`${webhookUrl}?${params.toString()}`, {
+        method: 'GET',
+        mode: 'no-cors',
+        cache: 'no-cache'
+      });
+
+      console.log('✅ N8N webhook request sent successfully');
       
       setIsSubmitted(true);
       
@@ -48,6 +71,17 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
       });
 
     } catch (error) {
+      console.error('❌ N8N webhook error:', {
+        message: error instanceof Error ? error.message : 'Unknown error',
+        type: error?.constructor?.name
+      });
+
+      // Analytics event for failed submission
+      if (typeof window !== 'undefined') {
+        const { analytics } = await import('../utils/analytics');
+        analytics.trackFormSubmit('quick_analysis', false);
+      }
+
       toast({
         title: "Bir hata oluştu",
         description: "Lütfen daha sonra tekrar deneyin.",
