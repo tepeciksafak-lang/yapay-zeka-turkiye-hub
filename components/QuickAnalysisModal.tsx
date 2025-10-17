@@ -49,21 +49,19 @@ export function QuickAnalysisModal({ open, onOpenChange }: QuickAnalysisModalPro
       // Validate form data
       const validatedData = formSchema.parse(formData)
 
-      // Send to N8N webhook
-      const response = await fetch('https://safakt.app.n8n.cloud/webhook/a3164d70-a436-4267-8339-5b1436b501d8', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: validatedData.name,
-          email: validatedData.email,
-          company: validatedData.company || '',
-          message: validatedData.message || '',
-          timestamp: new Date().toISOString(),
-          source: 'quick_analysis_modal'
-        })
+      // Send to N8N webhook via GET request with query parameters
+      const params = new URLSearchParams({
+        name: validatedData.name,
+        email: validatedData.email,
+        company: validatedData.company || '',
+        message: validatedData.message || '',
+        timestamp: new Date().toISOString(),
+        source: 'quick_analysis_modal'
       })
+
+      const response = await fetch(
+        `https://safakt.app.n8n.cloud/webhook/041dae70-b4dc-4fbb-89e5-3b78274c5ff5?${params.toString()}`
+      )
 
       if (!response.ok) {
         throw new Error('Network error')
