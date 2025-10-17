@@ -107,6 +107,12 @@ export default {
   'index.faq.5.question': 'Teknik bilgi gerekli mi?',
   'index.faq.5.answer': 'Hayır. Tüm süreci biz yönetiyoruz. Sadece iş süreçlerinizi anlamamız yeterli.',
   
+  // Solutions Page
+  'solutions.seo.title': 'Çözümler - Pratik Yapay Zeka',
+  'solutions.seo.description': 'Lead generation, pazarlama, satış ve müşteri başarısı için yapay zeka destekli otomasyon çözümleri.',
+  'solutions.hero.title1': 'Bir sonraki adım için hazır mısınız?',
+  'solutions.hero.title2': 'Sizin için çözümü geliştirelim',
+  
   // Case Study Detail & Timeline
   'cases.back.link': 'Tüm Vaka Çalışmaları',
   'cases.summary.title': 'Kısa Özet',

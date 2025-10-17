@@ -107,6 +107,12 @@ export default {
   'index.faq.5.question': 'Is technical knowledge required?',
   'index.faq.5.answer': 'No. We manage the entire process. We just need to understand your business processes.',
   
+  // Solutions Page
+  'solutions.seo.title': 'Solutions - Practical AI',
+  'solutions.seo.description': 'AI-powered automation solutions for lead generation, marketing, sales and customer success.',
+  'solutions.hero.title1': 'Ready for the next step?',
+  'solutions.hero.title2': 'Let us develop your solution',
+  
   // Case Study Detail & Timeline
   'cases.back.link': 'All Case Studies',
   'cases.summary.title': 'Brief Summary',
