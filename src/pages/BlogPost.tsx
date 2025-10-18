@@ -192,12 +192,9 @@ const BlogPost = () => {
           </div>
         )}
 
-        <div
-          className="prose prose-invert max-w-none"
-          style={{ color: "#E5E7EB" }}
-        >
-          <ReactMarkdown>{post.content}</ReactMarkdown>
-        </div>
+            <div className="prose prose-invert prose-lg max-w-none">
+              <ReactMarkdown>{post.content}</ReactMarkdown>
+            </div>
 
         {post.author_bio && (
           <div
