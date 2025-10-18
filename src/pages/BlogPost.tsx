@@ -22,7 +22,8 @@ interface BlogPostData {
 }
 
 const BlogPost = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug, id } = useParams<{ slug?: string; id?: string }>();
+  const slugOrId = slug ?? id;
   const { currentLanguage } = useLanguage();
   const [post, setPost] = useState<BlogPostData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,7 @@ const BlogPost = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      if (!id) {
+      if (!slugOrId) {
         setLoading(false);
         return;
       }
@@ -40,7 +41,7 @@ const BlogPost = () => {
         const { data, error } = await supabase
           .from("blog_posts")
           .select("*")
-          .eq("slug", id)
+          .eq("slug", slugOrId)
           .eq("language", currentLanguage)
           .eq("status", "published")
           .maybeSingle();
@@ -76,7 +77,7 @@ const BlogPost = () => {
     };
 
     fetchPost();
-  }, [id, currentLanguage]);
+  }, [slugOrId, currentLanguage]);
 
   if (loading) {
     return (
@@ -91,7 +92,7 @@ const BlogPost = () => {
     );
   }
 
-  if (!id || !post) {
+  if (!slugOrId || !post) {
     return (
       <main
         className="mx-auto w-full max-w-3xl px-4 py-12 min-h-screen"
