@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocalizedRoute } from "@/lib/routeMappings";
 
 export type BlogPost = {
   slug: string;
@@ -16,6 +18,8 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
+  const { currentLanguage } = useLanguage();
+  
   return (
     <article className="group relative">
       <div
@@ -28,7 +32,7 @@ export default function BlogCard({ post }: BlogCardProps) {
         }}
       />
       <Link
-        to={`/tr/blog/${post.slug}`}
+        to={`${getLocalizedRoute(currentLanguage, 'blog')}/${post.slug}`}
         className="relative block overflow-hidden rounded-xl border transition duration-300 hover:translate-y-0.5"
         style={{ borderColor: "#1F2937", background: "#111827" }}
       >

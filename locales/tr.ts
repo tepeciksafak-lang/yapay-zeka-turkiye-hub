@@ -131,4 +131,10 @@ export default {
   'cases.cta.button': 'Ücretsiz Analiz Talep Et',
   'cases.breadcrumb.home': 'Ana Sayfa',
   'cases.breadcrumb.cases': 'Vaka Çalışmaları',
+
+  // Blog Page
+  'blog.seo.title': 'Blog - Pratik Yapay Zeka',
+  'blog.seo.description': 'Yapay zeka, otomasyon ve dijital dönüşüm hakkında pratik rehberler ve vaka çalışmaları.',
+  'blog.hero.title': 'Blog',
+  'blog.hero.subtitle': 'Pratik yapay zeka destekli büyüme için içgörüler ve vaka çalışmaları.',
 } as const
