@@ -7,6 +7,15 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
+// Position mapping for automatic image insertion
+const positionMap: Record<string, string> = {
+  "tarihçe": "## Yapay Zekanın Kısa Tarihi",
+  "calisma-prensibi": "## Yapay Zeka Nasıl Çalışır?",
+  "uygulama-alanlari": "## Yapay Zeka Nerelerde Kullanılır?",
+  "avantaj-dezavantaj": "## Yapay Zekanın Artıları ve Eksileri",
+  "gelecek": "## Yapay Zekanın Geleceği",
+};
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -34,6 +43,7 @@ serve(async (req) => {
       read_time,
       status = "published",
       author_bio,
+      images = [],
     } = await req.json();
 
     // Validation
@@ -63,20 +73,16 @@ serve(async (req) => {
     
     const slug = `${baseSlug}-${language}`;
 
-    // Handle cover image upload if provided
-    let coverImageUrl = null;
-    if (cover_image) {
+    // Helper function to upload image
+    async function uploadImage(imageSource: string, fileName: string): Promise<string | null> {
       try {
         let imageData: Uint8Array;
         
-        // Check if it's base64 or URL
-        if (cover_image.startsWith("data:image")) {
-          // Base64 image
-          const base64Data = cover_image.split(",")[1];
+        if (imageSource.startsWith("data:image")) {
+          const base64Data = imageSource.split(",")[1];
           imageData = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
-        } else if (cover_image.startsWith("http")) {
-          // URL - download image
-          const imageResponse = await fetch(cover_image);
+        } else if (imageSource.startsWith("http")) {
+          const imageResponse = await fetch(imageSource);
           if (!imageResponse.ok) {
             throw new Error("Failed to download image from URL");
           }
@@ -86,8 +92,6 @@ serve(async (req) => {
           throw new Error("Invalid image format. Provide base64 or URL");
         }
 
-        // Upload to storage
-        const fileName = `${slug}-${Date.now()}.jpg`;
         const { data: uploadData, error: uploadError } = await supabase.storage
           .from("blog-images")
           .upload(fileName, imageData, {
@@ -101,20 +105,75 @@ serve(async (req) => {
           throw uploadError;
         }
 
-        // Get public URL
         const { data: { publicUrl } } = supabase.storage
           .from("blog-images")
           .getPublicUrl(fileName);
         
-        coverImageUrl = publicUrl;
-        console.log("Image uploaded successfully:", coverImageUrl);
-      } catch (imageError) {
-        console.error("Error processing cover image:", imageError);
-        // Continue without image if upload fails
+        console.log("Image uploaded successfully:", publicUrl);
+        return publicUrl;
+      } catch (error) {
+        console.error("Error processing image:", error);
+        return null;
       }
     }
 
-    // Insert blog post
+    // Handle cover image upload
+    let coverImageUrl = null;
+    if (cover_image) {
+      const fileName = `${slug}-cover-${Date.now()}.jpg`;
+      coverImageUrl = await uploadImage(cover_image, fileName);
+    }
+
+    // Process content images
+    let processedContent = content;
+    const uploadedImages: Array<{ position: string; url: string }> = [];
+    const skippedImages: string[] = [];
+
+    if (images && images.length > 0) {
+      for (const img of images) {
+        const { position, image_url, image_meta_description } = img;
+        
+        // Skip cover image in content
+        if (position === "kapak") {
+          continue;
+        }
+
+        const fileName = `${slug}-${position}-${Date.now()}.jpg`;
+        const uploadedUrl = await uploadImage(image_url, fileName);
+
+        if (uploadedUrl) {
+          uploadedImages.push({ position, url: uploadedUrl });
+
+          // Find heading and insert image after it
+          const heading = positionMap[position];
+          if (heading) {
+            const headingIndex = processedContent.indexOf(heading);
+            if (headingIndex !== -1) {
+              const afterHeading = headingIndex + heading.length;
+              const altText = image_meta_description || `Image for ${position}`;
+              const imageMarkdown = `\n\n![${altText}](${uploadedUrl})\n`;
+              processedContent = 
+                processedContent.slice(0, afterHeading) + 
+                imageMarkdown + 
+                processedContent.slice(afterHeading);
+              console.log(`Inserted image at position "${position}" after heading "${heading}"`);
+            } else {
+              console.warn(`Heading not found for position "${position}": ${heading}`);
+              // Append at the end if heading not found
+              processedContent += `\n\n![${image_meta_description || position}](${uploadedUrl})\n`;
+            }
+          } else {
+            console.warn(`No mapping found for position: ${position}`);
+            processedContent += `\n\n![${image_meta_description || position}](${uploadedUrl})\n`;
+          }
+        } else {
+          console.error(`Failed to upload image for position: ${position}`);
+          skippedImages.push(position);
+        }
+      }
+    }
+
+    // Insert blog post with processed content
     const { data: post, error: insertError } = await supabase
       .from("blog_posts")
       .insert({
@@ -122,7 +181,7 @@ serve(async (req) => {
         slug,
         title,
         excerpt,
-        content,
+        content: processedContent,
         author,
         author_bio,
         category,
@@ -160,6 +219,8 @@ serve(async (req) => {
         slug: slug,
         url: postUrl,
         cover_image_url: coverImageUrl,
+        uploaded_images: uploadedImages,
+        skipped_images: skippedImages,
       }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );

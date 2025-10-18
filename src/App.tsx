@@ -23,6 +23,7 @@ import CaseStudyDetail from "./pages/CaseStudyDetail";
 import UcretsizIcerikler from "./pages/UcretsizIcerikler";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import CreateBlogPostDemo from "./pages/CreateBlogPostDemo";
 import Solutions from "./pages/Solutions";
 import GizlilikPolitikasi from "./pages/GizlilikPolitikasi";
 import KullanimKosullari from "./pages/KullanimKosullari";
@@ -332,6 +333,17 @@ const AppWithModal = () => {
           <Route path="/tr/kullanim-kosullari" element={
             <LanguageWrapper>
               <KullanimKosullari />
+            </LanguageWrapper>
+          } />
+
+          {/* Demo Routes */}
+          <Route path="/create-blog-demo" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <CreateBlogPostDemo />
+              </main>
+              <Footer />
             </LanguageWrapper>
           } />
 
