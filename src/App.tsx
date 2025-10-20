@@ -13,17 +13,11 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import YapayZekaIsAlanlari from "./pages/YapayZekaIsAlanlari";
-import SatisOtomasyonu from "./pages/SatisOtomasyonu";
-import Services5 from "./pages/Services5";
-import Hakkimda from "./pages/Hakkimda";
-import SatisOtomasyonuDemo from "./pages/SatisOtomasyonuDemo";
 import VakaCalismalari from "./pages/VakaCalismalari";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import UcretsizIcerikler from "./pages/UcretsizIcerikler";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
-import CreateBlogPostDemo from "./pages/CreateBlogPostDemo";
 import Solutions from "./pages/Solutions";
 import GizlilikPolitikasi from "./pages/GizlilikPolitikasi";
 import KullanimKosullari from "./pages/KullanimKosullari";
@@ -90,46 +84,6 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/de/uber-uns" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Hakkimda />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/vertriebsautomatisierung" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <SatisOtomasyonu />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/vertriebsautomatisierung-demo" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <SatisOtomasyonuDemo />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/ki-geschaftsbereiche" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <YapayZekaIsAlanlari />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
           <Route path="/de/kostenlose-inhalte" element={
             <LanguageWrapper>
               <Navigation />
@@ -155,16 +109,6 @@ const AppWithModal = () => {
               <Navigation />
               <main className="flex-1">
                 <BlogPost />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/dienstleistungen" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Services5 />
               </main>
               <Footer />
             </LanguageWrapper>
@@ -242,46 +186,6 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/hakkimda" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Hakkimda />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/tr/satis-otomasyonu" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <SatisOtomasyonu />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/tr/satis-otomasyonu-demo" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <SatisOtomasyonuDemo />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/tr/yapay-zeka-is-alanlari" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <YapayZekaIsAlanlari />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
           <Route path="/tr/ucretsiz-icerikler" element={
             <LanguageWrapper>
               <Navigation />
@@ -312,17 +216,6 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          {/* Services Routes */}
-          <Route path="/tr/hizmetlerimiz" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Services5 />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
           {/* Legal Routes */}
           <Route path="/tr/gizlilik" element={
             <LanguageWrapper>
@@ -333,17 +226,6 @@ const AppWithModal = () => {
           <Route path="/tr/kullanim-kosullari" element={
             <LanguageWrapper>
               <KullanimKosullari />
-            </LanguageWrapper>
-          } />
-
-          {/* Demo Routes */}
-          <Route path="/create-blog-demo" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <CreateBlogPostDemo />
-              </main>
-              <Footer />
             </LanguageWrapper>
           } />
 

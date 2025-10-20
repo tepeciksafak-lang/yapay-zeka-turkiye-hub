@@ -6,14 +6,9 @@ export type RouteKey =
   | 'solutions'
   | 'cases'
   | 'case-detail'
-  | 'about'
-  | 'sales-automation'
-  | 'sales-automation-demo'
-  | 'ai-business-areas'
   | 'free-content'
   | 'blog'
   | 'blog-post'
-  | 'services'
   | 'privacy'
   | 'terms';
 
@@ -23,14 +18,9 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'solutions': '/cozumler',
     'cases': '/vaka-calismalari',
     'case-detail': '/vaka-calismalari/:slug',
-    'about': '/hakkimda',
-    'sales-automation': '/satis-otomasyonu',
-    'sales-automation-demo': '/satis-otomasyonu-demo',
-    'ai-business-areas': '/yapay-zeka-is-alanlari',
     'free-content': '/ucretsiz-icerikler',
     'blog': '/blog',
     'blog-post': '/blog/:slug',
-    'services': '/hizmetlerimiz',
     'privacy': '/gizlilik',
     'terms': '/kullanim-kosullari'
   },
@@ -39,14 +29,9 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'solutions': '/losungen',
     'cases': '/fallstudien',
     'case-detail': '/fallstudien/:slug',
-    'about': '/uber-uns',
-    'sales-automation': '/vertriebsautomatisierung',
-    'sales-automation-demo': '/vertriebsautomatisierung-demo',
-    'ai-business-areas': '/ki-geschaftsbereiche',
     'free-content': '/kostenlose-inhalte',
     'blog': '/blog',
     'blog-post': '/blog/:slug',
-    'services': '/dienstleistungen',
     'privacy': '/datenschutz',
     'terms': '/nutzungsbedingungen'
   },
@@ -55,14 +40,9 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'solutions': '/solutions',
     'cases': '/case-studies',
     'case-detail': '/case-studies/:slug',
-    'about': '/about-us',
-    'sales-automation': '/sales-automation',
-    'sales-automation-demo': '/sales-automation-demo',
-    'ai-business-areas': '/ai-business-areas',
     'free-content': '/free-resources',
     'blog': '/blog',
     'blog-post': '/blog/:slug',
-    'services': '/services',
     'privacy': '/privacy',
     'terms': '/terms'
   }

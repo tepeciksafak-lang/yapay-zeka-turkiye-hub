@@ -6,13 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Turkish routes (fully implemented)
   const trRoutes = [
     '',
-    '/hakkimda',
-    '/pazarlama',
-    '/otomasyon',
-    '/satis-otomasyonu',
-    '/satis-otomasyonu-demo',
-    '/veri-analizi',
-    '/yapay-zeka-is-alanlari',
+    '/cozumler',
     '/vaka-calismalari',
     '/vaka-calismalari/car-studio-ai',
     '/vaka-calismalari/acilsatis',
@@ -22,7 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/vaka-calismalari/dkm-coach-bilge',
     '/ucretsiz-icerikler',
     '/blog',
-    '/services5'
+    '/gizlilik',
+    '/kullanim-kosullari'
   ]
 
   // DE and EN routes (only homepage for now)
