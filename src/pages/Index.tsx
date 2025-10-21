@@ -180,7 +180,7 @@ const Index = () => {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {cases.map((case_item, index) => (
-              <Card key={index} className="group transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              <Card key={index} className="group transition-all duration-300 hover:border-primary/30">
                 <CardContent className="p-6">
                   <h3 className="mb-2 text-lg font-semibold text-foreground">{case_item.company}</h3>
                   <p className="mb-4 text-muted-foreground">{case_item.result}</p>
