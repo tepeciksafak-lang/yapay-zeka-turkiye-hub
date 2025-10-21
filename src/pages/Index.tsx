@@ -185,7 +185,7 @@ const Index = () => {
                   <h3 className="mb-2 text-lg font-semibold text-foreground">{case_item.company}</h3>
                   <p className="mb-4 text-muted-foreground">{case_item.result}</p>
                   <div className="flex items-center justify-between">
-                    <Badge className="bg-primary/10 text-primary">{case_item.metric}</Badge>
+                    <Badge className="bg-primary/10 text-primary pointer-events-none">{case_item.metric}</Badge>
                     <button 
                       onClick={() => {
                         const caseMap: Record<number, number> = { 0: 2, 1: 1, 2: 3, 3: 4, 4: 5 };
