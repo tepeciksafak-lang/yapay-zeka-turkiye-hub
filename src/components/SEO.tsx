@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 
 interface SEOProps {
   title: string;
@@ -9,10 +10,14 @@ interface SEOProps {
 }
 
 const SEO = ({ title, description, image, url, type = "website" }: SEOProps) => {
+  const location = useLocation();
   const siteTitle = "Pratik Yapay Zeka";
   const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
   const defaultImage = "/og-image.jpg";
-  const siteUrl = window.location.origin;
+  const siteUrl = "https://yapayzekapratik.com";
+  
+  // Check if page is German or English - add noindex
+  const shouldNoIndex = location.pathname.startsWith('/de') || location.pathname.startsWith('/en');
   
   return (
     <Helmet>
@@ -34,9 +39,9 @@ const SEO = ({ title, description, image, url, type = "website" }: SEOProps) => 
       <meta name="twitter:image" content={image || defaultImage} />
       
       {/* Additional */}
-      <link rel="canonical" href={url || window.location.href} />
+      <link rel="canonical" href={url || `${siteUrl}${location.pathname}`} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={shouldNoIndex ? "noindex, nofollow" : "index, follow"} />
       
       {/* Structured Data */}
       <script type="application/ld+json">
