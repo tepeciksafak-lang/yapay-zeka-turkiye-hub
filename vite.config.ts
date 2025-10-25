@@ -4,6 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
+// Ensure sitemap.xml and robots.txt are copied to build output
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
