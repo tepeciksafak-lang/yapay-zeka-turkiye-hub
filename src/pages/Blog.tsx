@@ -75,6 +75,7 @@ const Blog = () => {
       <SEO 
         title={t('blog.seo.title')}
         description={t('blog.seo.description')}
+        routeKey="blog"
       />
       
       <section className="relative mx-auto w-full max-w-6xl px-4 pt-12 md:pt-16">

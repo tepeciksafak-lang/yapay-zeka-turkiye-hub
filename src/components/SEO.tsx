@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
+import { RouteKey, getHreflangUrls } from "@/lib/routeMappings";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface SEOProps {
   title: string;
@@ -7,10 +9,13 @@ interface SEOProps {
   image?: string;
   url?: string;
   type?: string;
+  routeKey?: RouteKey;
+  params?: Record<string, string>;
 }
 
-const SEO = ({ title, description, image, url, type = "website" }: SEOProps) => {
+const SEO = ({ title, description, image, url, type = "website", routeKey, params }: SEOProps) => {
   const location = useLocation();
+  const { currentLanguage } = useLanguage();
   const siteTitle = "Pratik Yapay Zeka";
   const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
   const defaultImage = "/og-image.jpg";
@@ -18,6 +23,10 @@ const SEO = ({ title, description, image, url, type = "website" }: SEOProps) => 
   
   // Check if page is German or English - add noindex
   const shouldNoIndex = location.pathname.startsWith('/de') || location.pathname.startsWith('/en');
+  
+  // Generate hreflang URLs if routeKey is provided
+  const hreflangUrls = routeKey ? getHreflangUrls(routeKey, params) : null;
+  const canonicalUrl = url || (routeKey && hreflangUrls ? hreflangUrls[currentLanguage] : `${siteUrl}${location.pathname}`);
   
   return (
     <Helmet>
@@ -28,7 +37,7 @@ const SEO = ({ title, description, image, url, type = "website" }: SEOProps) => 
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image || defaultImage} />
-      <meta property="og:url" content={url || window.location.href} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={siteTitle} />
       
@@ -38,8 +47,19 @@ const SEO = ({ title, description, image, url, type = "website" }: SEOProps) => 
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image || defaultImage} />
       
-      {/* Additional */}
-      <link rel="canonical" href={url || `${siteUrl}${location.pathname}`} />
+      {/* Canonical */}
+      <link rel="canonical" href={canonicalUrl} />
+      
+      {/* hreflang Tags */}
+      {hreflangUrls && (
+        <>
+          <link rel="alternate" hrefLang="tr" href={hreflangUrls.tr} />
+          <link rel="alternate" hrefLang="de" href={hreflangUrls.de} />
+          <link rel="alternate" hrefLang="en" href={hreflangUrls.en} />
+          <link rel="alternate" hrefLang="x-default" href={hreflangUrls['x-default']} />
+        </>
+      )}
+      
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content={shouldNoIndex ? "noindex, nofollow" : "index, follow"} />
       

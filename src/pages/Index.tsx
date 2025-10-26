@@ -154,6 +154,7 @@ const Index = () => {
       <SEO
         title={t('index.seo.title')}
         description={t('index.seo.description')}
+        routeKey="home"
       />
       <FAQSchema faqs={faqs} />
       

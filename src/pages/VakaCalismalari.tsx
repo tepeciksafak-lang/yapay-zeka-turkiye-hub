@@ -34,6 +34,7 @@ const VakaCalismalari = () => {
       <SEO 
         title={t('cases.seo.title')}
         description={t('cases.seo.description')}
+        routeKey="cases"
       />
       <BreadcrumbSchema items={[
         { name: t('nav.home'), url: `https://pratikyz.com${getLocalizedRoute(currentLanguage, 'home')}` },

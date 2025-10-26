@@ -143,6 +143,8 @@ const BlogPost = () => {
       <SEO 
         title={post.title}
         description={post.excerpt}
+        routeKey="blog-post"
+        params={{ slug: post.slug }}
       />
       <script
         type="application/ld+json"

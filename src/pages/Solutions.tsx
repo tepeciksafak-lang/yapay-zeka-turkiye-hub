@@ -13,10 +13,11 @@ const Solutions = () => {
 
   return (
     <>
-<SEO
-  title={t('solutions.seo.title')}
-  description={t('solutions.seo.description')}
-/>
+      <SEO 
+        title={t('solutions.seo.title')}
+        description={t('solutions.seo.description')}
+        routeKey="solutions"
+      />
       
       {/* Solution Cards Section */}
       <SolutionCardsSection />

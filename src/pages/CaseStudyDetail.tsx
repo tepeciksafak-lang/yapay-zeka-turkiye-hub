@@ -34,8 +34,9 @@ const CaseStudyDetail = () => {
         title={caseStudy.metaTitle}
         description={caseStudy.metaDescription}
         image={caseStudy.ogImage}
-        url={`https://pratikyz.com/tr/vaka-calismalari/${caseStudy.slug}`}
         type="article"
+        routeKey="case-detail"
+        params={{ slug: caseStudy.slug }}
       />
       <BreadcrumbSchema items={[
         { name: t('cases.breadcrumb.home'), url: `https://pratikyz.com/${currentLanguage}` },

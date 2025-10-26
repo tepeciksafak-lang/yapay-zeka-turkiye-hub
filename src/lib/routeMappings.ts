@@ -126,3 +126,28 @@ export const extractParamsFromPath = (
   
   return params;
 };
+
+/**
+ * Generate hreflang URLs for all language versions of a route
+ * @param routeKey - The route key (home, solutions, etc.)
+ * @param params - Optional parameters (e.g., { slug: 'my-post' })
+ * @returns Object with URLs for all languages including x-default
+ */
+export const getHreflangUrls = (
+  routeKey: RouteKey,
+  params?: Record<string, string>
+): Record<string, string> => {
+  const baseUrl = 'https://yapayzekapratik.com';
+  const languages = ['tr', 'de', 'en'] as const;
+  
+  const urls: Record<string, string> = {};
+  
+  languages.forEach(lang => {
+    urls[lang] = `${baseUrl}${getLocalizedRoute(lang, routeKey, params)}`;
+  });
+  
+  // x-default points to Turkish version
+  urls['x-default'] = urls['tr'];
+  
+  return urls;
+};
