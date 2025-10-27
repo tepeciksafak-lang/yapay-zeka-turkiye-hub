@@ -123,6 +123,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/blog" />
   </url>
   
+  <!-- Blog Post: Yapay Zeka Nedir -->
+  <url>
+    <loc>https://yapayzekapratik.com/tr/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr</loc>
+    <lastmod>2025-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr" />
+  </url>
+  
   <!-- Blog Posts -->
   <url>
     <loc>https://yapayzekapratik.com/tr/blog/yapay-zeka-nedir</loc>

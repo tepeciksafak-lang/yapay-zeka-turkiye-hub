@@ -18,7 +18,7 @@ const SEO = ({ title, description, image, url, type = "website", routeKey, param
   const { currentLanguage } = useLanguage();
   const siteTitle = "Pratik Yapay Zeka";
   const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
-  const defaultImage = "/og-image.jpg";
+  const defaultImage = "/og-homepage.jpg";
   const siteUrl = "https://yapayzekapratik.com";
   
   // Check if page is German or English - add noindex
@@ -63,7 +63,7 @@ const SEO = ({ title, description, image, url, type = "website", routeKey, param
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content={shouldNoIndex ? "noindex, nofollow" : "index, follow"} />
       
-      {/* Structured Data */}
+      {/* Structured Data - Organization */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -78,6 +78,24 @@ const SEO = ({ title, description, image, url, type = "website", routeKey, param
             "contactType": "Customer Service",
             "areaServed": "TR",
             "availableLanguage": "Turkish"
+          }
+        })}
+      </script>
+      
+      {/* Structured Data - WebSite with SearchAction */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": siteTitle,
+          "url": siteUrl,
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": `${siteUrl}/tr/blog?search={search_term_string}`
+            },
+            "query-input": "required name=search_term_string"
           }
         })}
       </script>
