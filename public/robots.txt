@@ -5,4 +5,5 @@ Disallow: /en/
 Disallow: /api/
 Disallow: /admin/
 
+Sitemap: https://yapayzekapratik.com/sitemap.xml
 Sitemap: https://yapayzekapratik.com/functions/v1/sitemap
