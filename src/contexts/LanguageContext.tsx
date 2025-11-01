@@ -28,7 +28,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   
   const initializeLanguage = (lang: string | undefined) => {
     const validLang = (lang as Language);
-    if (validLang && ['de', 'tr', 'en'].includes(validLang)) {
+    // ACTIVE LANGUAGES: ['de', 'tr'] | PARKED: 'en'
+    if (validLang && ['de', 'tr'].includes(validLang)) {
       setCurrentLanguage(validLang);
     } else {
       setCurrentLanguage('tr'); // Default to Turkish

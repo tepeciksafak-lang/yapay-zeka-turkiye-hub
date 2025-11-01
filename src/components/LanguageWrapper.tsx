@@ -12,9 +12,10 @@ export const LanguageWrapper = ({ children }: LanguageWrapperProps) => {
   const { initializeLanguage } = useLanguage();
 
   const derivedLang = useMemo(() => {
-    if (paramLang && ['de', 'tr', 'en'].includes(paramLang)) return paramLang;
+    // ACTIVE LANGUAGES: ['de', 'tr'] | PARKED: 'en'
+    if (paramLang && ['de', 'tr'].includes(paramLang)) return paramLang;
     const seg = location.pathname.split('/')[1];
-    if (['de', 'tr', 'en'].includes(seg)) return seg;
+    if (['de', 'tr'].includes(seg)) return seg;
     return 'tr';
   }, [paramLang, location.pathname]);
 

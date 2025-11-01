@@ -126,7 +126,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          {/* English Routes */}
+          {/* PARKED: English Routes - To reactivate, uncomment this block
           <Route path="/en" element={
             <LanguageWrapper>
               <Navigation />
@@ -136,6 +136,7 @@ const AppWithModal = () => {
               <Footer />
             </LanguageWrapper>
           } />
+          */}
           
           {/* Turkish Routes */}
           <Route path="/tr" element={

@@ -9,7 +9,7 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr" />
   </url>
   <!-- Solutions -->
@@ -20,7 +20,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/cozumler" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/losungen" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/solutions" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/solutions" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/cozumler" />
   </url>
   <!-- Case Studies Overview -->
@@ -31,7 +31,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/vaka-calismalari" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/fallstudien" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/vaka-calismalari" />
   </url>
   <!-- Case Study Details -->
@@ -42,7 +42,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/vaka-calismalari/car-studio-ai" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/fallstudien/car-studio-ai" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/car-studio-ai" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/car-studio-ai" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/vaka-calismalari/car-studio-ai" />
   </url>
   <url>
@@ -52,7 +52,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/vaka-calismalari/acilsatis" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/fallstudien/acilsatis" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/acilsatis" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/acilsatis" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/vaka-calismalari/acilsatis" />
   </url>
   <url>
@@ -62,7 +62,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/vaka-calismalari/salevium" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/fallstudien/salevium" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/salevium" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/salevium" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/vaka-calismalari/salevium" />
   </url>
   <url>
@@ -72,7 +72,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/vaka-calismalari/erpa-teknoloji" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/fallstudien/erpa-teknoloji" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/erpa-teknoloji" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/erpa-teknoloji" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/vaka-calismalari/erpa-teknoloji" />
   </url>
   <url>
@@ -82,7 +82,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/vaka-calismalari/cemkimsan" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/fallstudien/cemkimsan" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/cemkimsan" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/cemkimsan" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/vaka-calismalari/cemkimsan" />
   </url>
   <url>
@@ -92,7 +92,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/vaka-calismalari/dkm-coach-bilge" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/fallstudien/dkm-coach-bilge" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/dkm-coach-bilge" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/case-studies/dkm-coach-bilge" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/vaka-calismalari/dkm-coach-bilge" />
   </url>
   <!-- Free Content -->
@@ -103,7 +103,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/ucretsiz-icerikler" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/kostenlose-ressourcen" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/free-resources" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/free-resources" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/ucretsiz-icerikler" />
   </url>
   <!-- Blog -->
@@ -114,7 +114,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/blog" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/blog" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/blog" />
   </url>
   <!-- Blog Post -->
@@ -125,7 +125,7 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-nedir-basit-ve-anlalr-anlatm-2025-gncel-rehber-tr" />
   </url>
   <!-- Blog Posts -->
@@ -136,7 +136,7 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-nedir" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/blog/yapay-zeka-nedir" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-nedir" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-nedir" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-nedir" />
   </url>
   <url>
@@ -146,7 +146,7 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-avantajlari-dezavantajlari" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/blog/yapay-zeka-avantajlari-dezavantajlari" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-avantajlari-dezavantajlari" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-avantajlari-dezavantajlari" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-avantajlari-dezavantajlari" />
   </url>
   <url>
@@ -156,7 +156,7 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-uygulama-alanlari" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/blog/yapay-zeka-uygulama-alanlari" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-uygulama-alanlari" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-uygulama-alanlari" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-uygulama-alanlari" />
   </url>
   <url>
@@ -166,7 +166,7 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-gelecek" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/blog/yapay-zeka-gelecek" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-gelecek" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/blog/yapay-zeka-gelecek" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/blog/yapay-zeka-gelecek" />
   </url>
   <!-- Legal Pages -->
@@ -177,7 +177,7 @@
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/gizlilik" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/datenschutz" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/privacy" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/privacy" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/gizlilik" />
   </url>
   <url>
@@ -187,7 +187,7 @@
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://yapayzekapratik.com/tr/kullanim-kosullari" />
     <xhtml:link rel="alternate" hreflang="de" href="https://yapayzekapratik.com/de/nutzungsbedingungen" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/terms" />
+    <!-- PARKED: <xhtml:link rel="alternate" hreflang="en" href="https://yapayzekapratik.com/en/terms" /> -->
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yapayzekapratik.com/tr/kullanim-kosullari" />
   </url>
 </urlset>

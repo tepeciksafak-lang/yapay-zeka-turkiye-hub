@@ -34,7 +34,8 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'blog-post': '/blog/:slug',
     'privacy': '/datenschutz',
     'terms': '/nutzungsbedingungen'
-  },
+  }
+  /* PARKED: English routes - To reactivate, uncomment this block
   en: {
     'home': '',
     'solutions': '/solutions',
@@ -46,6 +47,7 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'privacy': '/privacy',
     'terms': '/terms'
   }
+  */
 };
 
 /**
@@ -138,7 +140,7 @@ export const getHreflangUrls = (
   params?: Record<string, string>
 ): Record<string, string> => {
   const baseUrl = 'https://yapayzekapratik.com';
-  const languages = ['tr', 'de', 'en'] as const;
+  const languages = ['tr', 'de'] as const; // PARKED: 'en'
   
   const urls: Record<string, string> = {};
   
