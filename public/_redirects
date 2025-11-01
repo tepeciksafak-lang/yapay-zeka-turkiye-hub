@@ -1,1 +1,11 @@
+# Legacy URL Redirects (old routes without language prefix)
+/solutions              /tr/cozumler                301!
+/cases                  /tr/vaka-calismalari        301!
+/case-studies/*         /tr/vaka-calismalari/:splat 301!
+/blog                   /tr/blog                    301!
+/blog/*                 /tr/blog/:splat             301!
+/free-resources         /tr/ucretsiz-icerikler      301!
+/privacy                /tr/gizlilik                301!
+/terms                  /tr/kullanim-kosullari      301!
+
 /robots.txt     /robots.txt              200
