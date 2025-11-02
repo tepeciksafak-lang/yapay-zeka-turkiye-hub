@@ -21,7 +21,7 @@ import BlogPost from "./pages/BlogPost";
 import Solutions from "./pages/Solutions";
 import GizlilikPolitikasi from "./pages/GizlilikPolitikasi";
 import KullanimKosullari from "./pages/KullanimKosullari";
-import CreateBlogPostUtil from "./pages/CreateBlogPostUtil";
+
 
 const queryClient = new QueryClient();
 
@@ -222,9 +222,6 @@ const AppWithModal = () => {
               <KullanimKosullari />
             </LanguageWrapper>
           } />
-
-          {/* Admin Utility Routes */}
-          <Route path="/admin/create-blog-post" element={<CreateBlogPostUtil />} />
 
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
