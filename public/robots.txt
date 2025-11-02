@@ -2,13 +2,6 @@ User-agent: *
 Allow: /tr/
 Disallow: /de/
 Disallow: /en/
-Disallow: /solutions
-Disallow: /cases
-Disallow: /case-studies/
-Disallow: /blog
-Disallow: /free-resources
-Disallow: /privacy
-Disallow: /terms
 Disallow: /api/
 Disallow: /admin/
 
