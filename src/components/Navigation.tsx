@@ -18,6 +18,7 @@ const Navigation = () => {
     { href: getLocalizedRoute(currentLanguage, 'home'), label: t('nav.home') },
     { href: getLocalizedRoute(currentLanguage, 'solutions'), label: t('nav.solutions') },
     { href: getLocalizedRoute(currentLanguage, 'cases'), label: t('nav.cases') },
+    { href: getLocalizedRoute(currentLanguage, 'blog'), label: t('nav.blog') },
   ];
 
   const isActiveLink = (href: string) => {
