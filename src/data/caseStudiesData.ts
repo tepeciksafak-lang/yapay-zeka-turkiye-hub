@@ -7,6 +7,7 @@ export interface CaseStudy {
   metaTitle: string;
   metaDescription: string;
   ogImage?: string;
+  logo?: string;
   kpis: Array<{
     label: string;
     value: string;
@@ -28,6 +29,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "Car Studio AI Vaka Çalışması - Satış Otomasyonu ile 3000+ Kişiselleştirilmiş E-posta",
     metaDescription: "Car Studio AI'nin uluslararası pazarda ekip büyütmeden 3000+ kişiselleştirilmiş e-posta ile satış otomasyonu başarı hikayesi. Yapay zeka destekli e-posta sistemi ile ayda 20+ saat zaman tasarrufu.",
     ogImage: "/og-car-studio.jpg",
+    logo: "/logos/carstudio.webp",
     kpis: [
       { label: "E-posta Gönderimi", value: "3000+" },
       { label: "Zaman Tasarrufu", value: "20+ saat/ay" },
@@ -56,6 +58,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "Acilsatis Vaka Çalışması - Pazarlama Otomasyonu ile 5000+ Platform İlanı",
     metaDescription: "Acilsatis'in gayrimenkul ve otomobil sektöründe 5000+ platform ilanı ile hızlı büyüme ve organik trafik artışı başarı hikayesi. Instagram DM ve SMS otomasyonu ile pazarlama dönüşümü.",
     ogImage: "/og-acilsatis.jpg",
+    logo: "/logos/acilsatis.png",
     kpis: [
       { label: "Platform Ilani", value: "5000+" },
       { label: "Hedef Sektör", value: "2 Ana Sektör" },
@@ -121,6 +124,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "ERPA Teknoloji Vaka Çalışması - Avrupa Stadyumları için AI Destekli Lead Generation",
     metaDescription: "ERPA Teknoloji'nin TOCHI markasıyla Avrupa pazarına stratejik girişi. AI destekli lead generation ile stadyum işletmecilerine ulaşma ve ilk ayda nitelikli görüşmeler elde etme başarısı.",
     ogImage: "/og-erpa.jpg",
+    logo: "/logos/erpa.webp",
     kpis: [
       { label: "Hedef Pazar", value: "Avrupa Stadyumlari" },
       { label: "Karar Verici Tipi", value: "4+ Pozisyon" },
@@ -158,6 +162,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "Cemkimsan Vaka Çalışması - 20+ Ülkede 1000+ Doğrulanmış Distribütör Ağı",
     metaDescription: "Cemkimsan'ın su arıtma ve denizcilik kimyasalları için 20+ ülkede 1000+ doğrulanmış distribütör ağı kurma projesi. AI destekli B2B export ve sistematik ihracat büyümesi.",
     ogImage: "/og-cemkimsan.jpg",
+    logo: "/logos/cemkimsan.jpg",
     kpis: [
       { label: "Hedef Ülke", value: "20+ Ülke" },
       { label: "Dogrulanmis Distribütör", value: "1000+" },

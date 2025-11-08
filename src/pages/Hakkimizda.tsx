@@ -198,11 +198,19 @@ const Hakkimizda = () => {
               {caseStudiesData.slice(0, 6).map((caseStudy) => (
                 <Card key={caseStudy.id} className="border-border bg-card hover-glow transition-all">
                   <CardContent className="p-6 space-y-4">
-                    <div className="h-16 w-full bg-muted rounded-lg flex items-center justify-center">
-                      <span className="text-muted-foreground text-sm font-medium">
-                        {caseStudy.baslik} Logo
-                      </span>
-                    </div>
+              <div className="h-16 w-full bg-muted rounded-lg flex items-center justify-center p-4">
+                {caseStudy.logo ? (
+                  <img 
+                    src={caseStudy.logo} 
+                    alt={`${caseStudy.baslik} Logo`}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                ) : (
+                  <span className="text-muted-foreground text-sm font-medium">
+                    {caseStudy.baslik}
+                  </span>
+                )}
+              </div>
                     <h3 className="font-semibold text-text-hi text-lg">{caseStudy.baslik}</h3>
                     <div className="flex flex-wrap gap-2">
                       {caseStudy.kpis.map((kpi, idx) => (
