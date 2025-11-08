@@ -3,6 +3,7 @@ export default {
   'nav.home': 'Ana Sayfa',
   'nav.solutions': 'Çözümler',
   'nav.cases': 'Vaka Çalışmaları',
+  'nav.about': 'Hakkımızda',
   'nav.pricing': 'Fiyatlandırma',
   'nav.blog': 'Blog',
   'nav.contact': 'İletişim',
@@ -40,6 +41,7 @@ export default {
   'footer.menu.home': 'Ana Sayfa',
   'footer.menu.solutions': 'Çözümler',
   'footer.menu.cases': 'Vaka Çalışmaları',
+  'footer.menu.about': 'Hakkımızda',
   'footer.contact.title': 'İletişim',
   'footer.contact.text': 'İşletmenizi dönüştürmeye hazır mısınız?',
   'footer.cta.button': 'Ücretsiz Danışmanlık Alın',
@@ -137,4 +139,8 @@ export default {
   'blog.seo.description': 'Yapay zeka, otomasyon ve dijital dönüşüm hakkında pratik rehberler ve vaka çalışmaları.',
   'blog.hero.title': 'Blog',
   'blog.hero.subtitle': 'Pratik yapay zeka destekli büyüme için içgörüler ve vaka çalışmaları.',
+
+  // About Page
+  'about.seo.title': 'Hakkımızda - ST-Automatisierung | Yapay Zeka & Otomasyon Çözümleri',
+  'about.seo.description': 'ST-Automatisierung 2024\'ten beri KMU\'lara yapay zeka ve otomasyon çözümleri sunuyor. Dortmund merkezli, 6+ başarılı proje, ölçeklenebilir sistemler.',
 } as const

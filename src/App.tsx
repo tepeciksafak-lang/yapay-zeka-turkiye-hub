@@ -19,6 +19,7 @@ import UcretsizIcerikler from "./pages/UcretsizIcerikler";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Solutions from "./pages/Solutions";
+import Hakkimizda from "./pages/Hakkimizda";
 import GizlilikPolitikasi from "./pages/GizlilikPolitikasi";
 import KullanimKosullari from "./pages/KullanimKosullari";
 
@@ -205,6 +206,16 @@ const AppWithModal = () => {
               <Navigation />
               <main className="flex-1">
                 <BlogPost />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/tr/hakkimizda" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Hakkimizda />
               </main>
               <Footer />
             </LanguageWrapper>

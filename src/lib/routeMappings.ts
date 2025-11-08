@@ -9,6 +9,7 @@ export type RouteKey =
   | 'free-content'
   | 'blog'
   | 'blog-post'
+  | 'about'
   | 'privacy'
   | 'terms';
 
@@ -21,6 +22,7 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'free-content': '/ucretsiz-icerikler',
     'blog': '/blog',
     'blog-post': '/blog/:slug',
+    'about': '/hakkimizda',
     'privacy': '/gizlilik',
     'terms': '/kullanim-kosullari'
   },
@@ -32,6 +34,7 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'free-content': '/kostenlose-inhalte',
     'blog': '/blog',
     'blog-post': '/blog/:slug',
+    'about': '/uber-uns',
     'privacy': '/datenschutz',
     'terms': '/nutzungsbedingungen'
   }
