@@ -67,31 +67,37 @@ const Index = () => {
   const cases = [
     {
       company: "AcilSatis",
+      logo: "/logos/acilsatis.png",
       result: t('index.cases.acilsatis.result'),
       metric: t('index.cases.acilsatis.metric')
     },
     {
       company: "Carstudio AI", 
+      logo: "/logos/carstudio.webp",
       result: t('index.cases.carstudio.result'),
       metric: t('index.cases.carstudio.metric')
     },
     {
       company: "Salevium",
+      logo: null,
       result: t('index.cases.salevium.result'),
       metric: t('index.cases.salevium.metric')
     },
     {
       company: "ERPA Teknoloji",
+      logo: "/logos/erpa.webp",
       result: t('index.cases.erpa.result'),
       metric: t('index.cases.erpa.metric')
     },
     {
       company: "Cemkimsan",
+      logo: "/logos/cemkimsan.jpg",
       result: t('index.cases.cemkimsan.result'),
       metric: t('index.cases.cemkimsan.metric')
     },
     {
       company: "DKM/Coach Bilge",
+      logo: null,
       result: t('index.cases.dkm.result'),
       metric: t('index.cases.dkm.metric')
     }
@@ -182,14 +188,26 @@ const Index = () => {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {cases.map((case_item, index) => (
               <Card key={index} className="group transition-all duration-300 hover:border-primary/30">
-                <CardContent className="p-6">
-                  <h3 className="mb-2 text-lg font-semibold text-foreground">{case_item.company}</h3>
-                  <p className="mb-4 text-muted-foreground">{case_item.result}</p>
+                <CardContent className="p-6 space-y-4">
+                  <div className="h-12 w-full bg-muted rounded-lg flex items-center justify-center p-3">
+                    {case_item.logo ? (
+                      <img 
+                        src={case_item.logo} 
+                        alt={`${case_item.company} Logo`}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    ) : (
+                      <span className="text-muted-foreground text-xs font-medium">
+                        {case_item.company}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground text-center">{case_item.company}</h3>
+                  <p className="text-sm text-muted-foreground">{case_item.result}</p>
                   <div className="flex items-center justify-between">
                     <Badge className="bg-primary/10 text-primary pointer-events-none">{case_item.metric}</Badge>
                     <button 
                       onClick={() => {
-                        const caseMap: Record<number, number> = { 0: 2, 1: 1, 2: 3, 3: 4, 4: 5 };
                         const caseSlugMap: Record<number, string> = { 
                           0: 'acilsatis', 
                           1: 'car-studio-ai', 

@@ -64,13 +64,21 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
                       : 'bg-slate-900 border-lime-400 hover:bg-lime-400/8'
                     }
                     ${prefersReducedMotion ? '' : 'hover:scale-105'}
-                    flex items-center justify-center
+                    flex items-center justify-center overflow-hidden p-2
                   `}
                   style={{ backgroundColor: activeCase === caseStudy.id ? 'rgba(163, 230, 53, 0.12)' : '#111827' }}
                   aria-selected={activeCase === caseStudy.id}
                   role="tab"
                 >
-                  <span className="text-lime-400 font-bold text-lg">{index + 1}</span>
+                  {caseStudy.logo ? (
+                    <img 
+                      src={caseStudy.logo} 
+                      alt={`${caseStudy.baslik} Logo`}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-lime-400 font-bold text-lg">{index + 1}</span>
+                  )}
                 </Link>
                 <div className="mt-4 text-center max-w-32">
                   <p className="text-lime-400 text-sm font-medium">{caseStudy.etiket}</p>
@@ -118,13 +126,21 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
                         ? 'bg-lime-400/12 border-lime-400 shadow-lg shadow-lime-400/25'
                         : 'bg-slate-900 border-lime-400 hover:bg-lime-400/8'
                       }
-                      flex items-center justify-center
+                      flex items-center justify-center overflow-hidden p-2
                     `}
                     style={{ backgroundColor: activeCase === caseStudy.id ? 'rgba(163, 230, 53, 0.12)' : '#111827' }}
                     aria-selected={activeCase === caseStudy.id}
                     role="tab"
                   >
-                    <span className="text-lime-400 font-bold text-lg">{index + 1}</span>
+                    {caseStudy.logo ? (
+                      <img 
+                        src={caseStudy.logo} 
+                        alt={`${caseStudy.baslik} Logo`}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    ) : (
+                      <span className="text-lime-400 font-bold text-lg">{index + 1}</span>
+                    )}
                   </Link>
                   
                   <div className="ml-6 flex-1">
@@ -168,6 +184,19 @@ function CasePanel({ caseStudy }: { caseStudy: CaseStudy }) {
       }}
     >
       <CardContent className="p-8">
+        {/* Logo Header */}
+        {caseStudy.logo && (
+          <div className="mb-6 flex justify-center">
+            <div className="w-24 h-24 bg-slate-800/50 rounded-xl border border-slate-700 flex items-center justify-center p-4">
+              <img 
+                src={caseStudy.logo} 
+                alt={`${caseStudy.baslik} Logo`}
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+          </div>
+        )}
+
         {/* Brief Summary */}
         <div className="mb-8">
           <h3 className="text-xl font-semibold text-slate-200 mb-4">{t('cases.summary.title')}</h3>
