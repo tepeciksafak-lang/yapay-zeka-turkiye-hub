@@ -198,7 +198,7 @@ const Hakkimizda = () => {
               {caseStudiesData.slice(0, 6).map((caseStudy) => (
                 <Card key={caseStudy.id} className="border-border bg-card hover-glow transition-all">
                   <CardContent className="p-6 space-y-4">
-              <div className="h-16 w-full bg-muted rounded-lg flex items-center justify-center p-4">
+              <div className="h-16 w-full bg-transparent rounded-lg flex items-center justify-center p-4">
                 {caseStudy.logo ? (
                   <img 
                     src={caseStudy.logo} 

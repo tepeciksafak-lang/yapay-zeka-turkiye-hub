@@ -189,7 +189,7 @@ const Index = () => {
             {cases.map((case_item, index) => (
               <Card key={index} className="group transition-all duration-300 hover:border-primary/30">
                 <CardContent className="p-6 space-y-4">
-                  <div className="h-12 w-full bg-muted rounded-lg flex items-center justify-center p-3">
+                  <div className="h-12 w-full bg-transparent rounded-lg flex items-center justify-center p-3">
                     {case_item.logo ? (
                       <img 
                         src={case_item.logo} 

@@ -187,7 +187,7 @@ function CasePanel({ caseStudy }: { caseStudy: CaseStudy }) {
         {/* Logo Header */}
         {caseStudy.logo && (
           <div className="mb-6 flex justify-center">
-            <div className="w-24 h-24 bg-slate-800/50 rounded-xl border border-slate-700 flex items-center justify-center p-4">
+            <div className="w-24 h-24 bg-transparent rounded-xl border border-slate-700/30 flex items-center justify-center p-4">
               <img 
                 src={caseStudy.logo} 
                 alt={`${caseStudy.baslik} Logo`}
