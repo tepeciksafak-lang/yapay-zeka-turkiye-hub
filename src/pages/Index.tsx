@@ -73,31 +73,31 @@ const Index = () => {
     },
     {
       company: "Carstudio AI", 
-      logo: "/logos/carstudio.webp",
+      logo: "/logos/carstudio.png",
       result: t('index.cases.carstudio.result'),
       metric: t('index.cases.carstudio.metric')
     },
     {
       company: "Salevium",
-      logo: null,
+      logo: "/logos/salevium.png",
       result: t('index.cases.salevium.result'),
       metric: t('index.cases.salevium.metric')
     },
     {
       company: "ERPA Teknoloji",
-      logo: "/logos/erpa.webp",
+      logo: "/logos/erpa.png",
       result: t('index.cases.erpa.result'),
       metric: t('index.cases.erpa.metric')
     },
     {
       company: "Cemkimsan",
-      logo: "/logos/cemkimsan.jpg",
+      logo: "/logos/cemkimsan.png",
       result: t('index.cases.cemkimsan.result'),
       metric: t('index.cases.cemkimsan.metric')
     },
     {
       company: "DKM/Coach Bilge",
-      logo: null,
+      logo: "/logos/coach-bilge.png",
       result: t('index.cases.dkm.result'),
       metric: t('index.cases.dkm.metric')
     }
