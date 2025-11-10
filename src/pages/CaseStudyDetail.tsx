@@ -95,6 +95,11 @@ const CaseStudyDetail = () => {
             
             {/* Logo + Überschrift */}
             <div className="flex items-start gap-4 lg:gap-6 mb-6">
+              {/* Überschrift */}
+              <h1 className="text-3xl lg:text-5xl font-bold leading-tight flex-1" style={{ color: '#E5E7EB' }}>
+                {caseStudy.baslik}
+              </h1>
+              
               {/* Logo */}
               {caseStudy.logo && (
                 <div className="w-16 h-16 lg:w-20 lg:h-20 bg-transparent rounded-xl border border-slate-700/30 flex items-center justify-center p-3 flex-shrink-0">
@@ -105,11 +110,6 @@ const CaseStudyDetail = () => {
                   />
                 </div>
               )}
-              
-              {/* Überschrift */}
-              <h1 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#E5E7EB' }}>
-                {caseStudy.baslik}
-              </h1>
             </div>
             
             <p className="text-lg lg:text-xl" style={{ color: '#94A3B8' }}>
