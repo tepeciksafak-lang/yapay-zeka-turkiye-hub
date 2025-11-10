@@ -86,19 +86,6 @@ const CaseStudyDetail = () => {
               {t('cases.back.link')}
             </Link>
             
-            {/* Logo */}
-            {caseStudy.logo && (
-              <div className="mb-6 flex justify-center">
-                <div className="w-24 h-24 bg-transparent rounded-xl border border-slate-700/30 flex items-center justify-center p-4">
-                  <img 
-                    src={caseStudy.logo} 
-                    alt={`${caseStudy.baslik} Logo`}
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </div>
-            )}
-            
             <Badge
               variant="outline" 
               className="mb-6 border border-[#A3E635] text-[#A3E635] bg-transparent hover:bg-[#A3E635]/5"
@@ -106,9 +93,24 @@ const CaseStudyDetail = () => {
               {caseStudy.etiket}
             </Badge>
             
-            <h1 className="text-3xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: '#E5E7EB' }}>
-              {caseStudy.baslik}
-            </h1>
+            {/* Logo + Überschrift */}
+            <div className="flex items-start gap-4 lg:gap-6 mb-6">
+              {/* Logo */}
+              {caseStudy.logo && (
+                <div className="w-16 h-16 lg:w-20 lg:h-20 bg-transparent rounded-xl border border-slate-700/30 flex items-center justify-center p-3 flex-shrink-0">
+                  <img 
+                    src={caseStudy.logo} 
+                    alt={`${caseStudy.baslik} Logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              )}
+              
+              {/* Überschrift */}
+              <h1 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#E5E7EB' }}>
+                {caseStudy.baslik}
+              </h1>
+            </div>
             
             <p className="text-lg lg:text-xl" style={{ color: '#94A3B8' }}>
               {caseStudy.ozet}
