@@ -86,7 +86,20 @@ const CaseStudyDetail = () => {
               {t('cases.back.link')}
             </Link>
             
-            <Badge 
+            {/* Logo */}
+            {caseStudy.logo && (
+              <div className="mb-6 flex justify-center">
+                <div className="w-24 h-24 bg-transparent rounded-xl border border-slate-700/30 flex items-center justify-center p-4">
+                  <img 
+                    src={caseStudy.logo} 
+                    alt={`${caseStudy.baslik} Logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              </div>
+            )}
+            
+            <Badge
               variant="outline" 
               className="mb-6 border border-[#A3E635] text-[#A3E635] bg-transparent hover:bg-[#A3E635]/5"
             >
