@@ -22,6 +22,7 @@ import Solutions from "./pages/Solutions";
 import Hakkimizda from "./pages/Hakkimizda";
 import GizlilikPolitikasi from "./pages/GizlilikPolitikasi";
 import KullanimKosullari from "./pages/KullanimKosullari";
+import TestBlogCreation from "./pages/TestBlogCreation";
 
 
 const queryClient = new QueryClient();
@@ -186,6 +187,16 @@ const AppWithModal = () => {
               <Navigation />
               <main className="flex-1">
                 <UcretsizIcerikler />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/tr/test-blog-creation" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <TestBlogCreation />
               </main>
               <Footer />
             </LanguageWrapper>
