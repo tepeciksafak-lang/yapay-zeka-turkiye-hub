@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-text-hi">Kontakt</h3>
+            <h3 className="text-sm font-semibold text-text-hi">{t('footer.contact.title')}</h3>
             <ul className="space-y-2 text-sm text-text-muted">
               <li className="font-medium text-text-hi">ST-Automatisierung</li>
               <li>
