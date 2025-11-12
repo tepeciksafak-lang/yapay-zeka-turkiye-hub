@@ -9,11 +9,17 @@ const corsHeaders = {
 
 // Position mapping for automatic image insertion
 const positionMap: Record<string, string> = {
+  // Legacy positions (AI Basics post)
   "tarihçe": "## Yapay Zekanın Kısa Tarihi",
   "calisma-prensibi": "## Yapay Zeka Nasıl Çalışır?",
   "uygulama-alanlari": "## Yapay Zeka Nerelerde Kullanılır?",
   "avantaj-dezavantaj": "## Yapay Zekanın Artıları ve Eksileri",
   "gelecek": "## Yapay Zekanın Geleceği",
+  
+  // Reklam Yapma post positions
+  "before-senaryo": "## Senaryo Oluşturma",
+  "after-analiz": "## Video Üretimi",
+  "after-ses-uyumu": "## Hangi Yapay Zeka Modelleri",
 };
 
 serve(async (req) => {
@@ -144,27 +150,42 @@ serve(async (req) => {
         if (uploadedUrl) {
           uploadedImages.push({ position, url: uploadedUrl });
 
-          // Find heading and insert image after it
-          const heading = positionMap[position];
-          if (heading) {
-            const headingIndex = processedContent.indexOf(heading);
-            if (headingIndex !== -1) {
-              const afterHeading = headingIndex + heading.length;
-              const altText = image_meta_description || `Image for ${position}`;
-              const imageMarkdown = `\n\n![${altText}](${uploadedUrl})\n`;
-              processedContent = 
-                processedContent.slice(0, afterHeading) + 
-                imageMarkdown + 
-                processedContent.slice(afterHeading);
-              console.log(`Inserted image at position "${position}" after heading "${heading}"`);
-            } else {
-              console.warn(`Heading not found for position "${position}": ${heading}`);
-              // Append at the end if heading not found
-              processedContent += `\n\n![${image_meta_description || position}](${uploadedUrl})\n`;
-            }
+          const altText = image_meta_description || `Image for ${position}`;
+          const imageMarkdown = `\n\n![${altText}](${uploadedUrl})\n`;
+          let inserted = false;
+
+          // Check if position is a direct heading match (e.g., "Senaryo Oluşturma", "Video Üretimi")
+          const directHeadingMatch = `## ${position}`;
+          if (processedContent.includes(directHeadingMatch)) {
+            const headingIndex = processedContent.indexOf(directHeadingMatch);
+            const afterHeading = headingIndex + directHeadingMatch.length;
+            processedContent = processedContent.slice(0, afterHeading) + imageMarkdown + processedContent.slice(afterHeading);
+            console.log(`Inserted image directly after heading "## ${position}"`);
+            inserted = true;
           } else {
-            console.warn(`No mapping found for position: ${position}`);
-            processedContent += `\n\n![${image_meta_description || position}](${uploadedUrl})\n`;
+            // Try position map lookup
+            const heading = positionMap[position];
+            if (heading) {
+              const headingIndex = processedContent.indexOf(heading);
+              if (headingIndex !== -1) {
+                // For "before-" positions, insert before the heading
+                if (position.startsWith('before-')) {
+                  processedContent = processedContent.slice(0, headingIndex) + imageMarkdown + processedContent.slice(headingIndex);
+                  console.log(`Inserted image BEFORE heading "${heading}" for position "${position}"`);
+                } else {
+                  // For other positions, insert after the heading
+                  const afterHeading = headingIndex + heading.length;
+                  processedContent = processedContent.slice(0, afterHeading) + imageMarkdown + processedContent.slice(afterHeading);
+                  console.log(`Inserted image AFTER heading "${heading}" for position "${position}"`);
+                }
+                inserted = true;
+              }
+            }
+          }
+
+          if (!inserted) {
+            console.warn(`Could not insert image for position "${position}" - appending to end`);
+            processedContent += imageMarkdown;
           }
         } else {
           console.error(`Failed to upload image for position: ${position}`);

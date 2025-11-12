@@ -1,4 +1,4 @@
-import { createBlogPost } from "./createBlogPost";
+import { createBlogPost, fileToBase64 } from "./createBlogPost";
 
 export async function createReklamYapmaBlogPost() {
   const content = `Bugün sosyal medyada, tamamen yapay zeka ile oluşturulmuş ve yine de milyonlarca görüntülenmeye ulaşan sayısız kısa video ve Reels görüyoruz.
@@ -84,30 +84,31 @@ Reklam yapma sürecinizi bugün otomatikleştirin ve yapay zekanın gücünden y
 
 [Yapay zeka çözümlerimizi](/tr/cozumler) keşfedin veya [başarılı vaka çalışmalarımızı](/tr/vaka-calismalari) inceleyin.`;
 
+  // Convert local images to base64
   const images = [
     {
       position: "before-senaryo",
-      image_url: "/blog/yapay-zeka-sosyal-medya-reklamlari.avif",
+      image_url: await fileToBase64("/blog/yapay-zeka-sosyal-medya-reklamlari.avif"),
       image_meta_description: "Yapay zeka ile oluşturulmuş sosyal medya reklamları ve viral içerikler"
     },
     {
       position: "Senaryo Oluşturma",
-      image_url: "/blog/reklam-senaryo-olusturma-ai.avif",
+      image_url: await fileToBase64("/blog/reklam-senaryo-olusturma-ai.avif"),
       image_meta_description: "AI destekli reklam senaryo oluşturma süreci - Storyboard ve metin üretimi"
     },
     {
       position: "after-analiz",
-      image_url: "/blog/yapay-zeka-analiz-modelleri.avif",
+      image_url: await fileToBase64("/blog/yapay-zeka-analiz-modelleri.avif"),
       image_meta_description: "Yapay zeka modelleri ile reklam kampanyası analizi ve optimizasyon"
     },
     {
       position: "Video Üretimi",
-      image_url: "/blog/video-reklam-uretimi-ai.avif",
+      image_url: await fileToBase64("/blog/video-reklam-uretimi-ai.avif"),
       image_meta_description: "Otomatik video reklam üretimi - AI ile profesyonel reklam videolarının oluşturulması"
     },
     {
       position: "after-ses-uyumu",
-      image_url: "/blog/final-reklam-video-sonuc.avif",
+      image_url: await fileToBase64("/blog/final-reklam-video-sonuc.avif"),
       image_meta_description: "Tamamlanmış reklam videosu - Müzik, ses ve görsel efektlerle hazır kampanya"
     }
   ];
