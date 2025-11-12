@@ -22,6 +22,43 @@ const positionMap: Record<string, string> = {
   "after-ses-uyumu": "## Hangi Yapay Zeka Modelleri",
 };
 
+// Sanitize filename for storage
+function sanitizeForKey(input: string): string {
+  return input
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+    .toLowerCase()
+    .replace(/[^a-z0-9-]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+// Detect MIME type and extension from image source
+function getMimeAndExt(src: string): { mime: string; ext: string } {
+  if (src.startsWith('data:')) {
+    const mimeMatch = src.slice(5).split(';')[0];
+    const mime = mimeMatch || 'image/jpeg';
+    const ext = (mime.split('/')[1] || 'jpeg').toLowerCase();
+    return { mime, ext };
+  }
+  
+  try {
+    const extFromUrl = (new URL(src).pathname.split('.').pop() || 'jpg').toLowerCase();
+    const mimeMap: Record<string, string> = {
+      jpg: 'jpeg',
+      jpeg: 'jpeg',
+      png: 'png',
+      webp: 'webp',
+      avif: 'avif',
+      gif: 'gif'
+    };
+    const normalizedExt = mimeMap[extFromUrl] || 'jpeg';
+    return { mime: `image/${normalizedExt}`, ext: extFromUrl };
+  } catch {
+    return { mime: 'image/jpeg', ext: 'jpg' };
+  }
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -79,10 +116,24 @@ serve(async (req) => {
     
     const slug = `${baseSlug}-${language}`;
 
+    // Delete existing post with same slug (idempotent)
+    const { data: existingPost } = await supabase
+      .from('blog_posts')
+      .select('id')
+      .eq('slug', slug)
+      .maybeSingle();
+
+    if (existingPost?.id) {
+      console.log(`Deleting existing post with slug: ${slug}`);
+      await supabase.from('blog_posts').delete().eq('id', existingPost.id);
+    }
+
     // Helper function to upload image
-    async function uploadImage(imageSource: string, fileName: string): Promise<string | null> {
+    async function uploadImage(imageSource: string, fileBase: string): Promise<string | null> {
       try {
         let imageData: Uint8Array;
+        const { mime, ext } = getMimeAndExt(imageSource);
+        const fileName = `${fileBase}.${ext}`;
         
         if (imageSource.startsWith("data:image")) {
           const base64Data = imageSource.split(",")[1];
@@ -101,7 +152,7 @@ serve(async (req) => {
         const { data: uploadData, error: uploadError } = await supabase.storage
           .from("blog-images")
           .upload(fileName, imageData, {
-            contentType: "image/jpeg",
+            contentType: mime,
             cacheControl: "3600",
             upsert: false,
           });
@@ -115,7 +166,7 @@ serve(async (req) => {
           .from("blog-images")
           .getPublicUrl(fileName);
         
-        console.log("Image uploaded successfully:", publicUrl);
+        console.log(`Image uploaded successfully: ${publicUrl}`);
         return publicUrl;
       } catch (error) {
         console.error("Error processing image:", error);
@@ -125,9 +176,15 @@ serve(async (req) => {
 
     // Handle cover image upload
     let coverImageUrl = null;
-    if (cover_image) {
-      const fileName = `${slug}-cover-${Date.now()}.jpg`;
-      coverImageUrl = await uploadImage(cover_image, fileName);
+    if (cover_image && (cover_image.startsWith('data:image') || cover_image.startsWith('http'))) {
+      console.log('Processing cover image...');
+      const coverUrl = await uploadImage(cover_image, `${slug}-cover-${Date.now()}`);
+      if (coverUrl) {
+        coverImageUrl = coverUrl;
+        console.log(`Cover image uploaded: ${coverUrl}`);
+      } else {
+        console.error('Failed to upload cover image');
+      }
     }
 
     // Process content images
@@ -144,8 +201,9 @@ serve(async (req) => {
           continue;
         }
 
-        const fileName = `${slug}-${position}-${Date.now()}.jpg`;
-        const uploadedUrl = await uploadImage(image_url, fileName);
+        // Sanitize position for filename
+        const safePos = sanitizeForKey(position);
+        const uploadedUrl = await uploadImage(image_url, `${slug}-${safePos}-${Date.now()}`);
 
         if (uploadedUrl) {
           uploadedImages.push({ position, url: uploadedUrl });

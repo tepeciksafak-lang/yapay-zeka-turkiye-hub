@@ -122,7 +122,7 @@ Reklam yapma sürecinizi bugün otomatikleştirin ve yapay zekanın gücünden y
     author_bio: "Safak Tepecik, Pratik Yapay Zeka'nın kurucusudur. Yapay zeka, otomasyon ve dijital pazarlama üzerine çalışır.",
     category: "Pazarlama & Reklam",
     tags: ["Reklam Yapma", "Yapay Zeka", "Video Üretimi", "Otomasyon", "Dijital Pazarlama", "AI Marketing"],
-    cover_image: "/blog/reklam-yapma-yapay-zeka.avif",
+    cover_image: await fileToBase64("/blog/reklam-yapma-yapay-zeka.avif"),
     cover_image_alt: "Reklam yapma için yapay zeka kullanımı - Modern dijital reklam kampanyası oluşturma",
     meta_title: "Reklam Yapma: Yapay Zeka ile Video Reklam 2025",
     meta_description: "Reklam yapma artık saatler değil dakikalar içinde! Yapay zeka ile video reklam üretimi, senaryo oluşturma ve otomatik kampanya yönetimi. Ücretsiz rehber →",
