@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { lazy, Suspense } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { ModalProvider, useModal } from "./contexts/ModalContext";
 import { QuickAnalysisModal } from "./components/QuickAnalysisModal";
@@ -13,16 +14,25 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import VakaCalismalari from "./pages/VakaCalismalari";
-import CaseStudyDetail from "./pages/CaseStudyDetail";
-import UcretsizIcerikler from "./pages/UcretsizIcerikler";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import Solutions from "./pages/Solutions";
-import Hakkimizda from "./pages/Hakkimizda";
-import GizlilikPolitikasi from "./pages/GizlilikPolitikasi";
-import KullanimKosullari from "./pages/KullanimKosullari";
-import TestBlogCreation from "./pages/TestBlogCreation";
+
+// Lazy load non-critical pages
+const VakaCalismalari = lazy(() => import("./pages/VakaCalismalari"));
+const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
+const UcretsizIcerikler = lazy(() => import("./pages/UcretsizIcerikler"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const Solutions = lazy(() => import("./pages/Solutions"));
+const Hakkimizda = lazy(() => import("./pages/Hakkimizda"));
+const GizlilikPolitikasi = lazy(() => import("./pages/GizlilikPolitikasi"));
+const KullanimKosullari = lazy(() => import("./pages/KullanimKosullari"));
+const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="animate-pulse text-lg text-muted-foreground">Loading...</div>
+  </div>
+);
 
 
 const queryClient = new QueryClient();
@@ -53,7 +63,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Solutions />
+                <Suspense fallback={<PageLoader />}>
+                  <Solutions />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -63,7 +75,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <VakaCalismalari />
+                <Suspense fallback={<PageLoader />}>
+                  <VakaCalismalari />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -73,7 +87,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <CaseStudyDetail />
+                <Suspense fallback={<PageLoader />}>
+                  <CaseStudyDetail />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -83,7 +99,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <UcretsizIcerikler />
+                <Suspense fallback={<PageLoader />}>
+                  <UcretsizIcerikler />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -93,7 +111,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Blog />
+                <Suspense fallback={<PageLoader />}>
+                  <Blog />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -103,7 +123,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <BlogPost />
+                <Suspense fallback={<PageLoader />}>
+                  <BlogPost />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -113,7 +135,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <GizlilikPolitikasi />
+                <Suspense fallback={<PageLoader />}>
+                  <GizlilikPolitikasi />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -123,7 +147,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <KullanimKosullari />
+                <Suspense fallback={<PageLoader />}>
+                  <KullanimKosullari />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -156,7 +182,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Solutions />
+                <Suspense fallback={<PageLoader />}>
+                  <Solutions />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -166,7 +194,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <VakaCalismalari />
+                <Suspense fallback={<PageLoader />}>
+                  <VakaCalismalari />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -176,7 +206,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <CaseStudyDetail />
+                <Suspense fallback={<PageLoader />}>
+                  <CaseStudyDetail />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -186,7 +218,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <UcretsizIcerikler />
+                <Suspense fallback={<PageLoader />}>
+                  <UcretsizIcerikler />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -196,7 +230,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <TestBlogCreation />
+                <Suspense fallback={<PageLoader />}>
+                  <TestBlogCreation />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -206,7 +242,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Blog />
+                <Suspense fallback={<PageLoader />}>
+                  <Blog />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -216,7 +254,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <BlogPost />
+                <Suspense fallback={<PageLoader />}>
+                  <BlogPost />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -226,7 +266,9 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Hakkimizda />
+                <Suspense fallback={<PageLoader />}>
+                  <Hakkimizda />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>
@@ -235,13 +277,17 @@ const AppWithModal = () => {
           {/* Legal Routes */}
           <Route path="/tr/gizlilik" element={
             <LanguageWrapper>
-              <GizlilikPolitikasi />
+              <Suspense fallback={<PageLoader />}>
+                <GizlilikPolitikasi />
+              </Suspense>
             </LanguageWrapper>
           } />
           
           <Route path="/tr/kullanim-kosullari" element={
             <LanguageWrapper>
-              <KullanimKosullari />
+              <Suspense fallback={<PageLoader />}>
+                <KullanimKosullari />
+              </Suspense>
             </LanguageWrapper>
           } />
 

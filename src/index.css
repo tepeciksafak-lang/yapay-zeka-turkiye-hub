@@ -110,8 +110,9 @@ All colors MUST be HSL for consistency and theming support.
     bottom: 0;
     background: var(--glow-lime);
     pointer-events: none;
-    z-index: -1;
+    transform: translateZ(-1px);
     opacity: 0.3;
+    will-change: transform;
   }
 }
 
@@ -215,7 +216,8 @@ All colors MUST be HSL for consistency and theming support.
     inset: 0;
     border-radius: calc(var(--radius) * 1px);
     pointer-events: none;
-    z-index: -1;
+    transform: translateZ(-1px);
+    will-change: transform;
 
     background: radial-gradient(
       200px circle at var(--x, 50px) var(--y, 50px),

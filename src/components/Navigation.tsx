@@ -27,11 +27,14 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 transition-all duration-300 data-[scrolled=true]:bg-bg-2 data-[scrolled=true]:border-border">
+    <nav 
+      className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 transition-all duration-300 data-[scrolled=true]:bg-bg-2 data-[scrolled=true]:border-border"
+      aria-label="Main navigation"
+    >
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-16 items-center justify-between">
-          <Link to={getLocalizedRoute(currentLanguage, 'home')} className="flex items-center space-x-3 group">
-            <div className="h-8 w-8 rounded-lg bg-card border border-border group-hover:border-lime-400/50 transition-all duration-300 flex items-center justify-center">
+          <Link to={getLocalizedRoute(currentLanguage, 'home')} className="flex items-center space-x-3 group" aria-label="Homepage">
+            <div className="h-8 w-8 rounded-lg bg-card border border-border group-hover:border-lime-400/50 transition-all duration-300 flex items-center justify-center" aria-hidden="true">
             </div>
             {/* <span className="text-xl font-bold text-foreground tracking-tight">
               Pratik Yapay Zeka
@@ -64,7 +67,7 @@ const Navigation = () => {
             {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon" className="focus-lime">
+                <Button variant="ghost" size="icon" className="focus-lime min-h-[48px] min-w-[48px]" aria-label="Toggle menu">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
