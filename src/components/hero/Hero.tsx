@@ -55,10 +55,10 @@ export function Hero({ locale, modalOpen, onModalOpenChange }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
+    <section className="relative min-h-screen flex items-center justify-center" aria-label="Hero section">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
-      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" aria-hidden="true" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-30" aria-hidden="true" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
@@ -85,7 +85,8 @@ export function Hero({ locale, modalOpen, onModalOpenChange }: HeroProps) {
             <Button
               onClick={handleCtaClick}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-lg font-semibold rounded-xl transition-colors duration-200"
+              aria-label={copy.ctaPrimary}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-lg font-semibold rounded-xl transition-colors duration-200 min-h-[48px] min-w-[48px]"
             >
               {copy.ctaPrimary}
             </Button>
