@@ -106,6 +106,8 @@ const CaseStudyDetail = () => {
                   <img 
                     src={caseStudy.logo} 
                     alt={`${caseStudy.baslik} Logo`}
+                    loading="lazy"
+                    decoding="async"
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>

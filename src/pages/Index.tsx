@@ -67,37 +67,49 @@ const Index = () => {
   const cases = [
     {
       company: "AcilSatis",
-      logo: "/logos/acilsatis.png",
+      logo: "/logos/acilsatis.avif",
+      width: 91,
+      height: 42,
       result: t('index.cases.acilsatis.result'),
       metric: t('index.cases.acilsatis.metric')
     },
     {
       company: "Carstudio AI", 
-      logo: "/logos/carstudio.png",
+      logo: "/logos/carstudio.avif",
+      width: 200,
+      height: 42,
       result: t('index.cases.carstudio.result'),
       metric: t('index.cases.carstudio.metric')
     },
     {
       company: "Salevium",
-      logo: "/logos/salevium.png",
+      logo: "/logos/salevium.avif",
+      width: 152,
+      height: 42,
       result: t('index.cases.salevium.result'),
       metric: t('index.cases.salevium.metric')
     },
     {
       company: "ERPA Teknoloji",
-      logo: "/logos/erpa.png",
+      logo: "/logos/erpa.avif",
+      width: 42,
+      height: 42,
       result: t('index.cases.erpa.result'),
       metric: t('index.cases.erpa.metric')
     },
     {
       company: "Cemkimsan",
-      logo: "/logos/cemkimsan.png",
+      logo: "/logos/cemkimsan.avif",
+      width: 149,
+      height: 42,
       result: t('index.cases.cemkimsan.result'),
       metric: t('index.cases.cemkimsan.metric')
     },
     {
       company: "DKM/Coach Bilge",
-      logo: "/logos/coach-bilge.png",
+      logo: "/logos/coach-bilge.avif",
+      width: 42,
+      height: 42,
       result: t('index.cases.dkm.result'),
       metric: t('index.cases.dkm.metric')
     }
@@ -194,6 +206,10 @@ const Index = () => {
                       <img 
                         src={case_item.logo} 
                         alt={`${case_item.company} Logo`}
+                        width={case_item.width}
+                        height={case_item.height}
+                        loading="lazy"
+                        decoding="async"
                         className="max-h-full max-w-full object-contain"
                       />
                     ) : (
