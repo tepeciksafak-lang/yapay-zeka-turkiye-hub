@@ -74,6 +74,8 @@ export default function ConnectedTimeline({ caseStudies, selectedFilter = "Hepsi
                     <img 
                       src={caseStudy.logo} 
                       alt={`${caseStudy.baslik} Logo`}
+                      loading="lazy"
+                      decoding="async"
                       className="max-h-full max-w-full object-contain"
                     />
                   ) : (

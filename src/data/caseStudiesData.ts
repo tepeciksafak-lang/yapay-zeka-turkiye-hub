@@ -29,7 +29,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "Car Studio AI Vaka Çalışması - Satış Otomasyonu ile 3000+ Kişiselleştirilmiş E-posta",
     metaDescription: "Car Studio AI'nin uluslararası pazarda ekip büyütmeden 3000+ kişiselleştirilmiş e-posta ile satış otomasyonu başarı hikayesi. Yapay zeka destekli e-posta sistemi ile ayda 20+ saat zaman tasarrufu.",
     ogImage: "/og-car-studio.jpg",
-    logo: "/logos/carstudio.png",
+    logo: "/logos/carstudio.avif",
     kpis: [
       { label: "E-posta Gönderimi", value: "3000+" },
       { label: "Zaman Tasarrufu", value: "20+ saat/ay" },
@@ -58,7 +58,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "Acilsatis Vaka Çalışması - Pazarlama Otomasyonu ile 5000+ Platform İlanı",
     metaDescription: "Acilsatis'in gayrimenkul ve otomobil sektöründe 5000+ platform ilanı ile hızlı büyüme ve organik trafik artışı başarı hikayesi. Instagram DM ve SMS otomasyonu ile pazarlama dönüşümü.",
     ogImage: "/og-acilsatis.jpg",
-    logo: "/logos/acilsatis.png",
+    logo: "/logos/acilsatis.avif",
     kpis: [
       { label: "Platform Ilani", value: "5000+" },
       { label: "Hedef Sektör", value: "2 Ana Sektör" },
@@ -90,7 +90,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "Salevium Vaka Çalışması - LinkedIn İçerik Otomasyonu ile 22K+ Takipçi",
     metaDescription: "Salevium'un oyun temelli satış eğitimi için LinkedIn pazarlama otomasyonu başarı hikayesi. %0 manuel içerik ile 22.000+ takipçi ve 5x etkilesim artısı.",
     ogImage: "/og-salevium.jpg",
-    logo: "/logos/salevium.png",
+    logo: "/logos/salevium.avif",
     kpis: [
       { label: "Manuel Içerik", value: "%0" },
       { label: "Takipçi Sayisi", value: "22,000+" },
@@ -125,7 +125,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "ERPA Teknoloji Vaka Çalışması - Avrupa Stadyumları için AI Destekli Lead Generation",
     metaDescription: "ERPA Teknoloji'nin TOCHI markasıyla Avrupa pazarına stratejik girişi. AI destekli lead generation ile stadyum işletmecilerine ulaşma ve ilk ayda nitelikli görüşmeler elde etme başarısı.",
     ogImage: "/og-erpa.jpg",
-    logo: "/logos/erpa.png",
+    logo: "/logos/erpa.avif",
     kpis: [
       { label: "Hedef Pazar", value: "Avrupa Stadyumlari" },
       { label: "Karar Verici Tipi", value: "4+ Pozisyon" },
@@ -163,7 +163,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "Cemkimsan Vaka Çalışması - 20+ Ülkede 1000+ Doğrulanmış Distribütör Ağı",
     metaDescription: "Cemkimsan'ın su arıtma ve denizcilik kimyasalları için 20+ ülkede 1000+ doğrulanmış distribütör ağı kurma projesi. AI destekli B2B export ve sistematik ihracat büyümesi.",
     ogImage: "/og-cemkimsan.jpg",
-    logo: "/logos/cemkimsan.png",
+    logo: "/logos/cemkimsan.avif",
     kpis: [
       { label: "Hedef Ülke", value: "20+ Ülke" },
       { label: "Dogrulanmis Distribütör", value: "1000+" },
@@ -205,7 +205,7 @@ export const caseStudiesData: CaseStudy[] = [
     metaTitle: "DKM/Coach Bilge Vaka Çalışması - Oyunlaştırma ile +300 Nitelikli Lead",
     metaDescription: "DKM/Coach Bilge'nin Supermakler-Challenge projesi ile fuar öncesinde +300 nitelikli lead, %40 daha fazla stand ziyaretçisi ve %100 dijital takip başarısı.",
     ogImage: "/og-dkm-coach-bilge.jpg",
-    logo: "/logos/coach-bilge.png",
+    logo: "/logos/coach-bilge.avif",
     kpis: [
       { label: "Nitelikli Lead", value: "+300" },
       { label: "Stand Ziyaretçisi Artışı", value: "+%40" },
