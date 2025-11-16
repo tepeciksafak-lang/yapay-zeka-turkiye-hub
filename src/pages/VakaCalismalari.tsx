@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useModal } from "@/contexts/ModalContext";
 import { useNavigate } from "react-router-dom";
-import { caseStudiesData } from "@/data/caseStudiesData";
+import { caseStudiesData, getLocalizedCaseStudies } from "@/data/caseStudiesData";
 import { getLocalizedRoute } from "@/lib/routeMappings";
 
 const VakaCalismalari = () => {
@@ -72,7 +72,7 @@ const VakaCalismalari = () => {
       {/* Connected Timeline */}
       <div data-timeline>
         <ConnectedTimeline 
-          caseStudies={caseStudiesData} 
+          caseStudies={getLocalizedCaseStudies(currentLanguage as 'tr' | 'de')} 
           selectedFilter={selectedFilter}
         />
       </div>

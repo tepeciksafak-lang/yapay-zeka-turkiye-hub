@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ArrowRight, ArrowLeft, ExternalLink } from "lucide-react";
-import { getCaseStudyBySlug, getAdjacentCaseStudies } from "@/data/caseStudiesData";
+import { getCaseStudyBySlug, getAdjacentCaseStudies, getLocalizedCaseStudy } from "@/data/caseStudiesData";
 import { useModal } from "@/contexts/ModalContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getLocalizedRoute } from "@/lib/routeMappings";
@@ -20,7 +20,7 @@ const CaseStudyDetail = () => {
     return <Navigate to={getLocalizedRoute(currentLanguage, 'cases')} replace />;
   }
 
-  const caseStudy = getCaseStudyBySlug(slug);
+  const caseStudy = getLocalizedCaseStudy(slug, currentLanguage as 'tr' | 'de');
   
   if (!caseStudy) {
     return <Navigate to={getLocalizedRoute(currentLanguage, 'cases')} replace />;
