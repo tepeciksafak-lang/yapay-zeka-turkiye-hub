@@ -226,8 +226,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
             const Icon = item.icon;
 
             const nodeStyle = {
-              transform: `translate(${pos.x}px, ${pos.y}px)`,
-              zIndex: expanded ? 200 : pos.zIndex,
+              transform: `translate(${pos.x}px, ${pos.y}px) translateZ(${expanded ? '10px' : '0px'})`,
               opacity: expanded ? 1 : pos.opacity,
             } as const;
 
@@ -235,7 +234,9 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
               <div
                 key={item.id}
                 ref={(el) => (nodeRefs.current[item.id] = el)}
-                className="absolute transition-all duration-700 cursor-pointer"
+                className={`absolute transition-all duration-700 cursor-pointer will-change-transform ${
+                  expanded ? 'z-[200]' : ''
+                }`}
                 style={nodeStyle}
                 onClick={(e) => { e.stopPropagation(); toggleItem(item.id); }}
               >
@@ -263,8 +264,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                   expanded ? "text-white scale-125" : "text-white/85"
                 }`}
                 style={{ 
-                  top: `${responsive.nodeSize + 8}px`,
-                  fontSize: isMobile ? '11px' : '12px'
+                  top: `${responsive.nodeSize + 8}px`
                 }}>
                   {item.title}
                 </div>
@@ -307,13 +307,12 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                 .map(item => (
                   <Card 
                     key={`desktop-${item.id}`}
-                    className="bg-bg-2/95 backdrop-blur-lg border border-white/15 shadow-xl shadow-black/40 rounded-xl pointer-events-auto"
+                    className="bg-bg-2/95 backdrop-blur-lg border border-white/15 shadow-xl shadow-black/40 rounded-xl pointer-events-auto z-[300]"
                     style={{
                       width: `${responsive.cardWidth}px`,
                       maxHeight: `${Math.min((responsive.radius || 420) * 1.4, 400)}px`,
                       transform: `scale(${responsive.cardScale || 1})`,
-                      overflow: 'auto',
-                      zIndex: 300
+                      overflow: 'auto'
                     }}
                   >
                     <CardHeader className="pb-4">

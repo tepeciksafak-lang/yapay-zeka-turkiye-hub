@@ -76,14 +76,23 @@
     }
     </script>
 
-    <!-- Google tag (gtag.js) - Deferred for performance -->
+    <!-- Google tag (gtag.js) - Delayed for performance -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XYNQMB280W');
+      
+      // Delay GTM script loading to improve initial page load
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XYNQMB280W';
+          script.async = true;
+          document.head.appendChild(script);
+        }, 2000);
+      });
     </script>
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XYNQMB280W"></script>
   </head>
 
   <body>
