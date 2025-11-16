@@ -233,3 +233,190 @@ All colors MUST be HSL for consistency and theming support.
     padding: 2px;
   }
 }
+
+/* ============================================
+   Website in 3 Tagen – Rebolt Light Style
+   (Isolated design system for this page only)
+   ============================================ */
+
+@layer components {
+  .website-3days-page {
+    /* Color Variables - Light Mode */
+    --w3d-bg: 0 0% 100%;        /* #FFFFFF */
+    --w3d-bg-alt: 210 20% 98%;  /* #F8F9FA */
+    --w3d-text: 0 0% 4%;        /* #0B0B0B */
+    --w3d-primary: 270 91% 58%; /* #7C3AED Lila */
+    --w3d-accent: 84 100% 50%;  /* #A3FF00 Neongrün */
+    --w3d-border: 220 13% 91%;  /* #E5E7EB */
+    
+    /* Override dark mode */
+    background: hsl(var(--w3d-bg));
+    color: hsl(var(--w3d-text));
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.5;
+  }
+
+  /* Typography */
+  .website-3days-page h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: hsl(var(--w3d-text));
+  }
+
+  .website-3days-page h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: hsl(var(--w3d-text));
+  }
+
+  .website-3days-page h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: hsl(var(--w3d-text));
+  }
+
+  .website-3days-page p,
+  .website-3days-page li {
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.55;
+    color: hsl(var(--w3d-text));
+  }
+
+  /* Buttons */
+  .w3d-btn-primary {
+    background: hsl(var(--w3d-primary));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.875rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  .w3d-btn-primary:hover {
+    box-shadow: 0 0 24px rgba(124, 58, 237, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .w3d-btn-secondary {
+    background: white;
+    color: hsl(var(--w3d-text));
+    padding: 1rem 2rem;
+    border-radius: 0.875rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: 1px solid hsl(var(--w3d-text));
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .w3d-btn-secondary:hover {
+    background: hsl(var(--w3d-bg-alt));
+    transform: translateY(-2px);
+  }
+
+  /* Cards */
+  .w3d-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    border: 1px solid hsl(var(--w3d-border));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .w3d-card:hover {
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.15);
+    transform: translateY(-4px);
+  }
+
+  .w3d-card-popular {
+    border: 2px solid hsl(var(--w3d-primary));
+    position: relative;
+  }
+
+  /* Section Spacing */
+  .w3d-section {
+    padding-top: clamp(5rem, 12vw, 10rem);
+    padding-bottom: clamp(3.75rem, 10vw, 8.75rem);
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .w3d-fade-in {
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+  }
+
+  .w3d-stagger-1 { animation-delay: 0.1s; }
+  .w3d-stagger-2 { animation-delay: 0.2s; }
+  .w3d-stagger-3 { animation-delay: 0.3s; }
+
+  /* Link Underline Animation */
+  .w3d-link {
+    position: relative;
+    text-decoration: none;
+    color: hsl(var(--w3d-primary));
+  }
+
+  .w3d-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: hsl(var(--w3d-primary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .w3d-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Counter Animation */
+  @keyframes countUp {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .w3d-price-counter {
+    animation: countUp 0.8s ease-out;
+  }
+
+  /* Intersection Observer Classes */
+  .w3d-animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .w3d-animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

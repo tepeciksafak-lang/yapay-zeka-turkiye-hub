@@ -279,4 +279,61 @@ export default {
   'cases.cta.button': 'Kostenlose Analyse anfordern',
   'cases.breadcrumb.home': 'Startseite',
   'cases.breadcrumb.cases': 'Fallstudien',
+  
+  // Website in 3 Tagen Page
+  'website3days.seo.title': 'Website in 3 Tagen – KI-Website ohne Risiko',
+  'website3days.seo.description': 'Professionelle Website in 3 Werktagen. Erster Entwurf kostenlos. Monatlich kündbar. Perfekt für KMU, Dienstleister & Coaches.',
+  
+  'website3days.hero.h1': 'Eine Website ist keine Visitenkarte. Sie ist ein Umsatzsystem.',
+  'website3days.hero.subheadline': 'Wir bauen Ihre Website in 3 Werktagen – mit KI-gestützten Prozessen. Erster Entwurf gefällt nicht? Sie zahlen nichts.',
+  'website3days.hero.cta.primary': 'Ersten Entwurf kostenlos anfragen',
+  'website3days.hero.cta.secondary': 'Ablauf & Preise ansehen',
+  'website3days.hero.microproof': 'Beliebt bei KMU aus Dienstleistung, Handwerk & Beratung',
+  
+  'website3days.pricing.title': 'Drei klare Pakete. Monatlich kündbar.',
+  'website3days.pricing.starter.name': 'Starter Website',
+  'website3days.pricing.starter.price': '150',
+  'website3days.pricing.starter.description': 'Für Unternehmen, die schnell professionell online sein wollen.',
+  'website3days.pricing.starter.cta': 'Starter wählen',
+  'website3days.pricing.growth.name': 'Website + SEO Growth',
+  'website3days.pricing.growth.price': '250',
+  'website3days.pricing.growth.description': 'Für Unternehmen, die gefunden werden wollen.',
+  'website3days.pricing.growth.badge': 'Most Popular',
+  'website3days.pricing.growth.cta': 'SEO Growth wählen',
+  'website3days.pricing.fullservice.name': 'Website + Social KI',
+  'website3days.pricing.fullservice.price': '750',
+  'website3days.pricing.fullservice.description': 'Für Unternehmen, die Sichtbarkeit & Content komplett abgeben wollen.',
+  'website3days.pricing.fullservice.cta': 'Full-Service wählen',
+  
+  'website3days.process.title': 'So läuft der 3-Tage-Prozess ab',
+  'website3days.process.step1.title': 'Kickstart-Termin',
+  'website3days.process.step1.duration': '30–60 Minuten',
+  'website3days.process.step1.description': 'Wir klären Ihre Ziele, Zielgruppe und Positionierung in einem kurzen Call.',
+  'website3days.process.step2.title': 'Umsetzung',
+  'website3days.process.step2.duration': 'Tag 1–3',
+  'website3days.process.step2.description': 'Unser Team entwickelt Ihre Website mit KI-gestützten Prozessen. Sie bekommen regelmäßige Updates.',
+  'website3days.process.step3.title': 'Prüfung & Go-Live',
+  'website3days.process.step3.duration': 'Tag 3',
+  'website3days.process.step3.description': 'Sie prüfen den ersten Entwurf. Gefällt er nicht, zahlen Sie nichts. Gefällt er, geht die Website live.',
+  
+  'website3days.why.title': 'Warum funktioniert das so schnell?',
+  'website3days.why.reason1': 'KI-gestützte Prozesse',
+  'website3days.why.reason2': 'Parallel-Workflow',
+  'website3days.why.reason3': 'Erprobte Frameworks',
+  'website3days.why.reason4': 'Keine Meeting-Schleifen',
+  
+  'website3days.fit.title': 'Für wen wir perfekt sind – und für wen nicht',
+  'website3days.fit.good.title': 'Geeignet für:',
+  'website3days.fit.bad.title': 'Nicht geeignet:',
+  
+  'website3days.guarantee.title': '100 % risikofrei',
+  'website3days.guarantee.text': 'Der erste Entwurf ist kostenlos. Gefällt er nicht, zahlen Sie nichts.',
+  
+  'website3days.faq.title': 'Häufig gestellte Fragen',
+  
+  'website3days.finalcta.title': 'Bereit für Ihre Website in 3 Werktagen?',
+  'website3days.finalcta.cta.primary': 'Ersten Entwurf kostenlos anfragen',
+  'website3days.finalcta.cta.secondary': 'Ablauf ansehen',
+  
+  'website3days.references.title': 'Ergebnisse aus echten Projekten',
 } as const

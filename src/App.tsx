@@ -26,6 +26,7 @@ const Hakkimizda = lazy(() => import("./pages/Hakkimizda"));
 const GizlilikPolitikasi = lazy(() => import("./pages/GizlilikPolitikasi"));
 const KullanimKosullari = lazy(() => import("./pages/KullanimKosullari"));
 const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
+const WebsiteIn3Days = lazy(() => import("./pages/WebsiteIn3Days"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -149,6 +150,18 @@ const AppWithModal = () => {
               <main className="flex-1">
                 <Suspense fallback={<PageLoader />}>
                   <KullanimKosullari />
+                </Suspense>
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/website-in-3-tagen" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <WebsiteIn3Days />
                 </Suspense>
               </main>
               <Footer />
