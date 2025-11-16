@@ -30,6 +30,7 @@ import SolutionSection from "@/components/SolutionSection";
 import GoToMarketTimeline from "@/components/GoToMarketTimeline";
 import { getLocalizedRoute } from "@/lib/routeMappings";
 import { Link } from "react-router-dom";
+import { getLocalizedCaseStudies } from "@/data/caseStudiesData";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -64,56 +65,29 @@ const Index = () => {
     }
   ];
 
-  const cases = [
-    {
-      company: "AcilSatis",
-      logo: "/logos/acilsatis.avif",
-      width: 91,
+  const localizedCaseStudies = getLocalizedCaseStudies(currentLanguage as 'tr' | 'de');
+  
+  const cases = localizedCaseStudies.map((cs) => {
+    // Define logo widths
+    const logoWidths: { [key: string]: number } = {
+      'acilsatis': 91,
+      'car-studio-ai': 200,
+      'salevium': 152,
+      'erpa-teknoloji': 42,
+      'cemkimsan': 149,
+      'dkm-coach-bilge': 42
+    };
+    
+    return {
+      company: cs.baslik,
+      logo: cs.logo || '',
+      width: logoWidths[cs.slug] || 42,
       height: 42,
-      result: t('index.cases.acilsatis.result'),
-      metric: t('index.cases.acilsatis.metric')
-    },
-    {
-      company: "Carstudio AI", 
-      logo: "/logos/carstudio.avif",
-      width: 200,
-      height: 42,
-      result: t('index.cases.carstudio.result'),
-      metric: t('index.cases.carstudio.metric')
-    },
-    {
-      company: "Salevium",
-      logo: "/logos/salevium.avif",
-      width: 152,
-      height: 42,
-      result: t('index.cases.salevium.result'),
-      metric: t('index.cases.salevium.metric')
-    },
-    {
-      company: "ERPA Teknoloji",
-      logo: "/logos/erpa.avif",
-      width: 42,
-      height: 42,
-      result: t('index.cases.erpa.result'),
-      metric: t('index.cases.erpa.metric')
-    },
-    {
-      company: "Cemkimsan",
-      logo: "/logos/cemkimsan.avif",
-      width: 149,
-      height: 42,
-      result: t('index.cases.cemkimsan.result'),
-      metric: t('index.cases.cemkimsan.metric')
-    },
-    {
-      company: "DKM/Coach Bilge",
-      logo: "/logos/coach-bilge.avif",
-      width: 42,
-      height: 42,
-      result: t('index.cases.dkm.result'),
-      metric: t('index.cases.dkm.metric')
-    }
-  ];
+      result: cs.ozet,
+      metric: cs.kpis[0]?.value || '',
+      slug: cs.slug
+    };
+  });
 
   const testimonials = [
     {
