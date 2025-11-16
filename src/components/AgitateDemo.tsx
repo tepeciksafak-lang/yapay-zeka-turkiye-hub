@@ -1,8 +1,8 @@
 import { Features } from './ui/features';
 import { Settings, Users, Calendar } from 'lucide-react';
-import agitateAutomation from '../assets/agitate-diy.jpg';
-import agitateAnalytics from '../assets/agitate-inhouse.jpg';
-import agitateSales from '../assets/agitate-agency.jpg';
+import agitateAutomation from '../assets/agitate-diy.webp';
+import agitateAnalytics from '../assets/agitate-inhouse.webp';
+import agitateSales from '../assets/agitate-agency.webp';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AgitateDemo() {
