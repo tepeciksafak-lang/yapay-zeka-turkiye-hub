@@ -34,11 +34,16 @@ const Navigation = () => {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-16 items-center justify-between">
           <Link to={getLocalizedRoute(currentLanguage, 'home')} className="flex items-center space-x-3 group" aria-label="Homepage">
-            <div className="h-8 w-8 rounded-lg bg-card border border-border group-hover:border-lime-400/50 transition-all duration-300 flex items-center justify-center" aria-hidden="true">
-            </div>
-            {/* <span className="text-xl font-bold text-foreground tracking-tight">
-              Pratik Yapay Zeka
-            </span> */}
+            {currentLanguage === 'de' ? (
+              <img 
+                src="/logos/de-logo.avif" 
+                alt="Pratik Yapay Zeka DE Logo" 
+                className="h-10 w-auto transition-all duration-300 group-hover:scale-105"
+              />
+            ) : (
+              <div className="h-8 w-8 rounded-lg bg-card border border-border group-hover:border-lime-400/50 transition-all duration-300 flex items-center justify-center" aria-hidden="true">
+              </div>
+            )}
           </Link>
 
           {/* Desktop Navigation */}
