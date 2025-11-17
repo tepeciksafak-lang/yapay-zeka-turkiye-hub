@@ -78,6 +78,20 @@ const Navigation = () => {
                 </Button>
               </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-card border-border">
+              <div className="mb-6 pt-2">
+                <Link to={getLocalizedRoute(currentLanguage, 'home')} onClick={() => setIsOpen(false)}>
+                  {currentLanguage === 'de' ? (
+                    <img 
+                      src="/logos/de-logo.avif" 
+                      alt="Pratik Yapay Zeka DE Logo" 
+                      className="h-8 w-auto"
+                    />
+                  ) : (
+                    <div className="h-8 w-8 rounded-lg bg-card border border-border flex items-center justify-center" aria-hidden="true">
+                    </div>
+                  )}
+                </Link>
+              </div>
               <nav className="flex flex-col space-y-4 mt-8">
                 {navItems.map((item) => (
                   <Link
