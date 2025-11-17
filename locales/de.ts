@@ -2,7 +2,6 @@ export default {
   // Navigation
   'nav.home': 'Startseite',
   'nav.solutions': 'Lösungen',
-  'nav.website3days': 'Website in 3 Tagen',
   'nav.cases': 'Fallstudien',
   'nav.pricing': 'Preise',
   'nav.blog': 'Blog',

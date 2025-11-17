@@ -17,11 +17,6 @@ const Navigation = () => {
   const navItems = [
     { href: getLocalizedRoute(currentLanguage, 'home'), label: t('nav.home') },
     { href: getLocalizedRoute(currentLanguage, 'solutions'), label: t('nav.solutions') },
-    ...(currentLanguage === 'de' ? [{ 
-      href: getLocalizedRoute(currentLanguage, 'website-in-3-days'), 
-      label: t('nav.website3days'),
-      highlight: true
-    }] : []),
     { href: getLocalizedRoute(currentLanguage, 'cases'), label: t('nav.cases') },
     { href: getLocalizedRoute(currentLanguage, 'blog'), label: t('nav.blog') },
   ];
@@ -54,9 +49,7 @@ const Navigation = () => {
                 to={item.href!}
                 className={cn(
                   "text-sm font-medium transition-colors lime-underline focus-lime relative",
-                  (item as any).highlight 
-                    ? "text-[#A3FF00] hover:text-[#A3FF00]/80 font-semibold" 
-                    : isActiveLink(item.href!) ? "text-lime-400" : "text-text-hi hover:text-lime-400"
+                  isActiveLink(item.href!) ? "text-lime-400" : "text-text-hi hover:text-lime-400"
                 )}
               >
                 {item.label}
