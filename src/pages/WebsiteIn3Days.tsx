@@ -81,15 +81,15 @@ const WebsiteIn3Days = () => {
       <FAQSchema faqs={faqData} />
       
       <div className="website-3days-page">
-        <Hero3Days />
-        <Pricing3Days />
-        <Process3Days />
-        <WhyItWorks3Days />
-        <FitNoFit3Days />
-        <References3Days />
-        <Guarantee3Days />
-        <FAQ3Days faqData={faqData} />
-        <FinalCTA3Days />
+      <Hero3Days />
+      <Pricing3Days />
+      <References3Days />
+      <Process3Days />
+      <WhyItWorks3Days />
+      <FitNoFit3Days />
+      <Guarantee3Days />
+      <FAQ3Days faqData={faqData} />
+      <FinalCTA3Days />
       </div>
     </>
   );
