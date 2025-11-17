@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 
 interface PricingCardProps {
   name: string;
-  price: string;
+  oldPrice: string;
+  newPrice: string;
+  savings: string;
   description: string;
   features: string[];
   cta: string;
@@ -41,27 +43,28 @@ const fullserviceFeatures = [
   'Reporting'
 ];
 
-const PricingCard = ({ name, price, description, features, cta, isPopular, badge }: PricingCardProps) => {
-  const [count, setCount] = useState(0);
+const PricingCard = ({ name, oldPrice, newPrice, savings, description, features, cta, isPopular, badge }: PricingCardProps) => {
+  const [currentPrice, setCurrentPrice] = useState(parseInt(oldPrice));
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const target = parseInt(price);
-          const duration = 800;
-          const steps = 30;
-          const increment = target / steps;
-          let current = 0;
+          const start = parseInt(oldPrice);
+          const target = parseInt(newPrice);
+          const duration = 1200;
+          const steps = 40;
+          const decrement = (start - target) / steps;
+          let current = start;
 
           const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              setCount(target);
+            current -= decrement;
+            if (current <= target) {
+              setCurrentPrice(target);
               clearInterval(timer);
             } else {
-              setCount(Math.floor(current));
+              setCurrentPrice(Math.floor(current));
             }
           }, duration / steps);
         }
@@ -74,7 +77,7 @@ const PricingCard = ({ name, price, description, features, cta, isPopular, badge
     }
 
     return () => observer.disconnect();
-  }, [price]);
+  }, [oldPrice, newPrice]);
 
   return (
     <div
@@ -91,8 +94,20 @@ const PricingCard = ({ name, price, description, features, cta, isPopular, badge
       <h3 className="text-2xl font-semibold mb-2">{name}</h3>
       
       <div className="mb-4">
-        <span className="text-5xl font-bold text-[#7C3AED] w3d-price-counter">{count}</span>
-        <span className="text-xl text-gray-600"> € / Monat</span>
+        <div className="text-2xl text-gray-400 line-through mb-1 transition-opacity duration-300">
+          {oldPrice} €
+        </div>
+        
+        <div className="flex items-baseline gap-2">
+          <span className="text-5xl font-bold text-[#7C3AED] transition-all duration-300">
+            {currentPrice}
+          </span>
+          <span className="text-xl text-gray-600">€ / Monat</span>
+        </div>
+        
+        <div className="inline-block mt-3 bg-green-50 border border-green-200 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold">
+          💰 Du sparst {savings} € monatlich
+        </div>
       </div>
       
       <p className="text-gray-600 mb-6">{description}</p>
@@ -125,7 +140,9 @@ export const Pricing3Days = () => {
       <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         <PricingCard
           name={t('website3days.pricing.starter.name')}
-          price={t('website3days.pricing.starter.price')}
+          oldPrice="200"
+          newPrice="150"
+          savings="50"
           description={t('website3days.pricing.starter.description')}
           features={starterFeatures}
           cta={t('website3days.pricing.starter.cta')}
@@ -133,7 +150,9 @@ export const Pricing3Days = () => {
         
         <PricingCard
           name={t('website3days.pricing.growth.name')}
-          price={t('website3days.pricing.growth.price')}
+          oldPrice="350"
+          newPrice="250"
+          savings="100"
           description={t('website3days.pricing.growth.description')}
           features={growthFeatures}
           cta={t('website3days.pricing.growth.cta')}
@@ -143,7 +162,9 @@ export const Pricing3Days = () => {
         
         <PricingCard
           name={t('website3days.pricing.fullservice.name')}
-          price={t('website3days.pricing.fullservice.price')}
+          oldPrice="1000"
+          newPrice="750"
+          savings="250"
           description={t('website3days.pricing.fullservice.description')}
           features={fullserviceFeatures}
           cta={t('website3days.pricing.fullservice.cta')}
