@@ -368,4 +368,15 @@ export default {
   'website3days.contact.modal.error.description': 'Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
   
   'website3days.references.title': 'Ergebnisse aus echten Projekten',
+  
+  // Website 3 Days Thank You Page
+  'website3days.thankyou.title': 'Vielen Dank für Ihre Anfrage!',
+  'website3days.thankyou.subtitle': 'Wir haben Ihre Anfrage erhalten',
+  'website3days.thankyou.message': 'Unser Team meldet sich innerhalb der nächsten 24 Stunden bei Ihnen, um den Kickoff-Termin zu vereinbaren.',
+  'website3days.thankyou.steps.title': 'So geht es weiter:',
+  'website3days.thankyou.steps.1': 'Sie erhalten innerhalb von 24h eine Bestätigung per E-Mail oder Telefon',
+  'website3days.thankyou.steps.2': 'Wir vereinbaren einen kurzen Kickoff-Call (15-20 Minuten)',
+  'website3days.thankyou.steps.3': 'Sie erhalten Ihren ersten Website-Entwurf in 3 Werktagen',
+  'website3days.thankyou.cta.back': 'Zurück zur Startseite',
+  'website3days.thankyou.cta.more': 'Mehr über uns erfahren',
 } as const

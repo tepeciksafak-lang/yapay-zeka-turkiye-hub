@@ -12,7 +12,8 @@ export type RouteKey =
   | 'about'
   | 'privacy'
   | 'terms'
-  | 'website-in-3-days';
+  | 'website-in-3-days'
+  | 'website-3days-thank-you';
 
 export const routeMappings: Record<string, Record<RouteKey, string>> = {
   tr: {
@@ -26,7 +27,8 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'about': '/hakkimizda',
     'privacy': '/gizlilik',
     'terms': '/kullanim-kosullari',
-    'website-in-3-days': '/3-gun-website'
+    'website-in-3-days': '/3-gun-website',
+    'website-3days-thank-you': '/3-gun-website/tesekkurler'
   },
   de: {
     'home': '',
@@ -39,7 +41,8 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'about': '/uber-uns',
     'privacy': '/datenschutz',
     'terms': '/nutzungsbedingungen',
-    'website-in-3-days': '/website-in-3-tagen'
+    'website-in-3-days': '/website-in-3-tagen',
+    'website-3days-thank-you': '/website-in-3-tagen/danke'
   }
   /* PARKED: English routes - To reactivate, uncomment this block
   en: {

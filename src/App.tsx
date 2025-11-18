@@ -28,6 +28,7 @@ const GizlilikPolitikasi = lazy(() => import("./pages/GizlilikPolitikasi"));
 const KullanimKosullari = lazy(() => import("./pages/KullanimKosullari"));
 const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
 const WebsiteIn3Days = lazy(() => import("./pages/WebsiteIn3Days"));
+const Website3DaysDanke = lazy(() => import("./pages/Website3DaysDanke"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -166,6 +167,14 @@ const AppWithModal = () => {
                 </Suspense>
               </main>
               <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/website-in-3-tagen/danke" element={
+            <LanguageWrapper>
+              <Suspense fallback={<PageLoader />}>
+                <Website3DaysDanke />
+              </Suspense>
             </LanguageWrapper>
           } />
           
