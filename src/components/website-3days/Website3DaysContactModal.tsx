@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useNavigate } from 'react-router-dom';
 import * as z from 'zod';
 import {
   Dialog,
@@ -46,8 +47,8 @@ interface Website3DaysContactModalProps {
 
 export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysContactModalProps) {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -83,19 +84,16 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
       analytics.trackEvent({
         action: 'form_submit',
         category: 'website_3days',
-        label: 'contact_form',
+        label: 'contact_form_success',
         custom_parameters: {
           source: 'website_3days_contact',
           timestamp: new Date().toISOString(),
         }
       });
 
-      setIsSubmitted(true);
-      
-      toast({
-        title: t('website3days.contact.modal.success.title'),
-        description: t('website3days.contact.modal.success.description'),
-      });
+      // Close modal and redirect to thank you page
+      resetAndClose();
+      navigate('/de/website-in-3-tagen/danke');
     } catch (error) {
       console.error('Form submission error:', error);
       toast({
@@ -110,152 +108,121 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
 
   const resetAndClose = () => {
     form.reset();
-    setIsSubmitted(false);
     onOpenChange(false);
   };
 
   return (
     <Dialog open={open} onOpenChange={resetAndClose}>
-      <DialogContent className="sm:max-w-[500px]">
-        {isSubmitted ? (
-          <div className="text-center py-8">
-            <div className="mb-4">
-              <div className="w-16 h-16 bg-lime-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-8 h-8 text-lime-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-2">
-                {t('website3days.contact.modal.success.title')}
-              </h3>
-              <p className="text-text-muted">
-                {t('website3days.contact.modal.success.description')}
-              </p>
+      <DialogContent className="sm:max-w-[500px] bg-white border-[hsl(220,13%,91%)]">
+        <DialogHeader>
+          <DialogTitle className="text-2xl text-[hsl(0,0%,4%)]">
+            {t('website3days.contact.modal.title')}
+          </DialogTitle>
+          <DialogDescription className="text-gray-600">
+            {t('website3days.contact.modal.description')}
+          </DialogDescription>
+        </DialogHeader>
+
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[hsl(0,0%,4%)]">{t('website3days.contact.modal.name.label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t('website3days.contact.modal.name.placeholder')}
+                      className="bg-white border-[hsl(220,13%,91%)] text-[hsl(0,0%,4%)]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[hsl(0,0%,4%)]">{t('website3days.contact.modal.email.label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder={t('website3days.contact.modal.email.placeholder')}
+                      className="bg-white border-[hsl(220,13%,91%)] text-[hsl(0,0%,4%)]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[hsl(0,0%,4%)]">{t('website3days.contact.modal.phone.label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="tel"
+                      placeholder={t('website3days.contact.modal.phone.placeholder')}
+                      className="bg-white border-[hsl(220,13%,91%)] text-[hsl(0,0%,4%)]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                  <p className="text-sm text-gray-600">
+                    {t('website3days.contact.modal.contact.requirement')}
+                  </p>
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="company"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[hsl(0,0%,4%)]">{t('website3days.contact.modal.company.label')}</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder={t('website3days.contact.modal.company.placeholder')}
+                      className="min-h-[100px] bg-white border-[hsl(220,13%,91%)] text-[hsl(0,0%,4%)]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+            <div className="flex gap-3 pt-4">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={resetAndClose}
+                className="flex-1 bg-white border-[hsl(220,13%,91%)] text-[hsl(0,0%,4%)] hover:bg-gray-50"
+              >
+                {t('website3days.contact.modal.cancel')}
+              </Button>
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="flex-1 bg-[hsl(270,91%,58%)] hover:bg-[hsl(270,91%,53%)] text-white font-bold"
+              >
+                {isSubmitting
+                  ? t('website3days.contact.modal.submitting')
+                  : t('website3days.contact.modal.submit')}
+              </Button>
             </div>
-            <Button onClick={resetAndClose} className="mt-4">
-              Schließen
-            </Button>
-          </div>
-        ) : (
-          <>
-            <DialogHeader>
-              <DialogTitle className="text-2xl">
-                {t('website3days.contact.modal.title')}
-              </DialogTitle>
-              <DialogDescription>
-                {t('website3days.contact.modal.description')}
-              </DialogDescription>
-            </DialogHeader>
-
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t('website3days.contact.modal.name.label')}</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder={t('website3days.contact.modal.name.placeholder')}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t('website3days.contact.modal.email.label')}</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="email"
-                          placeholder={t('website3days.contact.modal.email.placeholder')}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t('website3days.contact.modal.phone.label')}</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="tel"
-                          placeholder={t('website3days.contact.modal.phone.placeholder')}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                      <p className="text-sm text-text-muted">
-                        {t('website3days.contact.modal.contact.requirement')}
-                      </p>
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="company"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t('website3days.contact.modal.company.label')}</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder={t('website3days.contact.modal.company.placeholder')}
-                          className="min-h-[100px]"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <div className="flex gap-3 pt-4">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={resetAndClose}
-                    className="flex-1"
-                  >
-                    {t('website3days.contact.modal.cancel')}
-                  </Button>
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="flex-1"
-                  >
-                    {isSubmitting
-                      ? t('website3days.contact.modal.submitting')
-                      : t('website3days.contact.modal.submit')}
-                  </Button>
-                </div>
-              </form>
-            </Form>
-          </>
-        )}
+          </form>
+        </Form>
       </DialogContent>
     </Dialog>
   );
