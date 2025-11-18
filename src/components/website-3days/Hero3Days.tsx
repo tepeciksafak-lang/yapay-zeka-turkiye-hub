@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const Hero3Days = () => {
   const { t } = useLanguage();
@@ -19,7 +19,7 @@ export const Hero3Days = () => {
           {t('website3days.hero.subheadline')}
         </p>
         
-        <div className="w3d-fade-in w3d-stagger-2 flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div className="w3d-fade-in w3d-stagger-2 flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#contact" className="w3d-btn-primary inline-flex items-center gap-2 justify-center">
             {t('website3days.hero.cta.primary')}
             <ArrowRight className="w-5 h-5" />
@@ -27,11 +27,6 @@ export const Hero3Days = () => {
           <button onClick={scrollToPricing} className="w3d-btn-secondary">
             {t('website3days.hero.cta.secondary')}
           </button>
-        </div>
-        
-        <div className="w3d-fade-in w3d-stagger-3 flex items-center justify-center gap-2 text-sm text-gray-600">
-          <CheckCircle className="w-4 h-4 text-[#7C3AED]" />
-          <span>{t('website3days.hero.microproof')}</span>
         </div>
       </div>
     </section>
