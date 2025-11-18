@@ -1,8 +1,10 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useModal } from '@/contexts/ModalContext';
 import { ArrowRight } from 'lucide-react';
 
 export const Hero3Days = () => {
   const { t } = useLanguage();
+  const { openWebsite3DaysContact } = useModal();
 
   const scrollToPricing = () => {
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
@@ -20,10 +22,13 @@ export const Hero3Days = () => {
         </p>
         
         <div className="w3d-fade-in w3d-stagger-2 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" className="w3d-btn-primary inline-flex items-center gap-2 justify-center">
+          <button 
+            onClick={openWebsite3DaysContact} 
+            className="w3d-btn-primary inline-flex items-center gap-2 justify-center"
+          >
             {t('website3days.hero.cta.primary')}
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </button>
           <button onClick={scrollToPricing} className="w3d-btn-secondary">
             {t('website3days.hero.cta.secondary')}
           </button>
