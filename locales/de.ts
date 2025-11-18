@@ -347,5 +347,25 @@ export default {
   'website3days.finalcta.cta.primary': 'Ersten Entwurf kostenlos anfragen',
   'website3days.finalcta.cta.secondary': 'Ablauf ansehen',
   
+  // Website 3 Days Contact Modal
+  'website3days.contact.modal.title': 'Ersten Entwurf kostenlos anfragen',
+  'website3days.contact.modal.description': 'Füllen Sie das Formular aus und erhalten Sie Ihren ersten Website-Entwurf in 3 Werktagen – völlig unverbindlich.',
+  'website3days.contact.modal.name.label': 'Name',
+  'website3days.contact.modal.name.placeholder': 'Max Mustermann',
+  'website3days.contact.modal.email.label': 'E-Mail',
+  'website3days.contact.modal.email.placeholder': 'max@firma.de',
+  'website3days.contact.modal.phone.label': 'Telefon',
+  'website3days.contact.modal.phone.placeholder': '+49 123 456789',
+  'website3days.contact.modal.company.label': 'Was macht Ihr Unternehmen?',
+  'website3days.contact.modal.company.placeholder': 'z.B. Handwerksbetrieb für Elektroinstallationen, Steuerberatung für KMU, ...',
+  'website3days.contact.modal.contact.requirement': 'Bitte E-Mail oder Telefon angeben',
+  'website3days.contact.modal.submit': 'Jetzt kostenlos anfragen',
+  'website3days.contact.modal.submitting': 'Wird gesendet...',
+  'website3days.contact.modal.cancel': 'Abbrechen',
+  'website3days.contact.modal.success.title': 'Anfrage erfolgreich versendet!',
+  'website3days.contact.modal.success.description': 'Wir melden uns innerhalb der nächsten 24 Stunden bei Ihnen und starten mit dem Kickoff-Termin.',
+  'website3days.contact.modal.error.title': 'Fehler beim Senden',
+  'website3days.contact.modal.error.description': 'Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
+  
   'website3days.references.title': 'Ergebnisse aus echten Projekten',
 } as const

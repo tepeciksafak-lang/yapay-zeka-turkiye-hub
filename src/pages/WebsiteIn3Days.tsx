@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useModal } from '@/contexts/ModalContext';
 import { SEO } from '@/components/SEO';
 import { FAQSchema } from '@/components/FAQSchema';
 import { Hero3Days } from '@/components/website-3days/Hero3Days';
@@ -10,9 +11,11 @@ import { References3Days } from '@/components/website-3days/References3Days';
 import { Guarantee3Days } from '@/components/website-3days/Guarantee3Days';
 import { FAQ3Days } from '@/components/website-3days/FAQ3Days';
 import { FinalCTA3Days } from '@/components/website-3days/FinalCTA3Days';
+import { Website3DaysContactModal } from '@/components/website-3days/Website3DaysContactModal';
 
 const WebsiteIn3Days = () => {
   const { t, currentLanguage } = useLanguage();
+  const { isWebsite3DaysContactOpen, closeWebsite3DaysContact } = useModal();
   
   const faqData = [
     {
@@ -104,6 +107,11 @@ const WebsiteIn3Days = () => {
         <FAQ3Days faqData={faqData} />
         <FinalCTA3Days />
       </div>
+      
+      <Website3DaysContactModal 
+        open={isWebsite3DaysContactOpen} 
+        onOpenChange={closeWebsite3DaysContact}
+      />
     </>
   );
 };
