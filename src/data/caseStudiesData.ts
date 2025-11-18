@@ -38,9 +38,9 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 1,
     slug: "car-studio-ai",
-    etiket: "Satis Otomasyonu",
+    etiket: "Satış Otomasyonu",
     baslik: "Car Studio AI",
-    ozet: "Uluslararasi pazarda ekip büyütmeden sürdürülebilir satis altyapisi kurulumu.",
+    ozet: "Uluslararası pazarda ekip büyütmeden sürdürülebilir satış altyapısı kurulumu.",
     metaTitle: "Car Studio AI Vaka Çalışması - Satış Otomasyonu ile 3000+ Kişiselleştirilmiş E-posta",
     metaDescription: "Car Studio AI'nin uluslararası pazarda ekip büyütmeden 3000+ kişiselleştirilmiş e-posta ile satış otomasyonu başarı hikayesi. Yapay zeka destekli e-posta sistemi ile ayda 20+ saat zaman tasarrufu.",
     ogImage: "/og-car-studio.jpg",
@@ -51,18 +51,18 @@ export const caseStudiesData: CaseStudy[] = [
       { label: "Kurulum Süresi", value: "1 hafta" }
     ],
     problem: [
-      "Dogru firmalari ve karar vericileri bulma",
-      "Her firmaya özel mesajlar hazirlama",
+      "Doğru firmaları ve karar vericileri bulma",
+      "Her firmaya özel mesajlar hazırlama",
       "Düzenli takip sistemi kurma"
     ],
-    cozum: "Yapay zeka destekli e-posta sistemi her firmanin özelliklerine göre kisisellestirilmis mesajlar olusturdu. LinkedIn profilleri ve sirket web sitelerinden alinan bilgilerle, dikkat çeken ve güven olusturan içerikler hazirlandi.",
-    uygulamaAsamalari: ["Otomatik E-posta Süreci", "Yapay Zeka ile Arama (Cold Calling)", "Kisisellestirilmis Mesajlasma"],
+    cozum: "Yapay zeka destekli e-posta sistemi her firmanın özelliklerine göre kişiselleştirilmiş mesajlar oluşturdu. LinkedIn profilleri ve şirket web sitelerinden alınan bilgilerle, dikkat çeken ve güven oluşturan içerikler hazırlandı.",
+    uygulamaAsamalari: ["Otomatik E-posta Süreci", "Yapay Zeka ile Arama (Cold Calling)", "Kişiselleştirilmiş Mesajlaşma"],
     sonuclar: [
-      "3000'den fazla kisisellestirilmis e-posta hiç manuel islem gerektirmeden gönderildi",
-      "Cold calling sayesinde kaliteli potansiyel müsteriler kazanildi",
-      "Satis ekibi ayda 20 saatten fazla zaman tasarrufu sagladi"
+      "3000'den fazla kişiselleştirilmiş e-posta hiç manuel işlem gerektirmeden gönderildi",
+      "Cold calling sayesinde kaliteli potansiyel müşteriler kazanıldı",
+      "Satış ekibi ayda 20 saatten fazla zaman tasarrufu sağladı"
     ],
-    alinti: "Otomasyon sayesinde artik sadece gerçekten ilgilenen müsterilerle görüsüyoruz. Bu da satis basarimizi önemli ölçüde artirdi.",
+    alinti: "Otomasyon sayesinde artık sadece gerçekten ilgilenen müşterilerle görüşüyoruz. Bu da satış başarımızı önemli ölçüde artırdı.",
     translations: {
       de: {
         etiket: "Vertriebsautomatisierung",
@@ -96,32 +96,32 @@ export const caseStudiesData: CaseStudy[] = [
     slug: "acilsatis",
     etiket: "Pazarlama Otomasyonu",
     baslik: "Acilsatis",
-    ozet: "Gayrimenkul ve otomobil sektöründe hizli büyüme ve organik trafik artisi.",
+    ozet: "Gayrimenkul ve otomobil sektöründe hızlı büyüme ve organik trafik artışı.",
     metaTitle: "Acilsatis Vaka Çalışması - Pazarlama Otomasyonu ile 5000+ Platform İlanı",
     metaDescription: "Acilsatis'in gayrimenkul ve otomobil sektöründe 5000+ platform ilanı ile hızlı büyüme ve organik trafik artışı başarı hikayesi. Instagram DM ve SMS otomasyonu ile pazarlama dönüşümü.",
     ogImage: "/og-acilsatis.jpg",
     logo: "/logos/acilsatis.avif",
     kpis: [
-      { label: "Platform Ilani", value: "5000+" },
+      { label: "Platform İlanı", value: "5000+" },
       { label: "Hedef Sektör", value: "2 Ana Sektör" },
       { label: "Kurulum", value: "Birkaç gün" }
     ],
     problem: [
-      "Sektördeki binlerce emlakçi ve oto saticisina kisa sürede ulasmak",
-      "Platformu potansiyel kullanicilara kisisel ve dogrudan tanitmak",
-      "Organik büyümeyi yüksek reklam maliyetleri olmadan gerçeklestirmek",
-      "Sürekli yüksek web trafigi saglamak",
-      "Sosyal medyada hizli, kaliteli ve sürekli içerik üretimi saglamak"
+      "Sektördeki binlerce emlakçı ve oto satıcısına kısa sürede ulaşmak",
+      "Platformu potansiyel kullanıcılara kişisel ve doğrudan tanıtmak",
+      "Organik büyümeyi yüksek reklam maliyetleri olmadan gerçekleştirmek",
+      "Sürekli yüksek web trafiği sağlamak",
+      "Sosyal medyada hızlı, kaliteli ve sürekli içerik üretimi sağlamak"
     ],
-    cozum: "Potansiyel kullanicilar, Instagram hesaplari üzerinden otomatik olarak tespit edildi. Ardindan her kullaniciya özel hazirlanmis, ilgi çekici mesajlar olusturuldu ve hem Instagram DM hem de SMS yoluyla iletildi. Ek olarak tamamen yapay zeka tarafindan üretilen reklam videolariyla markanin dijital ortamda görünürlügü ve ilgi çekiciligi artirildi.",
+    cozum: "Potansiyel kullanıcılar, Instagram hesapları üzerinden otomatik olarak tespit edildi. Ardından her kullanıcıya özel hazırlanmış, ilgi çekici mesajlar oluşturuldu ve hem Instagram DM hem de SMS yoluyla iletildi. Ek olarak tamamen yapay zeka tarafından üretilen reklam videolarıyla markanın dijital ortamda görünürlüğü ve ilgi çekiciliği artırıldı.",
     uygulamaAsamalari: ["Veri Toplama (Scraping)", "Otomatik Mesaj Gönderimi", "Yapay Zeka ile Video Üretimi"],
     sonuclar: [
-      "Kisa sürede yüzlerce emlakçi ve oto saticisiyla kisisel iletisim saglandi",
-      "Web sitesi trafigi ve platform bilinirliginde belirgin artis gerçeklesti",
-      "Tamamen otomatik sistem sayesinde pazarlama için ayrilan haftalik zaman ciddi oranda azaldi",
-      "Sosyal medya içerik üretimi sifir manuel müdahaleyle hiz kazandi ve kalite yükseldi"
+      "Kısa sürede yüzlerce emlakçı ve oto satıcısıyla kişisel iletişim sağlandı",
+      "Web sitesi trafiği ve platform bilinirliğinde belirgin artış gerçekleşti",
+      "Tamamen otomatik sistem sayesinde pazarlama için ayrılan haftalık zaman ciddi oranda azaldı",
+      "Sosyal medya içerik üretimi sıfır manuel müdahaleyle hız kazandı ve kalite yükseldi"
     ],
-    alinti: "Artik sektör profesyonelleri bizi taniyor ve bize güveniyor. Trafik artisi sayesinde kullanici sayimiz hizla artiyor.",
+    alinti: "Artık sektör profesyonelleri bizi tanıyor ve bize güveniyor. Trafik artışı sayesinde kullanıcı sayımız hızla artıyor.",
     translations: {
       de: {
         etiket: "Marketingautomatisierung",
@@ -156,27 +156,27 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 3,
     slug: "salevium",
-    etiket: "Içerik Otomasyonu",
+    etiket: "İçerik Otomasyonu",
     baslik: "Salevium",
-    ozet: "Oyun temelli satis egitimi sirketinin LinkedIn pazarlama sürecinin tamamen otomatiklestilmesi.",
+    ozet: "Oyun temelli satış eğitimi şirketinin LinkedIn pazarlama sürecinin tamamen otomatikleştirilmesi.",
     metaTitle: "Salevium Vaka Çalışması - LinkedIn İçerik Otomasyonu ile 22K+ Takipçi",
     metaDescription: "Salevium'un oyun temelli satış eğitimi için LinkedIn pazarlama otomasyonu başarı hikayesi. %0 manuel içerik ile 22.000+ takipçi ve 5x etkilesim artısı.",
     ogImage: "/og-salevium.jpg",
     logo: "/logos/salevium.avif",
     kpis: [
-      { label: "Manuel Içerik", value: "%0" },
-      { label: "Takipçi Sayisi", value: "22,000+" },
-      { label: "Etkilesim Artisi", value: "5x" }
+      { label: "Manuel İçerik", value: "%0" },
+      { label: "Takipçi Sayısı", value: "22,000+" },
+      { label: "Etkileşim Artışı", value: "5x" }
     ],
     problem: [
-      "LinkedIn pazarlama süreci tamamen kurucunun omuzlarindaydi",
-      "Içerik üretimi her hafta saatler aliyordu",
-      "Oyunlastirma alanindaki liderlik konumu sürdürülemiyordu",
-      "Içerikler kaliteli fakat düzensizdi",
-      "Ölçeklenebilir bir sistem mevcut degildi"
+      "LinkedIn pazarlama süreci tamamen kurucunun omuzlarındaydı",
+      "İçerik üretimi her hafta saatler alıyordu",
+      "Oyunlaştırma alanındaki liderlik konumu sürdürülemiyordu",
+      "İçerikler kaliteli fakat düzensizdi",
+      "Ölçeklenebilir bir sistem mevcut değildi"
     ],
-    cozum: "Gelistirilen sistem, tamamen otomatik bir içerik akisi olusturarak, LinkedIn stratejisini manuel efor harcamadan yürütebilecek sekilde yapilandirildi. Bilimsel arastirma motoru, oyunlastirma dönüsüm sistemi ve tek tikla onay sistemi ile süreç optimize edildi.",
-    uygulamaAsamalari: ["Stratejik Içerik Planlamas​i", "Bilimsel Arastirma Motoru", "Oyunlastirma Dönüsüm Sistemi", "Tek Tikla Onay Sistemi"],
+    cozum: "Geliştirilen sistem, tamamen otomatik bir içerik akışı oluşturarak, LinkedIn stratejisini manuel efor harcamadan yürütebilecek şekilde yapılandırıldı. Bilimsel araştırma motoru, oyunlaştırma dönüşüm sistemi ve tek tıkla onay sistemi ile süreç optimize edildi.",
+    uygulamaAsamalari: ["Stratejik İçerik Planlaması", "Bilimsel Araştırma Motoru", "Oyunlaştırma Dönüşüm Sistemi", "Tek Tıkla Onay Sistemi"],
     sonuclar: [
       "Manuel içerik üretimi %0 (öncesi haftalik 9–12 saat)",
       "LinkedIn görünürlügünde %45 artis",
@@ -224,41 +224,41 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 4,
     slug: "erpa-teknoloji",
-    etiket: "Uluslararasi Pazarlama",
+    etiket: "Uluslararası Pazarlama",
     baslik: "ERPA Teknoloji",
-    ozet: "TOCHI markasiyla stadyum dijital ekran sistemlerinde Avrupa pazarina stratejik giris. AI destekli lead generation ve kisisellestirilmis iletisim kampanyasi.",
+    ozet: "TOCHI markasıyla stadyum dijital ekran sistemlerinde Avrupa pazarına stratejik giriş. AI destekli lead generation ve kişiselleştirilmiş iletişim kampanyası.",
     metaTitle: "ERPA Teknoloji Vaka Çalışması - Avrupa Stadyumları için AI Destekli Lead Generation",
     metaDescription: "ERPA Teknoloji'nin TOCHI markasıyla Avrupa pazarına stratejik girişi. AI destekli lead generation ile stadyum işletmecilerine ulaşma ve ilk ayda nitelikli görüşmeler elde etme başarısı.",
     ogImage: "/og-erpa.jpg",
     logo: "/logos/erpa.avif",
     kpis: [
-      { label: "Hedef Pazar", value: "Avrupa Stadyumlari" },
+      { label: "Hedef Pazar", value: "Avrupa Stadyumları" },
       { label: "Karar Verici Tipi", value: "4+ Pozisyon" },
-      { label: "Kampanya Süresi", value: "Ilk Ay" }
+      { label: "Kampanya Süresi", value: "İlk Ay" }
     ],
     problem: [
-      "Avrupa pazarinda stadyum isletmecilerine ulasmak",
-      "Dogru karar vericileri (Hospitality Director, Marketing Manager, etc.) tespit etmek",
-      "Her stadyuma özel kisisellestirilmis mesajlar olusturmak",
-      "Yüksek kaliteli lead'lere donüsmek",
-      "Uluslararasi iletisimde profesyonel ve güvenilir imaj"
+      "Avrupa pazarında stadyum işletmecilerine ulaşmak",
+      "Doğru karar vericileri (Hospitality Director, Marketing Manager, etc.) tespit etmek",
+      "Her stadyuma özel kişiselleştirilmiş mesajlar oluşturmak",
+      "Yüksek kaliteli lead'lere dönüşmek",
+      "Uluslararası iletişimde profesyonel ve güvenilir imaj"
     ],
-    cozum: "Yapay zeka tabanli arastirma ile Avrupa genelindeki stadyum isletmecileri ve arena yoneticileri icin kapsamli bir veri tabani olusturuldu. Her karar vericinin pozisyonuna göre uyarlanmis, TOCHI'nin teknolojik üstünlüklerini vurgulayan kisa ve etkili e-posta metinleri hazirlandi. Otomasyon sistemiyle mesajlar gönderildi, yanitlar siniflandirildi ve satis ekibine yönlendirildi.",
+    cozum: "Yapay zeka tabanlı araştırma ile Avrupa genelindeki stadyum işletmecileri ve arena yöneticileri için kapsamlı bir veri tabanı oluşturuldu. Her karar vericinin pozisyonuna göre uyarlanmış, TOCHI'nin teknolojik üstünlüklerini vurgulayan kısa ve etkili e-posta metinleri hazırlandı. Otomasyon sistemiyle mesajlar gönderildi, yanıtlar sınıflandırıldı ve satış ekibine yönlendirildi.",
     uygulamaAsamalari: [
-      "Pazar ve Karar Verici Arastirmasi",
-      "Kisisellestirilmis E-posta Metinleri",
+      "Pazar ve Karar Verici Araştırması",
+      "Kişiselleştirilmiş E-posta Metinleri",
       "Otomasyon ve Lead Yönetimi",
-      "Yanit Analizi ve Satis Transferi"
+      "Yanıt Analizi ve Satış Transferi"
     ],
     sonuclar: [
-      "Ilk ayda birden fazla nitelikli görüsme planlandi",
-      "Sektor ortalamasinin üzerinde geri dönüs orani",
-      "Stadyum isletmecilerinden dogrudan yanit geldi",
-      "Satis ekibi sadece ilgilenen lead'lerle ilgilendi",
-      "TOCHI markasinin uluslararasi görünürlügü artti",
-      "Profesyonel bir iletisim süreci saglandi"
+      "İlk ayda birden fazla nitelikli görüşme planlandı",
+      "Sektör ortalamasının üzerinde geri dönüş oranı",
+      "Stadyum işletmecilerinden doğrudan yanıt geldi",
+      "Satış ekibi sadece ilgilenen lead'lerle ilgilendi",
+      "TOCHI markasının uluslararası görünürlüğü arttı",
+      "Profesyonel bir iletişim süreci sağlandı"
     ],
-    alinti: "Yapay zeka ile sadece mesaj göndermekle kalmadik; her mesajin ardindan neyin isleyip islemedigini görüp sürekli iyilestirdik. Bu sayede süreç hem etkili hem de sürdürülebilir oldu.",
+    alinti: "Yapay zeka ile sadece mesaj göndermekle kalmadık; her mesajın ardından neyin işleyip işlemediğini görüp sürekli iyileştirdik. Bu sayede süreç hem etkili hem de sürdürülebilir oldu.",
     translations: {
       de: {
         etiket: "Internationale Markterschließung",
@@ -300,7 +300,7 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 5,
     slug: "cemkimsan",
-    etiket: "Uluslararasi Satıs & Pazarlama",
+    etiket: "Uluslararası Satış & Pazarlama",
     baslik: "Cemkimsan",
     ozet: "Uluslararası kimya üreticisinin 20'den fazla ülkede satış ve pazarlama kampanyaları yürütme başarısı.",
     metaTitle: "Cemkimsan Vaka Çalışması - 20+ Ülkede Satış & Pazarlama Otomasyonu",
@@ -309,31 +309,31 @@ export const caseStudiesData: CaseStudy[] = [
     logo: "/logos/cemkimsan.avif",
     kpis: [
       { label: "Hedef Ülke", value: "20+" },
-      { label: "Yeni Firsatlar", value: "6" },
+      { label: "Yeni Fırsatlar", value: "6" },
       { label: "Kurulum", value: "3 hafta" }
     ],
     problem: [
-      "20+ ülkede otonom satis ve pazarlama kampanyalari yürütme ihtiyaci",
-      "Kimya sektöründe dogrudan karar vericilere ulasmak",
-      "Kimya laboratuvari ve endüstriyel müsterileri tespit etmek",
-      "Her ülke için yerel dilde ve kültürel olarak uygun mesajlar olusturmak",
-      "Bayi agi genisletmek ve büyümeyi hizlandirmak"
+      "20+ ülkede otonom satış ve pazarlama kampanyaları yürütme ihtiyacı",
+      "Kimya sektöründe doğrudan karar vericilere ulaşmak",
+      "Kimya laboratuvarı ve endüstriyel müşterileri tespit etmek",
+      "Her ülke için yerel dilde ve kültürel olarak uygun mesajlar oluşturmak",
+      "Bayi ağı genişletmek ve büyümeyi hızlandırmak"
     ],
-    cozum: "Yapay zeka tabanli çok dilli sistemle, her ülke için otomatik hedef kitle arastirmasi yapildi. Karar vericiler tespit edildi ve her ülkenin dili ve kültürüne uygun kisisellestirilmis mesajlar olusturuldu. E-posta kampanyalari otomatik olarak hazirlandi, gönderildi ve yanitlar analiz edildi. Ek olarak her ülke için lokal bayi adaylari belirlenerek genisleme firsatlari yaratildi.",
+    cozum: "Yapay zeka tabanlı çok dilli sistemle, her ülke için otomatik hedef kitle araştırması yapıldı. Karar vericiler tespit edildi ve her ülkenin dili ve kültürüne uygun kişiselleştirilmiş mesajlar oluşturuldu. E-posta kampanyaları otomatik olarak hazırlandı, gönderildi ve yanıtlar analiz edildi. Ek olarak her ülke için lokal bayi adayları belirlenerek genişleme fırsatları yaratıldı.",
     uygulamaAsamalari: [
-      "Çok Dilli Hedef Kitle Arastirmasi",
-      "Kisisellestirilmis E-posta Kampanyalari",
-      "Otomatik Yanit Analizi",
-      "Bayi Agi Genisleme Stratejisi"
+      "Çok Dilli Hedef Kitle Araştırması",
+      "Kişiselleştirilmiş E-posta Kampanyaları",
+      "Otomatik Yanıt Analizi",
+      "Bayi Ağı Genişleme Stratejisi"
     ],
     sonuclar: [
-      "20+ ülkede satıs ve pazarlama kampanyaları basariyla yürütüldü",
-      "Manuel operasyona ihtiyaç duymadan global ölçekte erişim saglandi",
-      "6 farkli ülkeden yeni is firsatlari elde edildi",
-      "Bayi agi genisleme sürecinde somut adimlar atildi",
+      "20+ ülkede satış ve pazarlama kampanyaları başarıyla yürütüldü",
+      "Manuel operasyona ihtiyaç duymadan global ölçekte erişim sağlandı",
+      "6 farklı ülkeden yeni iş fırsatları elde edildi",
+      "Bayi ağı genişleme sürecinde somut adımlar atıldı",
       "Her ülke için otomatik follow-up sistemleri kuruldu"
     ],
-    alinti: "Artik yeni bir ülkeye açilmak, bayi agi genisletmek veya uluslararasi pazarlarda görünürlük kazanmak için aylarca kaynak ayirmamiza gerek kalmiyor. Sistem, bizim için çalisiyor.",
+    alinti: "Artık yeni bir ülkeye açılmak, bayi ağı genişletmek veya uluslararası pazarlarda görünürlük kazanmak için aylarca kaynak ayırmamıza gerek kalmıyor. Sistem, bizim için çalışıyor.",
     translations: {
       de: {
         etiket: "Internationaler Vertrieb & Marketing",

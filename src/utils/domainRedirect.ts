@@ -24,6 +24,20 @@ export const checkAndRedirectDomain = () => {
     return;
   }
   
+  // Root path redirects
+  if (currentPath === '/' || currentPath === '') {
+    // ki-automatisieren.de/ → /de
+    if (currentDomain.includes('ki-automatisieren.de')) {
+      window.location.replace('https://ki-automatisieren.de/de');
+      return;
+    }
+    // yapayzekapratik.com/ → /tr
+    if (currentDomain.includes('yapayzekapratik.com')) {
+      window.location.replace('https://yapayzekapratik.com/tr');
+      return;
+    }
+  }
+  
   // Get expected domain for current language
   const expectedDomain = DOMAIN_CONFIG[currentLang];
   
