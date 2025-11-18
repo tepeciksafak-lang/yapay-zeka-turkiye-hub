@@ -1,67 +1,27 @@
-# Standard-Suchmaschinen (erlauben /tr/, blockieren spezifische Pfade)
+# Multi-Domain Robots Configuration
+
+# Standard crawlers
 User-agent: *
-Allow: /tr/
-Disallow: /de/
-Disallow: /en/
+Allow: /
+
+# Block non-public paths
 Disallow: /api/
 Disallow: /admin/
 
-# OpenAI (ChatGPT)
+# AI Crawlers
 User-agent: GPTBot
 User-agent: ChatGPT-User
-Allow: /tr/
-Disallow: /de/
-Disallow: /en/
-Disallow: /api/
-Disallow: /admin/
-
-# Anthropic (Claude)
 User-agent: anthropic-ai
 User-agent: Claude-Web
-Allow: /tr/
-Disallow: /de/
-Disallow: /en/
-Disallow: /api/
-Disallow: /admin/
-
-# Google Extended (Gemini/Bard)
 User-agent: Google-Extended
-Allow: /tr/
-Disallow: /de/
-Disallow: /en/
-Disallow: /api/
-Disallow: /admin/
-
-# Common Crawl
 User-agent: CCBot
-Allow: /tr/
-Disallow: /de/
-Disallow: /en/
-Disallow: /api/
-Disallow: /admin/
-
-# Perplexity AI
 User-agent: PerplexityBot
-Allow: /tr/
-Disallow: /de/
-Disallow: /en/
-Disallow: /api/
-Disallow: /admin/
-
-# Meta AI
 User-agent: Meta-ExternalAgent
-Allow: /tr/
-Disallow: /de/
-Disallow: /en/
-Disallow: /api/
-Disallow: /admin/
-
-# Cohere AI
 User-agent: cohere-ai
-Allow: /tr/
-Disallow: /de/
-Disallow: /en/
+Allow: /
 Disallow: /api/
 Disallow: /admin/
 
+# Domain-specific sitemaps (auto-detect language)
 Sitemap: https://yapayzekapratik.com/functions/v1/sitemap
+Sitemap: https://ki-automatisieren.de/functions/v1/sitemap
