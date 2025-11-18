@@ -299,6 +299,10 @@ All colors MUST be HSL for consistency and theming support.
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .w3d-btn-primary:hover {

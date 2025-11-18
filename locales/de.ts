@@ -284,8 +284,8 @@ export default {
   'website3days.seo.title': 'Website in 3 Tagen – KI-Website ohne Risiko',
   'website3days.seo.description': 'Professionelle Website in 3 Werktagen. Erster Entwurf kostenlos. Monatlich kündbar. Perfekt für KMU, Dienstleister & Coaches.',
   
-  'website3days.hero.h1': 'Eine Website ist keine Visitenkarte. Sie ist ein Umsatzsystem.',
-  'website3days.hero.subheadline': 'Wir bauen Ihre Website in 3 Werktagen – mit KI-gestützten Prozessen. Erster Entwurf gefällt nicht? Sie zahlen nichts.',
+  'website3days.hero.h1': 'Ihre Website in 3 Werktagen – oder Sie zahlen nichts',
+  'website3days.hero.subheadline': 'Wir bauen Ihre Website in 3 Werktagen – mit KI-gestützten Prozessen. Der erste Entwurf gefällt Ihnen nicht? Dann müssen Sie nichts zahlen.',
   'website3days.hero.cta.primary': 'Ersten Entwurf kostenlos anfragen',
   'website3days.hero.cta.secondary': 'Ablauf & Preise ansehen',
   'website3days.hero.microproof': 'Beliebt bei KMU aus Dienstleistung, Handwerk & Beratung',
@@ -314,7 +314,7 @@ export default {
   'website3days.process.step2.description': 'Unser Team entwickelt Ihre Website mit KI-gestützten Prozessen. Sie bekommen regelmäßige Updates.',
   'website3days.process.step3.title': 'Prüfung & Go-Live',
   'website3days.process.step3.duration': 'Tag 3',
-  'website3days.process.step3.description': 'Sie prüfen den ersten Entwurf. Gefällt er nicht, zahlen Sie nichts. Gefällt er, geht die Website live.',
+  'website3days.process.step3.description': 'Sie prüfen den ersten Entwurf. Gefällt er Ihnen nicht, müssen Sie nichts zahlen. Gefällt er Ihnen, geht die Website live.',
   
   'website3days.why.title': 'Warum funktioniert das so schnell?',
   'website3days.why.reason1': 'KI-gestützte Prozesse',
@@ -327,9 +327,21 @@ export default {
   'website3days.fit.bad.title': 'Nicht geeignet:',
   
   'website3days.guarantee.title': '100 % risikofrei',
-  'website3days.guarantee.text': 'Der erste Entwurf ist kostenlos. Gefällt er nicht, zahlen Sie nichts.',
+  'website3days.guarantee.text': 'Der erste Entwurf gefällt Ihnen nicht? Dann müssen Sie nichts zahlen.',
   
-  'website3days.faq.title': 'Häufig gestellte Fragen',
+    'website3days.faq.title': 'Häufig gestellte Fragen',
+    'website3days.faq.q1': 'Warum funktioniert das so schnell?',
+    'website3days.faq.a1': 'Wir nutzen KI-gestützte Prozesse, parallele Workflows und erprobte Frameworks. Dadurch können wir in 3 Werktagen liefern, was klassische Agenturen in 4-6 Wochen erstellen. Keine Meeting-Schleifen, kein Hin und Her – nur effiziente Umsetzung.',
+    'website3days.faq.q2': 'Was bedeutet "KI-gestützte Prozesse"?',
+    'website3days.faq.a2': 'Wir setzen KI-Tools für Texterstellung, Design-Optimierung und Code-Entwicklung ein. Das beschleunigt den Prozess erheblich und sorgt für professionelle Ergebnisse – ohne Qualitätsverlust.',
+    'website3days.faq.q3': 'Für wen ist dieser Service geeignet?',
+    'website3days.faq.a3': 'Perfekt für KMU & lokale Betriebe, Dienstleister & Handwerker, Coaches & Berater sowie Startups mit klarer Vision. Sie wollen schnell online sein und professionell auftreten – ohne monatelange Projekte.',
+    'website3days.faq.q4': 'Für wen ist dieser Service NICHT geeignet?',
+    'website3days.faq.a4': 'Nicht geeignet für: 10-Runden-Designkunden, Großprojekte mit langen Abstimmungen, Agenturen mit komplexen Anforderungen oder endlose Feedback-Schleifen. Wenn Sie maximale Geschwindigkeit und Effizienz wollen, sind wir perfekt.',
+    'website3days.faq.q5': 'Was passiert nach den 3 Werktagen?',
+    'website3days.faq.a5': 'Sie erhalten den ersten Entwurf zur Prüfung. Gefällt er Ihnen, geht die Website live und Sie zahlen ab dem Folgemonat. Gefällt er nicht, zahlen Sie nichts – keine Verpflichtung.',
+    'website3days.faq.q6': 'Kann ich monatlich kündigen?',
+    'website3days.faq.a6': 'Ja, alle Pakete sind monatlich kündbar. Sie gehen keine langfristige Verpflichtung ein.',
   
   'website3days.finalcta.title': 'Bereit für Ihre Website in 3 Werktagen?',
   'website3days.finalcta.cta.primary': 'Ersten Entwurf kostenlos anfragen',

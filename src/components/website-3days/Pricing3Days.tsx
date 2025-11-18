@@ -121,7 +121,7 @@ const PricingCard = ({ name, oldPrice, newPrice, savings, description, features,
         ))}
       </ul>
       
-      <button className="w-full w3d-btn-primary">
+      <button className="w-full w3d-btn-primary min-h-[48px] flex items-center justify-center">
         {cta}
       </button>
     </div>
