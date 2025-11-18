@@ -2,9 +2,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const referenceProjects = [
   {
-    image: '/logos/carstudio.avif',
-    result: '3000+ E-Mails, 20+ Std. gespart',
-    company: 'Car Studio AI'
+    image: '/logos/apaydin.avif',
+    result: 'Website für Gebrauchtwagenhändler in Hagen',
+    company: 'Apaydin Automobile'
   },
   {
     image: '/logos/salevium.avif',
@@ -13,7 +13,7 @@ const referenceProjects = [
   },
   {
     image: '/logos/erpa.avif',
-    result: 'Europa-Expansion in 4 Wochen',
+    result: 'Landingpage für Europa-Sales: Interessenten gewinnen',
     company: 'ERPA Teknoloji'
   }
 ];
