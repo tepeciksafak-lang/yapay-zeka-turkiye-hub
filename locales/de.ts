@@ -284,8 +284,8 @@ export default {
   'website3days.seo.title': 'Website in 3 Tagen – KI-Website ohne Risiko',
   'website3days.seo.description': 'Professionelle Website in 3 Werktagen. Erster Entwurf kostenlos. Monatlich kündbar. Perfekt für KMU, Dienstleister & Coaches.',
   
-  'website3days.hero.h1': 'Ihre Website in 3 Werktagen – oder Sie zahlen nichts',
-  'website3days.hero.subheadline': 'Wir bauen Ihre Website in 3 Werktagen – mit KI-gestützten Prozessen. Der erste Entwurf gefällt Ihnen nicht? Dann müssen Sie nichts zahlen.',
+  'website3days.hero.h1': 'Eine Website ist keine Visitenkarte. Sie ist ein Umsatzsystem',
+  'website3days.hero.subheadline': 'Wir bauen Ihre Website mit KI gestützten Prozessen in 3 Werktagen. Der erste Entwurf gefällt Ihnen nicht? Dann müssen Sie nichts zahlen.',
   'website3days.hero.cta.primary': 'Ersten Entwurf kostenlos anfragen',
   'website3days.hero.cta.secondary': 'Ablauf & Preise ansehen',
   'website3days.hero.microproof': 'Beliebt bei KMU aus Dienstleistung, Handwerk & Beratung',
