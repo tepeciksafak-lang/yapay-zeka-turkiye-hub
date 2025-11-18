@@ -12,6 +12,28 @@ const Footer = () => {
     return getLocalizedRoute(currentLanguage, routeKey);
   };
 
+  // Sprachspezifische Social-Media-Links
+  const socialLinks = {
+    de: {
+      youtube: 'https://www.youtube.com/@KI-Automatisieren',
+      tiktok: 'https://www.tiktok.com/@ki_automatisieren',
+      instagram: 'https://www.instagram.com/stautomatisierung/',
+    },
+    tr: {
+      youtube: 'https://www.youtube.com/@Pratikyapayzeka',
+      tiktok: 'https://www.tiktok.com/@pratikyapayzeka',
+      instagram: 'https://www.instagram.com/pratikyapayzeka',
+    },
+    en: {
+      youtube: 'https://www.youtube.com/@Pratikyapayzeka',
+      tiktok: 'https://www.tiktok.com/@pratikyapayzeka',
+      instagram: 'https://www.instagram.com/pratikyapayzeka',
+    }
+  };
+
+  // Aktuelle Social-Links basierend auf Sprache
+  const currentSocialLinks = socialLinks[currentLanguage as keyof typeof socialLinks] || socialLinks.tr;
+
   return (
     <footer className="border-t border-border bg-bg-2">
       <div className="container mx-auto px-4 py-12 lg:px-6">
@@ -74,8 +96,8 @@ const Footer = () => {
             </ul>
             <div className="flex space-x-3 pt-2">
               <a 
-                href="https://www.youtube.com/@Pratikyapayzeka" 
-                target="_blank" 
+                href={currentSocialLinks.youtube} 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted hover:text-lime-400 transition-colors"
                 aria-label="YouTube"
@@ -85,8 +107,8 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.tiktok.com/@pratikyapayzeka" 
-                target="_blank" 
+                href={currentSocialLinks.tiktok} 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted hover:text-lime-400 transition-colors"
                 aria-label="TikTok"
@@ -96,8 +118,8 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.instagram.com/pratikyapayzeka" 
-                target="_blank" 
+                href={currentSocialLinks.instagram} 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted hover:text-lime-400 transition-colors"
                 aria-label="Instagram"
