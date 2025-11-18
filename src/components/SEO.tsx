@@ -35,7 +35,6 @@ const SEO = ({ title, description, image, url, type = "website", routeKey, param
     return {
       tr: baseHreflangs.tr.replace('yapayzekapratik.com', DOMAIN_CONFIG.tr),
       de: baseHreflangs.de.replace('yapayzekapratik.com', DOMAIN_CONFIG.de),
-      en: baseHreflangs.en.replace('yapayzekapratik.com', DOMAIN_CONFIG.de), // Parked, use DE domain
       'x-default': baseHreflangs['x-default'].replace('yapayzekapratik.com', DOMAIN_CONFIG.tr)
     };
   };
@@ -70,7 +69,6 @@ const SEO = ({ title, description, image, url, type = "website", routeKey, param
         <>
           <link rel="alternate" hrefLang="tr" href={hreflangUrls.tr} />
           <link rel="alternate" hrefLang="de" href={hreflangUrls.de} />
-          <link rel="alternate" hrefLang="en" href={hreflangUrls.en} />
           <link rel="alternate" hrefLang="x-default" href={hreflangUrls['x-default']} />
         </>
       )}
