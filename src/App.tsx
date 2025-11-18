@@ -4,11 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { ModalProvider, useModal } from "./contexts/ModalContext";
 import { QuickAnalysisModal } from "./components/QuickAnalysisModal";
 import { useAnalytics } from "./hooks/useAnalytics";
+import { checkAndRedirectDomain } from "./utils/domainRedirect";
 import { LanguageWrapper } from "./components/LanguageWrapper";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -322,6 +323,13 @@ function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+function DomainRedirectCheck() {
+  useEffect(() => {
+    checkAndRedirectDomain();
+  }, []);
+  return null;
+}
+
 function App() {
   return (
     <HelmetProvider>
@@ -330,6 +338,7 @@ function App() {
           <LanguageProvider>
             <TooltipProvider>
               <AnalyticsWrapper>
+                <DomainRedirectCheck />
                 <ModalProvider>
                   <AppWithModal />
                 </ModalProvider>

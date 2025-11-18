@@ -76,18 +76,26 @@
     }
     </script>
 
-    <!-- Google tag (gtag.js) - Delayed for performance -->
+    <!-- Google tag (gtag.js) - Multi-Domain Setup -->
     <script>
+      // Determine GA ID based on language
+      var currentPath = window.location.pathname;
+      var currentLang = currentPath.split('/')[1];
+      var gaId = currentLang === 'de' ? 'G-XXXXXXXXXX' : 'G-XYNQMB280W'; // TODO: Replace G-XXXXXXXXXX with actual DE GA4 ID
+      
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XYNQMB280W');
+      gtag('config', gaId, {
+        cookie_domain: 'auto',
+        cookie_flags: 'SameSite=None;Secure'
+      });
       
       // Delay GTM script loading to improve initial page load
       window.addEventListener('load', function() {
         setTimeout(function() {
           var script = document.createElement('script');
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XYNQMB280W';
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
           script.async = true;
           document.head.appendChild(script);
         }, 2000);

@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { RouteKey, getHreflangUrls } from "@/lib/routeMappings";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { DOMAIN_CONFIG, getDomainForLanguage, type SupportedLanguage } from "@/utils/domainRedirect";
 
 interface SEOProps {
   title: string;
@@ -16,17 +17,31 @@ interface SEOProps {
 const SEO = ({ title, description, image, url, type = "website", routeKey, params }: SEOProps) => {
   const location = useLocation();
   const { currentLanguage } = useLanguage();
-  const siteTitle = "Pratik Yapay Zeka";
+  
+  // Dynamic site title and URL based on language/domain
+  const siteTitle = currentLanguage === 'de' ? 'KI Automatisieren' : 'Pratik Yapay Zeka';
   const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
   const defaultImage = "/og-homepage.jpg";
-  const siteUrl = "https://yapayzekapratik.com";
+  const siteUrl = getDomainForLanguage(currentLanguage as SupportedLanguage);
   
   // Check if page is German or English - add noindex
   const shouldNoIndex = location.pathname.startsWith('/de') || location.pathname.startsWith('/en');
   
-  // Generate hreflang URLs if routeKey is provided
-  const hreflangUrls = routeKey ? getHreflangUrls(routeKey, params) : null;
-  const canonicalUrl = url || (routeKey && hreflangUrls ? hreflangUrls[currentLanguage] : `${siteUrl}${location.pathname}`);
+  // Generate hreflang URLs with correct domains
+  const generateHreflangUrls = () => {
+    if (!routeKey) return null;
+    
+    const baseHreflangs = getHreflangUrls(routeKey, params);
+    return {
+      tr: baseHreflangs.tr.replace('yapayzekapratik.com', DOMAIN_CONFIG.tr),
+      de: baseHreflangs.de.replace('yapayzekapratik.com', DOMAIN_CONFIG.de),
+      en: baseHreflangs.en.replace('yapayzekapratik.com', DOMAIN_CONFIG.de), // Parked, use DE domain
+      'x-default': baseHreflangs['x-default'].replace('yapayzekapratik.com', DOMAIN_CONFIG.tr)
+    };
+  };
+  
+  const hreflangUrls = generateHreflangUrls();
+  const canonicalUrl = url || (routeKey && hreflangUrls ? hreflangUrls[currentLanguage as keyof typeof hreflangUrls] : `${siteUrl}${location.pathname}`);
   
   return (
     <Helmet>

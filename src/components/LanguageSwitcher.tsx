@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { DOMAIN_CONFIG } from "@/utils/domainRedirect";
 
 const LanguageSwitcher = () => {
   const { currentLanguage, setLanguage } = useLanguage();
@@ -16,8 +17,26 @@ const LanguageSwitcher = () => {
   const currentLang = languages.find(lang => lang.code === currentLanguage);
 
   const handleLanguageChange = (languageCode: string) => {
-    setLanguage(languageCode as 'de' | 'tr' | 'en');
-    setIsOpen(false);
+    const newLang = languageCode as 'de' | 'tr';
+    const currentDomain = window.location.hostname;
+    
+    // Check if we're on localhost/staging
+    const isLocalhost = currentDomain.includes('localhost') || 
+                       currentDomain.includes('lovable.app') ||
+                       currentDomain.includes('127.0.0.1');
+    
+    if (isLocalhost) {
+      // Use context for local development
+      setLanguage(newLang);
+      setIsOpen(false);
+    } else {
+      // Cross-domain navigation for production
+      const newDomain = DOMAIN_CONFIG[newLang];
+      const currentPath = window.location.pathname;
+      const newPath = currentPath.replace(/^\/(de|tr)/, `/${newLang}`);
+      
+      window.location.href = `https://${newDomain}${newPath}${window.location.search}`;
+    }
   };
 
   return (

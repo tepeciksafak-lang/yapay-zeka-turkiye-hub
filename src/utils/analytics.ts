@@ -12,6 +12,12 @@ export interface AnalyticsConfig {
   debug?: boolean;
 }
 
+// Multi-Domain Analytics Configuration
+export const ANALYTICS_CONFIG = {
+  de: 'G-XXXXXXXXXX', // TODO: Replace with actual GA4 ID for ki-automatisieren.de
+  tr: 'G-XYNQMB280W'  // Existing GA4 ID for yapayzekapratik.com
+} as const;
+
 export interface AnalyticsEvent {
   action: string;
   category: string;
@@ -26,18 +32,30 @@ class Analytics {
 
   constructor() {
     this.config = {
-      primaryId: 'G-XYNQMB280W',
+      primaryId: this.getCurrentTrackingId(),
       secondaryIds: [],
       debug: false
     };
+  }
+
+  // Get tracking ID based on current language
+  private getCurrentTrackingId(): string {
+    const currentPath = window.location.pathname;
+    const currentLang = currentPath.split('/')[1] as 'de' | 'tr';
+    return ANALYTICS_CONFIG[currentLang] || ANALYTICS_CONFIG.tr;
   }
 
   // Initialize analytics with configuration
   initialize(config?: Partial<AnalyticsConfig>) {
     if (this.initialized) return;
 
+    // Always use current tracking ID
+    const trackingId = this.getCurrentTrackingId();
+    
     if (config) {
-      this.config = { ...this.config, ...config };
+      this.config = { ...this.config, primaryId: trackingId, ...config };
+    } else {
+      this.config.primaryId = trackingId;
     }
 
     // Check if gtag is available
