@@ -8,7 +8,7 @@ const referenceProjects = [
   },
   {
     image: '/logos/salevium.avif',
-    result: '90% Zeit gespart bei Content',
+    result: 'Website für Messe: 100 zusätzliche Leads',
     company: 'Salevium'
   },
   {
