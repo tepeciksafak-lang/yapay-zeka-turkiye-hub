@@ -73,14 +73,10 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
         source: 'website_3days_contact',
       });
 
-      // Send GET request with no-cors mode
-      await fetch(
-        `https://safakt.app.n8n.cloud/webhook/d913b878-990b-48be-93e5-e4ea4a974bbe?${params.toString()}`,
-        {
-          method: 'GET',
-          mode: 'no-cors'
-        }
-      );
+      // Send GET request using Image Pixel method (guaranteed to work without CORS issues)
+      const webhookUrl = `https://safakt.app.n8n.cloud/webhook/d913b878-990b-48be-93e5-e4ea4a974bbe?${params.toString()}`;
+      const img = new Image();
+      img.src = webhookUrl;
 
       console.log('✅ Form submitted to webhook');
 
@@ -94,18 +90,22 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
         }
       });
 
-      // Close modal and redirect to thank you page
-      resetAndClose();
+      // Navigate first, then close modal to avoid race condition
       navigate('/de/website-in-3-tagen/danke');
+      
+      // Small delay before closing to ensure navigation starts
+      setTimeout(() => {
+        resetAndClose();
+      }, 100);
+
     } catch (error) {
       console.error('Form submission error:', error);
+      setIsSubmitting(false);
       toast({
         title: t('website3days.contact.modal.error.title'),
         description: t('website3days.contact.modal.error.description'),
         variant: 'destructive',
       });
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
