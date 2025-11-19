@@ -73,13 +73,16 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
         source: 'website_3days_contact',
       });
 
-      const response = await fetch(
-        `https://safakt.app.n8n.cloud/webhook/041dae70-b4dc-4fbb-89e5-3b78274c5ff5?${params.toString()}`
+      // Send GET request with no-cors mode
+      await fetch(
+        `https://safakt.app.n8n.cloud/webhook/d913b878-990b-48be-93e5-e4ea4a974bbe?${params.toString()}`,
+        {
+          method: 'GET',
+          mode: 'no-cors'
+        }
       );
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
+      console.log('✅ Form submitted to webhook');
 
       analytics.trackEvent({
         action: 'form_submit',
