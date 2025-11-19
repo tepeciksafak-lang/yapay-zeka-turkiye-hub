@@ -100,12 +100,13 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
 
     } catch (error) {
       console.error('Form submission error:', error);
-      setIsSubmitting(false);
       toast({
         title: t('website3days.contact.modal.error.title'),
         description: t('website3days.contact.modal.error.description'),
         variant: 'destructive',
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
