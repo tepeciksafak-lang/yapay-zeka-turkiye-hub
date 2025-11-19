@@ -33,6 +33,7 @@ export default function Website3DaysDanke() {
       <SEO 
         title={t('website3days.thankyou.title')}
         description={t('website3days.thankyou.subtitle')}
+        routeKey="website-3days-thank-you"
       />
       
       <Helmet>

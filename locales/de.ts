@@ -35,18 +35,18 @@ export default {
   'solutions.seo.description': 'Von Lead-Generierung bis Kundenbeziehungen – wir bauen Ihre gesamte Pipeline mit KI und Automatisierung. Mehr Kunden, niedrigere Kosten, nachhaltiges Wachstum.',
 
   // About Page
-  'about.seo.title': 'Über uns | Pratik Yapay Zeka',
-  'about.seo.description': 'Safak Tepecik - Experte für B2B-Softwarevertrieb und digitale Transformation, Gründer von Pratik Yapay Zeka.',
-  'about.page.title': 'Über uns | Pratik Yapay Zeka',
+  'about.seo.title': 'Über uns | KI Automatisieren',
+  'about.seo.description': 'Safak Tepecik - Experte für B2B-Softwarevertrieb und digitale Transformation, Gründer von KI Automatisieren.',
+  'about.page.title': 'Über uns | KI Automatisieren',
   'about.intro.text': 'Ich bin Safak Tepecik und Experte für B2B-Softwarevertrieb und digitale Transformation. Seit Jahren arbeite ich in der Technologiebranche und habe Erfahrung in der Optimierung digitaler Prozesse für Unternehmen gesammelt.',
   'about.section.background.title': 'Beruflicher Hintergrund',
   'about.section.background.text': 'Im Laufe meiner Karriere habe ich Unternehmen aus verschiedenen Branchen Technologielösungen angeboten. Ich habe mich insbesondere auf die Automatisierung von Vertriebsprozessen, Kundenbeziehungsmanagement und Datenanalyse spezialisiert. Durch diese Erfahrungen habe ich entdeckt, wie KI-Technologien praktische Lösungen für Unternehmen bieten können.',
   'about.section.current.title': 'Was ich heute mache',
-  'about.section.current.text': 'Als Pratik Yapay Zeka helfe ich Unternehmen in der Türkei, den maximalen Nutzen aus KI-Technologien zu ziehen. Mein Ziel ist es, komplexe Technologien in praktische Lösungen zu verwandeln, die jeder verstehen und anwenden kann.',
+  'about.section.current.text': 'Als KI Automatisieren helfe ich Unternehmen in Europa, den maximalen Nutzen aus KI-Technologien zu ziehen. Mein Ziel ist es, komplexe Technologien in praktische Lösungen zu verwandeln, die jeder verstehen und anwenden kann.',
   'about.section.vision.text': 'Ich glaube, dass KI nicht nur für große Technologieunternehmen, sondern für Unternehmen jeder Größe zugänglich sein sollte. Mit dieser Vision begleite ich insbesondere KMU bei ihren digitalen Transformationsprozessen und biete nachhaltige Lösungen an.',
 
   // Sales Automation Page
-  'sales.automation.seo.title': 'Vertriebsautomatisierung - KI für Outbound & Inbound Prozesse | Pratik Yapay Zeka',
+  'sales.automation.seo.title': 'Vertriebsautomatisierung - KI für Outbound & Inbound Prozesse | KI Automatisieren',
   'sales.automation.seo.description': 'Automatisieren Sie Ihre Vertriebsprozesse mit KI: Personalisierte E-Mails, automatische Nachverfolgung, Kundenanalyse. Sparen Sie 20+ Stunden für Ihr Vertriebsteam.',
   'sales.automation.hero.title': 'KI-Vertriebsautomatisierung | Beschleunigen Sie Ihre Vertriebsprozesse',
   'sales.automation.hero.subtitle': 'Automatisieren Sie Outbound-Prozesse mit KI im Vertrieb',
@@ -76,9 +76,9 @@ export default {
   'sales.automation.cta.learn-more': 'Erfahren Sie mehr über Vertriebsautomatisierung',
 
   // Sales Demo Page
-  'sales.demo.seo.title': 'Testen Sie die Vertriebsautomatisierung selbst | Pratik Yapay Zeka',
+  'sales.demo.seo.title': 'Testen Sie die Vertriebsautomatisierung selbst | KI Automatisieren',
   'sales.demo.seo.description': 'Wie funktioniert Vertriebsautomatisierung? Testen Sie jetzt die Demo für personalisierte Betreffzeilen und Verkaufsgesprächsvorbereitung.',
-  'sales.demo.hero.title': 'Testen Sie die Vertriebsautomatisierung selbst | Pratik Yapay Zeka',
+  'sales.demo.hero.title': 'Testen Sie die Vertriebsautomatisierung selbst | KI Automatisieren',
   'sales.demo.hero.subtitle': 'Wie funktioniert Vertriebsautomatisierung? Testen Sie es jetzt selbst',
   'sales.demo.subject.title': 'Demo für personalisierte Betreffzeilen:',
   'sales.demo.subject.description': 'Entdecken Sie jetzt, wie Sie die effektivste Betreffzeile erstellen, um Ihre E-Mail-Öffnungsrate zu steigern.',
@@ -96,7 +96,7 @@ export default {
   'sales.demo.form.submit': 'Absenden',
 
   // AI Business Areas Page
-  'ai.business.seo.title': 'KI-Geschäftsbereiche - Vertriebs- & Marketingautomatisierung | Pratik Yapay Zeka',
+  'ai.business.seo.title': 'KI-Geschäftsbereiche - Vertriebs- & Marketingautomatisierung | KI Automatisieren',
   'ai.business.seo.description': 'Transformieren Sie Ihre Geschäftsprozesse mit KI: Vertriebsautomatisierung, Marketingkampagnen, Kundenanalyse. Beschleunigen Sie Ihre digitale Transformation.',
   'ai.business.hero.title': 'KI-Geschäftsbereiche | Vertriebs- und Marketingautomatisierung',
   'ai.business.hero.subtitle': 'Automatisieren Sie Ihre Prozesse mit digitaler Transformation',
@@ -127,9 +127,9 @@ export default {
   'blog.hero.subtitle': 'Einblicke und Fallstudien für praktisches, KI-gestütztes Wachstum.',
 
   // Services Page
-  'services.seo.title': 'Unsere Dienstleistungen | Pratik Yapay Zeka',
+  'services.seo.title': 'Unsere Dienstleistungen | KI Automatisieren',
   'services.seo.description': 'Automatisierung, Datenanalyse, Kundenkommunikation und Schulung/Beratung: Praktische KI-Lösungen für Ihr Unternehmen.',
-  'services.page.title': 'Unsere Dienstleistungen | Pratik Yapay Zeka',
+  'services.page.title': 'Unsere Dienstleistungen | KI Automatisieren',
   'services.automation.title': 'Automatisierung',
   'services.automation.text': 'Viele Aufgaben, die Sie auf Ihrem Telefon oder Computer erledigen, kann jetzt KI für Sie übernehmen. Durch die Automatisierung täglicher wiederkehrender Aufgaben bieten wir Ihnen und Ihrem Team die Möglichkeit, sich auf wertvollere Aufgaben zu konzentrieren. Sparen Sie Zeit und vereinfachen Sie Ihre Geschäftsprozesse, indem Sie Technologie zu einem Teil Ihrer Arbeit machen.',
   'services.data-analysis.title': 'Datenanalyse',
@@ -159,12 +159,12 @@ export default {
   'footer.contact.title': 'Kontakt',
   'footer.contact.text': 'Bereit, Ihr Unternehmen zu transformieren?',
   'footer.cta.button': 'Kostenlose Beratung Erhalten',
-  'footer.copyright': '© 2024 Pratik Yapay Zeka. Alle Rechte vorbehalten.',
+  'footer.copyright': '© 2024 KI Automatisieren. Alle Rechte vorbehalten.',
   'footer.privacy': 'Datenschutz',
   'footer.terms': 'Nutzungsbedingungen',
 
   // Index Page
-  'index.seo.title': 'Pratik Yapay Zeka – Vertriebs- und Marketingautomatisierung',
+  'index.seo.title': 'KI Automatisieren – Vertriebs- und Marketingautomatisierung',
   'index.seo.description': 'Durchgängige KI-Automatisierung vom Lead bis zum Meeting. Steigern Sie Ihren Umsatz mit Outbound & Inbound, Content- und Social-Media-Automatisierung.',
   
   // Index Features
