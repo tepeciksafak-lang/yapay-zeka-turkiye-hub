@@ -61,6 +61,7 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
   });
 
   const handleSubmit = async (data: FormData) => {
+    console.log('🎯 FORM SUBMIT STARTED - Version 2.0');
     setIsSubmitting(true);
     
     const params = new URLSearchParams({
@@ -70,15 +71,17 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
       company: data.company,
       timestamp: new Date().toISOString(),
       source: 'website_3days_contact',
+      _v: Date.now().toString() // Cache busting
     });
 
-    // Send GET request using Image Pixel method (guaranteed to work without CORS issues)
+    console.log('📤 Sending webhook...');
     const webhookUrl = `https://safakt.app.n8n.cloud/webhook/d913b878-990b-48be-93e5-e4ea4a974bbe?${params.toString()}`;
     const img = new Image();
     img.src = webhookUrl;
 
-    console.log('✅ Form submitted to webhook');
+    console.log('✅ Webhook request initiated');
 
+    console.log('📊 Tracking analytics...');
     analytics.trackEvent({
       action: 'form_submit',
       category: 'website_3days',
@@ -89,13 +92,18 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
       }
     });
 
-    // Navigate first, then close modal to avoid race condition
-    navigate('/de/website-in-3-tagen/danke');
+    console.log('🚀 Closing modal and preparing navigation...');
     
-    // Small delay before closing to ensure navigation starts
+    // Close modal IMMEDIATELY
+    form.reset();
+    onOpenChange(false);
+    setIsSubmitting(false);
+    
+    // Then navigate (after a tiny delay to ensure modal closes first)
     setTimeout(() => {
-      resetAndClose();
-    }, 100);
+      console.log('📍 Navigation starting NOW');
+      navigate('/de/website-in-3-tagen/danke');
+    }, 50);
   };
 
   const resetAndClose = () => {
