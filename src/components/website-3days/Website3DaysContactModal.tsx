@@ -63,51 +63,39 @@ export function Website3DaysContactModal({ open, onOpenChange }: Website3DaysCon
   const handleSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    try {
-      const params = new URLSearchParams({
-        name: data.name,
-        email: data.email || '',
-        phone: data.phone || '',
-        company: data.company,
-        timestamp: new Date().toISOString(),
+    const params = new URLSearchParams({
+      name: data.name,
+      email: data.email || '',
+      phone: data.phone || '',
+      company: data.company,
+      timestamp: new Date().toISOString(),
+      source: 'website_3days_contact',
+    });
+
+    // Send GET request using Image Pixel method (guaranteed to work without CORS issues)
+    const webhookUrl = `https://safakt.app.n8n.cloud/webhook/d913b878-990b-48be-93e5-e4ea4a974bbe?${params.toString()}`;
+    const img = new Image();
+    img.src = webhookUrl;
+
+    console.log('✅ Form submitted to webhook');
+
+    analytics.trackEvent({
+      action: 'form_submit',
+      category: 'website_3days',
+      label: 'contact_form_success',
+      custom_parameters: {
         source: 'website_3days_contact',
-      });
+        timestamp: new Date().toISOString(),
+      }
+    });
 
-      // Send GET request using Image Pixel method (guaranteed to work without CORS issues)
-      const webhookUrl = `https://safakt.app.n8n.cloud/webhook/d913b878-990b-48be-93e5-e4ea4a974bbe?${params.toString()}`;
-      const img = new Image();
-      img.src = webhookUrl;
-
-      console.log('✅ Form submitted to webhook');
-
-      analytics.trackEvent({
-        action: 'form_submit',
-        category: 'website_3days',
-        label: 'contact_form_success',
-        custom_parameters: {
-          source: 'website_3days_contact',
-          timestamp: new Date().toISOString(),
-        }
-      });
-
-      // Navigate first, then close modal to avoid race condition
-      navigate('/de/website-in-3-tagen/danke');
-      
-      // Small delay before closing to ensure navigation starts
-      setTimeout(() => {
-        resetAndClose();
-      }, 100);
-
-    } catch (error) {
-      console.error('Form submission error:', error);
-      toast({
-        title: t('website3days.contact.modal.error.title'),
-        description: t('website3days.contact.modal.error.description'),
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Navigate first, then close modal to avoid race condition
+    navigate('/de/website-in-3-tagen/danke');
+    
+    // Small delay before closing to ensure navigation starts
+    setTimeout(() => {
+      resetAndClose();
+    }, 100);
   };
 
   const resetAndClose = () => {
