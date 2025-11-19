@@ -53,7 +53,7 @@ export default function Website3DaysDanke() {
         </script>
       </Helmet>
 
-      <div className="w3d-page">
+      <div className="website-3days-page">
         <Navigation />
         
         <main className="flex-1">
