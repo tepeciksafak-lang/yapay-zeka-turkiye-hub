@@ -63,8 +63,8 @@ const Hakkimizda = () => {
   return (
     <>
       <SEO
-        title="Hakkımızda - ST-Automatisierung | Yapay Zeka & Otomasyon Çözümleri"
-        description="ST-Automatisierung 2024'ten beri KMU'lara yapay zeka ve otomasyon çözümleri sunuyor. Dortmund merkezli, 6+ başarılı proje, ölçeklenebilir sistemler."
+        title={t('about.seo.title')}
+        description={t('about.seo.description')}
         routeKey="about"
       />
 
