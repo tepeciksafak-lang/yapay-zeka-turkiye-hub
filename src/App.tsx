@@ -30,6 +30,13 @@ const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
 const WebsiteIn3Days = lazy(() => import("./pages/WebsiteIn3Days"));
 const Website3DaysDanke = lazy(() => import("./pages/Website3DaysDanke"));
 
+// Solution pages
+const LeadGenerationKI = lazy(() => import("./pages/solutions/LeadGenerationKI"));
+const VertriebsAutomatisierung = lazy(() => import("./pages/solutions/VertriebsAutomatisierung"));
+const MarketingAutomatisierung = lazy(() => import("./pages/solutions/MarketingAutomatisierung"));
+const CRMProzessAutomatisierung = lazy(() => import("./pages/solutions/CRMProzessAutomatisierung"));
+const KundenserviceAutomatisierung = lazy(() => import("./pages/solutions/KundenserviceAutomatisierung"));
+
 // Loading fallback component
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-screen">
@@ -175,6 +182,67 @@ const AppWithModal = () => {
               <Suspense fallback={<PageLoader />}>
                 <Website3DaysDanke />
               </Suspense>
+            </LanguageWrapper>
+          } />
+          
+          {/* Solution Landing Pages */}
+          <Route path="/de/losungen/leadgenerierung-ki" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <LeadGenerationKI />
+                </Suspense>
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/losungen/vertriebsautomatisierung" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <VertriebsAutomatisierung />
+                </Suspense>
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/losungen/marketing-automatisierung" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <MarketingAutomatisierung />
+                </Suspense>
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/losungen/crm-prozessautomatisierung" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <CRMProzessAutomatisierung />
+                </Suspense>
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/de/losungen/kundenservice-automatisierung" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <KundenserviceAutomatisierung />
+                </Suspense>
+              </main>
+              <Footer />
             </LanguageWrapper>
           } />
           

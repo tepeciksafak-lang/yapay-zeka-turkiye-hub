@@ -13,7 +13,12 @@ export type RouteKey =
   | 'privacy'
   | 'terms'
   | 'website-in-3-days'
-  | 'website-3days-thank-you';
+  | 'website-3days-thank-you'
+  | 'solution-leadgen-ki'
+  | 'solution-vertrieb'
+  | 'solution-marketing'
+  | 'solution-crm'
+  | 'solution-kundenservice';
 
 export const routeMappings: Record<string, Record<RouteKey, string>> = {
   tr: {
@@ -28,7 +33,12 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'privacy': '/gizlilik',
     'terms': '/kullanim-kosullari',
     'website-in-3-days': '/3-gun-website',
-    'website-3days-thank-you': '/3-gun-website/tesekkurler'
+    'website-3days-thank-you': '/3-gun-website/tesekkurler',
+    'solution-leadgen-ki': '/cozumler/lead-generation',
+    'solution-vertrieb': '/cozumler/satis-otomasyonu',
+    'solution-marketing': '/cozumler/pazarlama-otomasyonu',
+    'solution-crm': '/cozumler/crm-otomasyonu',
+    'solution-kundenservice': '/cozumler/musteri-hizmeti-otomasyonu'
   },
   de: {
     'home': '',
@@ -42,7 +52,12 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'privacy': '/datenschutz',
     'terms': '/nutzungsbedingungen',
     'website-in-3-days': '/website-in-3-tagen',
-    'website-3days-thank-you': '/website-in-3-tagen/danke'
+    'website-3days-thank-you': '/website-in-3-tagen/danke',
+    'solution-leadgen-ki': '/losungen/leadgenerierung-ki',
+    'solution-vertrieb': '/losungen/vertriebsautomatisierung',
+    'solution-marketing': '/losungen/marketing-automatisierung',
+    'solution-crm': '/losungen/crm-prozessautomatisierung',
+    'solution-kundenservice': '/losungen/kundenservice-automatisierung'
   }
   /* PARKED: English routes - To reactivate, uncomment this block
   en: {
