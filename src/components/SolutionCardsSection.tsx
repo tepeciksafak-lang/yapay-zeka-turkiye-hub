@@ -1,11 +1,20 @@
 "use client";
 
 import { GlowCard } from "./ui/spotlight-card";
-import { PhoneCall, Megaphone, Database, Handshake, FlaskConical } from "lucide-react";
+import { PhoneCall, Megaphone, Database, Handshake, FlaskConical, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 export default function SolutionCardsSection() {
   const { currentLanguage, t } = useLanguage();
+
+  const solutionLinks: Record<number, string> = {
+    1: currentLanguage === 'de' ? '/de/losungen/leadgenerierung-ki' : '/tr/cozumler/lead-generation',
+    2: currentLanguage === 'de' ? '/de/losungen/marketing-automatisierung' : '/tr/cozumler/marketing-automation',
+    3: currentLanguage === 'de' ? '/de/losungen/vertriebsautomatisierung' : '/tr/cozumler/sales-automation',
+    4: currentLanguage === 'de' ? '/de/losungen/kundenservice-automatisierung' : '/tr/cozumler/customer-service',
+    5: currentLanguage === 'de' ? '/de/losungen/crm-prozessautomatisierung' : '/tr/cozumler/crm-automation',
+  };
 
   const solutionCards = currentLanguage === 'de' ? [
     {
@@ -138,10 +147,18 @@ export default function SolutionCardsSection() {
                         {card.title}
                       </h3>
                     </div>
-                    <div className="flex-1 flex items-center">
-                      <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                    <div className="flex-1 flex flex-col justify-between">
+                      <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line mb-4">
                         {card.content}
                       </p>
+                      <Link 
+                        to={solutionLinks[card.id]} 
+                        className="inline-flex items-center justify-center gap-2 text-sm font-medium hover:underline"
+                        style={{ color: '#A3E635' }}
+                      >
+                        {currentLanguage === 'de' ? 'Mehr erfahren' : 'Daha fazla bilgi'}
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
                 </GlowCard>
@@ -165,10 +182,18 @@ export default function SolutionCardsSection() {
                         {card.title}
                       </h3>
                     </div>
-                    <div className="flex-1 flex items-center">
-                      <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                    <div className="flex-1 flex flex-col justify-between">
+                      <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line mb-4">
                         {card.content}
                       </p>
+                      <Link 
+                        to={solutionLinks[card.id]} 
+                        className="inline-flex items-center justify-center gap-2 text-sm font-medium hover:underline"
+                        style={{ color: '#A3E635' }}
+                      >
+                        {currentLanguage === 'de' ? 'Mehr erfahren' : 'Daha fazla bilgi'}
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
                 </GlowCard>

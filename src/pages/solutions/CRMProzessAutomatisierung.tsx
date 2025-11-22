@@ -35,9 +35,12 @@ const CRMProzessAutomatisierung = () => {
     return () => observer.disconnect();
   }, []);
 
-  if (currentLanguage !== 'de') {
-    return null;
-  }
+  // Redirect to German if not on German
+  useEffect(() => {
+    if (currentLanguage !== 'de') {
+      navigate('/de/losungen/crm-prozessautomatisierung');
+    }
+  }, [currentLanguage, navigate]);
 
   const scrollToCaseStudy = () => {
     document.querySelector('.case-study-section')?.scrollIntoView({ behavior: 'smooth' });
