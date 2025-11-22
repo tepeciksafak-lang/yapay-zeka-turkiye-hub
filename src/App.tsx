@@ -30,7 +30,7 @@ const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
 const WebsiteIn3Days = lazy(() => import("./pages/WebsiteIn3Days"));
 const Website3DaysDanke = lazy(() => import("./pages/Website3DaysDanke"));
 
-// Solution pages
+// Solution pages - Force rebuild timestamp: 2025-01-20
 const LeadGenerationKI = lazy(() => import("./pages/solutions/LeadGenerationKI"));
 const VertriebsAutomatisierung = lazy(() => import("./pages/solutions/VertriebsAutomatisierung"));
 const MarketingAutomatisierung = lazy(() => import("./pages/solutions/MarketingAutomatisierung"));
