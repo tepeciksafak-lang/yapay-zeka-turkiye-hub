@@ -2,6 +2,12 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -16,10 +22,17 @@ const Navigation = () => {
 
   const navItems = [
     { href: getLocalizedRoute(currentLanguage, 'home'), label: t('nav.home') },
-    { href: getLocalizedRoute(currentLanguage, 'solutions'), label: t('nav.solutions') },
     { href: getLocalizedRoute(currentLanguage, 'cases'), label: t('nav.cases') },
     { href: getLocalizedRoute(currentLanguage, 'blog'), label: t('nav.blog') },
   ];
+
+  const solutionItems = currentLanguage === 'de' ? [
+    { href: '/de/losungen/leadgenerierung-ki', label: 'KI Leadgenerierung' },
+    { href: '/de/losungen/marketing-automatisierung', label: 'Marketing Automatisierung' },
+    { href: '/de/losungen/vertriebsautomatisierung', label: 'Vertriebsautomatisierung' },
+    { href: '/de/losungen/crm-prozessautomatisierung', label: 'CRM Automatisierung' },
+    { href: '/de/losungen/kundenservice-automatisierung', label: 'Kundenservice Automatisierung' },
+  ] : [];
 
   const isActiveLink = (href: string) => {
     if (href === "/") return location.pathname === "/";
@@ -63,6 +76,42 @@ const Navigation = () => {
                 )}
               </Link>
             ))}
+            
+            {/* Solutions Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={cn(
+                "text-sm font-medium transition-colors lime-underline focus-lime relative inline-flex items-center gap-1",
+                location.pathname.includes('/losungen') || location.pathname.includes('/cozumler') 
+                  ? "text-lime-400" 
+                  : "text-text-hi hover:text-lime-400"
+              )}>
+                {t('nav.solutions')}
+                <ChevronDown className="w-3 h-3" />
+                {(location.pathname.includes('/losungen') || location.pathname.includes('/cozumler')) && (
+                  <div className="absolute -left-2 top-1/2 -translate-y-1/2 lime-dot"></div>
+                )}
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-background border-border z-[60]">
+                {solutionItems.map((item) => (
+                  <DropdownMenuItem key={item.href} asChild>
+                    <Link 
+                      to={item.href} 
+                      className="w-full cursor-pointer hover:text-lime-400 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuItem asChild>
+                  <Link 
+                    to={getLocalizedRoute(currentLanguage, 'solutions')} 
+                    className="w-full cursor-pointer font-semibold hover:text-lime-400 transition-colors"
+                  >
+                    {currentLanguage === 'de' ? 'Alle Lösungen →' : 'Tüm Çözümler →'}
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Language Switcher & Mobile Navigation */}

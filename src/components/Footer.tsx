@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useModal } from "@/contexts/ModalContext";
 import { getLocalizedRoute, type RouteKey } from "@/lib/routeMappings";
+import { cn } from "@/lib/utils";
 
 const Footer = () => {
   const { t, currentLanguage } = useLanguage();
@@ -37,7 +38,10 @@ const Footer = () => {
   return (
     <footer className="border-t border-border bg-bg-2">
       <div className="container mx-auto px-4 py-12 lg:px-6">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className={cn(
+          "grid gap-8",
+          currentLanguage === 'de' ? "md:grid-cols-2 lg:grid-cols-5" : "md:grid-cols-2 lg:grid-cols-4"
+        )}>
           <div className="space-y-4">
             <Link to={getLocalizedPath('home')} className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-lg bg-card border border-border flex items-center justify-center">
@@ -74,6 +78,39 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          {currentLanguage === 'de' && (
+            <div className="space-y-4">
+              <h3 className="text-sm font-semibold text-text-hi">Dienstleistungen</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/de/losungen/leadgenerierung-ki" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                    KI Leadgenerierung
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/de/losungen/marketing-automatisierung" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                    Marketing Automatisierung
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/de/losungen/vertriebsautomatisierung" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                    Vertriebsautomatisierung
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/de/losungen/crm-prozessautomatisierung" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                    CRM Automatisierung
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/de/losungen/kundenservice-automatisierung" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                    Kundenservice Automatisierung
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
 
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-text-hi">{t('footer.contact.title')}</h3>
