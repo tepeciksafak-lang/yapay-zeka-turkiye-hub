@@ -22,14 +22,14 @@ const LeadGenerationKI = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add('animate-fade-in');
           }
         });
       },
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    const animatedElements = document.querySelectorAll('.w3d-animate-on-scroll');
+    const animatedElements = document.querySelectorAll('[data-animate]');
     animatedElements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
@@ -122,7 +122,7 @@ const LeadGenerationKI = () => {
         })}
       </script>
 
-      <div className="website-3days-page">
+      <div className="min-h-screen">
         <SolutionHero 
           title={t('solutions.leadgen.hero.title')}
           subtitle={t('solutions.leadgen.hero.subtitle')}
