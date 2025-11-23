@@ -84,27 +84,27 @@ const Footer = () => {
               <h3 className="text-sm font-semibold text-text-hi">Dienstleistungen</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link to="/de/losungen/leadgenerierung-ki" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  <Link to={getLocalizedRoute(currentLanguage, 'solution-leadgen-ki')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
                     KI Leadgenerierung
                   </Link>
                 </li>
                 <li>
-                  <Link to="/de/losungen/marketing-automatisierung" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  <Link to={getLocalizedRoute(currentLanguage, 'solution-marketing')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
                     Marketing Automatisierung
                   </Link>
                 </li>
                 <li>
-                  <Link to="/de/losungen/vertriebsautomatisierung" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  <Link to={getLocalizedRoute(currentLanguage, 'solution-vertrieb')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
                     Vertriebsautomatisierung
                   </Link>
                 </li>
                 <li>
-                  <Link to="/de/losungen/crm-prozessautomatisierung" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  <Link to={getLocalizedRoute(currentLanguage, 'solution-crm')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
                     CRM Automatisierung
                   </Link>
                 </li>
                 <li>
-                  <Link to="/de/losungen/kundenservice-automatisierung" className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  <Link to={getLocalizedRoute(currentLanguage, 'solution-kundenservice')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
                     Kundenservice Automatisierung
                   </Link>
                 </li>

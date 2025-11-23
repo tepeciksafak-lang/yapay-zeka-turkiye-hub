@@ -30,12 +30,14 @@ const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
 const WebsiteIn3Days = lazy(() => import("./pages/WebsiteIn3Days"));
 const Website3DaysDanke = lazy(() => import("./pages/Website3DaysDanke"));
 
-// Solution pages - Force rebuild timestamp: 2025-01-20
-const LeadGenerationKI = lazy(() => import("./pages/solutions/LeadGenerationKI"));
-const VertriebsAutomatisierung = lazy(() => import("./pages/solutions/VertriebsAutomatisierung"));
-const MarketingAutomatisierung = lazy(() => import("./pages/solutions/MarketingAutomatisierung"));
-const CRMProzessAutomatisierung = lazy(() => import("./pages/solutions/CRMProzessAutomatisierung"));
-const KundenserviceAutomatisierung = lazy(() => import("./pages/solutions/KundenserviceAutomatisierung"));
+// Solution pages - Direct import for better reliability - 2025-01-20T15:00:00Z
+import {
+  LeadGenerationKI,
+  VertriebsAutomatisierung,
+  MarketingAutomatisierung,
+  CRMProzessAutomatisierung,
+  KundenserviceAutomatisierung
+} from "./pages/solutions";
 
 // Loading fallback component
 const PageLoader = () => (
@@ -190,9 +192,7 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <LeadGenerationKI />
-                </Suspense>
+                <LeadGenerationKI />
               </main>
               <Footer />
             </LanguageWrapper>
@@ -202,9 +202,7 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <VertriebsAutomatisierung />
-                </Suspense>
+                <VertriebsAutomatisierung />
               </main>
               <Footer />
             </LanguageWrapper>
@@ -214,9 +212,7 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <MarketingAutomatisierung />
-                </Suspense>
+                <MarketingAutomatisierung />
               </main>
               <Footer />
             </LanguageWrapper>
@@ -226,9 +222,7 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <CRMProzessAutomatisierung />
-                </Suspense>
+                <CRMProzessAutomatisierung />
               </main>
               <Footer />
             </LanguageWrapper>
@@ -238,9 +232,7 @@ const AppWithModal = () => {
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <KundenserviceAutomatisierung />
-                </Suspense>
+                <KundenserviceAutomatisierung />
               </main>
               <Footer />
             </LanguageWrapper>

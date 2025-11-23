@@ -27,11 +27,11 @@ const Navigation = () => {
   ];
 
   const solutionItems = currentLanguage === 'de' ? [
-    { href: '/de/losungen/leadgenerierung-ki', label: 'KI Leadgenerierung' },
-    { href: '/de/losungen/marketing-automatisierung', label: 'Marketing Automatisierung' },
-    { href: '/de/losungen/vertriebsautomatisierung', label: 'Vertriebsautomatisierung' },
-    { href: '/de/losungen/crm-prozessautomatisierung', label: 'CRM Automatisierung' },
-    { href: '/de/losungen/kundenservice-automatisierung', label: 'Kundenservice Automatisierung' },
+    { href: getLocalizedRoute(currentLanguage, 'solution-leadgen-ki'), label: 'KI Leadgenerierung' },
+    { href: getLocalizedRoute(currentLanguage, 'solution-marketing'), label: 'Marketing Automatisierung' },
+    { href: getLocalizedRoute(currentLanguage, 'solution-vertrieb'), label: 'Vertriebsautomatisierung' },
+    { href: getLocalizedRoute(currentLanguage, 'solution-crm'), label: 'CRM Automatisierung' },
+    { href: getLocalizedRoute(currentLanguage, 'solution-kundenservice'), label: 'Kundenservice Automatisierung' },
   ] : [];
 
   const isActiveLink = (href: string) => {
