@@ -36,7 +36,12 @@ import {
   VertriebsAutomatisierung,
   MarketingAutomatisierung,
   CRMProzessAutomatisierung,
-  KundenserviceAutomatisierung
+  KundenserviceAutomatisierung,
+  LeadGenerationKI_TR,
+  VertriebsAutomatisierung_TR,
+  MarketingAutomatisierung_TR,
+  CRMProzessAutomatisierung_TR,
+  KundenserviceAutomatisierung_TR
 } from "./pages/solutions";
 
 // Loading fallback component
@@ -371,6 +376,57 @@ const AppWithModal = () => {
               <Suspense fallback={<PageLoader />}>
                 <KullanimKosullari />
               </Suspense>
+            </LanguageWrapper>
+          } />
+          
+          {/* Turkish Solution Pages */}
+          <Route path="/tr/cozumler/lead-generation" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <LeadGenerationKI_TR />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/tr/cozumler/satis-otomasyonu" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <VertriebsAutomatisierung_TR />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/tr/cozumler/pazarlama-otomasyonu" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <MarketingAutomatisierung_TR />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/tr/cozumler/crm-otomasyonu" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <CRMProzessAutomatisierung_TR />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/tr/cozumler/musteri-hizmeti-otomasyonu" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <KundenserviceAutomatisierung_TR />
+              </main>
+              <Footer />
             </LanguageWrapper>
           } />
 
