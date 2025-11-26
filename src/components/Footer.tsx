@@ -79,33 +79,35 @@ const Footer = () => {
             </ul>
           </div>
 
-          {currentLanguage === 'de' && (
+          {(currentLanguage === 'de' || currentLanguage === 'tr') && (
             <div className="space-y-4">
-              <h3 className="text-sm font-semibold text-text-hi">Dienstleistungen</h3>
+              <h3 className="text-sm font-semibold text-text-hi">
+                {currentLanguage === 'de' ? 'Dienstleistungen' : 'Hizmetler'}
+              </h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link to={getLocalizedRoute(currentLanguage, 'solution-leadgen-ki')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    KI Leadgenerierung
+                    {currentLanguage === 'de' ? 'KI Leadgenerierung' : 'Yapay Zeka Lead Üretimi'}
                   </Link>
                 </li>
                 <li>
                   <Link to={getLocalizedRoute(currentLanguage, 'solution-marketing')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    Marketing Automatisierung
+                    {currentLanguage === 'de' ? 'Marketing Automatisierung' : 'Pazarlama Otomasyonu'}
                   </Link>
                 </li>
                 <li>
                   <Link to={getLocalizedRoute(currentLanguage, 'solution-vertrieb')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    Vertriebsautomatisierung
+                    {currentLanguage === 'de' ? 'Vertriebsautomatisierung' : 'Satış Otomasyonu'}
                   </Link>
                 </li>
                 <li>
                   <Link to={getLocalizedRoute(currentLanguage, 'solution-crm')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    CRM Automatisierung
+                    {currentLanguage === 'de' ? 'CRM Automatisierung' : 'CRM Otomasyonu'}
                   </Link>
                 </li>
                 <li>
                   <Link to={getLocalizedRoute(currentLanguage, 'solution-kundenservice')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    Kundenservice Automatisierung
+                    {currentLanguage === 'de' ? 'Kundenservice Automatisierung' : 'Müşteri Hizmeti Otomasyonu'}
                   </Link>
                 </li>
               </ul>
