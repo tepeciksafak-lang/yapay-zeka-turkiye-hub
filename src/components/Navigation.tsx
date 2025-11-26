@@ -32,6 +32,12 @@ const Navigation = () => {
     { href: getLocalizedRoute(currentLanguage, 'solution-vertrieb'), label: 'Vertriebsautomatisierung' },
     { href: getLocalizedRoute(currentLanguage, 'solution-crm'), label: 'CRM Automatisierung' },
     { href: getLocalizedRoute(currentLanguage, 'solution-kundenservice'), label: 'Kundenservice Automatisierung' },
+  ] : currentLanguage === 'tr' ? [
+    { href: getLocalizedRoute(currentLanguage, 'solution-leadgen-ki'), label: 'Yapay Zeka Lead Üretimi' },
+    { href: getLocalizedRoute(currentLanguage, 'solution-marketing'), label: 'Pazarlama Otomasyonu' },
+    { href: getLocalizedRoute(currentLanguage, 'solution-vertrieb'), label: 'Satış Otomasyonu' },
+    { href: getLocalizedRoute(currentLanguage, 'solution-crm'), label: 'CRM Otomasyonu' },
+    { href: getLocalizedRoute(currentLanguage, 'solution-kundenservice'), label: 'Müşteri Hizmeti Otomasyonu' },
   ] : [];
 
   const isActiveLink = (href: string) => {
