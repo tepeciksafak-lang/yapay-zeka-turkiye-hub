@@ -54,9 +54,8 @@ const PageLoader = () => (
 
 const queryClient = new QueryClient();
 
-// Component to handle modal integration  
+// Component to handle routes  
 const AppWithModal = () => {
-  const { isQuickAnalysisOpen, closeQuickAnalysis } = useModal();
   
   return (
     <>
@@ -434,11 +433,6 @@ const AppWithModal = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-      
-      <QuickAnalysisModal 
-        open={isQuickAnalysisOpen} 
-        onOpenChange={closeQuickAnalysis} 
-      />
     </>
   );
 };
