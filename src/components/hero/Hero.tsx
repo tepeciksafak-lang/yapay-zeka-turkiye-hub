@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useModal } from "@/contexts/ModalContext";
 import { analytics } from "@/utils/analytics";
 
 // Types for locale support (Next.js compatibility)
@@ -7,8 +8,6 @@ export type HeroLang = 'tr' | 'de' | 'en';
 
 interface HeroProps {
   locale?: HeroLang;
-  modalOpen?: boolean;
-  onModalOpenChange?: (open: boolean) => void;
 }
 
 // Hero content - using the same translations from LanguageContext
@@ -36,9 +35,10 @@ const heroCopy = {
   }
 };
 
-export function Hero({ locale, modalOpen, onModalOpenChange }: HeroProps) {
+export function Hero({ locale }: HeroProps) {
   // For React Router context (src/ pages)
   const languageContext = useLanguage?.();
+  const { openQuickAnalysis } = useModal();
   
   // Determine which locale to use - prefer prop (Next.js) over context (React Router)
   const currentLocale = locale || (languageContext?.currentLanguage as HeroLang) || 'tr';
@@ -49,9 +49,7 @@ export function Hero({ locale, modalOpen, onModalOpenChange }: HeroProps) {
     analytics.trackButtonClick('hero_cta_button', 'hero_section');
     
     // Open the QuickAnalysisModal
-    if (onModalOpenChange) {
-      onModalOpenChange(true);
-    }
+    openQuickAnalysis();
   };
 
   return (

@@ -20,7 +20,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { QuickAnalysisModal } from "@/components/QuickAnalysisModal";
 import { SEO } from "@/components/SEO";
 import { FAQSchema } from "@/components/FAQSchema";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -33,7 +32,6 @@ import { Link } from "react-router-dom";
 import { getLocalizedCaseStudies } from "@/data/caseStudiesData";
 
 const Index = () => {
-  const [modalOpen, setModalOpen] = useState(false);
   const { t, currentLanguage } = useLanguage();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const navigate = useNavigate();
@@ -151,7 +149,7 @@ const Index = () => {
       <FAQSchema faqs={faqs} />
       
       {/* Hero Section */}
-      <Hero modalOpen={modalOpen} onModalOpenChange={setModalOpen} />
+      <Hero />
 
       {/* Agitate Demo Section */}
       <AgitateDemo />
@@ -219,9 +217,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-
-      <QuickAnalysisModal open={modalOpen} onOpenChange={setModalOpen} />
     </>
   );
 };
