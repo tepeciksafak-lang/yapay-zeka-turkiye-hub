@@ -1,4 +1,4 @@
-import { createContext, useContext, ReactNode, useState } from 'react';
+import { createContext, useContext, ReactNode, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import deTranslations from '../../locales/de';
 import trTranslations from '../../locales/tr';
@@ -23,10 +23,15 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>('tr');
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(() => {
+    // Initial language from URL
+    const pathLang = window.location.pathname.split('/')[1] as Language;
+    if (['de', 'tr'].includes(pathLang)) return pathLang;
+    return 'tr';
+  });
   const navigate = useNavigate();
   
-  const initializeLanguage = (lang: string | undefined) => {
+  const initializeLanguage = useCallback((lang: string | undefined) => {
     const validLang = (lang as Language);
     // ACTIVE LANGUAGES: ['de', 'tr'] | PARKED: 'en'
     if (validLang && ['de', 'tr'].includes(validLang)) {
@@ -34,7 +39,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     } else {
       setCurrentLanguage('tr'); // Default to Turkish
     }
-  };
+  }, []);
   
   const setLanguage = (newLang: Language) => {
     const currentPath = window.location.pathname;
