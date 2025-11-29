@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { CheckCircle, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface QuickAnalysisModalProps {
   open: boolean;
@@ -22,6 +23,7 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
+  const { t, currentLanguage } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,7 +37,8 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
         company: formData.company || '',
         message: formData.message || '',
         timestamp: new Date().toISOString(),
-        source: 'quick_analysis_modal'
+        source: 'quick_analysis_modal',
+        language: currentLanguage
       });
 
       const webhookUrl = 'https://safakt.app.n8n.cloud/webhook/041dae70-b4dc-4fbb-89e5-3b78274c5ff5';
@@ -66,8 +69,8 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
       }
 
       toast({
-        title: "Başvurunuz alındı!",
-        description: "48 saat içinde size özel analiz raporunu e-posta ile gönderilecek."
+        title: t('quickanalysis.modal.success.title'),
+        description: t('quickanalysis.modal.success.description')
       });
 
     } catch (error) {
@@ -83,8 +86,8 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
       }
 
       toast({
-        title: "Bir hata oluştu",
-        description: "Lütfen daha sonra tekrar deneyin.",
+        title: t('quickanalysis.modal.error.title'),
+        description: t('quickanalysis.modal.error.description'),
         variant: "destructive"
       });
     } finally {
@@ -112,13 +115,13 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
               <CheckCircle className="h-8 w-8 text-primary" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-foreground">Başvurunuz Alındı!</h3>
+              <h3 className="text-lg font-semibold text-foreground">{t('quickanalysis.modal.success.title')}</h3>
               <p className="text-sm text-muted-foreground mt-2">
-                48 saat içinde size özel analiz raporunu e-posta ile göndereceğiz.
+                {t('quickanalysis.modal.success.description')}
               </p>
             </div>
             <Button onClick={resetAndClose} className="w-full">
-              Tamam
+              {t('quickanalysis.modal.success.button')}
             </Button>
           </div>
         </DialogContent>
@@ -131,16 +134,16 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold text-center">
-            30 Dakika Hızlı Analiz
+            {t('quickanalysis.modal.title')}
           </DialogTitle>
           <p className="text-sm text-muted-foreground text-center mt-2">
-            İş süreçlerinizi analiz edelim, size özel otomasyon önerilerimizi paylaşalım.
+            {t('quickanalysis.modal.description')}
           </p>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4 pt-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Ad Soyad *</Label>
+            <Label htmlFor="name">{t('quickanalysis.modal.name.label')}</Label>
             <Input
               id="name"
               name="name"
@@ -148,12 +151,12 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
               required
               value={formData.name}
               onChange={handleInputChange}
-              placeholder="Adınız ve soyadınız"
+              placeholder={t('quickanalysis.modal.name.placeholder')}
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="email">E-posta *</Label>
+            <Label htmlFor="email">{t('quickanalysis.modal.email.label')}</Label>
             <Input
               id="email"
               name="email"
@@ -161,12 +164,12 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
               required
               value={formData.email}
               onChange={handleInputChange}
-              placeholder="ornek@sirket.com"
+              placeholder={t('quickanalysis.modal.email.placeholder')}
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="company">Şirket/Kurum *</Label>
+            <Label htmlFor="company">{t('quickanalysis.modal.company.label')}</Label>
             <Input
               id="company"
               name="company"
@@ -174,18 +177,18 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
               required
               value={formData.company}
               onChange={handleInputChange}
-              placeholder="Şirket adınız"
+              placeholder={t('quickanalysis.modal.company.placeholder')}
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="message">Hangi alanda otomasyon istiyorsunuz?</Label>
+            <Label htmlFor="message">{t('quickanalysis.modal.message.label')}</Label>
             <Textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              placeholder="Satış, pazarlama, müşteri hizmetleri, veri analizi vs..."
+              placeholder={t('quickanalysis.modal.message.placeholder')}
               rows={3}
             />
           </div>
@@ -198,17 +201,17 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
               size="lg"
             >
               {isSubmitting ? (
-                "Gönderiliyor..."
+                t('quickanalysis.modal.submitting')
               ) : (
                 <>
-                  Ücretsiz Analiz Al
+                  {t('quickanalysis.modal.submit')}
                   <Send className="ml-2 h-4 w-4" />
                 </>
               )}
             </Button>
             
             <p className="text-xs text-muted-foreground text-center">
-              Bilgileriniz güvenle saklanır. Spam göndermiyoruz.
+              {t('quickanalysis.modal.privacy')}
             </p>
           </div>
         </form>
