@@ -25,16 +25,6 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
   const { toast } = useToast();
   const { t, currentLanguage } = useLanguage();
 
-  // DEBUG: Log language and translation
-  console.log('🔍 QuickAnalysisModal Debug:', {
-    currentLanguage,
-    titleKey: 'quickanalysis.modal.title',
-    titleValue: t('quickanalysis.modal.title'),
-    nameLabelKey: 'quickanalysis.modal.name.label',
-    nameLabelValue: t('quickanalysis.modal.name.label'),
-    pathname: window.location.pathname
-  });
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
