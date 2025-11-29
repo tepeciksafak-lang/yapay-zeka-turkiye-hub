@@ -34,6 +34,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const initializeLanguage = useCallback((lang: string | undefined) => {
     const validLang = (lang as Language);
     // ACTIVE LANGUAGES: ['de', 'tr'] | PARKED: 'en'
+    console.log('📝 LanguageContext.initializeLanguage called:', {
+      inputLang: lang,
+      validLang,
+      willSetTo: (['de', 'tr'].includes(validLang)) ? validLang : 'tr'
+    });
     if (validLang && ['de', 'tr'].includes(validLang)) {
       setCurrentLanguage(validLang);
     } else {

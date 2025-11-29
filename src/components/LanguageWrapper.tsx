@@ -23,8 +23,13 @@ export const LanguageWrapper = ({ children }: LanguageWrapperProps) => {
   }, [paramLang, location.pathname]);
 
   useEffect(() => {
+    console.log('🌍 LanguageWrapper initializing:', {
+      derivedLang,
+      pathname: location.pathname,
+      paramLang
+    });
     initializeLanguage(derivedLang);
-  }, [derivedLang, initializeLanguage]);
+  }, [derivedLang, initializeLanguage, location.pathname, paramLang]);
 
   return (
     <>
