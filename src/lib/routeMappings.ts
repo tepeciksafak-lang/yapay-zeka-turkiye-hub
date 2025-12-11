@@ -18,7 +18,8 @@ export type RouteKey =
   | 'solution-vertrieb'
   | 'solution-marketing'
   | 'solution-crm'
-  | 'solution-kundenservice';
+  | 'solution-kundenservice'
+  | 'almanya-export';
 
 export const routeMappings: Record<string, Record<RouteKey, string>> = {
   tr: {
@@ -38,7 +39,8 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'solution-vertrieb': '/cozumler/satis-otomasyonu',
     'solution-marketing': '/cozumler/pazarlama-otomasyonu',
     'solution-crm': '/cozumler/crm-otomasyonu',
-    'solution-kundenservice': '/cozumler/musteri-hizmeti-otomasyonu'
+    'solution-kundenservice': '/cozumler/musteri-hizmeti-otomasyonu',
+    'almanya-export': '/cozumler/almanya-ihracat'
   },
   de: {
     'home': '',
@@ -57,7 +59,8 @@ export const routeMappings: Record<string, Record<RouteKey, string>> = {
     'solution-vertrieb': '/losungen/vertriebsautomatisierung',
     'solution-marketing': '/losungen/marketing-automatisierung',
     'solution-crm': '/losungen/crm-prozessautomatisierung',
-    'solution-kundenservice': '/losungen/kundenservice-automatisierung'
+    'solution-kundenservice': '/losungen/kundenservice-automatisierung',
+    'almanya-export': '' // Not available in German
   }
   /* PARKED: English routes - To reactivate, uncomment this block
   en: {

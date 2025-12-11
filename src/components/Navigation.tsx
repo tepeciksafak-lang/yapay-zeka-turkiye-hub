@@ -38,6 +38,7 @@ const Navigation = () => {
     { href: getLocalizedRoute(currentLanguage, 'solution-vertrieb'), label: 'Satış Otomasyonu' },
     { href: getLocalizedRoute(currentLanguage, 'solution-crm'), label: 'CRM Otomasyonu' },
     { href: getLocalizedRoute(currentLanguage, 'solution-kundenservice'), label: 'Müşteri Hizmeti Otomasyonu' },
+    { href: getLocalizedRoute(currentLanguage, 'almanya-export'), label: '🇩🇪 Almanya\'ya İhracat' },
   ] : [];
 
   const isActiveLink = (href: string) => {
