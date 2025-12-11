@@ -29,6 +29,7 @@ const KullanimKosullari = lazy(() => import("./pages/KullanimKosullari"));
 const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
 const WebsiteIn3Days = lazy(() => import("./pages/WebsiteIn3Days"));
 const Website3DaysDanke = lazy(() => import("./pages/Website3DaysDanke"));
+const AlmanyaExport = lazy(() => import("./pages/AlmanyaExport"));
 
 // Solution pages - Direct import for better reliability - 2025-01-20T15:00:00Z
 import {
@@ -424,6 +425,18 @@ const AppWithModal = () => {
               <Navigation />
               <main className="flex-1">
                 <KundenserviceAutomatisierung_TR />
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          
+          <Route path="/tr/cozumler/almanya-ihracat" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <AlmanyaExport />
+                </Suspense>
               </main>
               <Footer />
             </LanguageWrapper>

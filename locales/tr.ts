@@ -378,4 +378,89 @@ export default {
   'quickanalysis.modal.success.button': 'Tamam',
   'quickanalysis.modal.error.title': 'Bir hata oluştu',
   'quickanalysis.modal.error.description': 'Lütfen daha sonra tekrar deneyin.',
+
+  // Almanya İhracat Page
+  'almanya.seo.title': 'Almanya\'ya İhracat – Alman Gibi Görünün | Pratik Yapay Zeka',
+  'almanya.seo.description': 'Almanya pazarına giriş için dijital altyapı. Yerel varlık, Almanca landing page, fuar takibi ve soğuk satış otomasyonu.',
+  'almanya.hero.h1': 'Almanya\'ya İhracat Yapmak İçin Ofis Açmanıza Gerek Yok.',
+  'almanya.hero.h1.highlight': 'Sadece "Alman Gibi" Görünmeniz Yeterli.',
+  'almanya.hero.subtitle': 'Ürünleriniz dünya standartlarında ama dijital vitrininiz "turist" gibi mi duruyor? Hukuki altyapıdan yerel telefon numarasına, fuar takibinden soğuk satışa kadar: Size Almanya\'da güven, prestij ve müşteri kazandıran dijital sistemi kuruyorum.',
+  'almanya.hero.cta.primary': 'Ücretsiz Strateji Görüşmesi',
+  'almanya.hero.cta.secondary': 'Örnek Çalışmaları Gör',
+
+  // Almanya Agitate Section
+  'almanya.agitate.title': 'Fuarlara 50.000€ Harcadınız. Peki O Kartvizitler Ciroya Dönüştü mü?',
+  'almanya.agitate.scenario.title': 'Senaryo',
+  'almanya.agitate.scenario.text': 'Hannover Messe, Automechanika, Anuga... Standlar kuruldu, eller sıkıldı, yüzlerce kartvizit toplandı. Her şey harika görünüyordu.',
+  'almanya.agitate.problem.title': 'Sorun',
+  'almanya.agitate.problem.text': 'Türkiye\'ye döndünüz. İş yoğunluğu başladı. O kartvizitler çekmecede tozlanmaya başladı ya da ekibiniz standart bir "Nice to meet you" maili attı.',
+  'almanya.agitate.result.title': 'Sonuç',
+  'almanya.agitate.result.text': 'Cevap yok.',
+  'almanya.agitate.truth.title': 'Acı Gerçek',
+  'almanya.agitate.truth.text': 'Alman satın almacı, fuardan sonraki 3 gün içinde profesyonel, kişiselleştirilmiş ve kusursuz Almanca bir takip görmezse sizi "riskli tedarikçi" listesine yazar ve siler.',
+  'almanya.agitate.why.title': 'Neden Kaybediyorsunuz?',
+  'almanya.agitate.why.1': 'Hız Eksikliği: Sistematik takip (Follow-up) yoksa, unutulursunuz.',
+  'almanya.agitate.why.2': 'Dil Bariyeri: "Google Translate" kokan mailler prestijinizi yıkar.',
+  'almanya.agitate.why.3': 'Güven Eksikliği: Mailinize tıkladıklarında Alman standartlarında (Impressum vb.) bir web sitesi görmezlerse, iş biter.',
+
+  // Almanya Solution Section
+  'almanya.solution.title': 'Size Sadece Lead Değil, Bir "Alman Kimliği" İnşa Ediyorum.',
+  'almanya.solution.module1.title': 'Dijital Altyapı & Güven',
+  'almanya.solution.module1.subtitle': 'The Trust',
+  'almanya.solution.module1.feature1.title': 'Native Landing Page',
+  'almanya.solution.module1.feature1.description': 'Ana sitenizden bağımsız, %100 Almanca, yerel tasarım dilli ve yasal uyumlu (GDPR/DSGVO, Impressum) özel satış sayfaları.',
+  'almanya.solution.module1.feature2.title': 'Yerel Varlık',
+  'almanya.solution.module1.feature2.description': 'Şirketinize ait +49 (Almanya) alan kodlu sanal telefon hattı ve adresi. Arandığında Almanca cevap veren AI asistan kurulumu.',
+  'almanya.solution.module1.result': 'Müşteri sizi "ithalat riski" olarak değil, "yerel partner" olarak görür.',
+  'almanya.solution.module2.title': 'İçerik & İkna',
+  'almanya.solution.module2.subtitle': 'Creative Engine',
+  'almanya.solution.module2.feature1.title': 'AI Video & Görsel',
+  'almanya.solution.module2.feature1.description': 'Stok fotoğraf yok. Midjourney v7 ve Sora teknolojileriyle ürününüzü Alman fabrikasında veya ofisinde gösteren yüksek kaliteli, yerelleştirilmiş görseller.',
+  'almanya.solution.module2.feature2.title': 'Alman Metin Yazarlığı',
+  'almanya.solution.module2.feature2.description': 'Çeviri değil, adaptasyon. Alman mühendislerin ve satın almacıların dilinden konuşan net, disiplinli metinler.',
+  'almanya.solution.module3.title': 'Satış & Fuar Takibi',
+  'almanya.solution.module3.subtitle': 'Sales Engine',
+  'almanya.solution.module3.feature1.title': 'Messe-Booster',
+  'almanya.solution.module3.feature1.description': 'Fuar kartvizitlerinizi tarayıp (OCR), her bir kişiye özel, fuardaki görüşmenize atıfta bulunan Almanca takip mailleri gönderiyoruz.',
+  'almanya.solution.module3.feature2.title': 'System 3 Outreach',
+  'almanya.solution.module3.feature2.description': 'Hedefinizdeki 1000 Alman karar vericiyi (CEO, Satın Alma Müdürü) bulup, onlara soğuk ama "sıcak hissettiren" maillerle ulaşıyoruz.',
+
+  // Almanya Authority Section
+  'almanya.authority.title': 'Almanya Doğumlu, Türk DNA\'lı, Satış Odaklı.',
+  'almanya.authority.intro': 'Ben bir tercüme bürosu veya klasik bir ajans değilim. Ben Şafak Tepecik.',
+  'almanya.authority.point1': '🇩🇪 Almanya\'da doğdum, büyüdüm.',
+  'almanya.authority.point2': '💼 8+ yıl DACH bölgesinde (Almanya, Avusturya, İsviçre) B2B Satış Yöneticiliği yaptım.',
+  'almanya.authority.point3': '🤖 Yapay Zeka ve Otomasyon uzmanıyım.',
+  'almanya.authority.usp': '"Almanların neye \'Hayır\' dediğini ve neye imza attığını biliyorum. Sizin için bir ajans değil, Almanya\'daki stratejik ortağınızım."',
+
+  // Almanya Social Proof Section
+  'almanya.socialproof.title': 'Başarı Hikayeleri',
+  'almanya.socialproof.case1.title': 'Kimya & Sanayi',
+  'almanya.socialproof.case1.description': 'Bir Türk Kimya üreticisi (Cemkimsan) için Avrupa ve Ortadoğu pazarında nokta atışı distribütör tespiti ve toplantı organizasyonu.',
+  'almanya.socialproof.case2.title': 'Teknoloji & Donanım',
+  'almanya.socialproof.case2.description': 'Stadyum ekranları üreten yerli bir firma (Erpa) için Avrupa\'daki stadyum yöneticilerine doğrudan erişim ve marka sunumu.',
+  'almanya.socialproof.case3.title': 'Fuar & Takip',
+  'almanya.socialproof.case3.description': 'Fuardan dönen yüzlerce kartviziti, yapay zeka destekli otomasyonla sıcak satış görüşmelerine çeviren sistemler.',
+
+  // Almanya Process Section
+  'almanya.process.title': '3 Adımda Almanya\'dasınız',
+  'almanya.process.step1.title': 'Hafta 1: Kurulum',
+  'almanya.process.step1.description': 'Alman telefon hattı, Landing Page ve yasal metinlerin hazırlanması.',
+  'almanya.process.step2.title': 'Hafta 2: İçerik & Hedef',
+  'almanya.process.step2.description': 'AI videoların üretimi ve 500 kişilik karar verici listesinin (Deep Research) oluşturulması.',
+  'almanya.process.step3.title': 'Hafta 3: Start',
+  'almanya.process.step3.description': 'E-Mail ve LinkedIn motorlarının çalıştırılması. İlk toplantıların takviminize düşmesi.',
+
+  // Almanya FAQ Section
+  'almanya.faq.title': 'Sıkça Sorulan Sorular',
+  'almanya.faq.q1': 'Almanca bilen personelimiz yok, gelen telefonlara kim bakacak?',
+  'almanya.faq.a1': 'Sorun değil. İlk teması kurduğumuz AI Sesli Asistanlar ve yazılı otomasyonlar yönetir. Size sadece filtrelenmiş, İngilizce bilen veya ciddi alıcılar yönlendirilir.',
+  'almanya.faq.q2': 'Almanya\'da şirket kurmamız gerekiyor mu?',
+  'almanya.faq.a2': 'Hayır. Dijital varlığınız Alman, faturanız Türk şirketi üzerinden olabilir. Önemli olan ilk intiba ve güveni sağlamaktır.',
+  'almanya.faq.q3': 'Maliyet nedir?',
+  'almanya.faq.a3': 'Almanya\'da fiziksel bir ofis kiralamanın ve bir personel çalıştırmanın maliyetinin 10\'da 1\'i.',
+
+  // Almanya Final CTA Section
+  'almanya.finalcta.text': 'Rakipleriniz hala "Google Translate" kullanırken, siz Alman pazarında yerel bir oyuncu gibi oynayın.',
+  'almanya.finalcta.button': 'Almanya Pazar Analizi İçin Randevu Alın',
 } as const
