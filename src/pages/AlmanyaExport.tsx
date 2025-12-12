@@ -3,8 +3,10 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { SEO } from '@/components/SEO';
 import { FAQSchema } from '@/components/FAQSchema';
 import { HeroAlmanya } from '@/components/almanya-export/HeroAlmanya';
+import { RealityCheckAlmanya } from '@/components/almanya-export/RealityCheckAlmanya';
 import { AgitateAlmanya } from '@/components/almanya-export/AgitateAlmanya';
 import { SolutionModulesAlmanya } from '@/components/almanya-export/SolutionModulesAlmanya';
+import { SegmentationAlmanya } from '@/components/almanya-export/SegmentationAlmanya';
 import { AuthorityAlmanya } from '@/components/almanya-export/AuthorityAlmanya';
 import { SocialProofAlmanya } from '@/components/almanya-export/SocialProofAlmanya';
 import { ProcessAlmanya } from '@/components/almanya-export/ProcessAlmanya';
@@ -61,8 +63,10 @@ const AlmanyaExport = () => {
       
       <div className="almanya-export-page">
         <HeroAlmanya />
+        <RealityCheckAlmanya />
         <AgitateAlmanya />
         <SolutionModulesAlmanya />
+        <SegmentationAlmanya />
         <AuthorityAlmanya />
         <SocialProofAlmanya />
         <ProcessAlmanya />
