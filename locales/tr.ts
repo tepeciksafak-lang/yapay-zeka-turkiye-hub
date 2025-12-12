@@ -382,11 +382,31 @@ export default {
   // Almanya İhracat Page
   'almanya.seo.title': 'Almanya\'ya İhracat – Alman Gibi Görünün | Pratik Yapay Zeka',
   'almanya.seo.description': 'Almanya pazarına giriş için dijital altyapı. Yerel varlık, Almanca landing page, fuar takibi ve soğuk satış otomasyonu.',
-  'almanya.hero.h1': 'Almanya\'ya İhracat Yapmak İçin Ofis Açmanıza Gerek Yok.',
-  'almanya.hero.h1.highlight': 'Sadece "Alman Gibi" Görünmeniz Yeterli.',
-  'almanya.hero.subtitle': 'Ürünleriniz dünya standartlarında ama dijital vitrininiz "turist" gibi mi duruyor? Hukuki altyapıdan yerel telefon numarasına, fuar takibinden soğuk satışa kadar: Size Almanya\'da güven, prestij ve müşteri kazandıran dijital sistemi kuruyorum.',
-  'almanya.hero.cta.primary': 'Ücretsiz Strateji Görüşmesi',
+  'almanya.hero.h1': 'Almanya Pazarında "Yabancı" Gibi Değil,',
+  'almanya.hero.h1.highlight': '"Yerli" Gibi Satış Yapın.',
+  'almanya.hero.subtitle': 'Almanya doğumlu bir Türk\'ün yerel istihbaratı ve Yapay Zeka hızını birleştiriyoruz. Üretim gücünüzü kültürel bariyerlere takılmadan, doğrudan Euro gelirine dönüştürün.',
+  'almanya.hero.cta.primary': 'ALMANYA POTANSİYEL ANALİZİ BAŞLAT',
   'almanya.hero.cta.secondary': 'Örnek Çalışmaları Gör',
+  'almanya.hero.trust': 'Sadece Kurumsal Firmalar ve B2B Üreticiler İçin.',
+
+  // Almanya Reality Check Section
+  'almanya.realitycheck.title': 'Neden İhracat Departmanınız Almanya\'da Zorlanıyor?',
+  'almanya.realitycheck.subtitle': 'Alman pazarına girişte karşılaşılan 3 kritik engel',
+  'almanya.realitycheck.1.title': 'Dil Bariyeri Değil, "Kod" Bariyeri',
+  'almanya.realitycheck.1.description': 'Mükemmel çeviri yetmez. Alman satın almacı, mailin tonundan "bizden biri olmadığını" anlar. Biz, Alman ticari kodlarıyla konuşuyoruz.',
+  'almanya.realitycheck.2.title': 'Yasal ve Dijital Güven',
+  'almanya.realitycheck.2.description': 'Alman firmaları veri güvenliği (DSGVO) konusunda takıntılıdır. Biz, sisteminizi Alman standartlarına uygun hale getirerek masaya oturuyoruz.',
+  'almanya.realitycheck.3.title': 'Yanlış Kapıyı Çalmak',
+  'almanya.realitycheck.3.description': 'Sekreterlere mail atarak vakit kaybetmeyin. Yapay Zeka ile doğrudan karar vericinin (CEO) ekranına düşüyoruz.',
+
+  // Almanya Segmentation Section
+  'almanya.segmentation.title': 'Hedefiniz Hangisi?',
+  'almanya.segmentation.subtitle': 'Size özel stratejiyi birlikte belirleyelim.',
+  'almanya.segmentation.a.title': 'Marka Prestiji',
+  'almanya.segmentation.a.description': 'Ürünümü Almanya\'nın devlerine (Stadyum, Fabrika, Kurumsal) satmak istiyorum.',
+  'almanya.segmentation.b.title': 'Bayi Ağı Kurmak',
+  'almanya.segmentation.b.description': 'Almanya genelinde distribütörler bulup satışı otomatiğe bağlamak istiyorum.',
+  'almanya.segmentation.cta': 'Bu stratejiyi seç',
 
   // Almanya Agitate Section
   'almanya.agitate.title': 'Fuarlara 50.000€ Harcadınız. Peki O Kartvizitler Ciroya Dönüştü mü?',
@@ -426,12 +446,10 @@ export default {
   'almanya.solution.module3.feature2.description': 'Hedefinizdeki 1000 Alman karar vericiyi (CEO, Satın Alma Müdürü) bulup, onlara soğuk ama "sıcak hissettiren" maillerle ulaşıyoruz.',
 
   // Almanya Authority Section
-  'almanya.authority.title': 'Almanya Doğumlu, Türk DNA\'lı, Satış Odaklı.',
-  'almanya.authority.intro': 'Ben bir tercüme bürosu veya klasik bir ajans değilim. Ben Şafak Tepecik.',
-  'almanya.authority.point1': '🇩🇪 Almanya\'da doğdum, büyüdüm.',
-  'almanya.authority.point2': '💼 8+ yıl DACH bölgesinde (Almanya, Avusturya, İsviçre) B2B Satış Yöneticiliği yaptım.',
-  'almanya.authority.point3': '🤖 Yapay Zeka ve Otomasyon uzmanıyım.',
-  'almanya.authority.usp': '"Almanların neye \'Hayır\' dediğini ve neye imza attığını biliyorum. Sizin için bir ajans değil, Almanya\'daki stratejik ortağınızım."',
+  'almanya.authority.title': 'Şafak Tepecik: Almanya\'daki Şubeniz',
+  'almanya.authority.intro': 'Ben bir yapay zeka botu değilim. Almanya\'da doğdum, o sistemin içinde büyüdüm.',
+  'almanya.authority.text': 'Almanların neye "Evet" dediğini, neyden korktuğunu biliyorum. Türkiye\'deki üretim kaslarınızı, benim Almanya\'daki yerel ağım ve dijital istihbaratım ile birleştiriyoruz. Siz sadece üretin, bürokrasiyi ve satışı biz halledelim.',
+  'almanya.authority.usp': '"Sizin için bir ajans değil, Almanya\'daki stratejik ortağınızım."',
 
   // Almanya Social Proof Section
   'almanya.socialproof.title': 'Başarı Hikayeleri',
@@ -461,6 +479,8 @@ export default {
   'almanya.faq.a3': 'Almanya\'da fiziksel bir ofis kiralamanın ve bir personel çalıştırmanın maliyetinin 10\'da 1\'i.',
 
   // Almanya Final CTA Section
-  'almanya.finalcta.text': 'Rakipleriniz hala "Google Translate" kullanırken, siz Alman pazarında yerel bir oyuncu gibi oynayın.',
-  'almanya.finalcta.button': 'Almanya Pazar Analizi İçin Randevu Alın',
+  'almanya.finalcta.badge': 'Pazar Analizi (Ücretsiz)',
+  'almanya.finalcta.title': 'Almanya Potansiyelinizi Keşfedin',
+  'almanya.finalcta.text': 'Yatırım yapmadan önce, ürününüzün Almanya\'daki güncel talebini yapay zeka ile kontrol edelim.',
+  'almanya.finalcta.button': 'ANALİZ RANDEVUSU AL',
 } as const
