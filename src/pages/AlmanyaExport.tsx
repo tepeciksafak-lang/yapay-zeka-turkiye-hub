@@ -20,6 +20,11 @@ const AlmanyaExport = () => {
     { question: t('almanya.faq.q3'), answer: t('almanya.faq.a3') },
   ];
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
