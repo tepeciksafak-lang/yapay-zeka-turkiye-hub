@@ -1,15 +1,12 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useModal } from '@/contexts/ModalContext';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import safakImage from '@/assets/safak-tepecik-almanya.jpeg';
 
 export const HeroAlmanya = () => {
   const { t } = useLanguage();
   const { openQuickAnalysis } = useModal();
 
-  const scrollToCases = () => {
-    document.getElementById('social-proof')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <section className="almanya-section pt-32 pb-24">
@@ -35,13 +32,6 @@ export const HeroAlmanya = () => {
               >
                 {t('almanya.hero.cta.primary')}
                 <ArrowRight className="w-5 h-5" />
-              </button>
-              <button 
-                onClick={scrollToCases} 
-                className="almanya-btn-secondary inline-flex items-center gap-2 justify-center"
-              >
-                <Play className="w-4 h-4" />
-                {t('almanya.hero.cta.secondary')}
               </button>
             </div>
 
