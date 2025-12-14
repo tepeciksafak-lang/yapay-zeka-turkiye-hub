@@ -1,8 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { RouteKey, getHreflangUrls } from "@/lib/routeMappings";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { DOMAIN_CONFIG, getDomainForLanguage, type SupportedLanguage } from "@/utils/domainRedirect";
 
 interface SEOProps {
   title: string;
@@ -16,31 +14,20 @@ interface SEOProps {
 
 const SEO = ({ title, description, image, url, type = "website", routeKey, params }: SEOProps) => {
   const location = useLocation();
-  const { currentLanguage } = useLanguage();
   
-  // Dynamic site title and URL based on language/domain
-  const siteTitle = currentLanguage === 'de' ? 'KI Automatisieren' : 'Pratik Yapay Zeka';
+  const siteTitle = 'Pratik Yapay Zeka';
   const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
   const defaultImage = "/og-homepage.jpg";
-  const siteUrl = getDomainForLanguage(currentLanguage as SupportedLanguage);
+  const siteUrl = 'https://yapayzekapratik.com';
   
-  // Check if page is German or English - add noindex
-  const shouldNoIndex = location.pathname.startsWith('/de') || location.pathname.startsWith('/en');
-  
-  // Generate hreflang URLs with correct domains
+  // Generate hreflang URLs
   const generateHreflangUrls = () => {
     if (!routeKey) return null;
-    
-    const baseHreflangs = getHreflangUrls(routeKey, params);
-    return {
-      tr: baseHreflangs.tr.replace('yapayzekapratik.com', DOMAIN_CONFIG.tr),
-      de: baseHreflangs.de.replace('yapayzekapratik.com', DOMAIN_CONFIG.de),
-      'x-default': baseHreflangs['x-default'].replace('yapayzekapratik.com', DOMAIN_CONFIG.tr)
-    };
+    return getHreflangUrls(routeKey, params);
   };
   
   const hreflangUrls = generateHreflangUrls();
-  const canonicalUrl = url || (routeKey && hreflangUrls ? hreflangUrls[currentLanguage as keyof typeof hreflangUrls] : `${siteUrl}${location.pathname}`);
+  const canonicalUrl = url || (routeKey && hreflangUrls ? hreflangUrls['tr'] : `${siteUrl}${location.pathname}`);
   
   return (
     <Helmet>
@@ -68,13 +55,12 @@ const SEO = ({ title, description, image, url, type = "website", routeKey, param
       {hreflangUrls && (
         <>
           <link rel="alternate" hrefLang="tr" href={hreflangUrls.tr} />
-          <link rel="alternate" hrefLang="de" href={hreflangUrls.de} />
           <link rel="alternate" hrefLang="x-default" href={hreflangUrls['x-default']} />
         </>
       )}
       
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="robots" content={shouldNoIndex ? "noindex, nofollow" : "index, follow"} />
+      <meta name="robots" content="index, follow" />
       
       {/* Structured Data - Organization */}
       <script type="application/ld+json">

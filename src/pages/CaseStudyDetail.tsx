@@ -5,8 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
-import { ArrowRight, ArrowLeft, ExternalLink } from "lucide-react";
-import { getCaseStudyBySlug, getAdjacentCaseStudies, getLocalizedCaseStudy } from "@/data/caseStudiesData";
+import { ArrowRight, ArrowLeft } from "lucide-react";
+import { getAdjacentCaseStudies, getLocalizedCaseStudy } from "@/data/caseStudiesData";
 import { useModal } from "@/contexts/ModalContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getLocalizedRoute } from "@/lib/routeMappings";
@@ -14,16 +14,16 @@ import { getLocalizedRoute } from "@/lib/routeMappings";
 const CaseStudyDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { openQuickAnalysis } = useModal();
-  const { t, currentLanguage } = useLanguage();
+  const { t } = useLanguage();
   
   if (!slug) {
-    return <Navigate to={getLocalizedRoute(currentLanguage, 'cases')} replace />;
+    return <Navigate to={getLocalizedRoute('tr', 'cases')} replace />;
   }
 
-  const caseStudy = getLocalizedCaseStudy(slug, currentLanguage as 'tr' | 'de');
+  const caseStudy = getLocalizedCaseStudy(slug, 'tr');
   
   if (!caseStudy) {
-    return <Navigate to={getLocalizedRoute(currentLanguage, 'cases')} replace />;
+    return <Navigate to={getLocalizedRoute('tr', 'cases')} replace />;
   }
 
   const { prev, next } = getAdjacentCaseStudies(slug);
@@ -39,9 +39,9 @@ const CaseStudyDetail = () => {
         params={{ slug: caseStudy.slug }}
       />
       <BreadcrumbSchema items={[
-        { name: t('cases.breadcrumb.home'), url: `https://pratikyz.com/${currentLanguage}` },
-        { name: t('cases.breadcrumb.cases'), url: `https://pratikyz.com/${currentLanguage}/${currentLanguage === 'de' ? 'fallstudien' : currentLanguage === 'en' ? 'case-studies' : 'vaka-calismalari'}` },
-        { name: caseStudy.baslik, url: `https://pratikyz.com/${currentLanguage}/${currentLanguage === 'de' ? 'fallstudien' : currentLanguage === 'en' ? 'case-studies' : 'vaka-calismalari'}/${caseStudy.slug}` }
+        { name: t('cases.breadcrumb.home'), url: 'https://yapayzekapratik.com/tr' },
+        { name: t('cases.breadcrumb.cases'), url: 'https://yapayzekapratik.com/tr/vaka-calismalari' },
+        { name: caseStudy.baslik, url: `https://yapayzekapratik.com/tr/vaka-calismalari/${caseStudy.slug}` }
       ]} />
 
       {/* Structured Data for Case Study */}
@@ -63,12 +63,12 @@ const CaseStudyDetail = () => {
             "name": "Pratik YZ",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://pratikyz.com/logo.png"
+              "url": "https://yapayzekapratik.com/logo.png"
             }
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://pratikyz.com/tr/vaka-calismalari/${caseStudy.slug}`
+            "@id": `https://yapayzekapratik.com/tr/vaka-calismalari/${caseStudy.slug}`
           }
         })}
       </script>
@@ -81,7 +81,7 @@ const CaseStudyDetail = () => {
       }}>
         <div className="container mx-auto px-4 relative py-12 lg:py-16">
           <div className="max-w-4xl mx-auto">
-            <Link to={getLocalizedRoute(currentLanguage, 'cases')} className="inline-flex items-center text-lime-400 hover:text-lime-300 mb-6 transition-colors">
+            <Link to={getLocalizedRoute('tr', 'cases')} className="inline-flex items-center text-lime-400 hover:text-lime-300 mb-6 transition-colors">
               <ArrowLeft className="mr-2 h-4 w-4" />
               {t('cases.back.link')}
             </Link>
@@ -245,7 +245,7 @@ const CaseStudyDetail = () => {
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-12">
               {prev ? (
                 <Button asChild variant="outline" className="w-full sm:w-auto border-lime-400 text-lime-400 hover:bg-lime-400/10">
-                  <Link to={getLocalizedRoute(currentLanguage, 'case-detail', { slug: prev.slug })}>
+                  <Link to={getLocalizedRoute('tr', 'case-detail', { slug: prev.slug })}>
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     {prev.baslik}
                   </Link>
@@ -253,14 +253,14 @@ const CaseStudyDetail = () => {
               ) : <div className="w-full sm:w-auto" />}
               
               <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800">
-                <Link to={getLocalizedRoute(currentLanguage, 'cases')}>
+                <Link to={getLocalizedRoute('tr', 'cases')}>
                   {t('cases.nav.all')}
                 </Link>
               </Button>
               
               {next ? (
                 <Button asChild variant="outline" className="w-full sm:w-auto border-lime-400 text-lime-400 hover:bg-lime-400/10">
-                  <Link to={getLocalizedRoute(currentLanguage, 'case-detail', { slug: next.slug })}>
+                  <Link to={getLocalizedRoute('tr', 'case-detail', { slug: next.slug })}>
                     {next.baslik}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
