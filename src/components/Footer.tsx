@@ -3,45 +3,25 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useModal } from "@/contexts/ModalContext";
 import { getLocalizedRoute, type RouteKey } from "@/lib/routeMappings";
-import { cn } from "@/lib/utils";
 
 const Footer = () => {
-  const { t, currentLanguage } = useLanguage();
+  const { t } = useLanguage();
   const { openQuickAnalysis } = useModal();
   
   const getLocalizedPath = (routeKey: RouteKey) => {
-    return getLocalizedRoute(currentLanguage, routeKey);
+    return getLocalizedRoute('tr', routeKey);
   };
 
-  // Sprachspezifische Social-Media-Links
   const socialLinks = {
-    de: {
-      youtube: 'https://www.youtube.com/@KI-Automatisieren',
-      tiktok: 'https://www.tiktok.com/@ki_automatisieren',
-      instagram: 'https://www.instagram.com/stautomatisierung/',
-    },
-    tr: {
-      youtube: 'https://www.youtube.com/@Pratikyapayzeka',
-      tiktok: 'https://www.tiktok.com/@pratikyapayzeka',
-      instagram: 'https://www.instagram.com/pratikyapayzeka',
-    },
-    en: {
-      youtube: 'https://www.youtube.com/@Pratikyapayzeka',
-      tiktok: 'https://www.tiktok.com/@pratikyapayzeka',
-      instagram: 'https://www.instagram.com/pratikyapayzeka',
-    }
+    youtube: 'https://www.youtube.com/@Pratikyapayzeka',
+    tiktok: 'https://www.tiktok.com/@pratikyapayzeka',
+    instagram: 'https://www.instagram.com/pratikyapayzeka',
   };
-
-  // Aktuelle Social-Links basierend auf Sprache
-  const currentSocialLinks = socialLinks[currentLanguage as keyof typeof socialLinks] || socialLinks.tr;
 
   return (
     <footer className="border-t border-border bg-bg-2">
       <div className="container mx-auto px-4 py-12 lg:px-6">
-        <div className={cn(
-          "grid gap-8",
-          currentLanguage === 'de' ? "md:grid-cols-2 lg:grid-cols-5" : "md:grid-cols-2 lg:grid-cols-4"
-        )}>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link to={getLocalizedPath('home')} className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-lg bg-card border border-border flex items-center justify-center">
@@ -79,40 +59,36 @@ const Footer = () => {
             </ul>
           </div>
 
-          {(currentLanguage === 'de' || currentLanguage === 'tr') && (
-            <div className="space-y-4">
-              <h3 className="text-sm font-semibold text-text-hi">
-                {currentLanguage === 'de' ? 'Dienstleistungen' : 'Hizmetler'}
-              </h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link to={getLocalizedRoute(currentLanguage, 'solution-leadgen-ki')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    {currentLanguage === 'de' ? 'KI Leadgenerierung' : 'Yapay Zeka Lead Üretimi'}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={getLocalizedRoute(currentLanguage, 'solution-marketing')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    {currentLanguage === 'de' ? 'Marketing Automatisierung' : 'Pazarlama Otomasyonu'}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={getLocalizedRoute(currentLanguage, 'solution-vertrieb')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    {currentLanguage === 'de' ? 'Vertriebsautomatisierung' : 'Satış Otomasyonu'}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={getLocalizedRoute(currentLanguage, 'solution-crm')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    {currentLanguage === 'de' ? 'CRM Automatisierung' : 'CRM Otomasyonu'}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={getLocalizedRoute(currentLanguage, 'solution-kundenservice')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
-                    {currentLanguage === 'de' ? 'Kundenservice Automatisierung' : 'Müşteri Hizmeti Otomasyonu'}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          )}
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-text-hi">Hizmetler</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to={getLocalizedRoute('tr', 'solution-leadgen-ki')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Yapay Zeka Lead Üretimi
+                </Link>
+              </li>
+              <li>
+                <Link to={getLocalizedRoute('tr', 'solution-marketing')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Pazarlama Otomasyonu
+                </Link>
+              </li>
+              <li>
+                <Link to={getLocalizedRoute('tr', 'solution-vertrieb')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Satış Otomasyonu
+                </Link>
+              </li>
+              <li>
+                <Link to={getLocalizedRoute('tr', 'solution-crm')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  CRM Otomasyonu
+                </Link>
+              </li>
+              <li>
+                <Link to={getLocalizedRoute('tr', 'solution-kundenservice')} className="text-text-muted hover:text-lime-400 transition-colors lime-underline">
+                  Müşteri Hizmeti Otomasyonu
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-text-hi">{t('footer.contact.title')}</h3>
@@ -135,7 +111,7 @@ const Footer = () => {
             </ul>
             <div className="flex space-x-3 pt-2">
               <a 
-                href={currentSocialLinks.youtube} 
+                href={socialLinks.youtube} 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted hover:text-lime-400 transition-colors"
@@ -146,7 +122,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href={currentSocialLinks.tiktok} 
+                href={socialLinks.tiktok} 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted hover:text-lime-400 transition-colors"
@@ -157,7 +133,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href={currentSocialLinks.instagram} 
+                href={socialLinks.instagram} 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted hover:text-lime-400 transition-colors"
@@ -169,16 +145,17 @@ const Footer = () => {
               </a>
             </div>
           </div>
+        </div>
 
+        <div className="mt-8 pt-8 border-t border-border">
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-text-hi">{t('footer.contact.title')}</h3>
-            <div className="space-y-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-text-muted">
                 {t('footer.contact.text')}
               </p>
               <Button 
                 variant="lime" 
-                className="w-full hover-glow"
+                className="hover-glow"
                 onClick={openQuickAnalysis}
               >
                 {t('footer.cta.button')}

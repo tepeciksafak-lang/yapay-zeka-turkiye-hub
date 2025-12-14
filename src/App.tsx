@@ -6,10 +6,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense, useEffect } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
-import { ModalProvider, useModal } from "./contexts/ModalContext";
-import { QuickAnalysisModal } from "./components/QuickAnalysisModal";
+import { ModalProvider } from "./contexts/ModalContext";
 import { useAnalytics } from "./hooks/useAnalytics";
-import { checkAndRedirectDomain } from "./utils/domainRedirect";
 import { LanguageWrapper } from "./components/LanguageWrapper";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -27,17 +25,10 @@ const Hakkimizda = lazy(() => import("./pages/Hakkimizda"));
 const GizlilikPolitikasi = lazy(() => import("./pages/GizlilikPolitikasi"));
 const KullanimKosullari = lazy(() => import("./pages/KullanimKosullari"));
 const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
-const WebsiteIn3Days = lazy(() => import("./pages/WebsiteIn3Days"));
-const Website3DaysDanke = lazy(() => import("./pages/Website3DaysDanke"));
 const AlmanyaExport = lazy(() => import("./pages/AlmanyaExport"));
 
-// Solution pages - Direct import for better reliability - 2025-01-20T15:00:00Z
+// Turkish Solution pages
 import {
-  LeadGenerationKI,
-  VertriebsAutomatisierung,
-  MarketingAutomatisierung,
-  CRMProzessAutomatisierung,
-  KundenserviceAutomatisierung,
   LeadGenerationKI_TR,
   VertriebsAutomatisierung_TR,
   MarketingAutomatisierung_TR,
@@ -52,208 +43,16 @@ const PageLoader = () => (
   </div>
 );
 
-
 const queryClient = new QueryClient();
 
 // Component to handle routes  
 const AppWithModal = () => {
-  
   return (
     <>
       <div className="flex min-h-screen flex-col">
         <Routes>
           {/* Root route - Redirect to Turkish */}
           <Route path="/" element={<Navigate to="/tr" replace />} />
-          
-          {/* German Routes */}
-          <Route path="/de" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Index />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/losungen" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <Solutions />
-                </Suspense>
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/fallstudien" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <VakaCalismalari />
-                </Suspense>
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/fallstudien/:slug" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <CaseStudyDetail />
-                </Suspense>
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/kostenlose-inhalte" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <UcretsizIcerikler />
-                </Suspense>
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/blog" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <Blog />
-                </Suspense>
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/blog/:slug" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <BlogPost />
-                </Suspense>
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/datenschutz" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <GizlilikPolitikasi />
-                </Suspense>
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/nutzungsbedingungen" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <KullanimKosullari />
-                </Suspense>
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/website-in-3-tagen" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Suspense fallback={<PageLoader />}>
-                  <WebsiteIn3Days />
-                </Suspense>
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/website-in-3-tagen/danke" element={
-            <LanguageWrapper>
-              <Suspense fallback={<PageLoader />}>
-                <Website3DaysDanke />
-              </Suspense>
-            </LanguageWrapper>
-          } />
-          
-          {/* Solution Landing Pages */}
-          <Route path="/de/losungen/leadgenerierung-ki" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <LeadGenerationKI />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/losungen/vertriebsautomatisierung" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <VertriebsAutomatisierung />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/losungen/marketing-automatisierung" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <MarketingAutomatisierung />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/losungen/crm-prozessautomatisierung" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <CRMProzessAutomatisierung />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          <Route path="/de/losungen/kundenservice-automatisierung" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <KundenserviceAutomatisierung />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          
-          {/* PARKED: English Routes - To reactivate, uncomment this block
-          <Route path="/en" element={
-            <LanguageWrapper>
-              <Navigation />
-              <main className="flex-1">
-                <Index />
-              </main>
-              <Footer />
-            </LanguageWrapper>
-          } />
-          */}
           
           {/* Turkish Routes */}
           <Route path="/tr" element={
@@ -451,15 +250,8 @@ const AppWithModal = () => {
 };
 
 function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
-  useAnalytics(); // Initialize analytics tracking
+  useAnalytics();
   return <>{children}</>;
-}
-
-function DomainRedirectCheck() {
-  useEffect(() => {
-    checkAndRedirectDomain();
-  }, []);
-  return null;
 }
 
 function App() {
@@ -470,7 +262,6 @@ function App() {
           <LanguageProvider>
             <TooltipProvider>
               <AnalyticsWrapper>
-                <DomainRedirectCheck />
                 <ModalProvider>
                   <AppWithModal />
                 </ModalProvider>

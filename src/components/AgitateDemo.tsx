@@ -3,47 +3,9 @@ import { Settings, Users, Calendar } from 'lucide-react';
 import agitateAutomation from '../assets/agitate-diy.webp';
 import agitateAnalytics from '../assets/agitate-inhouse.webp';
 import agitateSales from '../assets/agitate-agency.webp';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AgitateDemo() {
-  const { currentLanguage, t } = useLanguage();
-
-  const features = currentLanguage === 'de' ? [
-    {
-      id: 1,
-      icon: Settings,
-      title: t('agitate.option1.title'),
-      bullets: [
-        t('agitate.option1.description')
-      ],
-      image: agitateAutomation,
-      imageAlt: 'DIY KI-Integration - Eigenständige Implementierung von künstlicher Intelligenz im Unternehmen'
-    },
-    {
-      id: 2,
-      icon: Users,
-      title: t('agitate.option2.title'),
-      bullets: [
-        t('agitate.option2.description1'),
-        t('agitate.option2.description2'),
-        t('agitate.option2.description3')
-      ],
-      image: agitateAnalytics,
-      imageAlt: 'Internes KI-Team aufbauen - Mitarbeiter für künstliche Intelligenz Projekte rekrutieren'
-    },
-    {
-      id: 3,
-      icon: Calendar,
-      title: t('agitate.option3.title'),
-      bullets: [
-        t('agitate.option3.description1'),
-        t('agitate.option3.description2'),
-        t('agitate.option3.description3')
-      ],
-      image: agitateSales,
-      imageAlt: 'KI-Implementierung aufschieben - Risiken des Abwartens bei künstlicher Intelligenz'
-    }
-  ] : [
+  const features = [
     {
       id: 1,
       icon: Settings,
@@ -85,10 +47,10 @@ export default function AgitateDemo() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center mb-12">
           <h2 className="headline text-3xl md:text-4xl tracking-tight text-text-hi mb-4">
-            {currentLanguage === 'de' ? t('agitate.title') : 'Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?'}
+            Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?
           </h2>
           <p className="text-lg md:text-xl text-text-med leading-relaxed">
-            {currentLanguage === 'de' ? t('agitate.subtitle') : 'Farklı yöntemler var… ama çoğu ayakkabınızın içindeki taş gibi: her adımda rahatsız eder.'}
+            Farklı yöntemler var… ama çoğu ayakkabınızın içindeki taş gibi: her adımda rahatsız eder.
           </p>
         </div>
 

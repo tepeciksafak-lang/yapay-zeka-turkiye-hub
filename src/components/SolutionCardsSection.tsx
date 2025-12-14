@@ -2,62 +2,18 @@
 
 import { GlowCard } from "./ui/spotlight-card";
 import { PhoneCall, Megaphone, Database, Handshake, FlaskConical, ArrowRight } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 
 export default function SolutionCardsSection() {
-  const { currentLanguage, t } = useLanguage();
-
   const solutionLinks: Record<number, string> = {
-    1: currentLanguage === 'de' ? '/de/losungen/leadgenerierung-ki' : '/tr/cozumler/lead-generation',
-    2: currentLanguage === 'de' ? '/de/losungen/marketing-automatisierung' : '/tr/cozumler/marketing-automation',
-    3: currentLanguage === 'de' ? '/de/losungen/vertriebsautomatisierung' : '/tr/cozumler/sales-automation',
-    4: currentLanguage === 'de' ? '/de/losungen/kundenservice-automatisierung' : '/tr/cozumler/customer-service',
-    5: currentLanguage === 'de' ? '/de/losungen/crm-prozessautomatisierung' : '/tr/cozumler/crm-automation',
+    1: '/tr/cozumler/lead-generation',
+    2: '/tr/cozumler/pazarlama-otomasyonu',
+    3: '/tr/cozumler/satis-otomasyonu',
+    4: '/tr/cozumler/musteri-hizmeti-otomasyonu',
+    5: '/tr/cozumler/crm-otomasyonu',
   };
 
-  const solutionCards = currentLanguage === 'de' ? [
-    {
-      id: 1,
-      title: t('timeline.step1.title'),
-      content: t('timeline.step1.description'),
-      category: "Lead Generation",
-      icon: PhoneCall,
-      glowColor: "lime" as const,
-    },
-    {
-      id: 2,
-      title: t('timeline.step2.title'),
-      content: t('timeline.step2.description'),
-      category: "Marketing",
-      icon: Megaphone,
-      glowColor: "lime" as const,
-    },
-    {
-      id: 3,
-      title: t('timeline.step3.title'),
-      content: t('timeline.step3.description'),
-      category: "Sales & CRM",
-      icon: Database,
-      glowColor: "lime" as const,
-    },
-    {
-      id: 4,
-      title: t('timeline.step4.title'),
-      content: t('timeline.step4.description'),
-      category: "Customer Success",
-      icon: Handshake,
-      glowColor: "lime" as const,
-    },
-    {
-      id: 5,
-      title: t('timeline.step5.title'),
-      content: t('timeline.step5.description'),
-      category: "Conversion Optimization",
-      icon: FlaskConical,
-      glowColor: "lime" as const,
-    }
-  ] : [
+  const solutionCards = [
     {
       id: 1,
       title: "Lead Generation",
@@ -125,7 +81,7 @@ export default function SolutionCardsSection() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center mb-12">
           <h2 className="headline text-3xl md:text-4xl tracking-tight text-foreground mb-6">
-            {currentLanguage === 'de' ? t('timeline.title') : 'Sıfırdan yeni lead kazanımından, sadık müşteri yaratmaya kadar uçtan uca otomasyon'}
+            Sıfırdan yeni lead kazanımından, sadık müşteri yaratmaya kadar uçtan uca otomasyon
           </h2>
         </div>
 
@@ -156,7 +112,7 @@ export default function SolutionCardsSection() {
                         className="inline-flex items-center justify-center gap-2 text-sm font-medium hover:underline"
                         style={{ color: '#A3E635' }}
                       >
-                        {currentLanguage === 'de' ? 'Mehr erfahren' : 'Daha fazla bilgi'}
+                        Daha fazla bilgi
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
@@ -191,7 +147,7 @@ export default function SolutionCardsSection() {
                         className="inline-flex items-center justify-center gap-2 text-sm font-medium hover:underline"
                         style={{ color: '#A3E635' }}
                       >
-                        {currentLanguage === 'de' ? 'Mehr erfahren' : 'Daha fazla bilgi'}
+                        Daha fazla bilgi
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>

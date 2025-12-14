@@ -1,11 +1,9 @@
 import { createContext, useContext, ReactNode, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import deTranslations from '../../locales/de';
 import trTranslations from '../../locales/tr';
-import enTranslations from '../../locales/en';
 import { getRouteKeyFromPath, getLocalizedRoute, extractParamsFromPath } from '@/lib/routeMappings';
 
-type Language = 'de' | 'tr' | 'en';
+type Language = 'tr';
 
 interface LanguageContextType {
   currentLanguage: Language;
@@ -15,64 +13,36 @@ interface LanguageContextType {
 }
 
 const translations = {
-  de: deTranslations,
-  tr: trTranslations,
-  en: enTranslations
+  tr: trTranslations
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(() => {
-    // Initial language from URL
-    const pathLang = window.location.pathname.split('/')[1] as Language;
-    if (['de', 'tr'].includes(pathLang)) return pathLang;
-    return 'tr';
-  });
+  const [currentLanguage] = useState<Language>('tr');
   const navigate = useNavigate();
   
   const initializeLanguage = useCallback((lang: string | undefined) => {
-    const validLang = (lang as Language);
-    // ACTIVE LANGUAGES: ['de', 'tr'] | PARKED: 'en'
-    if (validLang && ['de', 'tr'].includes(validLang)) {
-      setCurrentLanguage(validLang);
-    } else {
-      setCurrentLanguage('tr'); // Default to Turkish
-    }
+    // Always Turkish - no action needed
   }, []);
   
   const setLanguage = (newLang: Language) => {
+    // Always Turkish - redirect to Turkish version
     const currentPath = window.location.pathname;
-    const currentLang = currentPath.split('/')[1] as Language;
-    
-    // Find the route key of the current page
-    const routeKey = getRouteKeyFromPath(currentPath, currentLang);
+    const routeKey = getRouteKeyFromPath(currentPath, 'tr');
     
     if (routeKey) {
-      // Extract parameters using the helper function
-      const params = extractParamsFromPath(currentPath, currentLang, routeKey);
-      
-      // Generate correct localized URL
-      const newPath = getLocalizedRoute(newLang, routeKey, params || {});
+      const params = extractParamsFromPath(currentPath, 'tr', routeKey);
+      const newPath = getLocalizedRoute('tr', routeKey, params || {});
       navigate(newPath);
     } else {
-      // Fallback: Simple replacement for unknown routes
       const pathWithoutLang = currentPath.replace(/^\/(de|tr|en)/, '') || '/';
-      navigate(`/${newLang}${pathWithoutLang}`);
+      navigate(`/tr${pathWithoutLang}`);
     }
-    
-    setCurrentLanguage(newLang);
   };
 
   const t = (key: string): string => {
-    const tryGet = (lang: Language) => translations[lang]?.[key];
-    return (
-      tryGet(currentLanguage) ??
-      tryGet('de') ??
-      tryGet('en') ??
-      tryGet('tr') ??
-      key
-    );
+    return translations.tr?.[key] ?? key;
   };
 
   return (
