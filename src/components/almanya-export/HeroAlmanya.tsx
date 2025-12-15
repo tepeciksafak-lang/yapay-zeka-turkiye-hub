@@ -1,12 +1,17 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useModal } from '@/contexts/ModalContext';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import safakImage from '@/assets/safak-tepecik-almanya.jpeg';
 
 export const HeroAlmanya = () => {
   const { t } = useLanguage();
   const { openQuickAnalysis } = useModal();
 
+  const timelineItems = [
+    t('almanya.hero.timeline.week1'),
+    t('almanya.hero.timeline.week2'),
+    t('almanya.hero.timeline.week3'),
+  ];
 
   return (
     <section className="almanya-section pt-32 pb-24">
@@ -21,9 +26,19 @@ export const HeroAlmanya = () => {
               </span>
             </h1>
             
-            <p className="almanya-fade-in almanya-stagger-1 text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="almanya-fade-in almanya-stagger-1 text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
               {t('almanya.hero.subtitle')}
             </p>
+
+            {/* Micro Timeline */}
+            <div className="almanya-fade-in almanya-stagger-1 flex flex-col gap-2 mb-8">
+              {timelineItems.map((item, index) => (
+                <div key={index} className="flex items-center gap-2 text-sm text-foreground">
+                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
             
             <div className="almanya-fade-in almanya-stagger-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
               <button 
@@ -47,9 +62,15 @@ export const HeroAlmanya = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-3xl" />
               <img
                 src={safakImage}
-                alt="Şafak Tepecik - Almanya İhracat Uzmanı"
+                alt="Şafak Tepecik - Almanya İhracat + İkamet Uzmanı"
                 className="relative w-full max-w-md mx-auto lg:max-w-none rounded-2xl shadow-2xl border border-border/50"
               />
+              {/* Bio Badge */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 lg:left-4 lg:translate-x-0 bg-card/95 backdrop-blur-sm border border-border rounded-xl px-4 py-2 shadow-lg">
+                <p className="text-xs text-muted-foreground text-center lg:text-left">
+                  {t('almanya.hero.bio')}
+                </p>
+              </div>
             </div>
           </div>
         </div>

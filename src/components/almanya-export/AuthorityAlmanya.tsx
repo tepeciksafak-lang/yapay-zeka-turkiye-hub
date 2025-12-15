@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useModal } from '@/contexts/ModalContext';
-import { Quote, ArrowRight } from 'lucide-react';
+import { Quote, ArrowRight, CheckCircle } from 'lucide-react';
 import safakImage from '@/assets/safak-tepecik-almanya.jpeg';
 
 export const AuthorityAlmanya = () => {
@@ -27,7 +27,14 @@ export const AuthorityAlmanya = () => {
 
             {/* Content */}
             <div className="md:col-span-3">
-              <p className="text-lg text-muted-foreground mb-6">
+              {/* Credentials Badge */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Almanya Doğumlu</span>
+                <span className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">8+ Yıl B2B SaaS</span>
+                <span className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">%90+ Visa Başarı</span>
+              </div>
+
+              <p className="text-lg text-muted-foreground mb-4">
                 {t('almanya.authority.intro')}
               </p>
 
@@ -44,7 +51,7 @@ export const AuthorityAlmanya = () => {
 
               <button
                 onClick={openQuickAnalysis}
-                className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
               >
                 {t('almanya.authority.cta')}
                 <ArrowRight className="w-4 h-4" />
