@@ -45,7 +45,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-16 items-center justify-between">
-          <Link to={getLocalizedRoute('tr', 'home')} className="flex items-center space-x-3 group" aria-label="Homepage">
+          <Link to="/" className="flex items-center space-x-3 group" aria-label="Homepage">
             <div className="h-8 w-8 rounded-lg bg-card border border-border group-hover:border-lime-400/50 transition-all duration-300 flex items-center justify-center" aria-hidden="true">
             </div>
           </Link>
@@ -95,7 +95,7 @@ const Navigation = () => {
                 ))}
                 <DropdownMenuItem asChild>
                   <Link 
-                    to={getLocalizedRoute('tr', 'solutions')} 
+                    to="/cozumler" 
                     className="w-full cursor-pointer font-semibold hover:text-lime-400 transition-colors"
                   >
                     Tüm Çözümler →
@@ -116,7 +116,7 @@ const Navigation = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-card border-border">
                 <div className="mb-6 pt-2">
-                  <Link to={getLocalizedRoute('tr', 'home')} onClick={() => setIsOpen(false)}>
+                  <Link to="/" onClick={() => setIsOpen(false)}>
                     <div className="h-8 w-8 rounded-lg bg-card border border-border flex items-center justify-center" aria-hidden="true">
                     </div>
                   </Link>
