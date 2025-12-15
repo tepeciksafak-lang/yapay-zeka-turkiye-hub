@@ -25,7 +25,7 @@ export const FinalCTAAlmanya = () => {
             {t('almanya.finalcta.title')}
           </h2>
           
-          <p className="almanya-animate-on-scroll text-lg md:text-xl text-muted-foreground mb-6">
+          <p className="almanya-animate-on-scroll text-lg md:text-xl text-muted-foreground mb-8">
             {t('almanya.finalcta.text')}
           </p>
 
