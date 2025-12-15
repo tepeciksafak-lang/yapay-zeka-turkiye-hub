@@ -63,7 +63,7 @@ const Index = () => {
     }
   ];
 
-  const localizedCaseStudies = getLocalizedCaseStudies(currentLanguage as 'tr' | 'de');
+  const localizedCaseStudies = getLocalizedCaseStudies();
   
   const cases = localizedCaseStudies.map((cs) => {
     // Define logo widths

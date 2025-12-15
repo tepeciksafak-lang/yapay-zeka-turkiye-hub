@@ -20,7 +20,7 @@ const CaseStudyDetail = () => {
     return <Navigate to={getLocalizedRoute('tr', 'cases')} replace />;
   }
 
-  const caseStudy = getLocalizedCaseStudy(slug, 'tr');
+  const caseStudy = getLocalizedCaseStudy(slug);
   
   if (!caseStudy) {
     return <Navigate to={getLocalizedRoute('tr', 'cases')} replace />;

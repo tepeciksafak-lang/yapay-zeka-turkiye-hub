@@ -72,7 +72,7 @@ const VakaCalismalari = () => {
       {/* Connected Timeline */}
       <div data-timeline>
         <ConnectedTimeline 
-          caseStudies={getLocalizedCaseStudies(currentLanguage as 'tr' | 'de')} 
+          caseStudies={getLocalizedCaseStudies()} 
           selectedFilter={selectedFilter}
         />
       </div>
