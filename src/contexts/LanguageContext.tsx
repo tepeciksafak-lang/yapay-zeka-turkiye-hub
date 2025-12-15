@@ -1,7 +1,5 @@
 import { createContext, useContext, ReactNode, useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import trTranslations from '../../locales/tr';
-import { getRouteKeyFromPath, getLocalizedRoute, extractParamsFromPath } from '@/lib/routeMappings';
 
 type Language = 'tr';
 
@@ -20,25 +18,13 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [currentLanguage] = useState<Language>('tr');
-  const navigate = useNavigate();
   
-  const initializeLanguage = useCallback((lang: string | undefined) => {
+  const initializeLanguage = useCallback((_lang: string | undefined) => {
     // Always Turkish - no action needed
   }, []);
   
-  const setLanguage = (newLang: Language) => {
-    // Always Turkish - redirect to Turkish version
-    const currentPath = window.location.pathname;
-    const routeKey = getRouteKeyFromPath(currentPath, 'tr');
-    
-    if (routeKey) {
-      const params = extractParamsFromPath(currentPath, 'tr', routeKey);
-      const newPath = getLocalizedRoute('tr', routeKey, params || {});
-      navigate(newPath);
-    } else {
-      const pathWithoutLang = currentPath.replace(/^\/(de|tr|en)/, '') || '/';
-      navigate(`/tr${pathWithoutLang}`);
-    }
+  const setLanguage = (_newLang: Language) => {
+    // Always Turkish - no action needed
   };
 
   const t = (key: string): string => {

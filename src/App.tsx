@@ -2,9 +2,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { ModalProvider } from "./contexts/ModalContext";
 import { useAnalytics } from "./hooks/useAnalytics";
@@ -45,17 +45,21 @@ const PageLoader = () => (
 
 const queryClient = new QueryClient();
 
+// Component to handle legacy /tr redirects
+const LegacyRedirect = () => {
+  const location = useLocation();
+  const newPath = location.pathname.replace(/^\/tr/, '') || '/';
+  return <Navigate to={newPath + location.search + location.hash} replace />;
+};
+
 // Component to handle routes  
 const AppWithModal = () => {
   return (
     <>
       <div className="flex min-h-screen flex-col">
         <Routes>
-          {/* Root route - Redirect to Turkish */}
-          <Route path="/" element={<Navigate to="/tr" replace />} />
-          
-          {/* Turkish Routes */}
-          <Route path="/tr" element={
+          {/* Homepage */}
+          <Route path="/" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -65,7 +69,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/cozumler" element={
+          <Route path="/cozumler" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -77,7 +81,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/vaka-calismalari" element={
+          <Route path="/vaka-calismalari" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -89,7 +93,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/vaka-calismalari/:slug" element={
+          <Route path="/vaka-calismalari/:slug" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -101,7 +105,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/ucretsiz-icerikler" element={
+          <Route path="/ucretsiz-icerikler" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -113,7 +117,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/test-blog-creation" element={
+          <Route path="/test-blog-creation" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -125,7 +129,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/blog" element={
+          <Route path="/blog" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -137,7 +141,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/blog/:slug" element={
+          <Route path="/blog/:slug" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -149,7 +153,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/hakkimizda" element={
+          <Route path="/hakkimizda" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -162,7 +166,7 @@ const AppWithModal = () => {
           } />
           
           {/* Legal Routes */}
-          <Route path="/tr/gizlilik" element={
+          <Route path="/gizlilik" element={
             <LanguageWrapper>
               <Suspense fallback={<PageLoader />}>
                 <GizlilikPolitikasi />
@@ -170,7 +174,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/kullanim-kosullari" element={
+          <Route path="/kullanim-kosullari" element={
             <LanguageWrapper>
               <Suspense fallback={<PageLoader />}>
                 <KullanimKosullari />
@@ -178,8 +182,8 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          {/* Turkish Solution Pages */}
-          <Route path="/tr/cozumler/lead-generation" element={
+          {/* Solution Pages */}
+          <Route path="/cozumler/lead-generation" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -189,7 +193,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/cozumler/satis-otomasyonu" element={
+          <Route path="/cozumler/satis-otomasyonu" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -199,7 +203,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/cozumler/pazarlama-otomasyonu" element={
+          <Route path="/cozumler/pazarlama-otomasyonu" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -209,7 +213,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/cozumler/crm-otomasyonu" element={
+          <Route path="/cozumler/crm-otomasyonu" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -219,7 +223,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/cozumler/musteri-hizmeti-otomasyonu" element={
+          <Route path="/cozumler/musteri-hizmeti-otomasyonu" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -229,7 +233,7 @@ const AppWithModal = () => {
             </LanguageWrapper>
           } />
           
-          <Route path="/tr/cozumler/almanya-ihracat" element={
+          <Route path="/cozumler/almanya-ihracat" element={
             <LanguageWrapper>
               <Navigation />
               <main className="flex-1">
@@ -240,6 +244,10 @@ const AppWithModal = () => {
               <Footer />
             </LanguageWrapper>
           } />
+
+          {/* Legacy /tr/* redirects for SEO */}
+          <Route path="/tr/*" element={<LegacyRedirect />} />
+          <Route path="/tr" element={<Navigate to="/" replace />} />
 
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
