@@ -1,16 +1,6 @@
-# Multi-Domain Language Redirects
-# Turkish URLs should be on yapayzekapratik.com
-https://ki-automatisieren.de/tr/* https://yapayzekapratik.com/tr/:splat 301!
-https://ki-automatisieren.de/tr https://yapayzekapratik.com/tr 301!
+# Legacy /tr/* Redirects zu Root
+/tr/* /:splat 301!
+/tr / 301!
 
-# German URLs should be on ki-automatisieren.de  
-https://yapayzekapratik.com/de/* https://ki-automatisieren.de/de/:splat 301!
-https://yapayzekapratik.com/de https://ki-automatisieren.de/de 301!
-
-# Root redirects to default language
-https://ki-automatisieren.de/ https://ki-automatisieren.de/de 302
-https://yapayzekapratik.com/ https://yapayzekapratik.com/tr 302
-
-# Sitemap & Robots
-/sitemap.xml /functions/v1/sitemap 301
-/robots.txt /robots.txt 200
+# SPA Fallback
+/* /index.html 200

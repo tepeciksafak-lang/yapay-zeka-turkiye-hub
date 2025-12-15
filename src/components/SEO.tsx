@@ -92,7 +92,7 @@ const SEO = ({ title, description, image, url, type = "website", routeKey, param
             "@type": "SearchAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": `${siteUrl}/tr/blog?search={search_term_string}`
+              "urlTemplate": `${siteUrl}/blog?search={search_term_string}`
             },
             "query-input": "required name=search_term_string"
           }
