@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Factory, Monitor, CalendarCheck } from 'lucide-react';
+import { Factory, Monitor, CalendarCheck, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const SocialProofAlmanya = () => {
   const { t } = useLanguage();
@@ -9,18 +10,21 @@ export const SocialProofAlmanya = () => {
       icon: Factory,
       title: t('almanya.socialproof.case1.title'),
       description: t('almanya.socialproof.case1.description'),
+      metric: t('almanya.socialproof.case1.metric'),
       logo: '/logos/cemkimsan.avif',
     },
     {
       icon: Monitor,
       title: t('almanya.socialproof.case2.title'),
       description: t('almanya.socialproof.case2.description'),
+      metric: t('almanya.socialproof.case2.metric'),
       logo: '/logos/erpa.avif',
     },
     {
       icon: CalendarCheck,
       title: t('almanya.socialproof.case3.title'),
       description: t('almanya.socialproof.case3.description'),
+      metric: t('almanya.socialproof.case3.metric'),
       logo: null,
     },
   ];
@@ -33,7 +37,7 @@ export const SocialProofAlmanya = () => {
             {t('almanya.socialproof.title')}
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {cases.map((caseItem, index) => (
               <div 
                 key={index}
@@ -50,6 +54,11 @@ export const SocialProofAlmanya = () => {
                   {caseItem.description}
                 </p>
 
+                {/* Metric Badge */}
+                <div className="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full inline-block mb-4">
+                  {caseItem.metric}
+                </div>
+
                 {caseItem.logo && (
                   <div className="pt-4 border-t border-border">
                     <img 
@@ -61,6 +70,16 @@ export const SocialProofAlmanya = () => {
                 )}
               </div>
             ))}
+          </div>
+
+          <div className="almanya-animate-on-scroll text-center">
+            <Link
+              to="/vaka-calismalari"
+              className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+            >
+              {t('almanya.socialproof.cta')}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>

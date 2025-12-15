@@ -13,6 +13,11 @@ export const FAQAlmanya = () => {
     { question: t('almanya.faq.q1'), answer: t('almanya.faq.a1') },
     { question: t('almanya.faq.q2'), answer: t('almanya.faq.a2') },
     { question: t('almanya.faq.q3'), answer: t('almanya.faq.a3') },
+    { question: t('almanya.faq.q4'), answer: t('almanya.faq.a4') },
+    { question: t('almanya.faq.q5'), answer: t('almanya.faq.a5') },
+    { question: t('almanya.faq.q6'), answer: t('almanya.faq.a6') },
+    { question: t('almanya.faq.q7'), answer: t('almanya.faq.a7') },
+    { question: t('almanya.faq.q8'), answer: t('almanya.faq.a8') },
   ];
 
   return (

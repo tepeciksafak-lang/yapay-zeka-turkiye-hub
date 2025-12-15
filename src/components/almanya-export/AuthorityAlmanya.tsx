@@ -1,9 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Quote } from 'lucide-react';
+import { useModal } from '@/contexts/ModalContext';
+import { Quote, ArrowRight } from 'lucide-react';
 import safakImage from '@/assets/safak-tepecik-almanya.jpeg';
 
 export const AuthorityAlmanya = () => {
   const { t } = useLanguage();
+  const { openQuickAnalysis } = useModal();
 
   return (
     <section className="almanya-section bg-muted/30 py-20">
@@ -33,12 +35,20 @@ export const AuthorityAlmanya = () => {
                 {t('almanya.authority.text')}
               </p>
 
-              <div className="relative bg-primary/5 border border-primary/20 rounded-xl p-6">
+              <div className="relative bg-primary/5 border border-primary/20 rounded-xl p-6 mb-6">
                 <Quote className="absolute -top-3 -left-3 w-8 h-8 text-primary bg-card rounded-full p-1" />
                 <p className="text-foreground font-medium italic pl-4">
                   {t('almanya.authority.usp')}
                 </p>
               </div>
+
+              <button
+                onClick={openQuickAnalysis}
+                className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+              >
+                {t('almanya.authority.cta')}
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
           </div>
         </div>
