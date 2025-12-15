@@ -26,19 +26,6 @@ export const HeroAlmanya = () => {
               {t('almanya.hero.subtitle')}
             </p>
 
-            {/* Trust Box */}
-            <div className="almanya-fade-in almanya-stagger-1 bg-muted/30 border border-border rounded-xl p-6 mb-8 text-left">
-              <p className="text-lg font-semibold text-foreground mb-2">
-                {t('almanya.hero.trust.title')}
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                {t('almanya.hero.trust.text')}
-              </p>
-              <p className="text-sm text-muted-foreground/70">
-                {t('almanya.hero.signature')}
-              </p>
-            </div>
-            
             {/* CTA */}
             <div className="almanya-fade-in almanya-stagger-2 flex flex-col items-center lg:items-start gap-3">
               <button 
