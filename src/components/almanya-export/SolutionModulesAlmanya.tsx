@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Shield, Palette, Rocket, Globe, Bot, FileText, Video, PenTool, Mail, Users } from 'lucide-react';
+import { Shield, Palette, Rocket, Globe, Bot, FileText, Video, PenTool, Mail, Users, Home, Plane, Heart } from 'lucide-react';
 
 export const SolutionModulesAlmanya = () => {
   const { t } = useLanguage();
@@ -38,6 +38,19 @@ export const SolutionModulesAlmanya = () => {
         { icon: FileText, title: t('almanya.solution.module3.feature1.title'), description: t('almanya.solution.module3.feature1.description') },
         { icon: Users, title: t('almanya.solution.module3.feature2.title'), description: t('almanya.solution.module3.feature2.description') },
       ],
+    },
+    {
+      title: t('almanya.solution.module4.title'),
+      subtitle: t('almanya.solution.module4.subtitle'),
+      icon: Home,
+      color: 'text-amber-500',
+      bgColor: 'bg-amber-500/10',
+      features: [
+        { icon: FileText, title: t('almanya.solution.module4.feature1.title'), description: t('almanya.solution.module4.feature1.description') },
+        { icon: Plane, title: t('almanya.solution.module4.feature2.title'), description: t('almanya.solution.module4.feature2.description') },
+        { icon: Heart, title: t('almanya.solution.module4.feature3.title'), description: t('almanya.solution.module4.feature3.description') },
+      ],
+      result: t('almanya.solution.module4.result'),
     },
   ];
 

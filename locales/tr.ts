@@ -388,6 +388,10 @@ export default {
   'almanya.hero.cta.primary': 'ALMANYA POTANSİYEL ANALİZİ BAŞLAT',
   'almanya.hero.cta.secondary': 'Örnek Çalışmaları Gör',
   'almanya.hero.trust': 'Sadece Kurumsal Firmalar ve B2B Üreticiler İçin.',
+  'almanya.hero.timeline.week1': 'Hafta 1: +49 telefon, Almanca landing page, DSGVO uyum',
+  'almanya.hero.timeline.week2': 'Hafta 2: AI video, 500 karar verici listesi',
+  'almanya.hero.timeline.week3': 'Hafta 3: Outbound start, ilk toplantılar + visa planı',
+  'almanya.hero.bio': '8+ yıl DACH satış deneyimi • 50+ cross-border proje • §21 visa danışmanlığı',
 
   // Almanya Reality Check Section
   'almanya.realitycheck.title': 'Neden İhracat Departmanınız Almanya\'da Zorlanıyor?',
@@ -450,6 +454,7 @@ export default {
   'almanya.authority.intro': 'Ben bir yapay zeka botu değilim. Almanya\'da doğdum, o sistemin içinde büyüdüm.',
   'almanya.authority.text': 'Almanların neye "Evet" dediğini, neyden korktuğunu biliyorum. Türkiye\'deki üretim kaslarınızı, benim Almanya\'daki yerel ağım ve dijital istihbaratım ile birleştiriyoruz. Siz sadece üretin, bürokrasiyi ve satışı biz halledelim.',
   'almanya.authority.usp': '"Sizin için bir ajans değil, Almanya\'daki stratejik ortağınızım."',
+  'almanya.authority.cta': 'Şafak ile Tanış – 15 Dk Zoom',
 
   // Almanya Social Proof Section
   'almanya.socialproof.title': 'Başarı Hikayeleri',
@@ -477,10 +482,59 @@ export default {
   'almanya.faq.a2': 'Hayır. Dijital varlığınız Alman, faturanız Türk şirketi üzerinden olabilir. Önemli olan ilk intiba ve güveni sağlamaktır.',
   'almanya.faq.q3': 'Maliyet nedir?',
   'almanya.faq.a3': 'Almanya\'da fiziksel bir ofis kiralamanın ve bir personel çalıştırmanın maliyetinin 10\'da 1\'i.',
+  'almanya.faq.q4': '§21 visa garantisi var mı?',
+  'almanya.faq.a4': '%90+ başarı oranı ile çalışıyoruz. Ancak resmi onay, Alman makamlarının yetkisindedir. Biz business plan ve başvuru sürecini profesyonelce hazırlıyoruz.',
+  'almanya.faq.q5': 'Aile de gelebilir mi?',
+  'almanya.faq.a5': 'Evet, §21 ile aile birleşimi (Familiennachzug) mümkün. Eş ve çocuklar için de oturma izni başvurusu yapılabilir.',
+  'almanya.faq.q6': 'Hangi sektörlerde çalışıyorsunuz?',
+  'almanya.faq.a6': 'Üretim, teknoloji, kimya, makine ve B2B hizmet sektörlerinde uzmanız.',
+  'almanya.faq.q7': 'İlk sonuçlar ne zaman gelir?',
+  'almanya.faq.a7': '3. haftada ilk toplantılar takviminize düşmeye başlar. Visa süreci ise 3-6 ay arası sürebilir.',
+  'almanya.faq.q8': 'GDPR/DSGVO uyumu nasıl sağlanıyor?',
+  'almanya.faq.a8': 'Alman sunucular kullanıyoruz ve yasal danışmanlık ile tüm veri işleme süreçleri DSGVO uyumlu hale getiriliyor.',
 
   // Almanya Final CTA Section
   'almanya.finalcta.badge': 'Pazar Analizi (Ücretsiz)',
-  'almanya.finalcta.title': 'Almanya Potansiyelinizi Keşfedin',
+  'almanya.finalcta.title': 'Almanya\'da Satış + Yaşam Hayalinize Başlayın',
   'almanya.finalcta.text': 'Yatırım yapmadan önce, ürününüzün Almanya\'daki güncel talebini yapay zeka ile kontrol edelim.',
   'almanya.finalcta.button': 'ANALİZ RANDEVUSU AL',
+  'almanya.finalcta.benefit1': '✓ Pazar talep raporu',
+  'almanya.finalcta.benefit2': '✓ Rekabet analizi',
+  'almanya.finalcta.benefit3': '✓ 3 aylık yol haritası + visa planı',
+
+  // Almanya Reality Check - 4th barrier
+  'almanya.realitycheck.4.title': 'İkamet Engeli',
+  'almanya.realitycheck.4.description': 'Türkiye\'de sıkışmak – GmbH kurmadan visa reddi yüksek. Biz business plan hazırlıyor, §21 sürecini yönetiyoruz.',
+  'almanya.realitycheck.cta': 'Bu Engelleri Nasıl Aştığımızı Gör',
+  'almanya.realitycheck.stat': '%75 fuar kontağı 72 saat içinde takip edilmezse kayboluyor',
+
+  // Almanya Agitate - Additional
+  'almanya.agitate.why.4': 'İkamet Hayali Erteleniyor: Avrupa\'da yaşama planınız hep "sonra" kalıyor.',
+
+  // Almanya Solution Module 4
+  'almanya.solution.module4.title': 'İkamet & Visa',
+  'almanya.solution.module4.subtitle': 'İkamet Engine',
+  'almanya.solution.module4.feature1.title': '§21 Visa Planı',
+  'almanya.solution.module4.feature1.description': 'Almanya\'da GmbH kurarak §21 AufenthG kapsamında oturma izni başvurusu. Business plan hazırlığı dahil.',
+  'almanya.solution.module4.feature2.title': 'D-Visum Desteği',
+  'almanya.solution.module4.feature2.description': 'Konsolosluk başvurusu, randevu yönetimi ve gerekli belgelerin hazırlanması.',
+  'almanya.solution.module4.feature3.title': 'Aile Birleşimi',
+  'almanya.solution.module4.feature3.description': 'Familiennachzug danışmanlığı: Eş ve çocuklar için oturma izni süreci.',
+  'almanya.solution.module4.result': '%90+ başarı oranı ile Avrupa\'da yaşam hayalinize kavuşun.',
+
+  // Almanya Segmentation - Updated
+  'almanya.segmentation.a.title.new': 'Marka Prestiji + İkamet',
+  'almanya.segmentation.a.description.new': 'Ürünümü Almanya\'nın devlerine satmak ve Avrupa\'da yaşamak istiyorum.',
+  'almanya.segmentation.b.title.new': 'Bayi Ağı + Yaşam',
+  'almanya.segmentation.b.description.new': 'Almanya genelinde distribütörler bulup, ailemi de Avrupa\'ya taşımak istiyorum.',
+
+  // Almanya Social Proof - Metrics
+  'almanya.socialproof.case1.metric': '4 ayda 6 distribütör anlaşması',
+  'almanya.socialproof.case2.metric': '3 ayda 5 stadyum görüşmesi',
+  'almanya.socialproof.case3.metric': '%300 takip dönüşüm artışı',
+  'almanya.socialproof.cta': 'Tüm Vakaları İncele',
+
+  // Almanya Process - Week 4
+  'almanya.process.step4.title': 'Hafta 4 (Opsiyonel): Visa',
+  'almanya.process.step4.description': 'D-Visum başvurusu başlatıldı. GmbH kuruluş süreci takibi.',
 } as const

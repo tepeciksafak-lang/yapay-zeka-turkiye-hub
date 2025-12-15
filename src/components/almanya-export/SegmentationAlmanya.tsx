@@ -27,10 +27,10 @@ export const SegmentationAlmanya = () => {
                 <Building2 className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">
-                {t('almanya.segmentation.a.title')}
+                {t('almanya.segmentation.a.title.new')}
               </h3>
               <p className="text-muted-foreground mb-4">
-                {t('almanya.segmentation.a.description')}
+                {t('almanya.segmentation.a.description.new')}
               </p>
               <span className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
                 {t('almanya.segmentation.cta')}
@@ -47,10 +47,10 @@ export const SegmentationAlmanya = () => {
                 <Network className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">
-                {t('almanya.segmentation.b.title')}
+                {t('almanya.segmentation.b.title.new')}
               </h3>
               <p className="text-muted-foreground mb-4">
-                {t('almanya.segmentation.b.description')}
+                {t('almanya.segmentation.b.description.new')}
               </p>
               <span className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
                 {t('almanya.segmentation.cta')}

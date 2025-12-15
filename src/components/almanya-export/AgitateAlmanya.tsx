@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { AlertTriangle, Clock, Globe, Shield } from 'lucide-react';
+import { AlertTriangle, Clock, Globe, Shield, Home } from 'lucide-react';
 
 export const AgitateAlmanya = () => {
   const { t } = useLanguage();
@@ -8,6 +8,7 @@ export const AgitateAlmanya = () => {
     { icon: Clock, text: t('almanya.agitate.why.1') },
     { icon: Globe, text: t('almanya.agitate.why.2') },
     { icon: Shield, text: t('almanya.agitate.why.3') },
+    { icon: Home, text: t('almanya.agitate.why.4') },
   ];
 
   return (
@@ -54,7 +55,7 @@ export const AgitateAlmanya = () => {
             <h3 className="text-xl font-semibold text-center mb-6 text-foreground">
               {t('almanya.agitate.why.title')}
             </h3>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {whyItems.map((item, index) => (
                 <div 
                   key={index}
