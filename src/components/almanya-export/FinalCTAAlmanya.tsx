@@ -1,10 +1,16 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useModal } from '@/contexts/ModalContext';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle } from 'lucide-react';
 
 export const FinalCTAAlmanya = () => {
   const { t } = useLanguage();
   const { openQuickAnalysis } = useModal();
+
+  const bullets = [
+    t('almanya.finalcta.bullet1'),
+    t('almanya.finalcta.bullet2'),
+    t('almanya.finalcta.bullet3'),
+  ];
 
   return (
     <section className="almanya-section bg-primary/5 border-t border-primary/20 py-20">
@@ -19,9 +25,19 @@ export const FinalCTAAlmanya = () => {
             {t('almanya.finalcta.title')}
           </h2>
           
-          <p className="almanya-animate-on-scroll text-lg md:text-xl text-muted-foreground mb-8">
+          <p className="almanya-animate-on-scroll text-lg md:text-xl text-muted-foreground mb-6">
             {t('almanya.finalcta.text')}
           </p>
+
+          {/* Bullets */}
+          <div className="almanya-animate-on-scroll flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            {bullets.map((bullet, index) => (
+              <div key={index} className="flex items-center gap-2 text-foreground">
+                <CheckCircle className="w-5 h-5 text-primary" />
+                <span>{bullet}</span>
+              </div>
+            ))}
+          </div>
           
           <button 
             onClick={openQuickAnalysis}
