@@ -391,15 +391,37 @@ export default {
   'almanya.hero.cta.primary': 'PAZAR UYGUNLUĞUNU ANALİZ ET',
   'almanya.hero.microcopy': 'Ücretsiz ön değerlendirme. Sadece uygun profillerle ilerliyorum.',
 
-  // Almanya Reality Check Section
-  'almanya.realitycheck.title': 'Neden İhracat Departmanınız Almanya\'da Zorlanıyor?',
-  'almanya.realitycheck.subtitle': 'Alman pazarına girişte karşılaşılan 3 kritik engel',
-  'almanya.realitycheck.1.title': 'Dil Bariyeri Değil, "Kod" Bariyeri',
-  'almanya.realitycheck.1.description': 'Mükemmel çeviri yetmez. Alman satın almacı, mailin tonundan "bizden biri olmadığını" anlar. Biz, Alman ticari kodlarıyla konuşuyoruz.',
-  'almanya.realitycheck.2.title': 'Yasal ve Dijital Güven',
-  'almanya.realitycheck.2.description': 'Alman firmaları veri güvenliği (DSGVO) konusunda takıntılıdır. Biz, sisteminizi Alman standartlarına uygun hale getirerek masaya oturuyoruz.',
-  'almanya.realitycheck.3.title': 'Yanlış Kapıyı Çalmak',
-  'almanya.realitycheck.3.description': 'Sekreterlere mail atarak vakit kaybetmeyin. Yapay Zeka ile doğrudan karar vericinin (CEO) ekranına düşüyoruz.',
+  // Almanya Trust Foundation Section (Section 2)
+  'almanya.trustfoundation.title': 'Almanya\'da Satış Güvenle Başlar',
+  'almanya.trustfoundation.subtitle': 'Alman firmalar, Alman gibi görünen firmalarla çalışır',
+  
+  // Card 1 - Language & First Impression
+  'almanya.trustfoundation.1.title': 'Almanca, Alman Gözüyle',
+  'almanya.trustfoundation.1.bullet1': 'Web sitesi Almanca hazırlanır',
+  'almanya.trustfoundation.1.bullet2': 'Metinler çeviri gibi durmaz',
+  'almanya.trustfoundation.1.bullet3': 'Alman firmalara hitap eder',
+  'almanya.trustfoundation.1.trust': 'Güven ilk cümlede başlar',
+  
+  // Card 2 - Presence & Credibility
+  'almanya.trustfoundation.2.title': 'Güven Veren Duruş',
+  'almanya.trustfoundation.2.bullet1': 'Yurtdışından yazan biri hissi oluşmaz',
+  'almanya.trustfoundation.2.bullet2': 'İletişim net ve ciddidir',
+  'almanya.trustfoundation.2.bullet3': 'Alman iş kültürüne uygundur',
+  'almanya.trustfoundation.2.trust': 'Güven olmadan satış konuşulmaz',
+  
+  // Card 3 - Sales Entry Points
+  'almanya.trustfoundation.3.title': 'Satış Nereden Gelir?',
+  'almanya.trustfoundation.3.bullet1': 'Fuar sonrası sistemli takip',
+  'almanya.trustfoundation.3.bullet2': 'Alman hedef kitleye uygun reklamlar',
+  'almanya.trustfoundation.3.bullet3': 'Karar vericilere doğrudan erişim',
+  'almanya.trustfoundation.3.trust': 'Önce doğru kanal seçilir',
+  
+  // Card 4 - System & Process
+  'almanya.trustfoundation.4.title': 'Rastgele Değil, Sistemle',
+  'almanya.trustfoundation.4.bullet1': 'Lead, görüşme, takip süreci kurulur',
+  'almanya.trustfoundation.4.bullet2': 'Her adım ölçülebilir olur',
+  'almanya.trustfoundation.4.bullet3': 'Satış süreci kontrol altına alınır',
+  'almanya.trustfoundation.4.trust': 'Denemek değil, düzen kurmak',
 
   // Almanya Segmentation Section
   'almanya.segmentation.title': 'Hedefiniz Hangisi?',

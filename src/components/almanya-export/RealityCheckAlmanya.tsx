@@ -1,77 +1,100 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Languages, ShieldCheck, Target, Home, ArrowDown } from 'lucide-react';
+import { Languages, ShieldCheck, TrendingUp, Settings } from 'lucide-react';
 
 export const RealityCheckAlmanya = () => {
   const { t } = useLanguage();
 
-  const challenges = [
+  const cards = [
     {
       icon: Languages,
-      title: t('almanya.realitycheck.1.title'),
-      description: t('almanya.realitycheck.1.description'),
+      title: t('almanya.trustfoundation.1.title'),
+      bullets: [
+        t('almanya.trustfoundation.1.bullet1'),
+        t('almanya.trustfoundation.1.bullet2'),
+        t('almanya.trustfoundation.1.bullet3'),
+      ],
+      trust: t('almanya.trustfoundation.1.trust'),
     },
     {
       icon: ShieldCheck,
-      title: t('almanya.realitycheck.2.title'),
-      description: t('almanya.realitycheck.2.description'),
+      title: t('almanya.trustfoundation.2.title'),
+      bullets: [
+        t('almanya.trustfoundation.2.bullet1'),
+        t('almanya.trustfoundation.2.bullet2'),
+        t('almanya.trustfoundation.2.bullet3'),
+      ],
+      trust: t('almanya.trustfoundation.2.trust'),
     },
     {
-      icon: Target,
-      title: t('almanya.realitycheck.3.title'),
-      description: t('almanya.realitycheck.3.description'),
+      icon: TrendingUp,
+      title: t('almanya.trustfoundation.3.title'),
+      bullets: [
+        t('almanya.trustfoundation.3.bullet1'),
+        t('almanya.trustfoundation.3.bullet2'),
+        t('almanya.trustfoundation.3.bullet3'),
+      ],
+      trust: t('almanya.trustfoundation.3.trust'),
     },
     {
-      icon: Home,
-      title: t('almanya.realitycheck.4.title'),
-      description: t('almanya.realitycheck.4.description'),
+      icon: Settings,
+      title: t('almanya.trustfoundation.4.title'),
+      bullets: [
+        t('almanya.trustfoundation.4.bullet1'),
+        t('almanya.trustfoundation.4.bullet2'),
+        t('almanya.trustfoundation.4.bullet3'),
+      ],
+      trust: t('almanya.trustfoundation.4.trust'),
     },
   ];
-
-  const scrollToSolution = () => {
-    const element = document.getElementById('solution-modules');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="almanya-section py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
           <h2 className="almanya-animate-on-scroll text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-            {t('almanya.realitycheck.title')}
+            {t('almanya.trustfoundation.title')}
           </h2>
           <p className="almanya-animate-on-scroll text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
-            {t('almanya.realitycheck.subtitle')}
+            {t('almanya.trustfoundation.subtitle')}
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            {challenges.map((challenge, index) => (
+          {/* 4-Card Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cards.map((card, index) => (
               <div
                 key={index}
-                className="almanya-animate-on-scroll bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
+                className="almanya-animate-on-scroll bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-300"
               >
+                {/* Icon */}
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <challenge.icon className="w-6 h-6 text-primary" />
+                  <card.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {challenge.title}
+
+                {/* Title */}
+                <h3 className="text-lg font-semibold text-foreground mb-4">
+                  {card.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
-                  {challenge.description}
+
+                {/* Bullets */}
+                <ul className="space-y-2 mb-4">
+                  {card.bullets.map((bullet, bulletIndex) => (
+                    <li
+                      key={bulletIndex}
+                      className="text-sm text-muted-foreground flex items-start gap-2"
+                    >
+                      <span className="text-primary mt-1">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Trust Line */}
+                <p className="text-sm text-primary/80 italic border-t border-border/50 pt-4">
+                  {card.trust}
                 </p>
               </div>
             ))}
-          </div>
-
-          <div className="almanya-animate-on-scroll text-center">
-            <button
-              onClick={scrollToSolution}
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
-            >
-              {t('almanya.realitycheck.cta')}
-              <ArrowDown className="w-4 h-4" />
-            </button>
           </div>
         </div>
       </div>
