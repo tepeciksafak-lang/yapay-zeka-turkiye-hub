@@ -19,6 +19,12 @@ export const ProcessAlmanya = () => {
       title: t('almanya.process.step3.title'),
       description: t('almanya.process.step3.description'),
     },
+    {
+      week: '4',
+      title: t('almanya.process.step4.title'),
+      description: t('almanya.process.step4.description'),
+      optional: true,
+    },
   ];
 
   return (

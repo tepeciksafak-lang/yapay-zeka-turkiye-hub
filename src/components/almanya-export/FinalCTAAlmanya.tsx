@@ -7,9 +7,9 @@ export const FinalCTAAlmanya = () => {
   const { openQuickAnalysis } = useModal();
 
   const bullets = [
-    t('almanya.finalcta.bullet1'),
-    t('almanya.finalcta.bullet2'),
-    t('almanya.finalcta.bullet3'),
+    t('almanya.finalcta.benefit1'),
+    t('almanya.finalcta.benefit2'),
+    t('almanya.finalcta.benefit3'),
   ];
 
   return (
