@@ -4,6 +4,7 @@ import { SEO } from '@/components/SEO';
 import { FAQSchema } from '@/components/FAQSchema';
 import { HeroAlmanya } from '@/components/almanya-export/HeroAlmanya';
 import { RealityCheckAlmanya } from '@/components/almanya-export/RealityCheckAlmanya';
+import { CaseTimelineAlmanya } from '@/components/almanya-export/CaseTimelineAlmanya';
 import { AgitateAlmanya } from '@/components/almanya-export/AgitateAlmanya';
 import { SolutionModulesAlmanya } from '@/components/almanya-export/SolutionModulesAlmanya';
 import { SegmentationAlmanya } from '@/components/almanya-export/SegmentationAlmanya';
@@ -64,6 +65,7 @@ const AlmanyaExport = () => {
       <div className="almanya-export-page">
         <HeroAlmanya />
         <RealityCheckAlmanya />
+        <CaseTimelineAlmanya />
         <AgitateAlmanya />
         <SolutionModulesAlmanya />
         <SegmentationAlmanya />
