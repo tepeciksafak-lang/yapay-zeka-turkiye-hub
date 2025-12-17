@@ -4,6 +4,7 @@ import { SEO } from '@/components/SEO';
 import { HeroAlmanya } from '@/components/almanya-export/HeroAlmanya';
 import { RealityCheckAlmanya } from '@/components/almanya-export/RealityCheckAlmanya';
 import { CaseTimelineAlmanya } from '@/components/almanya-export/CaseTimelineAlmanya';
+import { ProcessAlmanya } from '@/components/almanya-export/ProcessAlmanya';
 
 const AlmanyaExport = () => {
   const { t, currentLanguage } = useLanguage();
@@ -50,6 +51,7 @@ const AlmanyaExport = () => {
         <HeroAlmanya />
         <RealityCheckAlmanya />
         <CaseTimelineAlmanya />
+        <ProcessAlmanya />
       </div>
     </>
   );

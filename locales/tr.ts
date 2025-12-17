@@ -510,13 +510,16 @@ export default {
   'almanya.socialproof.case3.description': 'Fuardan dönen yüzlerce kartviziti, yapay zeka destekli otomasyonla sıcak satış görüşmelerine çeviren sistemler.',
 
   // Almanya Process Section
-  'almanya.process.title': '3 Adımda Almanya\'dasınız',
-  'almanya.process.step1.title': 'Hafta 1: Kurulum',
-  'almanya.process.step1.description': 'Alman telefon hattı, Landing Page ve yasal metinlerin hazırlanması.',
-  'almanya.process.step2.title': 'Hafta 2: İçerik & Hedef',
-  'almanya.process.step2.description': 'AI videoların üretimi ve 500 kişilik karar verici listesinin (Deep Research) oluşturulması.',
-  'almanya.process.step3.title': 'Hafta 3: Start',
-  'almanya.process.step3.description': 'E-Mail ve LinkedIn motorlarının çalıştırılması. İlk toplantıların takviminize düşmesi.',
+  'almanya.process.title': 'Süreç Nasıl İlerliyor?',
+  'almanya.process.subtitle': 'Almanya pazarına plansız değil, sistemli giriyoruz.',
+  'almanya.process.step1.title': 'Analiz',
+  'almanya.process.step1.description': 'Firma, ürün ve hedef pazar analiz edilir',
+  'almanya.process.step2.title': 'Altyapı',
+  'almanya.process.step2.description': 'Almanca iletişim ve satış zemini kurulur',
+  'almanya.process.step3.title': 'Satış Başlangıcı',
+  'almanya.process.step3.description': 'Seçilen kanallar üzerinden satış başlatılır',
+  'almanya.process.step4.title': 'Takip ve Geliştirme',
+  'almanya.process.step4.description': 'Geri dönüşlere göre süreç geliştirilir',
 
   // Almanya FAQ Section
   'almanya.faq.title': 'Sıkça Sorulan Sorular',
@@ -578,7 +581,4 @@ export default {
   'almanya.socialproof.case3.metric': '%300 takip dönüşüm artışı',
   'almanya.socialproof.cta': 'Tüm Vakaları İncele',
 
-  // Almanya Process - Week 4
-  'almanya.process.step4.title': 'Hafta 4 (Opsiyonel): Visa',
-  'almanya.process.step4.description': 'D-Visum başvurusu başlatıldı. GmbH kuruluş süreci takibi.',
 } as const
