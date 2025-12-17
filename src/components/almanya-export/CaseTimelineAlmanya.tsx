@@ -1,8 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useRef, useState } from 'react';
+import erpaLogo from '@/assets/logos/erpa-logo.avif';
+import sanperLogo from '@/assets/logos/sanper-logo.avif';
 
 interface CaseBlockProps {
   title: string;
+  logo: string;
   sections: {
     label: string;
     content: string | string[];
@@ -11,19 +14,28 @@ interface CaseBlockProps {
   delay: number;
 }
 
-const CaseBlock = ({ title, sections, isVisible, delay }: CaseBlockProps) => {
+const CaseBlock = ({ title, logo, sections, isVisible, delay }: CaseBlockProps) => {
   return (
     <div
-      className={`relative pl-8 transition-all duration-700 ease-out ${
+      className={`relative pl-20 md:pl-24 transition-all duration-700 ease-out ${
         isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-3'
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
+      {/* Logo positioned left of the vertical line */}
+      <div className="absolute left-0 top-0 w-12 h-12 md:w-14 md:h-14 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden">
+        <img 
+          src={logo} 
+          alt={title} 
+          className="w-10 h-10 md:w-12 md:h-12 object-contain"
+        />
+      </div>
+
       {/* Vertical Line */}
       <div
-        className={`absolute left-0 top-0 w-0.5 bg-primary/30 transition-all duration-500 ease-out ${
+        className={`absolute left-[60px] md:left-[72px] top-0 w-0.5 bg-primary/30 transition-all duration-500 ease-out ${
           isVisible ? 'h-full' : 'h-0'
         }`}
         style={{ transitionDelay: `${delay + 100}ms` }}
@@ -84,6 +96,7 @@ export const CaseTimelineAlmanya = () => {
   const cases = [
     {
       title: t('almanya.casetimeline.case1.title'),
+      logo: erpaLogo,
       sections: [
         {
           label: t('almanya.casetimeline.label.durum'),
@@ -108,6 +121,7 @@ export const CaseTimelineAlmanya = () => {
     },
     {
       title: t('almanya.casetimeline.case2.title'),
+      logo: sanperLogo,
       sections: [
         {
           label: t('almanya.casetimeline.label.durum'),
@@ -160,6 +174,7 @@ export const CaseTimelineAlmanya = () => {
               <CaseBlock
                 key={index}
                 title={caseItem.title}
+                logo={caseItem.logo}
                 sections={caseItem.sections}
                 isVisible={isVisible}
                 delay={200 + index * 300}
