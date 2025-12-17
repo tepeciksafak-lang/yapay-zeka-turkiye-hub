@@ -1,77 +1,79 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Search, Building2, Rocket, RefreshCw } from 'lucide-react';
 
 export const ProcessAlmanya = () => {
   const { t } = useLanguage();
 
   const steps = [
     {
-      week: '1',
+      number: '01',
+      icon: Search,
       title: t('almanya.process.step1.title'),
       description: t('almanya.process.step1.description'),
     },
     {
-      week: '2',
+      number: '02',
+      icon: Building2,
       title: t('almanya.process.step2.title'),
       description: t('almanya.process.step2.description'),
     },
     {
-      week: '3',
+      number: '03',
+      icon: Rocket,
       title: t('almanya.process.step3.title'),
       description: t('almanya.process.step3.description'),
     },
     {
-      week: '4',
+      number: '04',
+      icon: RefreshCw,
       title: t('almanya.process.step4.title'),
       description: t('almanya.process.step4.description'),
-      optional: true,
     },
   ];
 
   return (
-    <section className="almanya-section bg-muted/30 py-20">
+    <section className="bg-black py-20 md:py-28">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="almanya-animate-on-scroll text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
-            {t('almanya.process.title')}
-          </h2>
+        <div className="max-w-5xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t('almanya.process.title')}
+            </h2>
+            <p className="text-muted-foreground text-sm md:text-base">
+              {t('almanya.process.subtitle')}
+            </p>
+          </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
-
-            <div className="space-y-8 md:space-y-0">
-              {steps.map((step, index) => (
+          {/* Steps Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
+            {steps.map((step) => {
+              const Icon = step.icon;
+              return (
                 <div 
-                  key={index}
-                  className={`almanya-animate-on-scroll relative md:flex items-center ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                  key={step.number}
+                  className="flex flex-col items-center text-center"
                 >
-                  {/* Content */}
-                  <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <div className="bg-card border border-border rounded-xl p-6">
-                      <h3 className="font-bold text-foreground mb-2">{step.title}</h3>
-                      <p className="text-muted-foreground text-sm">{step.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Week indicator */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center font-bold text-lg z-10">
-                    {step.week}
-                  </div>
-
-                  {/* Mobile week indicator */}
-                  <div className="md:hidden flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                      {step.week}
-                    </div>
-                  </div>
-
-                  {/* Spacer for alternating layout */}
-                  <div className="hidden md:block md:w-1/2" />
+                  {/* Icon */}
+                  <Icon className="w-7 h-7 text-primary/60 mb-4" strokeWidth={1.5} />
+                  
+                  {/* Number */}
+                  <span className="text-4xl md:text-5xl font-bold text-primary/80 mb-3">
+                    {step.number}
+                  </span>
+                  
+                  {/* Title */}
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {step.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>
