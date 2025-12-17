@@ -1,8 +1,10 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Search, Building2, Rocket, RefreshCw } from 'lucide-react';
+import { useModal } from '@/contexts/ModalContext';
+import { Search, Building2, Rocket, RefreshCw, ArrowRight } from 'lucide-react';
 
 export const ProcessAlmanya = () => {
   const { t } = useLanguage();
+  const { openQuickAnalysis } = useModal();
 
   const steps = [
     {
@@ -74,6 +76,17 @@ export const ProcessAlmanya = () => {
                 </div>
               );
             })}
+          </div>
+
+          {/* CTA Button */}
+          <div className="flex justify-center mt-16">
+            <button 
+              onClick={openQuickAnalysis} 
+              className="almanya-btn-primary inline-flex items-center gap-2 justify-center"
+            >
+              {t('almanya.hero.cta.primary')}
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </div>
