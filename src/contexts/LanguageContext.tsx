@@ -41,7 +41,13 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    // Return a safe fallback during HMR or before provider mounts
+    return {
+      currentLanguage: 'tr' as const,
+      setLanguage: () => {},
+      t: (key: string) => key,
+      initializeLanguage: () => {},
+    };
   }
   return context;
 };
