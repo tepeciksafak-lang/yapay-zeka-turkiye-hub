@@ -7,6 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { CheckCircle, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { supabase } from "@/integrations/supabase/client";
 
 interface QuickAnalysisModalProps {
   open: boolean;
@@ -29,8 +30,35 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
     e.preventDefault();
     setIsSubmitting(true);
 
+    const pageUrl = typeof window !== 'undefined' ? window.location.href : '';
+    let leadId: string | null = null;
+
     try {
-      // Build query parameters for N8N webhook
+      // Step 1: Save lead to Supabase first (backup)
+      const { data: leadData, error: supabaseError } = await supabase
+        .from('leads')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || null,
+          message: formData.message || null,
+          source: 'quick_analysis_modal',
+          language: currentLanguage,
+          page_url: pageUrl,
+          n8n_synced: false
+        })
+        .select('id')
+        .single();
+
+      if (supabaseError) {
+        console.error('⚠️ Supabase insert error:', supabaseError.message);
+      } else {
+        leadId = leadData?.id;
+        console.log('✅ Lead saved to database');
+      }
+
+      // Step 2: Send to N8N webhook
+      const webhookUrl = 'https://safakt.app.n8n.cloud/webhook/041dae70-b4dc-4fbb-89e5-3b78274c5ff5';
       const params = new URLSearchParams({
         name: formData.name,
         email: formData.email,
@@ -38,27 +66,25 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
         message: formData.message || '',
         timestamp: new Date().toISOString(),
         source: 'quick_analysis_modal',
-        language: currentLanguage
+        language: currentLanguage,
+        page_url: pageUrl
       });
 
-      const webhookUrl = 'https://safakt.app.n8n.cloud/webhook/041dae70-b4dc-4fbb-89e5-3b78274c5ff5';
-
-      // Debug log (without PII)
-      console.log('🚀 N8N webhook GET request fired', {
-        url: webhookUrl,
-        fields: ['name', 'email', 'company', 'message', 'timestamp', 'source'],
-        messageLength: (formData.message || '').length,
-        hasCompany: !!formData.company
-      });
-
-      // Send GET request to N8N webhook
       await fetch(`${webhookUrl}?${params.toString()}`, {
         method: 'GET',
         mode: 'no-cors',
         cache: 'no-cache'
       });
 
-      console.log('✅ N8N webhook request sent successfully');
+      console.log('✅ N8N webhook request sent');
+
+      // Step 3: Mark as synced in Supabase
+      if (leadId) {
+        await supabase
+          .from('leads')
+          .update({ n8n_synced: true })
+          .eq('id', leadId);
+      }
       
       setIsSubmitted(true);
       
@@ -74,9 +100,8 @@ export const QuickAnalysisModal = ({ open, onOpenChange }: QuickAnalysisModalPro
       });
 
     } catch (error) {
-      console.error('❌ N8N webhook error:', {
-        message: error instanceof Error ? error.message : 'Unknown error',
-        type: error?.constructor?.name
+      console.error('❌ Form submission error:', {
+        message: error instanceof Error ? error.message : 'Unknown error'
       });
 
       // Analytics event for failed submission
