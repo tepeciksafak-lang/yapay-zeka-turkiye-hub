@@ -393,35 +393,23 @@ export default {
 
   // Almanya Trust Foundation Section (Section 2)
   'almanya.trustfoundation.title': 'Almanya\'da Satış Güvenle Başlar',
-  'almanya.trustfoundation.subtitle': 'Alman firmalar, Alman gibi görünen firmalarla çalışır',
+  'almanya.trustfoundation.subtitle': 'Alman firmaları risk almayı sevmez',
   
-  // Card 1 - Language & First Impression
-  'almanya.trustfoundation.1.title': 'Almanca, Alman Gözüyle',
-  'almanya.trustfoundation.1.bullet1': 'Web sitesi Almanca hazırlanır',
-  'almanya.trustfoundation.1.bullet2': 'Metinler çeviri gibi durmaz',
-  'almanya.trustfoundation.1.bullet3': 'Alman firmalara hitap eder',
-  'almanya.trustfoundation.1.trust': 'Güven ilk cümlede başlar',
+  // Card 1 - Kusursuz Almanca
+  'almanya.trustfoundation.1.title': 'Kusursuz Almanca',
+  'almanya.trustfoundation.1.text': 'Web siteniz ve metinleriniz, ana dili Almanca olan uzmanlar tarafından hazırlanır. Çeviri kokusu olmaz, ilk cümlede güven verir',
   
-  // Card 2 - Presence & Credibility
+  // Card 2 - Güven Veren Duruş
   'almanya.trustfoundation.2.title': 'Güven Veren Duruş',
-  'almanya.trustfoundation.2.bullet1': 'Yurtdışından yazan biri hissi oluşmaz',
-  'almanya.trustfoundation.2.bullet2': 'İletişim net ve ciddidir',
-  'almanya.trustfoundation.2.bullet3': 'Alman iş kültürüne uygundur',
-  'almanya.trustfoundation.2.trust': 'Güven olmadan satış konuşulmaz',
+  'almanya.trustfoundation.2.text': 'Sizi dışarıdan gelen bir yabancı gibi göstermiyoruz. Tüm iletişiminiz Alman iş kültürüne ve disiplinine tam uyumlu, ciddi bir seviyede yürütülür',
   
-  // Card 3 - Sales Entry Points
-  'almanya.trustfoundation.3.title': 'Satış Nereden Gelir?',
-  'almanya.trustfoundation.3.bullet1': 'Fuar sonrası sistemli takip',
-  'almanya.trustfoundation.3.bullet2': 'Alman hedef kitleye uygun reklamlar',
-  'almanya.trustfoundation.3.bullet3': 'Karar vericilere doğrudan erişim',
-  'almanya.trustfoundation.3.trust': 'Önce doğru kanal seçilir',
+  // Card 3 - Doğru Kanal, Doğru Kişi
+  'almanya.trustfoundation.3.title': 'Doğru Kanal, Doğru Kişi',
+  'almanya.trustfoundation.3.text': 'Fuarlarda kartvizit peşinde koşmuyoruz. Sizi doğrudan imza yetkisi olan karar vericinin masasına oturtan en doğru kanalı seçiyoruz',
   
-  // Card 4 - System & Process
-  'almanya.trustfoundation.4.title': 'Rastgele Değil, Sistemle',
-  'almanya.trustfoundation.4.bullet1': 'Lead, görüşme, takip süreci kurulur',
-  'almanya.trustfoundation.4.bullet2': 'Her adım ölçülebilir olur',
-  'almanya.trustfoundation.4.bullet3': 'Satış süreci kontrol altına alınır',
-  'almanya.trustfoundation.4.trust': 'Denemek değil, düzen kurmak',
+  // Card 4 - Şans Değil, Sistem
+  'almanya.trustfoundation.4.title': 'Şans Değil, Sistem',
+  'almanya.trustfoundation.4.text': 'Deneme yanılma bitiyor. Müşteri bulmadan imzaya kadar her adımı takip edilen ve ölçülebilir net bir satış makinesi kuruyoruz',
 
   // Almanya Case Timeline Section
   'almanya.casetimeline.title': 'Gerçek Çalışmalar. Gerçek Süreçler.',

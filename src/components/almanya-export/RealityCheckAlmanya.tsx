@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Languages, ShieldCheck, TrendingUp, Settings } from 'lucide-react';
+import { Languages, ShieldCheck, Target, Settings } from 'lucide-react';
 
 export const RealityCheckAlmanya = () => {
   const { t } = useLanguage();
@@ -8,42 +8,22 @@ export const RealityCheckAlmanya = () => {
     {
       icon: Languages,
       title: t('almanya.trustfoundation.1.title'),
-      bullets: [
-        t('almanya.trustfoundation.1.bullet1'),
-        t('almanya.trustfoundation.1.bullet2'),
-        t('almanya.trustfoundation.1.bullet3'),
-      ],
-      trust: t('almanya.trustfoundation.1.trust'),
+      text: t('almanya.trustfoundation.1.text'),
     },
     {
       icon: ShieldCheck,
       title: t('almanya.trustfoundation.2.title'),
-      bullets: [
-        t('almanya.trustfoundation.2.bullet1'),
-        t('almanya.trustfoundation.2.bullet2'),
-        t('almanya.trustfoundation.2.bullet3'),
-      ],
-      trust: t('almanya.trustfoundation.2.trust'),
+      text: t('almanya.trustfoundation.2.text'),
     },
     {
-      icon: TrendingUp,
+      icon: Target,
       title: t('almanya.trustfoundation.3.title'),
-      bullets: [
-        t('almanya.trustfoundation.3.bullet1'),
-        t('almanya.trustfoundation.3.bullet2'),
-        t('almanya.trustfoundation.3.bullet3'),
-      ],
-      trust: t('almanya.trustfoundation.3.trust'),
+      text: t('almanya.trustfoundation.3.text'),
     },
     {
       icon: Settings,
       title: t('almanya.trustfoundation.4.title'),
-      bullets: [
-        t('almanya.trustfoundation.4.bullet1'),
-        t('almanya.trustfoundation.4.bullet2'),
-        t('almanya.trustfoundation.4.bullet3'),
-      ],
-      trust: t('almanya.trustfoundation.4.trust'),
+      text: t('almanya.trustfoundation.4.text'),
     },
   ];
 
@@ -76,22 +56,9 @@ export const RealityCheckAlmanya = () => {
                   {card.title}
                 </h3>
 
-                {/* Bullets */}
-                <ul className="space-y-2 mb-4">
-                  {card.bullets.map((bullet, bulletIndex) => (
-                    <li
-                      key={bulletIndex}
-                      className="text-sm text-muted-foreground flex items-start gap-2"
-                    >
-                      <span className="text-primary mt-1">•</span>
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Trust Line */}
-                <p className="text-sm text-primary/80 italic border-t border-border/50 pt-4">
-                  {card.trust}
+                {/* Text */}
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {card.text}
                 </p>
               </div>
             ))}
