@@ -89,6 +89,45 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          company: string | null
+          created_at: string | null
+          email: string
+          id: string
+          language: string | null
+          message: string | null
+          n8n_synced: boolean | null
+          name: string
+          page_url: string | null
+          source: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string | null
+          email: string
+          id?: string
+          language?: string | null
+          message?: string | null
+          n8n_synced?: boolean | null
+          name: string
+          page_url?: string | null
+          source?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string | null
+          email?: string
+          id?: string
+          language?: string | null
+          message?: string | null
+          n8n_synced?: boolean | null
+          name?: string
+          page_url?: string | null
+          source?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
