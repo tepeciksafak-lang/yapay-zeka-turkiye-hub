@@ -382,9 +382,9 @@ export default {
   // Almanya İhracat Page
   'almanya.seo.title': 'Almanya\'ya İhracat – Alman Gibi Görünün | Pratik Yapay Zeka',
   'almanya.seo.description': 'Almanya pazarına giriş için dijital altyapı. Yerel varlık, Almanca landing page, fuar takibi ve soğuk satış otomasyonu.',
-  'almanya.hero.h1': 'Yapay Zeka ile',
-  'almanya.hero.h1.highlight': 'Yurtdışı Açılımı',
-  'almanya.hero.subtitle': 'Türkiye\'deki işinizi, Almanya\'da gerçek satış görüşmelerine dönüştüren bir sistem kuruyoruz.',
+  'almanya.hero.h1': 'Türkiye\'de Üretin',
+  'almanya.hero.h1.highlight': 'Almanya\'da Euro Kazanın',
+  'almanya.hero.subtitle': 'Ürünlerinizi Alman pazarına açıyoruz. Başarılı bir ihracat sistemiyle gelirinizi dövize çevirin ve §21 Vizesi kapısını aralayın.',
   'almanya.hero.trust.title': 'Yanınızdayım.',
   'almanya.hero.trust.text': '8 yıllık Almanya ve Avrupa B2B satış tecrübem, son 2 yıldaki yapay zeka uygulamalarıyla birleşiyor. Yurtdışı açılım sürecinde yalnız değilsiniz.',
   'almanya.hero.signature': 'Şafak Tepecik – DACH B2B Satış & Yapay Zeka',
