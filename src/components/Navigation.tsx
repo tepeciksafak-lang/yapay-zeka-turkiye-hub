@@ -26,10 +26,11 @@ const Navigation = () => {
 
   const solutionItems = [
     { href: getLocalizedRoute('tr', 'solution-leadgen-ki'), label: 'Yapay Zeka Lead Üretimi' },
-    { href: getLocalizedRoute('tr', 'solution-marketing'), label: 'Pazarlama Otomasyonu' },
-    { href: getLocalizedRoute('tr', 'solution-vertrieb'), label: 'Satış Otomasyonu' },
+    { href: '/marketing-otomasyonu', label: 'Pazarlama Otomasyonu' },
+    { href: '/satis-otomasyonu', label: 'Satış Otomasyonu' },
     { href: getLocalizedRoute('tr', 'solution-crm'), label: 'CRM Otomasyonu' },
     { href: getLocalizedRoute('tr', 'solution-kundenservice'), label: 'Müşteri Hizmeti Otomasyonu' },
+    { href: '/yapay-zeka-otomasyonu', label: 'Yapay Zeka Otomasyonu' },
     { href: getLocalizedRoute('tr', 'almanya-export'), label: '🇩🇪 Almanya\'ya İhracat' },
   ];
 

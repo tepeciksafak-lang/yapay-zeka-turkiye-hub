@@ -26,6 +26,7 @@ const GizlilikPolitikasi = lazy(() => import("./pages/GizlilikPolitikasi"));
 const KullanimKosullari = lazy(() => import("./pages/KullanimKosullari"));
 const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
 const AlmanyaExport = lazy(() => import("./pages/AlmanyaExport"));
+const SEOLandingPage = lazy(() => import("./pages/seo-landing/SEOLandingPage"));
 
 // Turkish Solution pages
 import {
@@ -239,6 +240,56 @@ const AppWithModal = () => {
               <main className="flex-1">
                 <Suspense fallback={<PageLoader />}>
                   <AlmanyaExport />
+                </Suspense>
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+
+          {/* SEO Landing Pages - Marketing Hub */}
+          <Route path="/marketing-otomasyonu/*" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <SEOLandingPage />
+                </Suspense>
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+          <Route path="/marketing-otomasyonu" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <SEOLandingPage />
+                </Suspense>
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+
+          {/* SEO Landing Pages - Sales Hub */}
+          <Route path="/satis-otomasyonu/*" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <SEOLandingPage />
+                </Suspense>
+              </main>
+              <Footer />
+            </LanguageWrapper>
+          } />
+
+          {/* SEO Landing Pages - Entry Page */}
+          <Route path="/yapay-zeka-otomasyonu" element={
+            <LanguageWrapper>
+              <Navigation />
+              <main className="flex-1">
+                <Suspense fallback={<PageLoader />}>
+                  <SEOLandingPage />
                 </Suspense>
               </main>
               <Footer />
