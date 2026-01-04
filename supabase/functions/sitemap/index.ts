@@ -21,12 +21,11 @@ const getLanguageFromRequest = (req: Request): 'tr' | 'de' => {
 // Generate sitemap for specific language
 const generateSitemap = (lang: 'tr' | 'de'): string => {
   const baseUrl = `https://${DOMAINS[lang]}`;
-  const langPath = `/${lang}`;
   
   const urlEntry = (path: string, priority: string = '0.8', changefreq: string = 'monthly') => `
   <url>
-    <loc>${baseUrl}${langPath}${path}</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>${baseUrl}${path}</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
