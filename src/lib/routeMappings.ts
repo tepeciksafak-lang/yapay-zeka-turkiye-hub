@@ -113,13 +113,3 @@ export const getCanonicalUrl = (
   return `${baseUrl}${path}`;
 };
 
-/**
- * @deprecated Use getCanonicalUrl instead - monolingual site doesn't need hreflang
- */
-export const getHreflangUrls = (
-  routeKey: RouteKey,
-  params?: Record<string, string>
-): Record<string, string> => {
-  const url = getCanonicalUrl(routeKey, params);
-  return { 'tr': url, 'x-default': url };
-};
