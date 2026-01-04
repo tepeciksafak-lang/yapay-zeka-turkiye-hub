@@ -1,5 +1,7 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { SEO } from '@/components/SEO';
 import { Helmet } from 'react-helmet-async';
 
@@ -28,17 +30,27 @@ export interface SEOLandingPageContent {
   ctaHeadline: string;
   ctaDescription: string;
   footerTrustNote?: string;
+  parentHub?: string;
+  relatedPages?: string[];
 }
 
 interface SEOLandingPageTemplateProps {
   content: SEOLandingPageContent;
   onPrimaryCTA: () => void;
+  getPageBySlug: (slug: string) => SEOLandingPageContent | undefined;
 }
 
-export const SEOLandingPageTemplate = ({ content, onPrimaryCTA }: SEOLandingPageTemplateProps) => {
+export const SEOLandingPageTemplate = ({ content, onPrimaryCTA, getPageBySlug }: SEOLandingPageTemplateProps) => {
   const siteUrl = 'https://yapayzekapratik.com';
   const canonicalUrl = `${siteUrl}${content.slug}`;
-
+  
+  // Get parent hub content for back-link
+  const parentHubContent = content.parentHub ? getPageBySlug(content.parentHub) : null;
+  
+  // Get related pages content for hub pages
+  const relatedPagesContent = content.relatedPages 
+    ? content.relatedPages.map(slug => getPageBySlug(slug)).filter(Boolean) as SEOLandingPageContent[]
+    : [];
   return (
     <>
       <SEO
@@ -51,8 +63,21 @@ export const SEOLandingPageTemplate = ({ content, onPrimaryCTA }: SEOLandingPage
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
+      {/* BACK-LINK TO HUB (for sub-pages only) */}
+      {parentHubContent && (
+        <nav className="container mx-auto px-6 pt-8 pb-4">
+          <Link 
+            to={content.parentHub!} 
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {parentHubContent.h1MainKeyword}
+          </Link>
+        </nav>
+      )}
+
       {/* SECTION 1: HERO */}
-      <section className="relative min-h-[70vh] flex items-center justify-center py-20 px-6">
+      <section className={`relative ${parentHubContent ? 'min-h-[60vh] py-16' : 'min-h-[70vh] py-20'} flex items-center justify-center px-6`}>
         <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
         <div className="absolute inset-0 bg-grid-pattern opacity-30" />
         
@@ -189,6 +214,38 @@ export const SEOLandingPageTemplate = ({ content, onPrimaryCTA }: SEOLandingPage
           </ul>
         </div>
       </section>
+
+      {/* SECTION 6.5: WEITERE LÖSUNGEN (for hub pages with related pages) */}
+      {relatedPagesContent.length > 0 && (
+        <section className="py-20 px-6">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+              Weitere Lösungen
+            </h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedPagesContent.map((page) => (
+                <Link 
+                  key={page.slug} 
+                  to={page.slug}
+                  className="group block"
+                >
+                  <Card className="h-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+                    <CardHeader>
+                      <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                        {page.h1MainKeyword}
+                      </CardTitle>
+                      <CardDescription className="text-sm text-muted-foreground line-clamp-2">
+                        {page.heroOneLinerDescription}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* SECTION 7: CALL TO ACTION */}
       <section className="py-20 px-6 bg-primary/5">
