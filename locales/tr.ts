@@ -23,6 +23,8 @@ export default {
   // Cases
   'cases.title': 'Başarı Hikayeleri',
   'cases.subtitle': 'Yapay zeka otomasyonu ile büyüyen şirketlerden gerçek sonuçlar',
+  'cases.seo.title': 'Vaka Çalışmaları – Başarı Hikayeleri | Pratik Yapay Zeka',
+  'cases.seo.description': 'Yapay zeka otomasyonu ile büyüyen şirketlerden gerçek vaka çalışmaları ve başarı hikayeleri.',
   'cases.final.title': 'İşletmenizi Dönüştürmeye Hazır mısınız?',
   'cases.final.subtitle': 'Yapay zeka ve otomasyon ile satış ve pazarlama süreçlerinizi optimize edin. Ücretsiz danışmanlık için hemen iletişime geçin.',
   

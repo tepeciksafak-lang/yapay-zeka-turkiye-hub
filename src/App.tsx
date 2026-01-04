@@ -39,7 +39,7 @@ import {
 // Loading fallback component
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-screen">
-    <div className="animate-pulse text-lg text-muted-foreground">Loading...</div>
+    <div className="animate-pulse text-lg text-muted-foreground">Yükleniyor...</div>
   </div>
 );
 

@@ -1,26 +1,11 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
-// Multi-Domain Configuration
-const DOMAINS = {
-  tr: 'yapayzekapratik.com',
-  de: 'ki-automatisieren.de'
-};
+// Single Domain Configuration (Turkish only)
+const DOMAIN = 'yapayzekapratik.com';
 
-// Determine language from request hostname
-const getLanguageFromRequest = (req: Request): 'tr' | 'de' => {
-  const url = new URL(req.url);
-  const hostname = url.hostname;
-  
-  // Return language based on domain
-  if (hostname.includes(DOMAINS.de)) {
-    return 'de';
-  }
-  return 'tr'; // Default to Turkish
-};
-
-// Generate sitemap for specific language
-const generateSitemap = (lang: 'tr' | 'de'): string => {
-  const baseUrl = `https://${DOMAINS[lang]}`;
+// Generate sitemap
+const generateSitemap = (): string => {
+  const baseUrl = `https://${DOMAIN}`;
   
   const urlEntry = (path: string, priority: string = '0.8', changefreq: string = 'monthly') => `
   <url>
@@ -30,7 +15,7 @@ const generateSitemap = (lang: 'tr' | 'de'): string => {
     <priority>${priority}</priority>
   </url>`;
 
-  const trUrls = `
+  const urls = `
   ${urlEntry('', '1.0', 'weekly')}
   ${urlEntry('/cozumler')}
   ${urlEntry('/vaka-calismalari')}
@@ -47,27 +32,18 @@ const generateSitemap = (lang: 'tr' | 'de'): string => {
   ${urlEntry('/blog/yapay-zeka-ile-reklam-yapmak')}
   ${urlEntry('/blog/yapay-zeka-ile-satis-arttirma')}
   ${urlEntry('/hakkimizda')}
-  ${urlEntry('/website-in-3-tagen', '0.85', 'weekly')}
+  ${urlEntry('/cozumler/almanya-ihracat', '0.85', 'weekly')}
   ${urlEntry('/gizlilik-politikasi', '0.3')}
   ${urlEntry('/kullanim-kosullari', '0.3')}`;
 
-  const deUrls = `
-  ${urlEntry('', '1.0', 'weekly')}
-  ${urlEntry('/losungen')}
-  ${urlEntry('/website-in-3-tagen', '0.9', 'weekly')}
-  ${urlEntry('/uber-uns')}
-  ${urlEntry('/datenschutz', '0.3')}
-  ${urlEntry('/nutzungsbedingungen', '0.3')}`;
-
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${lang === 'tr' ? trUrls : deUrls}
+  ${urls}
 </urlset>`;
 };
 
-serve(async (req: Request) => {
-  const lang = getLanguageFromRequest(req);
-  const sitemapXML = generateSitemap(lang);
+serve(async (_req: Request) => {
+  const sitemapXML = generateSitemap();
   
   return new Response(sitemapXML, {
     headers: {
