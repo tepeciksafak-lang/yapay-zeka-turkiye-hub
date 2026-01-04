@@ -23,6 +23,8 @@ export default {
   // Cases
   'cases.title': 'Başarı Hikayeleri',
   'cases.subtitle': 'Yapay zeka otomasyonu ile büyüyen şirketlerden gerçek sonuçlar',
+  'cases.final.title': 'İşletmenizi Dönüştürmeye Hazır mısınız?',
+  'cases.final.subtitle': 'Yapay zeka ve otomasyon ile satış ve pazarlama süreçlerinizi optimize edin. Ücretsiz danışmanlık için hemen iletişime geçin.',
   
   // Pricing
   'pricing.title': 'Basit, Şeffaf Fiyatlandırma',
