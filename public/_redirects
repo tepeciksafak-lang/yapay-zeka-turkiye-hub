@@ -2,5 +2,8 @@
 /tr/* /:splat 301!
 /tr / 301!
 
+# Legacy sitemap redirect
+/functions/v1/sitemap /sitemap.xml 301!
+
 # SPA Fallback
 /* /index.html 200

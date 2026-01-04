@@ -23,4 +23,4 @@ Disallow: /api/
 Disallow: /admin/
 
 # Sitemap
-Sitemap: https://yapayzekapratik.com/functions/v1/sitemap
+Sitemap: https://yapayzekapratik.com/sitemap.xml
