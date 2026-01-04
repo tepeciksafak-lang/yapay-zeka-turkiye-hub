@@ -1,16 +1,14 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { SEOLandingPageTemplate } from '@/components/seo-landing/SEOLandingPageTemplate';
 import { getPageBySlug } from '@/data/seoLandingPagesContent';
 import NotFound from '@/pages/NotFound';
 import { useModal } from '@/contexts/ModalContext';
 
 const SEOLandingPage = () => {
-  const { '*': path } = useParams();
-  const navigate = useNavigate();
+  const location = useLocation();
   const { openQuickAnalysis } = useModal();
 
-  // Construct the full slug from the path
-  const slug = `/${path || ''}`;
+  const slug = location.pathname;
   const pageContent = getPageBySlug(slug);
 
   if (!pageContent) {
