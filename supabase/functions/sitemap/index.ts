@@ -6,11 +6,12 @@ const DOMAIN = 'yapayzekapratik.com';
 // Generate sitemap
 const generateSitemap = (): string => {
   const baseUrl = `https://${DOMAIN}`;
-  
+  const today = new Date().toISOString().split('T')[0];
+
   const urlEntry = (path: string, priority: string = '0.8', changefreq: string = 'monthly') => `
   <url>
     <loc>${baseUrl}${path}</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
@@ -71,12 +72,11 @@ const generateSitemap = (): string => {
 
 serve(async (_req: Request) => {
   const sitemapXML = generateSitemap();
-  
+
   return new Response(sitemapXML, {
     headers: {
       "Content-Type": "application/xml",
-      "Cache-Control": "public, max-age=86400", // 24 hours
-      "X-Robots-Tag": "noindex"
+      "Cache-Control": "public, max-age=86400" // 24 hours
     },
   });
 });
