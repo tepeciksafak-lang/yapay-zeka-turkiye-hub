@@ -59,8 +59,8 @@ export const SEOLandingPageTemplate = ({ content, onPrimaryCTA, getPageBySlug }:
         url={canonicalUrl}
       />
       <Helmet>
-        {/* NOINDEX for initial launch */}
-        <meta name="robots" content="noindex, nofollow" />
+        {/* SEO: Index all pages */}
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       {/* BACK-LINK TO HUB (for sub-pages only) */}

@@ -34,7 +34,34 @@ const generateSitemap = (): string => {
   ${urlEntry('/hakkimizda')}
   ${urlEntry('/cozumler/almanya-ihracat', '0.85', 'weekly')}
   ${urlEntry('/gizlilik-politikasi', '0.3')}
-  ${urlEntry('/kullanim-kosullari', '0.3')}`;
+  ${urlEntry('/kullanim-kosullari', '0.3')}
+  
+  ${/* SEO LANDING PAGES - 20 Seiten */''}
+  ${/* Entry Page */''}
+  ${urlEntry('/yapay-zeka-otomasyonu', '0.9', 'weekly')}
+  
+  ${/* Hub: Marketing Automation */''}
+  ${urlEntry('/marketing-otomasyonu', '0.9', 'weekly')}
+  ${urlEntry('/marketing-otomasyonu/lead-uretimi', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/email-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/sosyal-medya-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/icerik-uretimi', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/seo-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/reklam-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/chatbot-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/analitik-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/kampanya-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/kisisellestirilmis-pazarlama', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/funnel-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/retargeting-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/whatsapp-otomasyonu', '0.8')}
+  ${urlEntry('/marketing-otomasyonu/influencer-pazarlama', '0.8')}
+  
+  ${/* Hub: Sales Automation */''}
+  ${urlEntry('/satis-otomasyonu', '0.9', 'weekly')}
+  ${urlEntry('/satis-otomasyonu/crm-satis', '0.8')}
+  ${urlEntry('/satis-otomasyonu/teklif-otomasyonu', '0.8')}
+  ${urlEntry('/satis-otomasyonu/musteri-edinme', '0.8')}`;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
