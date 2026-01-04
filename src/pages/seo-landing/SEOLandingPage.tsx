@@ -22,7 +22,8 @@ const SEOLandingPage = () => {
   return (
     <SEOLandingPageTemplate 
       content={pageContent} 
-      onPrimaryCTA={handlePrimaryCTA} 
+      onPrimaryCTA={handlePrimaryCTA}
+      getPageBySlug={getPageBySlug}
     />
   );
 };

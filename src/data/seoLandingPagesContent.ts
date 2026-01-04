@@ -1,5 +1,30 @@
 import { SEOLandingPageContent } from '@/components/seo-landing/SEOLandingPageTemplate';
 
+// Define all marketing sub-page slugs
+const marketingSubPages = [
+  '/marketing-otomasyonu/lead-uretimi',
+  '/marketing-otomasyonu/funnel-otomasyonu',
+  '/marketing-otomasyonu/landing-page-otomasyonu',
+  '/marketing-otomasyonu/form-otomasyonu',
+  '/marketing-otomasyonu/email-otomasyonu',
+  '/marketing-otomasyonu/crm-entegrasyonu',
+  '/marketing-otomasyonu/lead-nurturing',
+  '/marketing-otomasyonu/musteri-segmentasyonu',
+  '/marketing-otomasyonu/whatsapp-otomasyonu',
+  '/marketing-otomasyonu/chatbot-otomasyonu',
+  '/marketing-otomasyonu/musteri-iletisim-otomasyonu',
+  '/marketing-otomasyonu/sosyal-medya-otomasyonu',
+  '/marketing-otomasyonu/icerik-uretimi',
+  '/marketing-otomasyonu/reklam-otomasyonu',
+];
+
+// Define all sales sub-page slugs
+const salesSubPages = [
+  '/satis-otomasyonu/crm-satis',
+  '/satis-otomasyonu/teklif-otomasyonu',
+  '/satis-otomasyonu/follow-up-otomasyonu',
+];
+
 export const seoLandingPagesContent: SEOLandingPageContent[] = [
   // === PAGE 1: /marketing-otomasyonu ===
   {
@@ -38,7 +63,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Pazarlama Sureclerinizi Otomatiklestirin',
     ctaDescription: 'Ekibinizin stratejiye odaklanmasi icin operasyonel yukleri azaltin. Ucretsiz analiz gorusmesi icin hemen iletisime gecin.',
-    footerTrustNote: 'Turkiyenin oncu B2B sirketleri ile calisiyoruz.'
+    footerTrustNote: 'Turkiyenin oncu B2B sirketleri ile calisiyoruz.',
+    relatedPages: marketingSubPages,
   },
 
   // === PAGE 2: /marketing-otomasyonu/lead-uretimi ===
@@ -78,7 +104,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Satis Hattinizi Doldurun',
     ctaDescription: 'Nitelikli lead uretimini otomatik hale getirin. Ucretsiz demo icin formu doldurun.',
-    footerTrustNote: 'B2B firmalar icin sonuc odakli lead generation cozumleri.'
+    footerTrustNote: 'B2B firmalar icin sonuc odakli lead generation cozumleri.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 3: /marketing-otomasyonu/funnel-otomasyonu ===
@@ -118,7 +145,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Funnelinizi Otomatiklestirin',
     ctaDescription: 'Satis sureclerinizi sistematik hale getirin. Strateji gorusmesi icin simdi iletisime gecin.',
-    footerTrustNote: 'Uzun satis donguleri icin optimize edilmis funnel cozumleri.'
+    footerTrustNote: 'Uzun satis donguleri icin optimize edilmis funnel cozumleri.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 4: /marketing-otomasyonu/landing-page-otomasyonu ===
@@ -158,7 +186,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Kampanyalarinizi Hizlandirin',
     ctaDescription: 'Landing page sureclerinizi otomatik hale getirin. Demo icin hemen basvurun.',
-    footerTrustNote: 'Pazarlama ekipleri icin tasarlanmis self-servis landing page sistemi.'
+    footerTrustNote: 'Pazarlama ekipleri icin tasarlanmis self-servis landing page sistemi.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 5: /marketing-otomasyonu/form-otomasyonu ===
@@ -198,7 +227,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Formlarinizi Akillica Yonetin',
     ctaDescription: 'Lead kayiplarini onleyin, form verilerinizi otomatik isleyin. Ucretsiz analiz icin iletisime gecin.',
-    footerTrustNote: 'Form odakli lead yonetimi icin tasarlanmis otomasyon cozumu.'
+    footerTrustNote: 'Form odakli lead yonetimi icin tasarlanmis otomasyon cozumu.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 6: /marketing-otomasyonu/email-otomasyonu ===
@@ -238,7 +268,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'E-posta Performansinizi Artirin',
     ctaDescription: 'E-posta pazarlamanizi yapay zeka ile guclendirin. Ucretsiz demo icin formu doldurun.',
-    footerTrustNote: 'B2B e-posta pazarlamasinda kanitlanmis sonuclar.'
+    footerTrustNote: 'B2B e-posta pazarlamasinda kanitlanmis sonuclar.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 7: /marketing-otomasyonu/crm-entegrasyonu ===
@@ -278,7 +309,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Sistemlerinizi Baglayin',
     ctaDescription: 'Veri kopuklugune son verin. Entegrasyon analizi icin hemen iletisime gecin.',
-    footerTrustNote: 'CRM entegrasyonunda uzman teknik ekip.'
+    footerTrustNote: 'CRM entegrasyonunda uzman teknik ekip.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 8: /marketing-otomasyonu/lead-nurturing ===
@@ -318,7 +350,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Leadlerinizi Isitmeye Baslayin',
     ctaDescription: 'Satisa hazir lead sayinizi artirin. Strateji gorusmesi icin hemen iletisime gecin.',
-    footerTrustNote: 'Uzun satis donguleri icin tasarlanmis nurturing cozumleri.'
+    footerTrustNote: 'Uzun satis donguleri icin tasarlanmis nurturing cozumleri.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 9: /marketing-otomasyonu/musteri-segmentasyonu ===
@@ -358,7 +391,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Musterilerinizi Daha Iyi Taniyin',
     ctaDescription: 'Hedefli pazarlama icin segmentasyon analizinizi alin. Hemen iletisime gecin.',
-    footerTrustNote: 'Veri odakli pazarlama icin yapay zeka destekli segmentasyon.'
+    footerTrustNote: 'Veri odakli pazarlama icin yapay zeka destekli segmentasyon.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 10: /marketing-otomasyonu/whatsapp-otomasyonu ===
@@ -398,7 +432,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'WhatsApp Iletisiminizi Otomatiklestirin',
     ctaDescription: 'Musterilerinize aninda yanit verin. Ucretsiz demo icin simdi basvurun.',
-    footerTrustNote: 'WhatsApp Business API ile kurumsal iletisim cozumleri.'
+    footerTrustNote: 'WhatsApp Business API ile kurumsal iletisim cozumleri.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 11: /marketing-otomasyonu/chatbot-otomasyonu ===
@@ -438,7 +473,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: '7/24 Destek Saglayin',
     ctaDescription: 'Ziyaretcilerinizi kaybetmeyin. Chatbot demo icin hemen basvurun.',
-    footerTrustNote: 'B2B sirketler icin yapay zeka chatbot cozumleri.'
+    footerTrustNote: 'B2B sirketler icin yapay zeka chatbot cozumleri.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 12: /marketing-otomasyonu/musteri-iletisim-otomasyonu ===
@@ -478,7 +514,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Iletisiminizi Birlestirin',
     ctaDescription: 'Cok kanalli iletisimi basitlestirin. Ucretsiz analiz icin hemen iletisime gecin.',
-    footerTrustNote: 'Omnichannel iletisim otomasyonu cozumleri.'
+    footerTrustNote: 'Omnichannel iletisim otomasyonu cozumleri.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 13: /marketing-otomasyonu/sosyal-medya-otomasyonu ===
@@ -518,7 +555,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Sosyal Medyanizi Otomatiklestirin',
     ctaDescription: 'Icerik yonetiminizi kolaylastirin. Demo icin hemen basvurun.',
-    footerTrustNote: 'B2B sosyal medya yonetimi icin tasarlanmis otomasyon araci.'
+    footerTrustNote: 'B2B sosyal medya yonetimi icin tasarlanmis otomasyon araci.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 14: /marketing-otomasyonu/icerik-uretimi ===
@@ -558,7 +596,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Icerik Uretimini Hizlandirin',
     ctaDescription: 'Yapay zeka ile icerik uretmeye baslayin. Ucretsiz deneme icin basvurun.',
-    footerTrustNote: 'B2B pazarlama icin yapay zeka destekli icerik cozumleri.'
+    footerTrustNote: 'B2B pazarlama icin yapay zeka destekli icerik cozumleri.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 15: /marketing-otomasyonu/reklam-otomasyonu ===
@@ -598,7 +637,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Reklam Performansinizi Artirin',
     ctaDescription: 'Reklam harcamalarinizi akillica yonetin. Ucretsiz analiz icin hemen iletisime gecin.',
-    footerTrustNote: 'Performance marketing icin yapay zeka destekli otomasyon.'
+    footerTrustNote: 'Performance marketing icin yapay zeka destekli otomasyon.',
+    parentHub: '/marketing-otomasyonu',
   },
 
   // === PAGE 16: /satis-otomasyonu ===
@@ -638,7 +678,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Satis Sureclerinizi Otomatiklestirin',
     ctaDescription: 'Ekibinizi idari yukten kurtarin. Ucretsiz satis analizi icin hemen iletisime gecin.',
-    footerTrustNote: 'B2B satis ekipleri icin otomasyon cozumleri.'
+    footerTrustNote: 'B2B satis ekipleri icin otomasyon cozumleri.',
+    relatedPages: salesSubPages,
   },
 
   // === PAGE 17: /satis-otomasyonu/crm-satis ===
@@ -678,7 +719,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'CRM Verimliliginizi Artirin',
     ctaDescription: 'CRM sisteminizi satisin gercek destekleyicisi yapin. Ucretsiz analiz icin hemen iletisime gecin.',
-    footerTrustNote: 'CRM odakli satis otomasyonu cozumleri.'
+    footerTrustNote: 'CRM odakli satis otomasyonu cozumleri.',
+    parentHub: '/satis-otomasyonu',
   },
 
   // === PAGE 18: /satis-otomasyonu/teklif-otomasyonu ===
@@ -718,7 +760,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Tekliflerinizi Hizlandirin',
     ctaDescription: 'Profesyonel teklifleri dakikalar icerisinde hazirlayin. Demo icin hemen basvurun.',
-    footerTrustNote: 'B2B satis ekipleri icin teklif yonetim sistemi.'
+    footerTrustNote: 'B2B satis ekipleri icin teklif yonetim sistemi.',
+    parentHub: '/satis-otomasyonu',
   },
 
   // === PAGE 19: /satis-otomasyonu/follow-up-otomasyonu ===
@@ -758,7 +801,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Takiplerinizi Sistematiklestirin',
     ctaDescription: 'Satis firsatlarini kaybetmeyin. Ucretsiz analiz icin hemen iletisime gecin.',
-    footerTrustNote: 'Satis ekipleri icin follow-up otomasyon cozumleri.'
+    footerTrustNote: 'Satis ekipleri icin follow-up otomasyon cozumleri.',
+    parentHub: '/satis-otomasyonu',
   },
 
   // === PAGE 20: /yapay-zeka-otomasyonu ===
@@ -798,7 +842,8 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     ],
     ctaHeadline: 'Is Sureclerinizi Donusturun',
     ctaDescription: 'Yapay zeka ile isletmenizi geleceğe tasıyın. Ucretsiz danismanlik gorusmesi icin hemen iletisime gecin.',
-    footerTrustNote: 'Turkiyenin lider B2B sirketlerine yapay zeka otomasyonu sagliyoruz.'
+    footerTrustNote: 'Turkiyenin lider B2B sirketlerine yapay zeka otomasyonu sagliyoruz.',
+    relatedPages: ['/marketing-otomasyonu', '/satis-otomasyonu'],
   }
 ];
 
