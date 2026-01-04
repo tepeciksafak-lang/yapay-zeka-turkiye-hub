@@ -20,14 +20,26 @@ const SEO = ({ title, description, image, url, type = "website", routeKey, param
   const defaultImage = "/og-homepage.jpg";
   const siteUrl = 'https://yapayzekapratik.com';
   
-  // Generate hreflang URLs
-  const generateHreflangUrls = () => {
-    if (!routeKey) return null;
-    return getHreflangUrls(routeKey, params);
+  // Clean canonical URL: remove query strings, hash, normalize trailing slash
+  const getCleanCanonical = () => {
+    if (url) return url;
+    
+    let pathname = location.pathname;
+    
+    // Remove trailing slash (except for root)
+    if (pathname !== '/' && pathname.endsWith('/')) {
+      pathname = pathname.slice(0, -1);
+    }
+    
+    // Root path: no trailing slash
+    if (pathname === '/') {
+      return siteUrl;
+    }
+    
+    return `${siteUrl}${pathname}`;
   };
-  
-  const hreflangUrls = generateHreflangUrls();
-  const canonicalUrl = url || (routeKey && hreflangUrls ? hreflangUrls['tr'] : `${siteUrl}${location.pathname}`);
+
+  const canonicalUrl = getCleanCanonical();
   
   return (
     <Helmet>
