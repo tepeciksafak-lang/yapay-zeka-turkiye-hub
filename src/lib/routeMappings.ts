@@ -102,19 +102,24 @@ export const extractParamsFromPath = (
 };
 
 /**
- * Generate hreflang URLs (Turkish only)
+ * Get canonical URL for a route (Turkish only, no hreflang needed)
+ */
+export const getCanonicalUrl = (
+  routeKey: RouteKey,
+  params?: Record<string, string>
+): string => {
+  const baseUrl = 'https://yapayzekapratik.com';
+  const path = getLocalizedRoute('tr', routeKey, params);
+  return `${baseUrl}${path}`;
+};
+
+/**
+ * @deprecated Use getCanonicalUrl instead - monolingual site doesn't need hreflang
  */
 export const getHreflangUrls = (
   routeKey: RouteKey,
   params?: Record<string, string>
 ): Record<string, string> => {
-  const baseUrl = 'https://yapayzekapratik.com';
-  const path = getLocalizedRoute('tr', routeKey, params);
-  
-  const urls: Record<string, string> = {
-    'tr': `${baseUrl}${path}`,
-    'x-default': `${baseUrl}${path}`
-  };
-  
-  return urls;
+  const url = getCanonicalUrl(routeKey, params);
+  return { 'tr': url, 'x-default': url };
 };

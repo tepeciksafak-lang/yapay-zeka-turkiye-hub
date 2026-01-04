@@ -51,13 +51,7 @@ const SEO = ({ title, description, image, url, type = "website", routeKey, param
       {/* Canonical */}
       <link rel="canonical" href={canonicalUrl} />
       
-      {/* hreflang Tags */}
-      {hreflangUrls && (
-        <>
-          <link rel="alternate" hrefLang="tr" href={hreflangUrls.tr} />
-          <link rel="alternate" hrefLang="x-default" href={hreflangUrls['x-default']} />
-        </>
-      )}
+      {/* hreflang Tags - Removed: Monolingual site (Turkish only) */}
       
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index, follow" />

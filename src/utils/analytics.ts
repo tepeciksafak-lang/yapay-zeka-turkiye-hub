@@ -12,10 +12,9 @@ export interface AnalyticsConfig {
   debug?: boolean;
 }
 
-// Multi-Domain Analytics Configuration
+// Analytics Configuration (Turkish only)
 export const ANALYTICS_CONFIG = {
-  de: 'G-XXXXXXXXXX', // TODO: Replace with actual GA4 ID for ki-automatisieren.de
-  tr: 'G-XYNQMB280W'  // Existing GA4 ID for yapayzekapratik.com
+  tr: 'G-XYNQMB280W'  // GA4 ID for yapayzekapratik.com
 } as const;
 
 export interface AnalyticsEvent {
@@ -38,11 +37,9 @@ class Analytics {
     };
   }
 
-  // Get tracking ID based on current language
+  // Get tracking ID (Turkish only)
   private getCurrentTrackingId(): string {
-    const currentPath = window.location.pathname;
-    const currentLang = currentPath.split('/')[1] as 'de' | 'tr';
-    return ANALYTICS_CONFIG[currentLang] || ANALYTICS_CONFIG.tr;
+    return ANALYTICS_CONFIG.tr;
   }
 
   // Initialize analytics with configuration

@@ -85,9 +85,7 @@ const BlogPost = () => {
         className="mx-auto w-full max-w-3xl px-4 py-12 min-h-screen flex items-center justify-center"
         style={{ background: "#0B0F14" }}
       >
-        <p style={{ color: "#94A3B8" }}>
-          {currentLanguage === "tr" ? "Yükleniyor..." : "Wird geladen..."}
-        </p>
+        <p style={{ color: "#94A3B8" }}>Yükleniyor...</p>
       </main>
     );
   }
@@ -102,12 +100,10 @@ const BlogPost = () => {
           className="text-3xl md:text-4xl font-semibold"
           style={{ color: "#E5E7EB" }}
         >
-          {currentLanguage === "tr" ? "Post bulunamadı" : "Post nicht gefunden"}
+          Post bulunamadı
         </h1>
         <p className="mt-4" style={{ color: "#94A3B8" }}>
-          {currentLanguage === "tr"
-            ? "Aradığınız blog yazısı bulunamadı."
-            : "Der gesuchte Blog-Post wurde nicht gefunden."}
+          Aradığınız blog yazısı bulunamadı.
         </p>
       </main>
     );
@@ -174,7 +170,7 @@ const BlogPost = () => {
           <span>•</span>
           <span>{post.date}</span>
           <span>•</span>
-          <span>{post.read_time} {currentLanguage === "tr" ? "dk" : "Min"}</span>
+          <span>{post.read_time} dk</span>
         </div>
 
         {post.tags.length > 0 && (
@@ -207,7 +203,7 @@ const BlogPost = () => {
               className="text-lg font-semibold mb-2"
               style={{ color: "#E5E7EB" }}
             >
-              {currentLanguage === "tr" ? "Yazar Hakkında" : "Über den Autor"}
+              Yazar Hakkında
             </h3>
             <p style={{ color: "#94A3B8" }}>{post.author_bio}</p>
           </div>
