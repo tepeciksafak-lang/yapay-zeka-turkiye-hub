@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 export default function SolutionCardsSection() {
   const solutionLinks: Record<number, string> = {
-    1: '/tr/cozumler/lead-generation',
-    2: '/tr/cozumler/pazarlama-otomasyonu',
-    3: '/tr/cozumler/satis-otomasyonu',
-    4: '/tr/cozumler/musteri-hizmeti-otomasyonu',
-    5: '/tr/cozumler/crm-otomasyonu',
+    1: '/cozumler/lead-generation',
+    2: '/cozumler/pazarlama-otomasyonu',
+    3: '/cozumler/satis-otomasyonu',
+    4: '/cozumler/musteri-hizmeti-otomasyonu',
+    5: '/cozumler/crm-otomasyonu',
   };
 
   const solutionCards = [

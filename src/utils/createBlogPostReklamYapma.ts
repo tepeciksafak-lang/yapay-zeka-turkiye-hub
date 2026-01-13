@@ -82,7 +82,7 @@ Yapay zeka destekli ses araçları profesyonel seslendirme, müzik ve ses efektl
 
 Reklam yapma sürecinizi bugün otomatikleştirin ve yapay zekanın gücünden yararlanın. Daha hızlı, daha verimli ve daha etkili kampanyalar oluşturun.
 
-[Yapay zeka çözümlerimizi](/tr/cozumler) keşfedin veya [başarılı vaka çalışmalarımızı](/tr/vaka-calismalari) inceleyin.`;
+[Yapay zeka çözümlerimizi](/cozumler) keşfedin veya [başarılı vaka çalışmalarımızı](/vaka-calismalari) inceleyin.`;
 
   // Convert local images to base64
   const images = [

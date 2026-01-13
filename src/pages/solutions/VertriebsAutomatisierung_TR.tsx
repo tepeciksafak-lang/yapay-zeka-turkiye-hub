@@ -116,7 +116,7 @@ const VertriebsAutomatisierung_TR = () => {
           "areaServed": "TR",
           "availableChannel": {
             "@type": "ServiceChannel",
-            "serviceUrl": "https://yapayzekapratik.com/tr/cozumler/satis-otomasyonu"
+            "serviceUrl": "https://yapayzekapratik.com/cozumler/satis-otomasyonu"
           }
         })}
       </script>

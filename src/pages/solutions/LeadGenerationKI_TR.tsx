@@ -116,7 +116,7 @@ const LeadGenerationKI_TR = () => {
           "areaServed": "TR",
           "availableChannel": {
             "@type": "ServiceChannel",
-            "serviceUrl": "https://yapayzekapratik.com/tr/cozumler/lead-generation"
+            "serviceUrl": "https://yapayzekapratik.com/cozumler/lead-generation"
           }
         })}
       </script>

@@ -39,9 +39,9 @@ const CaseStudyDetail = () => {
         params={{ slug: caseStudy.slug }}
       />
       <BreadcrumbSchema items={[
-        { name: t('cases.breadcrumb.home'), url: 'https://yapayzekapratik.com/tr' },
-        { name: t('cases.breadcrumb.cases'), url: 'https://yapayzekapratik.com/tr/vaka-calismalari' },
-        { name: caseStudy.baslik, url: `https://yapayzekapratik.com/tr/vaka-calismalari/${caseStudy.slug}` }
+        { name: t('cases.breadcrumb.home'), url: 'https://yapayzekapratik.com' },
+        { name: t('cases.breadcrumb.cases'), url: 'https://yapayzekapratik.com/vaka-calismalari' },
+        { name: caseStudy.baslik, url: `https://yapayzekapratik.com/vaka-calismalari/${caseStudy.slug}` }
       ]} />
 
       {/* Structured Data for Case Study */}
@@ -68,7 +68,7 @@ const CaseStudyDetail = () => {
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://yapayzekapratik.com/tr/vaka-calismalari/${caseStudy.slug}`
+            "@id": `https://yapayzekapratik.com/vaka-calismalari/${caseStudy.slug}`
           }
         })}
       </script>
