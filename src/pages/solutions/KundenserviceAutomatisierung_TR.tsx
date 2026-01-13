@@ -35,12 +35,6 @@ const KundenserviceAutomatisierung_TR = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (currentLanguage !== 'tr') {
-      navigate('/tr/cozumler/musteri-hizmeti-otomasyonu');
-    }
-  }, [currentLanguage, navigate]);
-
   const scrollToCaseStudy = () => {
     document.querySelector('.case-study-section')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -156,7 +150,7 @@ const KundenserviceAutomatisierung_TR = () => {
           company="Acilsatis"
           result="1000+ Otomatik Yanıt, 24/7 Müsait"
           description={t('solutions.kundenservice.casestudy.description')}
-          link="/tr/vaka-calismalari/acilsatis"
+          link="/vaka-calismalari/acilsatis"
           image="/logos/acilsatis.avif"
         />
 
@@ -166,7 +160,7 @@ const KundenserviceAutomatisierung_TR = () => {
           ctaPrimary={t('solutions.kundenservice.cta.primary')}
           ctaSecondary="Diğer Çözümleri Görüntüle"
           onPrimaryCTA={openQuickAnalysis}
-          onSecondaryCTA={() => navigate('/tr/cozumler')}
+          onSecondaryCTA={() => navigate('/cozumler')}
         />
       </div>
     </>

@@ -35,12 +35,6 @@ const VertriebsAutomatisierung_TR = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (currentLanguage !== 'tr') {
-      navigate('/tr/cozumler/satis-otomasyonu');
-    }
-  }, [currentLanguage, navigate]);
-
   const scrollToCaseStudy = () => {
     document.querySelector('.case-study-section')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -156,7 +150,7 @@ const VertriebsAutomatisierung_TR = () => {
           company="ERPA Teknoloji"
           result="Sistematik B2B Müşteri Kazanımı"
           description={t('solutions.vertrieb.casestudy.description')}
-          link="/tr/vaka-calismalari/erpa"
+          link="/vaka-calismalari/erpa"
           image="/logos/erpa.avif"
         />
 
@@ -166,7 +160,7 @@ const VertriebsAutomatisierung_TR = () => {
           ctaPrimary={t('solutions.vertrieb.cta.primary')}
           ctaSecondary="Diğer Çözümleri Görüntüle"
           onPrimaryCTA={openQuickAnalysis}
-          onSecondaryCTA={() => navigate('/tr/cozumler')}
+          onSecondaryCTA={() => navigate('/cozumler')}
         />
       </div>
     </>
