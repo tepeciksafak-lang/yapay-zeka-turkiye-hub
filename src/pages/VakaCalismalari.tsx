@@ -37,8 +37,8 @@ const VakaCalismalari = () => {
         routeKey="cases"
       />
       <BreadcrumbSchema items={[
-        { name: t('nav.home'), url: `https://pratikyz.com${getLocalizedRoute(currentLanguage, 'home')}` },
-        { name: t('nav.cases'), url: `https://pratikyz.com${getLocalizedRoute(currentLanguage, 'cases')}` }
+        { name: t('nav.home'), url: 'https://yapayzekapratik.com' },
+        { name: t('nav.cases'), url: 'https://yapayzekapratik.com/vaka-calismalari' }
       ]} />
       
       {/* Hero Section */}

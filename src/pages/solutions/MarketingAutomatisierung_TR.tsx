@@ -116,7 +116,7 @@ const MarketingAutomatisierung_TR = () => {
           "areaServed": "TR",
           "availableChannel": {
             "@type": "ServiceChannel",
-            "serviceUrl": "https://yapayzekapratik.com/tr/cozumler/pazarlama-otomasyonu"
+            "serviceUrl": "https://yapayzekapratik.com/cozumler/pazarlama-otomasyonu"
           }
         })}
       </script>

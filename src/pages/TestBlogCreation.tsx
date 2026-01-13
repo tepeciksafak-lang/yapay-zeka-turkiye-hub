@@ -62,7 +62,7 @@ export default function TestBlogCreation() {
             <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
               <p className="text-sm text-green-600 dark:text-green-400 flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4" />
-                Der Blog-Post wurde erfolgreich erstellt und ist jetzt unter /tr/blog verfügbar!
+                Der Blog-Post wurde erfolgreich erstellt und ist jetzt unter /blog verfügbar!
               </p>
             </div>
           )}
@@ -80,7 +80,7 @@ export default function TestBlogCreation() {
             <Button
               variant="outline"
               className="w-full"
-              onClick={() => window.location.href = "/tr/blog"}
+              onClick={() => window.location.href = "/blog"}
             >
               Zum Blog →
             </Button>

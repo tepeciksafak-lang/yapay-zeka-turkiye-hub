@@ -116,7 +116,7 @@ const KundenserviceAutomatisierung_TR = () => {
           "areaServed": "TR",
           "availableChannel": {
             "@type": "ServiceChannel",
-            "serviceUrl": "https://yapayzekapratik.com/tr/cozumler/musteri-hizmeti-otomasyonu"
+            "serviceUrl": "https://yapayzekapratik.com/cozumler/musteri-hizmeti-otomasyonu"
           }
         })}
       </script>

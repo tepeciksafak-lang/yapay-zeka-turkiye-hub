@@ -116,7 +116,7 @@ const CRMProzessAutomatisierung_TR = () => {
           "areaServed": "TR",
           "availableChannel": {
             "@type": "ServiceChannel",
-            "serviceUrl": "https://yapayzekapratik.com/tr/cozumler/crm-otomasyonu"
+            "serviceUrl": "https://yapayzekapratik.com/cozumler/crm-otomasyonu"
           }
         })}
       </script>
