@@ -35,12 +35,6 @@ const LeadGenerationKI_TR = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (currentLanguage !== 'tr') {
-      navigate('/tr/cozumler/lead-generation');
-    }
-  }, [currentLanguage, navigate]);
-
   const scrollToCaseStudy = () => {
     document.querySelector('.case-study-section')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -156,7 +150,7 @@ const LeadGenerationKI_TR = () => {
           company="Car Studio AI"
           result="+30 Randevu/Ay"
           description={t('solutions.leadgen.casestudy.description')}
-          link="/tr/vaka-calismalari/car-studio-ai"
+          link="/vaka-calismalari/car-studio-ai"
           image="/logos/carstudio.avif"
         />
 
@@ -166,7 +160,7 @@ const LeadGenerationKI_TR = () => {
           ctaPrimary={t('solutions.leadgen.cta.primary')}
           ctaSecondary="Diğer Çözümleri Görüntüle"
           onPrimaryCTA={openQuickAnalysis}
-          onSecondaryCTA={() => navigate('/tr/cozumler')}
+          onSecondaryCTA={() => navigate('/cozumler')}
         />
       </div>
     </>

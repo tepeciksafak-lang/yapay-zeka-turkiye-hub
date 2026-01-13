@@ -35,12 +35,6 @@ const MarketingAutomatisierung_TR = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (currentLanguage !== 'tr') {
-      navigate('/tr/cozumler/pazarlama-otomasyonu');
-    }
-  }, [currentLanguage, navigate]);
-
   const scrollToCaseStudy = () => {
     document.querySelector('.case-study-section')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -156,7 +150,7 @@ const MarketingAutomatisierung_TR = () => {
           company="Salevium"
           result="Sistematik LinkedIn B2B Lead Üretimi"
           description={t('solutions.marketing.casestudy.description')}
-          link="/tr/vaka-calismalari/salevium"
+          link="/vaka-calismalari/salevium"
           image="/logos/salevium.avif"
         />
 
@@ -166,7 +160,7 @@ const MarketingAutomatisierung_TR = () => {
           ctaPrimary={t('solutions.marketing.cta.primary')}
           ctaSecondary="Diğer Çözümleri Görüntüle"
           onPrimaryCTA={openQuickAnalysis}
-          onSecondaryCTA={() => navigate('/tr/cozumler')}
+          onSecondaryCTA={() => navigate('/cozumler')}
         />
       </div>
     </>
