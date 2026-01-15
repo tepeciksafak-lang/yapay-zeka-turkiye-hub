@@ -5,5 +5,8 @@
 # Legacy sitemap redirect
 /functions/v1/sitemap /sitemap.xml 301!
 
-# SPA Fallback
+# Trailing slash redirect (301) - P0 Fix
+/:path*/ /:path* 301!
+
+# SPA Fallback (must be last)
 /* /index.html 200
