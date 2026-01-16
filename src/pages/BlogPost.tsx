@@ -109,29 +109,37 @@ const BlogPost = () => {
     );
   }
 
-  // Article Schema for SEO
+  // Article Schema for SEO (P2 Fix - complete schema.org Article)
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": post.title,
+    "description": post.excerpt,
     "datePublished": post.date,
     "dateModified": post.date,
     "author": {
       "@type": "Person",
-      "name": post.author
+      "name": post.author,
+      ...(post.author_bio && { "description": post.author_bio })
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Pratik Yapay Zeka",
+      "name": "Yapay Zeka Pratik",
+      "url": "https://yapayzekapratik.com",
       "logo": {
         "@type": "ImageObject",
-        "url": `${baseUrl}/logo.png`
+        "url": "https://yapayzekapratik.com/logo.png"
       }
     },
-    "image": post.cover_image_url || `${baseUrl}/placeholder.svg`,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://yapayzekapratik.com/blog/${post.slug}`
+    },
+    "image": post.cover_image_url || "https://yapayzekapratik.com/placeholder.svg",
     "articleBody": post.content.substring(0, 500),
     "keywords": post.tags.join(", "),
-    "articleSection": post.category
+    "articleSection": post.category,
+    "inLanguage": "tr-TR"
   };
 
   return (
