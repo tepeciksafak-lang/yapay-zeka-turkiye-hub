@@ -97,23 +97,26 @@ const MarketingAutomatisierung_TR = () => {
         routeKey="solution-marketing"
       />
       
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Pazarlama Otomasyonu",
+          "serviceType": "Marketing Automation",
+          "name": "Yapay Zeka ile Pazarlama Otomasyonu",
+          "description": t('solutions.marketing.seo.description'),
           "provider": {
             "@type": "Organization",
-            "name": "Pratik Yapay Zeka"
+            "name": "Yapay Zeka Pratik",
+            "url": "https://yapayzekapratik.com"
           },
-          "description": t('solutions.marketing.seo.description'),
-          "areaServed": "TR",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Turkey"
+          },
           "availableChannel": {
             "@type": "ServiceChannel",
             "serviceUrl": "https://yapayzekapratik.com/cozumler/pazarlama-otomasyonu"
           }
-        })}
-      </script>
+        }) }} />
 
       <div className="min-h-screen">
         <SolutionHero 

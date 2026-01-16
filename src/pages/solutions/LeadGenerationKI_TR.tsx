@@ -97,23 +97,27 @@ const LeadGenerationKI_TR = () => {
         routeKey="solution-leadgen-ki"
       />
       
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Yapay Zeka Lead Üretimi",
+          "serviceType": "Lead Generation Automation",
+          "name": "Yapay Zeka ile Lead Üretimi",
+          "description": t('solutions.leadgen.seo.description'),
           "provider": {
             "@type": "Organization",
-            "name": "Pratik Yapay Zeka"
+            "name": "Yapay Zeka Pratik",
+            "url": "https://yapayzekapratik.com"
           },
-          "description": t('solutions.leadgen.seo.description'),
-          "areaServed": "TR",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Turkey"
+          },
           "availableChannel": {
             "@type": "ServiceChannel",
             "serviceUrl": "https://yapayzekapratik.com/cozumler/lead-generation"
           }
-        })}
-      </script>
+        }) }} />
+      
 
       <div className="min-h-screen">
         <SolutionHero 

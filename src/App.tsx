@@ -2,9 +2,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { ModalProvider } from "./contexts/ModalContext";
 import { useAnalytics } from "./hooks/useAnalytics";
@@ -53,10 +53,26 @@ const LegacyRedirect = () => {
   return <Navigate to={newPath + location.search + location.hash} replace />;
 };
 
+// URL Normalizer - redirects uppercase paths to lowercase (P1 Case-Sensitivity Fix)
+const URLNormalizer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    const lowercasePath = location.pathname.toLowerCase();
+    if (location.pathname !== lowercasePath) {
+      navigate(lowercasePath + location.search + location.hash, { replace: true });
+    }
+  }, [location.pathname, location.search, location.hash, navigate]);
+  
+  return null;
+};
+
 // Component to handle routes  
 const AppWithModal = () => {
   return (
     <>
+      <URLNormalizer />
       <div className="flex min-h-screen flex-col">
         <Routes>
           {/* Homepage */}

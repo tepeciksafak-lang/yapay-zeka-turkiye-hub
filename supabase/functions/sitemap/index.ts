@@ -19,6 +19,11 @@ const generateSitemap = (): string => {
   const urls = `
   ${urlEntry('', '1.0', 'weekly')}
   ${urlEntry('/cozumler')}
+  ${urlEntry('/cozumler/lead-generation')}
+  ${urlEntry('/cozumler/satis-otomasyonu')}
+  ${urlEntry('/cozumler/pazarlama-otomasyonu')}
+  ${urlEntry('/cozumler/crm-otomasyonu')}
+  ${urlEntry('/cozumler/musteri-hizmeti-otomasyonu')}
   ${urlEntry('/vaka-calismalari')}
   ${urlEntry('/vaka-calismalari/car-studio-ai', '0.7')}
   ${urlEntry('/vaka-calismalari/acilsatis', '0.7')}
@@ -34,7 +39,7 @@ const generateSitemap = (): string => {
   ${urlEntry('/blog/yapay-zeka-ile-satis-arttirma')}
   ${urlEntry('/hakkimizda')}
   ${urlEntry('/cozumler/almanya-ihracat', '0.85', 'weekly')}
-  ${urlEntry('/gizlilik-politikasi', '0.3')}
+  ${urlEntry('/gizlilik', '0.3')}
   ${urlEntry('/kullanim-kosullari', '0.3')}
   
   ${/* SEO LANDING PAGES - 20 Seiten */''}

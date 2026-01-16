@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { createReklamYapmaBlogPost } from "@/utils/createBlogPostReklamYapma";
@@ -36,7 +37,11 @@ export default function TestBlogCreation() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Blog-Post Veröffentlichen</CardTitle>
@@ -88,5 +93,6 @@ export default function TestBlogCreation() {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 }

@@ -97,23 +97,26 @@ const KundenserviceAutomatisierung_TR = () => {
         routeKey="solution-kundenservice"
       />
       
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Müşteri Hizmeti Otomasyonu",
+          "serviceType": "Customer Service Automation",
+          "name": "Yapay Zeka ile Müşteri Hizmeti Otomasyonu",
+          "description": t('solutions.kundenservice.seo.description'),
           "provider": {
             "@type": "Organization",
-            "name": "Pratik Yapay Zeka"
+            "name": "Yapay Zeka Pratik",
+            "url": "https://yapayzekapratik.com"
           },
-          "description": t('solutions.kundenservice.seo.description'),
-          "areaServed": "TR",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Turkey"
+          },
           "availableChannel": {
             "@type": "ServiceChannel",
             "serviceUrl": "https://yapayzekapratik.com/cozumler/musteri-hizmeti-otomasyonu"
           }
-        })}
-      </script>
+        }) }} />
 
       <div className="min-h-screen">
         <SolutionHero 

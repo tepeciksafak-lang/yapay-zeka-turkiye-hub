@@ -97,23 +97,26 @@ const VertriebsAutomatisierung_TR = () => {
         routeKey="solution-vertrieb"
       />
       
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Satış Otomasyonu",
+          "serviceType": "Sales Process Automation",
+          "name": "Yapay Zeka ile Satış Otomasyonu",
+          "description": t('solutions.vertrieb.seo.description'),
           "provider": {
             "@type": "Organization",
-            "name": "Pratik Yapay Zeka"
+            "name": "Yapay Zeka Pratik",
+            "url": "https://yapayzekapratik.com"
           },
-          "description": t('solutions.vertrieb.seo.description'),
-          "areaServed": "TR",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Turkey"
+          },
           "availableChannel": {
             "@type": "ServiceChannel",
             "serviceUrl": "https://yapayzekapratik.com/cozumler/satis-otomasyonu"
           }
-        })}
-      </script>
+        }) }} />
 
       <div className="min-h-screen">
         <SolutionHero 

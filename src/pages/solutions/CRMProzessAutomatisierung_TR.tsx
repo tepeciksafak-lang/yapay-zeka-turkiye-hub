@@ -97,23 +97,26 @@ const CRMProzessAutomatisierung_TR = () => {
         routeKey="solution-crm"
       />
       
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "CRM ve Süreç Otomasyonu",
+          "serviceType": "CRM Process Automation",
+          "name": "Yapay Zeka ile CRM Otomasyonu",
+          "description": t('solutions.crm.seo.description'),
           "provider": {
             "@type": "Organization",
-            "name": "Pratik Yapay Zeka"
+            "name": "Yapay Zeka Pratik",
+            "url": "https://yapayzekapratik.com"
           },
-          "description": t('solutions.crm.seo.description'),
-          "areaServed": "TR",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Turkey"
+          },
           "availableChannel": {
             "@type": "ServiceChannel",
             "serviceUrl": "https://yapayzekapratik.com/cozumler/crm-otomasyonu"
           }
-        })}
-      </script>
+        }) }} />
 
       <div className="min-h-screen">
         <SolutionHero 
