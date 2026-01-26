@@ -26,45 +26,48 @@ const salesSubPages = [
 ];
 
 export const seoLandingPagesContent: SEOLandingPageContent[] = [
-  // === PAGE 1: /marketing-otomasyonu ===
+  // === PAGE 1: /marketing-otomasyonu (HUB_PAGE - Informational) ===
   {
     slug: '/marketing-otomasyonu',
-    title: 'Yapay Zeka ile Pazarlama Otomasyonu',
-    metaDescription: 'B2B pazarlama sureclerinizi yapay zeka ile otomatiklestirin. Daha fazla lead, daha az manuel is. Ucretsiz analiz alin.',
-    h1MainKeyword: 'Yapay Zeka Destekli Pazarlama Otomasyonu',
-    heroSubheadlineBenefit: 'Pazarlama sureclerinizi otomatiklestirin, ekibinizin zamanini stratejiye ayirin.',
-    heroOneLinerDescription: 'Lead uretiminden musteri segmentasyonuna kadar tum pazarlama operasyonlarinizi yapay zeka ile guclendirin.',
-    primaryCtaText: 'Ucretsiz Analiz Alin',
-    problemHeadline: 'Pazarlama Ekiplerinin Yasadigi Zorluklar',
+    title: 'Pazarlama Otomasyonu Rehberi: Tüm Kanallar ve Use Cases',
+    metaDescription: 'Pazarlama otomasyonu nedir, nasıl çalışır? Lead üretimi, funnel, e-posta ve daha fazlası — kapsamlı rehber.',
+    h1MainKeyword: 'Pazarlama Otomasyonu: Kapsamlı Rehber',
+    heroSubheadlineBenefit: 'Pazarlama otomasyonunun tüm yönlerini keşfedin.',
+    heroOneLinerDescription: 'Lead üretiminden müşteri segmentasyonuna, e-posta otomasyonundan CRM entegrasyonuna kadar tüm pazarlama konularını kapsayan rehber.',
+    primaryCtaText: 'Ücretsiz Analiz Alın',
+    problemHeadline: 'Pazarlama Ekiplerinin Yaşadığı Zorluklar',
     problemBullets: [
-      'Kampanyalar manuel yurutuldugundan ekip kapasitesi sinirlaniyor.',
-      'Leadler zamaninda takip edilemiyor, firsatlar kayip gidiyor.',
-      'Pazarlama verileri dagnik, raporlama zaman aliyor.'
+      'Kampanyalar manuel yürütüldüğünden ekip kapasitesi sınırlanıyor.',
+      'Leadler zamanında takip edilemiyor, fırsatlar kayıp gidiyor.',
+      'Pazarlama verileri dağınık, raporlama zaman alıyor.'
     ],
-    solutionHeadline: 'Yapay Zeka ile Cozum',
+    solutionHeadline: 'Pazarlama Otomasyonu Nedir?',
     solutionParagraphs: [
-      'Pazarlama otomasyonu, kampanya yurutmeden lead skorlamaya kadar tum surecleri sistematik hale getirir.',
-      'Yapay zeka destekli sistemler, dogru kisilere dogru zamanda ulasmanizi saglar.',
-      'Sonuc: daha fazla nitelikli lead, daha az operasyonel yuk.'
+      'Pazarlama otomasyonu, kampanya yürütmeden lead skorlamaya kadar tüm süreçleri sistematik hale getiren teknolojilerdir.',
+      'Bu rehberde her bir pazarlama otomasyonu alt konusunu detaylı inceleyebilirsiniz.',
+      'Profesyonel çözüm arıyorsanız, pazarlama otomasyonu çözümlerimizi inceleyin.'
     ],
-    howItWorksHeadline: 'Nasil Calisir?',
+    howItWorksHeadline: 'Pazarlama Otomasyonu Nasıl Çalışır?',
     steps: [
-      { title: 'Analiz', description: 'Mevcut pazarlama sureclerinizi ve veri akislarinizi inceliyoruz.' },
-      { title: 'Tasarim', description: 'Otomasyona uygun is akislari ve entegrasyon plani hazirliyoruz.' },
-      { title: 'Uygulama', description: 'Sistemi kuruyoruz, ekibinizi egitiyoruz ve canli takip yapiyoruz.' }
+      { title: 'Analiz', description: 'Mevcut pazarlama süreçlerinizi ve veri akışlarınızı inceliyoruz.' },
+      { title: 'Tasarım', description: 'Otomasyona uygun iş akışları ve entegrasyon planı hazırlıyoruz.' },
+      { title: 'Uygulama', description: 'Sistemi kuruyoruz, ekibinizi eğitiyoruz ve canlı takip yapıyoruz.' }
     ],
-    useCaseHeadline: 'Ornek Senaryo',
-    useCaseDescription: 'Bir B2B yazilim firmasinin pazarlama ekibi, kampanya yurutme ve lead takibini otomatiklestirdikten sonra haftalik 15 saat zaman kazandi. Ayni zamanda lead donus orani yuzde 22 artti.',
-    whyUsHeadline: 'Neden Biz?',
+    useCaseHeadline: 'Örnek Senaryo',
+    useCaseDescription: 'Bir B2B yazılım firmasının pazarlama ekibi, kampanya yürütme ve lead takibini otomatikleştirdikten sonra haftalık 15 saat zaman kazandı. Aynı zamanda lead dönüş oranı yüzde 22 arttı.',
+    whyUsHeadline: 'Rehber İçindekiler',
     whyUsBullets: [
-      'B2B pazarlama otomasyonunda uzmanlasmis teknik ekip.',
-      'Mevcut CRM ve pazarlama araclariyla sorunsuz entegrasyon.',
-      'Olculebilir sonuclarla haftalik raporlama.'
+      'Lead üretimi ve nurturing stratejileri',
+      'E-posta, sosyal medya ve reklam otomasyonu',
+      'CRM entegrasyonu ve veri yönetimi'
     ],
-    ctaHeadline: 'Pazarlama Sureclerinizi Otomatiklestirin',
-    ctaDescription: 'Ekibinizin stratejiye odaklanmasi icin operasyonel yukleri azaltin. Ucretsiz analiz gorusmesi icin hemen iletisime gecin.',
-    footerTrustNote: 'Turkiyenin oncu B2B sirketleri ile calisiyoruz.',
+    ctaHeadline: 'Profesyonel Çözüm mü Arıyorsunuz?',
+    ctaDescription: 'Pazarlama süreçlerinizi otomatikleştirmek için profesyonel destek alın.',
+    footerTrustNote: 'Türkiye\'nin öncü B2B şirketleri ile çalışıyoruz.',
     relatedPages: marketingSubPages,
+    // Hub-to-Money internal link
+    moneyPageLink: '/cozumler/pazarlama-otomasyonu',
+    moneyPageAnchor: 'Pazarlama Otomasyonu Çözümlerimiz →',
   },
 
   // === PAGE 2: /marketing-otomasyonu/lead-uretimi ===
@@ -641,45 +644,48 @@ export const seoLandingPagesContent: SEOLandingPageContent[] = [
     parentHub: '/marketing-otomasyonu',
   },
 
-  // === PAGE 16: /satis-otomasyonu ===
+  // === PAGE 16: /satis-otomasyonu (HUB_PAGE - Informational) ===
   {
     slug: '/satis-otomasyonu',
-    title: 'Yapay Zeka ile Satis Otomasyonu',
-    metaDescription: 'Satis sureclerinizi yapay zeka ile otomatiklestirin. CRM yonetimi, takip ve teklif olusturma. Ucretsiz analiz alin.',
-    h1MainKeyword: 'Yapay Zeka Satis Otomasyonu',
-    heroSubheadlineBenefit: 'Satis ekibinizin zamanini satisa odaklayin.',
-    heroOneLinerDescription: 'CRM yonetimi, lead takibi ve teklif olusturma sureclerini otomatik hale getirin.',
-    primaryCtaText: 'Ucretsiz Satis Analizi',
-    problemHeadline: 'Satis Ekiplerinin Yasadigi Zorluklar',
+    title: 'Satış Otomasyonu Rehberi: CRM, Teklif ve Follow-up',
+    metaDescription: 'Satış otomasyonu nedir? CRM, teklif oluşturma ve takip süreçleri — tüm satış otomasyonu konuları tek rehberde.',
+    h1MainKeyword: 'Satış Otomasyonu: Kapsamlı Rehber',
+    heroSubheadlineBenefit: 'Satış otomasyonunun tüm yönlerini keşfedin.',
+    heroOneLinerDescription: 'CRM yönetimi, teklif oluşturma ve follow-up süreçlerini kapsayan kapsamlı satış otomasyonu rehberi.',
+    primaryCtaText: 'Ücretsiz Satış Analizi',
+    problemHeadline: 'Satış Ekiplerinin Yaşadığı Zorluklar',
     problemBullets: [
-      'CRM guncelleme ve veri girisi zaman aliyor.',
+      'CRM güncelleme ve veri girişi zaman alıyor.',
       'Lead takipleri gecikiyor veya unutuluyor.',
-      'Teklif hazirlama surecleri manuel ve yavas.'
+      'Teklif hazırlama süreçleri manuel ve yavaş.'
     ],
-    solutionHeadline: 'Otomatik Satis Surecleri',
+    solutionHeadline: 'Satış Otomasyonu Nedir?',
     solutionParagraphs: [
-      'Satis otomasyonu, CRM guncellemelerini ve hatirlatmalari otomatik hale getirir.',
-      'Leadler skorlanir ve onceliklendirilir, takipler zamaninda yapilir.',
-      'Sonuc: daha fazla satis gorusmesi, daha yuksek kapanis orani.'
+      'Satış otomasyonu, CRM güncellemelerini ve hatırlatmaları otomatik hale getiren teknolojilerdir.',
+      'Bu rehberde CRM, teklif ve follow-up otomasyonu konularını detaylı inceleyebilirsiniz.',
+      'Profesyonel çözüm arıyorsanız, satış otomasyonu çözümlerimizi inceleyin.'
     ],
-    howItWorksHeadline: 'Nasil Calisir?',
+    howItWorksHeadline: 'Satış Otomasyonu Nasıl Çalışır?',
     steps: [
-      { title: 'Surec Analizi', description: 'Mevcut satis sureclerinizi ve CRM kullaniminizi inceliyoruz.' },
-      { title: 'Otomasyon Tasarimi', description: 'Otomasyona uygun is akislari hazirliyoruz.' },
-      { title: 'Uygulama', description: 'Sistemi kuruyoruz ve satis ekibinizi egitiyoruz.' }
+      { title: 'Süreç Analizi', description: 'Mevcut satış süreçlerinizi ve CRM kullanımınızı inceliyoruz.' },
+      { title: 'Otomasyon Tasarımı', description: 'Otomasyona uygun iş akışları hazırlıyoruz.' },
+      { title: 'Uygulama', description: 'Sistemi kuruyoruz ve satış ekibinizi eğitiyoruz.' }
     ],
-    useCaseHeadline: 'Ornek Senaryo',
-    useCaseDescription: 'Bir B2B hizmet firmasinin satis ekibi, otomasyon sonrasi haftalik 12 saat idari isten kurtuldu ve satis gorusme sayisini yuzde 30 artirdi.',
-    whyUsHeadline: 'Neden Biz?',
+    useCaseHeadline: 'Örnek Senaryo',
+    useCaseDescription: 'Bir B2B hizmet firmasının satış ekibi, otomasyon sonrası haftalık 12 saat idari işten kurtuldu ve satış görüşme sayısını yüzde 30 artırdı.',
+    whyUsHeadline: 'Rehber İçindekiler',
     whyUsBullets: [
-      'B2B satis sureclerinde uzman teknik ekip.',
-      'Tum buyuk CRM sistemleriyle entegrasyon.',
-      'Olculebilir sonuclar ve haftalik raporlama.'
+      'CRM otomasyonu ve veri yönetimi',
+      'Teklif oluşturma ve fiyatlandırma',
+      'Follow-up ve lead takip sistemleri'
     ],
-    ctaHeadline: 'Satis Sureclerinizi Otomatiklestirin',
-    ctaDescription: 'Ekibinizi idari yukten kurtarin. Ucretsiz satis analizi icin hemen iletisime gecin.',
-    footerTrustNote: 'B2B satis ekipleri icin otomasyon cozumleri.',
+    ctaHeadline: 'Profesyonel Çözüm mü Arıyorsunuz?',
+    ctaDescription: 'Satış süreçlerinizi otomatikleştirmek için profesyonel destek alın.',
+    footerTrustNote: 'B2B satış ekipleri için otomasyon çözümleri.',
     relatedPages: salesSubPages,
+    // Hub-to-Money internal link
+    moneyPageLink: '/cozumler/satis-otomasyonu',
+    moneyPageAnchor: 'Satış Otomasyonu Çözümlerimiz →',
   },
 
   // === PAGE 17: /satis-otomasyonu/crm-satis ===
