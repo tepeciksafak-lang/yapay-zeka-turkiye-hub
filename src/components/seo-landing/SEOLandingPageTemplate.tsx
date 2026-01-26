@@ -32,6 +32,9 @@ export interface SEOLandingPageContent {
   footerTrustNote?: string;
   parentHub?: string;
   relatedPages?: string[];
+  // Hub-to-Money page internal linking (for HUB_PAGEs only)
+  moneyPageLink?: string;
+  moneyPageAnchor?: string;
 }
 
 interface SEOLandingPageTemplateProps {
@@ -143,6 +146,19 @@ export const SEOLandingPageTemplate = ({ content, onPrimaryCTA, getPageBySlug }:
               </p>
             ))}
           </div>
+
+          {/* HUB_PAGE → MONEY_PAGE Internal Link (SEO Hierarchy) */}
+          {content.moneyPageLink && content.moneyPageAnchor && (
+            <div className="mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl text-center">
+              <Link 
+                to={content.moneyPageLink}
+                className="inline-flex items-center gap-2 text-lg font-semibold text-primary hover:text-primary/80 transition-colors"
+              >
+                {content.moneyPageAnchor}
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
