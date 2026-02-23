@@ -27,6 +27,7 @@ const KullanimKosullari = lazy(() => import("./pages/KullanimKosullari"));
 const TestBlogCreation = lazy(() => import("./pages/TestBlogCreation"));
 const AlmanyaExport = lazy(() => import("./pages/AlmanyaExport"));
 const SEOLandingPage = lazy(() => import("./pages/seo-landing/SEOLandingPage"));
+const ChatGPTMirror = lazy(() => import("./pages/ChatGPTMirror"));
 
 // Turkish Solution pages
 import {
@@ -315,6 +316,15 @@ const AppWithModal = () => {
           {/* Legacy /tr/* redirects for SEO */}
           <Route path="/tr/*" element={<LegacyRedirect />} />
           <Route path="/tr" element={<Navigate to="/" replace />} />
+
+          {/* ChatGPT Mirror Tool - standalone, no nav/footer */}
+          <Route path="/chatgpt" element={
+            <LanguageWrapper>
+              <Suspense fallback={<PageLoader />}>
+                <ChatGPTMirror />
+              </Suspense>
+            </LanguageWrapper>
+          } />
 
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
